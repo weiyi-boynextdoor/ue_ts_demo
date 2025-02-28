@@ -24,7 +24,15 @@ public:
     virtual void Shutdown() override;
 	
 private:
+    /* Js entry file */
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Puerts", meta = (AllowPrivateAccess = "true"))
-    FString ModuleName = "Init";
-    TSharedPtr<puerts::FJsEnv> GameScript;
+    FString JsEntry;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Puerts", meta = (AllowPrivateAccess = "true"))
+    int JsDebugPort = 0;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Puerts", meta = (AllowPrivateAccess = "true"))
+    bool WaitDebugger = false;
+
+    TSharedPtr<puerts::FJsEnv> JsScript;
 };

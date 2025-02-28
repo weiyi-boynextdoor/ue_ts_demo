@@ -11,16 +11,32 @@ void UTsGameInstance::Init()
 void UTsGameInstance::OnStart()
 {
     Super::OnStart();
-    GameScript = MakeShared<puerts::FJsEnv>();
-    //GameScript = MakeShared<puerts::FJsEnv>(std::make_unique<puerts::DefaultJSModuleLoader>(TEXT("JavaScript")), std::make_shared<puerts::FDefaultLogger>(), 8080);
-    //GameScript->WaitDebugger();
+
+    if (JsEntry.IsEmpty())
+    {
+        return;
+    }
+
+    if (JsDebugPort > 0)
+    {
+        JsScript = MakeShared<puerts::FJsEnv>(std::make_unique<puerts::DefaultJSModuleLoader>(TEXT("JavaScript")), std::make_shared<puerts::FDefaultLogger>(), JsDebugPort);
+        if (WaitDebugger)
+        {
+            JsScript->WaitDebugger();
+        }
+    }
+    else
+    {
+        JsScript = MakeShared<puerts::FJsEnv>();
+    }
+
     TArray<TPair<FString, UObject*>> Arguments;
     Arguments.Add(TPair<FString, UObject*>(TEXT("GameInstance"), this));
-    GameScript->Start(ModuleName, Arguments);
+    JsScript->Start(JsEntry, Arguments);
 }
 
 void UTsGameInstance::Shutdown()
 {
     Super::Shutdown();
-    GameScript.Reset();
+    JsScript.Reset();
 }

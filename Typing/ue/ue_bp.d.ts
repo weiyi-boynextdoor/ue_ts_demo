@@ -6,11 +6,10 @@ declare module "ue" {
 
     import * as UE from "ue"
 
-// __TYPE_DECL_START: 655FE7804F2DF940DA4487AAA67FA716
+// __TYPE_DECL_START: 211F243F44C9706398935698783676E5
     namespace Game.ThirdPerson.Blueprints.BP_ThirdPersonCharacter {
         class BP_ThirdPersonCharacter_C extends UE.TPSMPCharacter {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-            SceneCaptureComponent2D: UE.SceneCaptureComponent2D;
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): BP_ThirdPersonCharacter_C;
             static Load(InName: string): BP_ThirdPersonCharacter_C;
@@ -37,7 +36,7 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
-// __TYPE_DECL_START: 22DEC44544ECBCB25B414DBDC8409F35
+// __TYPE_DECL_START: B822F6314FFD812FBCEF7BA8C02CB249
     namespace Game.ThirdPerson.UI.WBP_MainMenu {
         class WBP_MainMenu_C extends UE.UserWidget {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
@@ -47,7 +46,6 @@ declare module "ue" {
             UrlInput: UE.EditableText;
             BndEvt__WBP_MainMenu_HostBtn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature() : void;
             BndEvt__WBP_MainMenu_JoinBtn_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature() : void;
-            Construct() : void;
             ExecuteUbergraph_WBP_MainMenu(EntryPoint: number) : void;
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): WBP_MainMenu_C;
@@ -485,24 +483,8 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
-// __TYPE_DECL_START: 64E570C548D7EC66DE227BA3CC3FABC6
-    namespace Game.ThirdPerson.UI.WBP_SplitScreen {
-        class WBP_SplitScreen_C extends UE.UserWidget {
-            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-            BG: UE.Image;
-            LeftImage: UE.Image;
-            static StaticClass(): Class;
-            static Find(OrigInName: string, Outer?: Object): WBP_SplitScreen_C;
-            static Load(InName: string): WBP_SplitScreen_C;
-        
-            __tid_WBP_SplitScreen_C_0__: boolean;
-        }
-        
-    }
-
-// __TYPE_DECL_END
-// __TYPE_DECL_START: B25608E34A05513A410BC894C94492CF
-    namespace Game.BP_TsGameInstance {
+// __TYPE_DECL_START: C402F73C46621B93428450AFE59E03CE
+    namespace Game.ThirdPerson.Blueprints.BP_TsGameInstance {
         class BP_TsGameInstance_C extends UE.TsGameInstance {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
             static StaticClass(): Class;
