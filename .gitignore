@@ -76,8 +76,6 @@ DerivedDataCache/*
 # js related, generated or download by yourself
 Plugins/Puerts/ThirdParty/v8_*
 Plugins/Puerts/Source/CSharpParamDefaultValueMetas/obj
-Typing/
-Content/JavaScript/*
 
 # Package output path I use
 Package/*
