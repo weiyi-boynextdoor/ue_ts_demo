@@ -6,9 +6,9 @@ declare module "ue" {
 
     import * as UE from "ue"
 
-// __TYPE_DECL_START: 211F243F44C9706398935698783676E5
+// __TYPE_DECL_START: D1650A8B4545CBF2DD7CC0AB7D0A84BF
     namespace Game.ThirdPerson.Blueprints.BP_ThirdPersonCharacter {
-        class BP_ThirdPersonCharacter_C extends UE.TPSMPCharacter {
+        class BP_ThirdPersonCharacter_C extends UE.ThirdPersonCharacter {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): BP_ThirdPersonCharacter_C;
@@ -36,7 +36,7 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
-// __TYPE_DECL_START: B822F6314FFD812FBCEF7BA8C02CB249
+// __TYPE_DECL_START: 599B19544A621CE19A20B8B7CAC84FCB
     namespace Game.ThirdPerson.UI.WBP_MainMenu {
         class WBP_MainMenu_C extends UE.UserWidget {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
@@ -46,6 +46,7 @@ declare module "ue" {
             UrlInput: UE.EditableText;
             BndEvt__WBP_MainMenu_HostBtn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature() : void;
             BndEvt__WBP_MainMenu_JoinBtn_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature() : void;
+            Construct() : void;
             ExecuteUbergraph_WBP_MainMenu(EntryPoint: number) : void;
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): WBP_MainMenu_C;
@@ -478,6 +479,21 @@ declare module "ue" {
             static Load(InName: string): CR_Mannequin_Procedural_C;
         
             __tid_CR_Mannequin_Procedural_C_0__: boolean;
+        }
+        
+    }
+
+// __TYPE_DECL_END
+// __TYPE_DECL_START: 29EBDB834451EFD69B02CEAB4180F499
+    namespace Game.ThirdPerson.Blueprints.BP_ThirdPersonGameMode {
+        class BP_ThirdPersonGameMode_C extends UE.GameModeBase {
+            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            DefaultSceneRoot: UE.SceneComponent;
+            static StaticClass(): Class;
+            static Find(OrigInName: string, Outer?: Object): BP_ThirdPersonGameMode_C;
+            static Load(InName: string): BP_ThirdPersonGameMode_C;
+        
+            __tid_BP_ThirdPersonGameMode_C_0__: boolean;
         }
         
     }
