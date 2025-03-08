@@ -82,3 +82,6 @@ Package/*
 Plugins/Puerts/Source/CSharpParamDefaultValueMetas/CSharpParamDefaultValueMetas.ubtplugin.csproj.props
 
 ts_file_versions_info.json
+
+# npm install
+node_modules/

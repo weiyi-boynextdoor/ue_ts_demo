@@ -483,18 +483,4 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
-// __TYPE_DECL_START: C402F73C46621B93428450AFE59E03CE
-    namespace Game.ThirdPerson.Blueprints.BP_TsGameInstance {
-        class BP_TsGameInstance_C extends UE.TsGameInstance {
-            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-            static StaticClass(): Class;
-            static Find(OrigInName: string, Outer?: Object): BP_TsGameInstance_C;
-            static Load(InName: string): BP_TsGameInstance_C;
-        
-            __tid_BP_TsGameInstance_C_0__: boolean;
-        }
-        
-    }
-
-// __TYPE_DECL_END
 }
