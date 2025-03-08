@@ -80,3 +80,5 @@ Plugins/Puerts/Source/CSharpParamDefaultValueMetas/obj
 # Package output path I use
 Package/*
 Plugins/Puerts/Source/CSharpParamDefaultValueMetas/CSharpParamDefaultValueMetas.ubtplugin.csproj.props
+
+ts_file_versions_info.json
