@@ -240,6 +240,11 @@ public:
 
             JsEnv->RebindJs();
             UE_LOG(PuertsModule, Log, TEXT("Normal Mode started!"));
+
+            if (!Settings.EntryFile.IsEmpty())
+            {
+                JsEnv->Start(Settings.EntryFile);
+            }
         }
     }
 
