@@ -499,4 +499,33 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
+// __TYPE_DECL_START: 866A89CE461E6BEE16AF92933E266049
+    namespace Game.Blueprints.BP_TsGameInstance {
+        class BP_TsGameInstance_C extends UE.TsGameInstance {
+            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            static StaticClass(): Class;
+            static Find(OrigInName: string, Outer?: Object): BP_TsGameInstance_C;
+            static Load(InName: string): BP_TsGameInstance_C;
+        
+            __tid_BP_TsGameInstance_C_0__: boolean;
+        }
+        
+    }
+
+// __TYPE_DECL_END
+// __TYPE_DECL_START: A66974974C55ED0A3FEEB193FA6E05D9
+    namespace Game.Blueprints.BP_Actor {
+        class BP_Actor_C extends UE.Actor {
+            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            DefaultSceneRoot: UE.SceneComponent;
+            static StaticClass(): Class;
+            static Find(OrigInName: string, Outer?: Object): BP_Actor_C;
+            static Load(InName: string): BP_Actor_C;
+        
+            __tid_BP_Actor_C_0__: boolean;
+        }
+        
+    }
+
+// __TYPE_DECL_END
 }
