@@ -6,10 +6,31 @@ declare module "ue" {
 
     import * as UE from "ue"
 
-// __TYPE_DECL_START: D1650A8B4545CBF2DD7CC0AB7D0A84BF
+// __TYPE_DECL_START: E55D129847EB92822DDA60A1AB00F3B8
     namespace Game.ThirdPerson.Blueprints.BP_ThirdPersonCharacter {
-        class BP_ThirdPersonCharacter_C extends UE.ThirdPersonCharacter {
+        class BP_ThirdPersonCharacter_C extends UE.Character {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            UberGraphFrame: UE.PointerToUberGraphFrame;
+            FollowCamera: UE.CameraComponent;
+            CameraBoom: UE.SpringArmComponent;
+            DefaultMappingContext: UE.InputMappingContext;
+            EventLook: $MulticastDelegate<(X: number, Y: number) => void>;
+            EventMove: $MulticastDelegate<(X: number, Y: number) => void>;
+            EventBeginJump: $MulticastDelegate<() => void>;
+            EventEndJump: $MulticastDelegate<() => void>;
+            EventBeginJump__DelegateSignature() : void;
+            EventEndJump__DelegateSignature() : void;
+            EventLook__DelegateSignature(X: number, Y: number) : void;
+            EventMove__DelegateSignature(X: number, Y: number) : void;
+            ExecuteUbergraph_BP_ThirdPersonCharacter(EntryPoint: number) : void;
+            InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_0(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
+            InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_1(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
+            InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_3(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
+            InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_2(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
+            /*
+             *Event when play begins for this actor.
+             */
+            ReceiveBeginPlay() : void;
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): BP_ThirdPersonCharacter_C;
             static Load(InName: string): BP_ThirdPersonCharacter_C;
@@ -513,16 +534,36 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
-// __TYPE_DECL_START: A66974974C55ED0A3FEEB193FA6E05D9
+// __TYPE_DECL_START: E892532D4B12C2BA97927A9043C231F2
     namespace Game.Blueprints.BP_Actor {
         class BP_Actor_C extends UE.Actor {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            UberGraphFrame: UE.PointerToUberGraphFrame;
             DefaultSceneRoot: UE.SceneComponent;
+            ExecuteUbergraph_BP_Actor(EntryPoint: number) : void;
+            /*
+             *Event when play begins for this actor.
+             */
+            ReceiveBeginPlay() : void;
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): BP_Actor_C;
             static Load(InName: string): BP_Actor_C;
         
             __tid_BP_Actor_C_0__: boolean;
+        }
+        
+    }
+
+// __TYPE_DECL_END
+// __TYPE_DECL_START: F1C153484F63CB4A647CD0ACAF79ADE2
+    namespace Game.Blueprints.BP_Actor_1 {
+        class BP_Actor_1_C extends UE.Game.Blueprints.BP_Actor.BP_Actor_C {
+            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            static StaticClass(): Class;
+            static Find(OrigInName: string, Outer?: Object): BP_Actor_1_C;
+            static Load(InName: string): BP_Actor_1_C;
+        
+            __tid_BP_Actor_1_C_0__: boolean;
         }
         
     }
