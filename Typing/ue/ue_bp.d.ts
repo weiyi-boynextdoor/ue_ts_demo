@@ -6,7 +6,7 @@ declare module "ue" {
 
     import * as UE from "ue"
 
-// __TYPE_DECL_START: E55D129847EB92822DDA60A1AB00F3B8
+// __TYPE_DECL_START: DE6C754446F2CFB58C591CB714330DF3
     namespace Game.ThirdPerson.Blueprints.BP_ThirdPersonCharacter {
         class BP_ThirdPersonCharacter_C extends UE.Character {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
@@ -18,15 +18,18 @@ declare module "ue" {
             EventMove: $MulticastDelegate<(X: number, Y: number) => void>;
             EventBeginJump: $MulticastDelegate<() => void>;
             EventEndJump: $MulticastDelegate<() => void>;
+            EventAttack: $MulticastDelegate<() => void>;
+            EventAttack__DelegateSignature() : void;
             EventBeginJump__DelegateSignature() : void;
             EventEndJump__DelegateSignature() : void;
             EventLook__DelegateSignature(X: number, Y: number) : void;
             EventMove__DelegateSignature(X: number, Y: number) : void;
             ExecuteUbergraph_BP_ThirdPersonCharacter(EntryPoint: number) : void;
-            InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_0(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
+            InpActEvt_IA_Attack_K2Node_EnhancedInputActionEvent_0(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
             InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_1(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
-            InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_3(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
-            InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_2(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
+            InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_2(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
+            InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_4(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
+            InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_3(ActionValue: UE.InputActionValue, ElapsedTime: number, TriggeredTime: number, SourceAction: $Nullable<UE.InputAction>) : void;
             /*
              *Event when play begins for this actor.
              */
