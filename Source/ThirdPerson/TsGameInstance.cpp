@@ -3,16 +3,16 @@
 
 #include "TsGameInstance.h"
 
-void UTsGameInstance::OnStart()
+void UTsGameInstance::Init()
 {
-    Super::OnStart();
+    Super::Init();
     if (JsDebugPort <= 0)
     {
-        JsEnv = MakeShared<puerts::FJsEnv>();
+        JsEnv = MakeShared<puerts::FJsEnv>(JsRootPath);
     }
     else
     {
-        JsEnv = MakeShared<puerts::FJsEnv>(std::make_unique<puerts::DefaultJSModuleLoader>(TEXT("JavaScript")), std::make_shared<puerts::FDefaultLogger>(), JsDebugPort);
+        JsEnv = MakeShared<puerts::FJsEnv>(std::make_unique<puerts::DefaultJSModuleLoader>(JsRootPath), std::make_shared<puerts::FDefaultLogger>(), JsDebugPort);
         if (WaitDebugger)
         {
             JsEnv->WaitDebugger();

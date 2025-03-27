@@ -16,11 +16,14 @@ class THIRDPERSON_API UTsGameInstance : public UGameInstance
 	GENERATED_BODY()
 	
 public:
-	virtual void OnStart() override;
+	virtual void Init() override;
 
     virtual void Shutdown() override;
 	
 private:
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Puerts", meta = (AllowPrivateAccess = "true"))
+    FString JsRootPath = TEXT("JavaScript");
+
 	/* Js entry file */
      UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Puerts", meta = (AllowPrivateAccess = "true"))
      FString JsEntryFile;
