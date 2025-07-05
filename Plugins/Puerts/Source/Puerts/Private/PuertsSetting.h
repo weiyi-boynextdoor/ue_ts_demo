@@ -46,10 +46,6 @@ public:
     int32 NumberOfJsEnv = 1;
 
     UPROPERTY(config, EditAnywhere, Category = "Default JavaScript Environment",
-        meta = (DisplayName = "JaveScript Entry File", defaultValue = ""))
-    FString EntryFile = "";
-
-    UPROPERTY(config, EditAnywhere, Category = "Default JavaScript Environment",
         meta = (DisplayName = "Disable TypeScript Watch", defaultValue = false))
     bool WatchDisable = false;
 

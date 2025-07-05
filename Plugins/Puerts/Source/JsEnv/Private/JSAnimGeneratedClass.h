@@ -48,4 +48,9 @@ public:
 #ifdef THREAD_SAFE
     v8::Isolate* Isolate;
 #endif
+
+// Why fail to build without this?
+#if WITH_EDITOR
+    void HandleReinitializeObjectAfterCompile(UObject* Object) const override {}
+#endif
 };
