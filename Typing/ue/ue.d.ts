@@ -29681,123 +29681,6 @@ declare module "ue" {
         __tid_AnimNode_ControlRig_0__: boolean;
     }
     
-    class AnimNode_LinkedInputPose extends UE.AnimNode_Base {
-        constructor();
-        constructor(Name: string, Graph: string, InputPose: UE.PoseLink, bIsOutputLinked: boolean);
-        Name: string;
-        Graph: string;
-        InputPose: UE.PoseLink;
-        bIsOutputLinked: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_AnimNode_LinkedInputPose_0__: boolean;
-    }
-    
-    class AnimNode_PoseHandler extends UE.AnimNode_AssetPlayerBase {
-        constructor();
-        constructor(PoseAsset: UE.PoseAsset);
-        PoseAsset: UE.PoseAsset;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_AnimNode_PoseHandler_0__: boolean;
-    }
-    
-    class PoseDriverTransform {
-        constructor();
-        constructor(TargetTranslation: UE.Vector, TargetRotation: UE.Rotator);
-        TargetTranslation: UE.Vector;
-        TargetRotation: UE.Rotator;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_PoseDriverTransform_0__: boolean;
-    }
-    
-    enum ERBFDistanceMethod { Euclidean, Quaternion, SwingAngle, TwistAngle, DefaultMethod, ERBFDistanceMethod_MAX, __typeKeyDoNoAccess}
-    enum ERBFFunctionType { Gaussian, Exponential, Linear, Cubic, Quintic, DefaultFunction, ERBFFunctionType_MAX, __typeKeyDoNoAccess}
-    class PoseDriverTarget {
-        constructor();
-        constructor(BoneTransforms: TArray<UE.PoseDriverTransform>, TargetRotation: UE.Rotator, TargetScale: number, DistanceMethod: UE.ERBFDistanceMethod, FunctionType: UE.ERBFFunctionType, bApplyCustomCurve: boolean, CustomCurve: UE.RichCurve, DrivenName: string, bIsHidden: boolean);
-        BoneTransforms: TArray<UE.PoseDriverTransform>;
-        TargetRotation: UE.Rotator;
-        TargetScale: number;
-        DistanceMethod: UE.ERBFDistanceMethod;
-        FunctionType: UE.ERBFFunctionType;
-        bApplyCustomCurve: boolean;
-        CustomCurve: UE.RichCurve;
-        DrivenName: string;
-        bIsHidden: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_PoseDriverTarget_0__: boolean;
-    }
-    
-    enum ERBFSolverType { Additive, Interpolative, ERBFSolverType_MAX, __typeKeyDoNoAccess}
-    enum EBoneAxis { BA_X, BA_Y, BA_Z, BA_MAX, __typeKeyDoNoAccess}
-    enum ERBFNormalizeMethod { OnlyNormalizeAboveOne, AlwaysNormalize, NormalizeWithinMedian, NoNormalization, ERBFNormalizeMethod_MAX, __typeKeyDoNoAccess}
-    class RBFParams {
-        constructor();
-        constructor(TargetDimensions: number, SolverType: UE.ERBFSolverType, Radius: number, bAutomaticRadius: boolean, Function: UE.ERBFFunctionType, DistanceMethod: UE.ERBFDistanceMethod, TwistAxis: UE.EBoneAxis, WeightThreshold: number, NormalizeMethod: UE.ERBFNormalizeMethod, MedianReference: UE.Vector, MedianMin: number, MedianMax: number);
-        TargetDimensions: number;
-        SolverType: UE.ERBFSolverType;
-        Radius: number;
-        bAutomaticRadius: boolean;
-        Function: UE.ERBFFunctionType;
-        DistanceMethod: UE.ERBFDistanceMethod;
-        TwistAxis: UE.EBoneAxis;
-        WeightThreshold: number;
-        NormalizeMethod: UE.ERBFNormalizeMethod;
-        MedianReference: UE.Vector;
-        MedianMin: number;
-        MedianMax: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RBFParams_0__: boolean;
-    }
-    
-    enum EPoseDriverSource { Rotation, Translation, EPoseDriverSource_MAX, __typeKeyDoNoAccess}
-    enum EPoseDriverOutput { DrivePoses, DriveCurves, EPoseDriverOutput_MAX, __typeKeyDoNoAccess}
-    enum EPoseDriverType { SwingAndTwist, SwingOnly, Translation, EPoseDriverType_MAX, __typeKeyDoNoAccess}
-    class AnimNode_PoseDriver extends UE.AnimNode_PoseHandler {
-        constructor();
-        constructor(SourcePose: UE.PoseLink, SourceBones: TArray<UE.BoneReference>, EvalSpaceBone: UE.BoneReference, bEvalFromRefPose: boolean, OnlyDriveBones: TArray<UE.BoneReference>, PoseTargets: TArray<UE.PoseDriverTarget>, RBFParams: UE.RBFParams, DriveSource: UE.EPoseDriverSource, DriveOutput: UE.EPoseDriverOutput, SourceBone: UE.BoneReference, TwistAxis: UE.EBoneAxis, Type: UE.EPoseDriverType, RadialScaling: number, bSoloDrivenOnly: boolean, LODThreshold: number);
-        SourcePose: UE.PoseLink;
-        SourceBones: TArray<UE.BoneReference>;
-        EvalSpaceBone: UE.BoneReference;
-        bEvalFromRefPose: boolean;
-        OnlyDriveBones: TArray<UE.BoneReference>;
-        PoseTargets: TArray<UE.PoseDriverTarget>;
-        RBFParams: UE.RBFParams;
-        DriveSource: UE.EPoseDriverSource;
-        DriveOutput: UE.EPoseDriverOutput;
-        SourceBone: UE.BoneReference;
-        TwistAxis: UE.EBoneAxis;
-        Type: UE.EPoseDriverType;
-        RadialScaling: number;
-        bSoloDrivenOnly: boolean;
-        LODThreshold: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_AnimNode_PoseDriver_0__: boolean;
-    }
-    
     class DataflowNode {
         constructor();
         constructor(bActive: boolean, bOverrideColor: boolean, OverrideColor: UE.LinearColor, FrozenProperties: UE.InstancedPropertyBag, bIsFrozen: boolean);
@@ -34502,89 +34385,6 @@ declare module "ue" {
         __tid_AddConePrimitiveTool_0__: boolean;
     }
     
-    class RigUnit_HierarchyAddControl_Settings {
-        constructor();
-        constructor(DisplayName: string);
-        DisplayName: string;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RigUnit_HierarchyAddControl_Settings_0__: boolean;
-    }
-    
-    enum ERigVMTransformSpace { LocalSpace, GlobalSpace, Max, ERigVMTransformSpace_MAX, __typeKeyDoNoAccess}
-    class RigUnit_HierarchyAddControlTransform_LimitSettings {
-        constructor();
-        constructor(LimitTranslationX: UE.RigControlLimitEnabled, LimitTranslationY: UE.RigControlLimitEnabled, LimitTranslationZ: UE.RigControlLimitEnabled, LimitPitch: UE.RigControlLimitEnabled, LimitYaw: UE.RigControlLimitEnabled, LimitRoll: UE.RigControlLimitEnabled, LimitScaleX: UE.RigControlLimitEnabled, LimitScaleY: UE.RigControlLimitEnabled, LimitScaleZ: UE.RigControlLimitEnabled, MinValue: UE.EulerTransform, MaxValue: UE.EulerTransform, bDrawLimits: boolean);
-        LimitTranslationX: UE.RigControlLimitEnabled;
-        LimitTranslationY: UE.RigControlLimitEnabled;
-        LimitTranslationZ: UE.RigControlLimitEnabled;
-        LimitPitch: UE.RigControlLimitEnabled;
-        LimitYaw: UE.RigControlLimitEnabled;
-        LimitRoll: UE.RigControlLimitEnabled;
-        LimitScaleX: UE.RigControlLimitEnabled;
-        LimitScaleY: UE.RigControlLimitEnabled;
-        LimitScaleZ: UE.RigControlLimitEnabled;
-        MinValue: UE.EulerTransform;
-        MaxValue: UE.EulerTransform;
-        bDrawLimits: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RigUnit_HierarchyAddControlTransform_LimitSettings_0__: boolean;
-    }
-    
-    class RigUnit_HierarchyAddControl_ShapeSettings {
-        constructor();
-        constructor(bVisible: boolean, Name: string, Color: UE.LinearColor, Transform: UE.Transform);
-        bVisible: boolean;
-        Name: string;
-        Color: UE.LinearColor;
-        Transform: UE.Transform;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RigUnit_HierarchyAddControl_ShapeSettings_0__: boolean;
-    }
-    
-    class RigUnit_HierarchyAddControl_ProxySettings {
-        constructor();
-        constructor(bIsProxy: boolean, DrivenControls: TArray<UE.RigElementKey>, ShapeVisibility: UE.ERigControlVisibility);
-        bIsProxy: boolean;
-        DrivenControls: TArray<UE.RigElementKey>;
-        ShapeVisibility: UE.ERigControlVisibility;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RigUnit_HierarchyAddControl_ProxySettings_0__: boolean;
-    }
-    
-    class RigUnit_HierarchyAddControlTransform_Settings extends UE.RigUnit_HierarchyAddControl_Settings {
-        constructor();
-        constructor(InitialSpace: UE.ERigVMTransformSpace, bUsePreferredRotationOrder: boolean, PreferredRotationOrder: UE.EEulerRotationOrder, Limits: UE.RigUnit_HierarchyAddControlTransform_LimitSettings, Shape: UE.RigUnit_HierarchyAddControl_ShapeSettings, Proxy: UE.RigUnit_HierarchyAddControl_ProxySettings, FilteredChannels: TArray<UE.ERigControlTransformChannel>);
-        InitialSpace: UE.ERigVMTransformSpace;
-        bUsePreferredRotationOrder: boolean;
-        PreferredRotationOrder: UE.EEulerRotationOrder;
-        Limits: UE.RigUnit_HierarchyAddControlTransform_LimitSettings;
-        Shape: UE.RigUnit_HierarchyAddControl_ShapeSettings;
-        Proxy: UE.RigUnit_HierarchyAddControl_ProxySettings;
-        FilteredChannels: TArray<UE.ERigControlTransformChannel>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RigUnit_HierarchyAddControlTransform_Settings_0__: boolean;
-    }
-    
     class ManagedArrayCollection {
         constructor();
         /**
@@ -37833,545 +37633,6 @@ declare module "ue" {
         __tid_AITask_RunEQS_0__: boolean;
     }
     
-    class BoxComponent extends UE.ShapeComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        BoxExtent: UE.Vector;
-        /*
-         *@return the box extent, scaled by the component scale.
-         */
-        GetScaledBoxExtent() : UE.Vector;
-        /*
-         *@return the box extent, ignoring component scale.
-         */
-        GetUnscaledBoxExtent() : UE.Vector;
-        /*
-         *Change the box extent size. This is the unscaled size, before component scale is applied.
-         *@param       InBoxExtent: new extent (radius) for the box.
-         *@param       bUpdateOverlaps: if true and this shape is registered and collides, updates touching array for owner actor.
-         */
-        SetBoxExtent(InBoxExtent: UE.Vector, bUpdateOverlaps?: boolean /* = true */) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): BoxComponent;
-        static Load(InName: string): BoxComponent;
-    
-        __tid_BoxComponent_0__: boolean;
-    }
-    
-    enum EFunctionalTestLogHandling { ProjectDefault, OutputIsError, OutputIgnored, EFunctionalTestLogHandling_MAX, __typeKeyDoNoAccess}
-    class RandomStream {
-        constructor();
-        constructor(InitialSeed: number, Seed: number);
-        InitialSeed: number;
-        Seed: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RandomStream_0__: boolean;
-    }
-    
-    enum EFunctionalTestResult { Default, Invalid, Error, Running, Failed, Succeeded, EFunctionalTestResult_MAX, __typeKeyDoNoAccess}
-    class FuncTestRenderingComponent extends UE.PrimitiveComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): FuncTestRenderingComponent;
-        static Load(InName: string): FuncTestRenderingComponent;
-    
-        __tid_FuncTestRenderingComponent_0__: boolean;
-    }
-    
-    enum EHorizTextAligment { EHTA_Left, EHTA_Center, EHTA_Right, EHTA_MAX, __typeKeyDoNoAccess}
-    enum EVerticalTextAligment { EVRTA_TextTop, EVRTA_TextCenter, EVRTA_TextBottom, EVRTA_QuadTop, EVRTA_MAX, __typeKeyDoNoAccess}
-    class TextRenderComponent extends UE.PrimitiveComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Text: string;
-        TextMaterial: UE.MaterialInterface;
-        Font: UE.Font;
-        HorizontalAlignment: UE.EHorizTextAligment;
-        VerticalAlignment: UE.EVerticalTextAligment;
-        TextRenderColor: UE.Color;
-        XScale: number;
-        YScale: number;
-        WorldSize: number;
-        InvDefaultSize: number;
-        HorizSpacingAdjust: number;
-        VertSpacingAdjust: number;
-        bAlwaysRenderAsText: boolean;
-        /*
-         *Get local size of text
-         */
-        GetTextLocalSize() : UE.Vector;
-        /*
-         *Get world space size of text
-         */
-        GetTextWorldSize() : UE.Vector;
-        /*
-         *Change the text value and signal the primitives to be rebuilt
-         */
-        K2_SetText(Value: string) : void;
-        /*
-         *Change the font and signal the primitives to be rebuilt
-         */
-        SetFont(Value: $Nullable<UE.Font>) : void;
-        /*
-         *Change the horizontal alignment and signal the primitives to be rebuilt
-         */
-        SetHorizontalAlignment(Value: UE.EHorizTextAligment) : void;
-        /*
-         *Change the text horizontal spacing adjustment and signal the primitives to be rebuilt
-         */
-        SetHorizSpacingAdjust(Value: number) : void;
-        /*
-         *Change the text value and signal the primitives to be rebuilt
-         */
-        SetText(Value: string) : void;
-        /*
-         *Change the text material and signal the primitives to be rebuilt
-         */
-        SetTextMaterial(Material: $Nullable<UE.MaterialInterface>) : void;
-        /*
-         *Change the text render color and signal the primitives to be rebuilt
-         */
-        SetTextRenderColor(Value: UE.Color) : void;
-        /*
-         *Change the vertical alignment and signal the primitives to be rebuilt
-         */
-        SetVerticalAlignment(Value: UE.EVerticalTextAligment) : void;
-        /*
-         *Change the text vertical spacing adjustment and signal the primitives to be rebuilt
-         */
-        SetVertSpacingAdjust(Value: number) : void;
-        /*
-         *Change the world size of the text and signal the primitives to be rebuilt
-         */
-        SetWorldSize(Value: number) : void;
-        /*
-         *Change the text X scale and signal the primitives to be rebuilt
-         */
-        SetXScale(Value: number) : void;
-        /*
-         *Change the text Y scale and signal the primitives to be rebuilt
-         */
-        SetYScale(Value: number) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TextRenderComponent;
-        static Load(InName: string): TextRenderComponent;
-    
-        __tid_TextRenderComponent_0__: boolean;
-    }
-    
-    enum EComparisonMethod { Equal_To, Not_Equal_To, Greater_Than_Or_Equal_To, Less_Than_Or_Equal_To, Greater_Than, Less_Than, EComparisonMethod_MAX, __typeKeyDoNoAccess}
-    class DateTime {
-        constructor();
-        constructor(Ticks: bigint);
-        Ticks: bigint;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_DateTime_0__: boolean;
-    }
-    
-    class Box2D {
-        constructor();
-        constructor(p0: number);
-        constructor(p0: Vector2D, p1: Vector2D);
-        constructor(p0: Vector2D, p1: number);
-        constructor(p0: UE.TArray<UE.Vector2D>);
-        Min: UE.Vector2D;
-        Max: UE.Vector2D;
-        bIsValid: boolean;
-        ComputeSquaredDistanceToPoint(p0: Vector2D) : number;
-        ExpandBy(p0: number) : Box2D;
-        GetArea() : number;
-        GetCenter() : Vector2D;
-        GetCenterAndExtents(p0: $Ref<Vector2D>, p1: $Ref<Vector2D>) : void;
-        GetClosestPointTo(p0: Vector2D) : Vector2D;
-        GetExtent() : Vector2D;
-        GetSize() : Vector2D;
-        Init() : void;
-        Intersect(p0: Box2D) : boolean;
-        IsInside(p0: Vector2D) : boolean;
-        IsInside(p0: Box2D) : boolean;
-        op_Addition(p0: Vector2D) : Box2D;
-        op_Addition(p0: Box2D) : Box2D;
-        op_Equality(p0: Box2D) : boolean;
-        op_Inequality(p0: Box2D) : boolean;
-        set_Item(p0: number) : Vector2D;
-        ShiftBy(p0: Vector2D) : Box2D;
-        ToString() : string;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_Box2D_0__: boolean;
-    }
-    
-    class TraceQueryTestNames {
-        constructor();
-        constructor(ComponentName: string, PhysicalMaterialName: string, ActorName: string);
-        ComponentName: string;
-        PhysicalMaterialName: string;
-        ActorName: string;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TraceQueryTestNames_0__: boolean;
-    }
-    
-    class TraceQueryTestResultsInnerMost {
-        constructor();
-        constructor(SingleHit: UE.HitResult, SingleNames: UE.TraceQueryTestNames, bSingleResult: boolean, MultiHits: TArray<UE.HitResult>, MultiNames: TArray<UE.TraceQueryTestNames>, bMultiResult: boolean);
-        SingleHit: UE.HitResult;
-        SingleNames: UE.TraceQueryTestNames;
-        bSingleResult: boolean;
-        MultiHits: TArray<UE.HitResult>;
-        MultiNames: TArray<UE.TraceQueryTestNames>;
-        bMultiResult: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TraceQueryTestResultsInnerMost_0__: boolean;
-    }
-    
-    class TraceQueryTestResultsInner {
-        constructor();
-        constructor(LineResults: UE.TraceQueryTestResultsInnerMost, SphereResults: UE.TraceQueryTestResultsInnerMost, CapsuleResults: UE.TraceQueryTestResultsInnerMost, BoxResults: UE.TraceQueryTestResultsInnerMost);
-        LineResults: UE.TraceQueryTestResultsInnerMost;
-        SphereResults: UE.TraceQueryTestResultsInnerMost;
-        CapsuleResults: UE.TraceQueryTestResultsInnerMost;
-        BoxResults: UE.TraceQueryTestResultsInnerMost;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TraceQueryTestResultsInner_0__: boolean;
-    }
-    
-    class TraceChannelTestBatchOptions {
-        constructor();
-        constructor(bLineTrace: boolean, bSphereTrace: boolean, bCapsuleTrace: boolean, bBoxTrace: boolean, bChannelTrace: boolean, bObjectsTrace: boolean, bProfileTrace: boolean);
-        bLineTrace: boolean;
-        bSphereTrace: boolean;
-        bCapsuleTrace: boolean;
-        bBoxTrace: boolean;
-        bChannelTrace: boolean;
-        bObjectsTrace: boolean;
-        bProfileTrace: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TraceChannelTestBatchOptions_0__: boolean;
-    }
-    
-    class TraceQueryTestResults extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ChannelResults: UE.TraceQueryTestResultsInner;
-        ObjectResults: UE.TraceQueryTestResultsInner;
-        ProfileResults: UE.TraceQueryTestResultsInner;
-        BatchOptions: UE.TraceChannelTestBatchOptions;
-        /*
-         *Output string value
-         */
-        ToString() : string;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TraceQueryTestResults;
-        static Load(InName: string): TraceQueryTestResults;
-    
-        __tid_TraceQueryTestResults_0__: boolean;
-    }
-    
-    class FunctionalTest extends UE.Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        TestLabel: string;
-        Author: string;
-        Description: string;
-        TestTags: string;
-        SpriteComponent: UE.BillboardComponent;
-        bIsEnabled: boolean;
-        bIsInSublevel: boolean;
-        PersistentLevelName: string;
-        LogErrorHandling: UE.EFunctionalTestLogHandling;
-        LogWarningHandling: UE.EFunctionalTestLogHandling;
-        ObservationPoint: UE.Actor;
-        bShouldDelayGarbageCollection: boolean;
-        RandomNumbersStream: UE.RandomStream;
-        Result: UE.EFunctionalTestResult;
-        PreparationTimeLimit: number;
-        TimeLimit: number;
-        TimesUpMessage: string;
-        TimesUpResult: UE.EFunctionalTestResult;
-        OnTestPrepare: $MulticastDelegate<() => void>;
-        OnTestStart: $MulticastDelegate<() => void>;
-        OnTestFinished: $MulticastDelegate<() => void>;
-        AutoDestroyActors: TArray<UE.Actor>;
-        RenderComp_EditorOnly: UE.FuncTestRenderingComponent;
-        TestName_EditorOnly: UE.TextRenderComponent;
-        bIsRunning: boolean;
-        TotalTime: number;
-        AddError(Message: string) : void;
-        AddInfo(Message: string) : void;
-        /*
-         *Causes the test to be rerun for a specific named reason.
-         */
-        AddRerun(Reason: string) : void;
-        AddWarning(Message: string) : void;
-        /*
-         *Assert that two bools are equal
-         *@param What   A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} for context '')
-         */
-        AssertEqual_Bool(Actual: boolean, Expected: boolean, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two two-component boxes are (memberwise) equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Box2D(Actual: UE.Box2D, Expected: UE.Box2D, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two double are equal within tolerance between two doubles.
-         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} within Tolerance for context '')
-         */
-        AssertEqual_Double(Actual: number, Expected: number, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two floats are equal within tolerance between two floats.
-         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} within Tolerance for context '')
-         */
-        AssertEqual_Float(Actual: number, Expected: number, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two ints are equal
-         *@param What   A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} for context '')
-         */
-        AssertEqual_Int(Actual: number, Expected: number, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two 4x4 matrices are (memberwise) equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Matrix(Actual: UE.Matrix, Expected: UE.Matrix, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two FNames are equal
-         *@param What   A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} for context '')
-         */
-        AssertEqual_Name(Actual: string, Expected: string, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two Objects are equal
-         *@param What   A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} for context '')
-         */
-        AssertEqual_Object(Actual: $Nullable<UE.Object>, Expected: $Nullable<UE.Object>, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two planes are (memberwise) equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Plane(Actual: UE.Plane, Expected: UE.Plane, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two quats are (memberwise) equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Quat(Actual: UE.Quat, Expected: UE.Quat, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that the component angles of two rotators are all equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Rotator(Actual: UE.Rotator, Expected: UE.Rotator, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that the orientation of two rotators is the same within a small tolerance. Robust to quaternion singularities where angles can differ despite having an identical orientation.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_RotatorOrientation(Actual: UE.Rotator, Expected: UE.Rotator, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two Strings are equal.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_String(Actual: string, Expected: string, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two TraceQueryResults are equal.
-         *@param What   A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_TraceQueryResults(Actual: $Nullable<UE.TraceQueryTestResults>, Expected: $Nullable<UE.TraceQueryTestResults>, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two transforms are (components memberwise - translation, rotation, scale) equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Transform(Actual: UE.Transform, Expected: UE.Transform, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two vectors are (memberwise) equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Vector(Actual: UE.Vector, Expected: UE.Vector, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two two-component vectors are (memberwise) equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Vector2D(Actual: UE.Vector2D, Expected: UE.Vector2D, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two four-component vectors are (memberwise) equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertEqual_Vector4(Actual: UE.Vector4, Expected: UE.Vector4, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that a boolean value is false.
-         *@param Message       The message to display if the assert fails ("Assertion Failed: 'Message' for context ''")
-         */
-        AssertFalse(Condition: boolean, Message: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that a UObject is valid
-         *@param Message       The message to display if the object is invalid ("Invalid object: 'Message' for context ''")
-         */
-        AssertIsValid(Object: $Nullable<UE.Object>, Message: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two two-component boxes are (memberwise) not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Box2D(Actual: UE.Box2D, NotExpected: UE.Box2D, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two 4x4 matrices are (memberwise) not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Matrix(Actual: UE.Matrix, NotExpected: UE.Matrix, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two planes are (memberwise) not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Plane(Actual: UE.Plane, NotExpected: UE.Plane, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two quats are (memberwise) not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Quat(Actual: UE.Quat, NotExpected: UE.Quat, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that the component angles of two rotators are all not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Rotator(Actual: UE.Rotator, NotExpected: UE.Rotator, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two Strings are not equal.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_String(Actual: string, NotExpected: string, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two transforms are (components memberwise - translation, rotation, scale) not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Transform(Actual: UE.Transform, NotExpected: UE.Transform, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two vectors are (memberwise) not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Vector(Actual: UE.Vector, NotExpected: UE.Vector, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two two-component vectors are (memberwise) not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Vector2D(Actual: UE.Vector2D, NotExpected: UE.Vector2D, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that two four-component vectors are (memberwise) not equal within a small tolerance.
-         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
-         */
-        AssertNotEqual_Vector4(Actual: UE.Vector4, NotExpected: UE.Vector4, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert that a boolean value is true.
-         *@param Message       The message to display if the assert fails ("Assertion Failed: 'Message' for context ''")
-         */
-        AssertTrue(Condition: boolean, Message: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert on a relationship between two DateTimes.
-         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be <ShouldBe> {Expected} for context '')
-         */
-        AssertValue_DateTime(Actual: UE.DateTime, ShouldBe: UE.EComparisonMethod, Expected: UE.DateTime, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert on a relationship between two doubles.
-         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be <ShouldBe> {Expected} for context '')
-         */
-        AssertValue_Double(Actual: number, ShouldBe: UE.EComparisonMethod, Expected: number, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert on a relationship between two floats.
-         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be <ShouldBe> {Expected} for context '')
-         */
-        AssertValue_Float(Actual: number, ShouldBe: UE.EComparisonMethod, Expected: number, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Assert on a relationship between two integers.
-         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be <ShouldBe> {Expected} for context '')
-         */
-        AssertValue_Int(Actual: number, ShouldBe: UE.EComparisonMethod, Expected: number, What: string, ContextObject?: UE.Object /* = None */) : boolean;
-        /*
-         *Used by debug drawing to gather actors this test is using and point at them on the level to better understand test's setup
-         */
-        DebugGatherRelevantActors() : TArray<UE.Actor>;
-        FinishTest(TestResult: UE.EFunctionalTestResult, Message: string) : void;
-        /*
-         *Returns the current re-run reason if we're in a named re-run.
-         */
-        GetCurrentRerunReason() : string;
-        IsEnabled() : boolean;
-        IsEnabledInWorld(World: $Nullable<UE.World>) : boolean;
-        /*
-         *IsReady() is called once per frame after a test is run, until it returns true.  You should use this function to
-         *delay Start being called on the test until preconditions are met.
-         */
-        IsReady() : boolean;
-        /*
-         *AActor interface end
-         */
-        IsRunning() : boolean;
-        LogMessage(Message: string) : void;
-        OnAdditionalTestFinishedMessageRequest(TestResult: UE.EFunctionalTestResult) : string;
-        /*
-         *retrieves information whether test wants to have another run just after finishing
-         */
-        OnWantsReRunCheck() : boolean;
-        /*
-         *Prepare Test is fired once the test starts up, before the test IsReady() and thus before Start Test is called.
-         *So if there's some initial conditions or setup that you might need for your IsReady() check, you might want
-         *to do that here.
-         */
-        ReceivePrepareTest() : void;
-        /*
-         *Called once the IsReady() check for the test returns true.  After that happens the test has Officially started,
-         *and it will begin receiving Ticks in the blueprint.
-         */
-        ReceiveStartTest() : void;
-        /*
-         *Called during FinishTest().  Allows for clean-up on the blueprint side, so that the user can bring the test
-         *back to its default state, making it ready for the next one.
-         */
-        ReceiveTestFinished() : void;
-        /*
-         *Actors registered this way will be automatically destroyed (by limiting their lifespan)
-         *    on test finish
-         */
-        RegisterAutoDestroyActor(ActorToAutoDestroy: $Nullable<UE.Actor>) : void;
-        /*
-         *Sets the CVar from the given input. Variable gets reset after the test.
-         */
-        SetConsoleVariable(Name: string, InValue: string) : void;
-        /*
-         *Sets the CVar from the given input. Variable gets reset after the test.
-         */
-        SetConsoleVariableFromBoolean(Name: string, InValue: boolean) : void;
-        /*
-         *Sets the CVar from the given input. Variable gets reset after the test.
-         */
-        SetConsoleVariableFromFloat(Name: string, InValue: number) : void;
-        /*
-         *Sets the CVar from the given input. Variable gets reset after the test.
-         */
-        SetConsoleVariableFromInteger(Name: string, InValue: number) : void;
-        SetTimeLimit(NewTimeLimit: number, ResultWhenTimeRunsOut: UE.EFunctionalTestResult) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): FunctionalTest;
-        static Load(InName: string): FunctionalTest;
-    
-        __tid_FunctionalTest_0__: boolean;
-    }
-    
     class AITestSpawnInfoBase {
         constructor();
         constructor(SpawnLocation: UE.Actor, NumberToSpawn: number, SpawnDelay: number, PreSpawnDelay: number);
@@ -39652,17 +38913,6 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_AngularRangeLimit_0__: boolean;
-    }
-    
-    enum ESplineType { BSpline, Hermite, Max, ESplineType_MAX, __typeKeyDoNoAccess}
-    class ControlRigSpline {
-        constructor();
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ControlRigSpline_0__: boolean;
     }
     
     class AnimAssetFindReplaceContext extends UE.Object {
@@ -41094,498 +40344,6 @@ declare module "ue" {
         static Load(InName: string): AnimationRecordingParameters;
     
         __tid_AnimationRecordingParameters_0__: boolean;
-    }
-    
-    class EditorUtilityWidget extends UE.UserWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        TabDisplayName: string;
-        HelpText: string;
-        bAlwaysReregisterWithWindowsMenu: boolean;
-        bAutoRunDefaultAction: boolean;
-        bRunEditorUtilityOnStartup: boolean;
-        FindChildWidgetByName_EditorOnly(WidgetName: string) : UE.Widget;
-        /*
-         *The default action called when the widget is invoked if bAutoRunDefaultAction=true (it is never called otherwise)
-         */
-        Run_EditorOnly() : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): EditorUtilityWidget;
-        static Load(InName: string): EditorUtilityWidget;
-    
-        __tid_EditorUtilityWidget_0__: boolean;
-    }
-    
-    class ContentWidget extends UE.PanelWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        GetContent() : UE.Widget;
-        GetContentSlot() : UE.PanelSlot;
-        SetContent(Content: $Nullable<UE.Widget>) : UE.PanelSlot;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ContentWidget;
-        static Load(InName: string): ContentWidget;
-    
-        __tid_ContentWidget_0__: boolean;
-    }
-    
-    enum EButtonClickMethod { DownAndUp, MouseDown, MouseUp, PreciseClick, EButtonClickMethod_MAX, __typeKeyDoNoAccess}
-    enum EButtonTouchMethod { DownAndUp, Down, PreciseTap, EButtonTouchMethod_MAX, __typeKeyDoNoAccess}
-    enum EButtonPressMethod { DownAndUp, ButtonPress, ButtonRelease, EButtonPressMethod_MAX, __typeKeyDoNoAccess}
-    class Button extends UE.ContentWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        WidgetStyle: UE.ButtonStyle;
-        ColorAndOpacity: UE.LinearColor;
-        BackgroundColor: UE.LinearColor;
-        ClickMethod: UE.EButtonClickMethod;
-        TouchMethod: UE.EButtonTouchMethod;
-        PressMethod: UE.EButtonPressMethod;
-        IsFocusable: boolean;
-        OnClicked: $MulticastDelegate<() => void>;
-        OnPressed: $MulticastDelegate<() => void>;
-        OnReleased: $MulticastDelegate<() => void>;
-        OnHovered: $MulticastDelegate<() => void>;
-        OnUnhovered: $MulticastDelegate<() => void>;
-        /*
-         *Returns true if the user is actively pressing the button.  Do not use this for detecting 'Clicks', use the OnClicked event instead.
-         *
-         *@return true if the user is actively pressing the button otherwise false.
-         */
-        IsPressed() : boolean;
-        /*
-         *Sets the color multiplier for the button background
-         */
-        SetBackgroundColor(InBackgroundColor: UE.LinearColor) : void;
-        SetClickMethod(InClickMethod: UE.EButtonClickMethod) : void;
-        /*
-         *Sets the color multiplier for the button content
-         */
-        SetColorAndOpacity(InColorAndOpacity: UE.LinearColor) : void;
-        SetPressMethod(InPressMethod: UE.EButtonPressMethod) : void;
-        /*
-         *Sets the color multiplier for the button background
-         */
-        SetStyle(InStyle: UE.ButtonStyle) : void;
-        SetTouchMethod(InTouchMethod: UE.EButtonTouchMethod) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): Button;
-        static Load(InName: string): Button;
-    
-        __tid_Button_0__: boolean;
-    }
-    
-    class ComboBoxStyle extends UE.SlateWidgetStyle {
-        constructor();
-        constructor(ComboButtonStyle: UE.ComboButtonStyle, PressedSlateSound: UE.SlateSound, SelectionChangeSlateSound: UE.SlateSound, ContentPadding: UE.Margin, MenuRowPadding: UE.Margin, PressedSound: string, SelectionChangeSound: string);
-        ComboButtonStyle: UE.ComboButtonStyle;
-        PressedSlateSound: UE.SlateSound;
-        SelectionChangeSlateSound: UE.SlateSound;
-        ContentPadding: UE.Margin;
-        MenuRowPadding: UE.Margin;
-        PressedSound: string;
-        SelectionChangeSound: string;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ComboBoxStyle_0__: boolean;
-    }
-    
-    class TableRowStyle extends UE.SlateWidgetStyle {
-        constructor();
-        constructor(SelectorFocusedBrush: UE.SlateBrush, ActiveHoveredBrush: UE.SlateBrush, ActiveBrush: UE.SlateBrush, InactiveHoveredBrush: UE.SlateBrush, InactiveBrush: UE.SlateBrush, bUseParentRowBrush: boolean, ParentRowBackgroundBrush: UE.SlateBrush, ParentRowBackgroundHoveredBrush: UE.SlateBrush, EvenRowBackgroundHoveredBrush: UE.SlateBrush, EvenRowBackgroundBrush: UE.SlateBrush, OddRowBackgroundHoveredBrush: UE.SlateBrush, OddRowBackgroundBrush: UE.SlateBrush, TextColor: UE.SlateColor, SelectedTextColor: UE.SlateColor, DropIndicator_Above: UE.SlateBrush, DropIndicator_Onto: UE.SlateBrush, DropIndicator_Below: UE.SlateBrush, ActiveHighlightedBrush: UE.SlateBrush, InactiveHighlightedBrush: UE.SlateBrush);
-        SelectorFocusedBrush: UE.SlateBrush;
-        ActiveHoveredBrush: UE.SlateBrush;
-        ActiveBrush: UE.SlateBrush;
-        InactiveHoveredBrush: UE.SlateBrush;
-        InactiveBrush: UE.SlateBrush;
-        bUseParentRowBrush: boolean;
-        ParentRowBackgroundBrush: UE.SlateBrush;
-        ParentRowBackgroundHoveredBrush: UE.SlateBrush;
-        EvenRowBackgroundHoveredBrush: UE.SlateBrush;
-        EvenRowBackgroundBrush: UE.SlateBrush;
-        OddRowBackgroundHoveredBrush: UE.SlateBrush;
-        OddRowBackgroundBrush: UE.SlateBrush;
-        TextColor: UE.SlateColor;
-        SelectedTextColor: UE.SlateColor;
-        DropIndicator_Above: UE.SlateBrush;
-        DropIndicator_Onto: UE.SlateBrush;
-        DropIndicator_Below: UE.SlateBrush;
-        ActiveHighlightedBrush: UE.SlateBrush;
-        InactiveHighlightedBrush: UE.SlateBrush;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TableRowStyle_0__: boolean;
-    }
-    
-    class ScrollBarStyle extends UE.SlateWidgetStyle {
-        constructor();
-        constructor(HorizontalBackgroundImage: UE.SlateBrush, VerticalBackgroundImage: UE.SlateBrush, VerticalTopSlotImage: UE.SlateBrush, HorizontalTopSlotImage: UE.SlateBrush, VerticalBottomSlotImage: UE.SlateBrush, HorizontalBottomSlotImage: UE.SlateBrush, NormalThumbImage: UE.SlateBrush, HoveredThumbImage: UE.SlateBrush, DraggedThumbImage: UE.SlateBrush, Thickness: number);
-        HorizontalBackgroundImage: UE.SlateBrush;
-        VerticalBackgroundImage: UE.SlateBrush;
-        VerticalTopSlotImage: UE.SlateBrush;
-        HorizontalTopSlotImage: UE.SlateBrush;
-        VerticalBottomSlotImage: UE.SlateBrush;
-        HorizontalBottomSlotImage: UE.SlateBrush;
-        NormalThumbImage: UE.SlateBrush;
-        HoveredThumbImage: UE.SlateBrush;
-        DraggedThumbImage: UE.SlateBrush;
-        Thickness: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ScrollBarStyle_0__: boolean;
-    }
-    
-    enum ESelectInfo { OnKeyPress, OnNavigation, OnMouseClick, Direct, ESelectInfo_MAX, __typeKeyDoNoAccess}
-    class ComboBoxString extends UE.Widget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        DefaultOptions: TArray<string>;
-        SelectedOption: string;
-        WidgetStyle: UE.ComboBoxStyle;
-        ItemStyle: UE.TableRowStyle;
-        ScrollBarStyle: UE.ScrollBarStyle;
-        ContentPadding: UE.Margin;
-        MaxListHeight: number;
-        HasDownArrow: boolean;
-        EnableGamepadNavigationMode: boolean;
-        Font: UE.SlateFontInfo;
-        ForegroundColor: UE.SlateColor;
-        bIsFocusable: boolean;
-        OnGenerateWidgetEvent: $Delegate<(Item: string) => UE.Widget>;
-        OnSelectionChanged: $MulticastDelegate<(SelectedItem: string, SelectionType: UE.ESelectInfo) => void>;
-        OnOpening: $MulticastDelegate<() => void>;
-        AddOption(Option: string) : void;
-        ClearOptions() : void;
-        ClearSelection() : void;
-        FindOptionIndex(Option: string) : number;
-        GetOptionAtIndex(Index: number) : string;
-        /*
-         *Returns the number of options
-         */
-        GetOptionCount() : number;
-        GetSelectedIndex() : number;
-        GetSelectedOption() : string;
-        IsOpen() : boolean;
-        OnOpeningEvent__DelegateSignature() : void;
-        OnSelectionChangedEvent__DelegateSignature(SelectedItem: string, SelectionType: UE.ESelectInfo) : void;
-        /*
-         *Refreshes the list of options.  If you added new ones, and want to update the list even if it's
-         *currently being displayed use this.
-         */
-        RefreshOptions() : void;
-        RemoveOption(Option: string) : boolean;
-        SetSelectedIndex(Index: number) : void;
-        SetSelectedOption(Option: string) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ComboBoxString;
-        static Load(InName: string): ComboBoxString;
-    
-        __tid_ComboBoxString_0__: boolean;
-    }
-    
-    enum ESlateSizeRule { Automatic, Fill, ESlateSizeRule_MAX, __typeKeyDoNoAccess}
-    class SlateChildSize {
-        constructor();
-        constructor(Value: number, SizeRule: UE.ESlateSizeRule);
-        Value: number;
-        SizeRule: UE.ESlateSizeRule;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_SlateChildSize_0__: boolean;
-    }
-    
-    class HorizontalBoxSlot extends UE.PanelSlot {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Size: UE.SlateChildSize;
-        Padding: UE.Margin;
-        HorizontalAlignment: UE.EHorizontalAlignment;
-        VerticalAlignment: UE.EVerticalAlignment;
-        SetHorizontalAlignment(InHorizontalAlignment: UE.EHorizontalAlignment) : void;
-        SetPadding(InPadding: UE.Margin) : void;
-        SetSize(InSize: UE.SlateChildSize) : void;
-        SetVerticalAlignment(InVerticalAlignment: UE.EVerticalAlignment) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): HorizontalBoxSlot;
-        static Load(InName: string): HorizontalBoxSlot;
-    
-        __tid_HorizontalBoxSlot_0__: boolean;
-    }
-    
-    class HorizontalBox extends UE.PanelWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AddChildToHorizontalBox(Content: $Nullable<UE.Widget>) : UE.HorizontalBoxSlot;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): HorizontalBox;
-        static Load(InName: string): HorizontalBox;
-    
-        __tid_HorizontalBox_0__: boolean;
-    }
-    
-    class LevelSequencePlayer extends UE.MovieSceneSequencePlayer {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        OnCameraCut: $MulticastDelegate<(CameraComponent: $Nullable<UE.CameraComponent>) => void>;
-        /*
-         *Get the active camera cut camera
-         */
-        GetActiveCameraComponent() : UE.CameraComponent;
-        /*
-         *Create a new level sequence player.
-         *
-         *@param WorldContextObject Context object from which to retrieve a UWorld.
-         *@param LevelSequence The level sequence to play.
-         *@param Settings The desired playback settings
-         *@param OutActor The level sequence actor created to play this sequence.
-         */
-        static CreateLevelSequencePlayer(WorldContextObject: $Nullable<UE.Object>, LevelSequence: $Nullable<UE.LevelSequence>, Settings: UE.MovieSceneSequencePlaybackSettings, OutActor: $Ref<UE.LevelSequenceActor>) : UE.LevelSequencePlayer;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequencePlayer;
-        static Load(InName: string): LevelSequencePlayer;
-    
-        __tid_LevelSequencePlayer_0__: boolean;
-    }
-    
-    class LevelSequenceCameraSettings {
-        constructor();
-        constructor(bOverrideAspectRatioAxisConstraint: boolean, AspectRatioAxisConstraint: UE.EAspectRatioAxisConstraint);
-        bOverrideAspectRatioAxisConstraint: boolean;
-        AspectRatioAxisConstraint: UE.EAspectRatioAxisConstraint;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_LevelSequenceCameraSettings_0__: boolean;
-    }
-    
-    class LevelSequenceBurnInInitSettings extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceBurnInInitSettings;
-        static Load(InName: string): LevelSequenceBurnInInitSettings;
-    
-        __tid_LevelSequenceBurnInInitSettings_0__: boolean;
-    }
-    
-    class LevelSequenceBurnInOptions extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        bUseBurnIn: boolean;
-        BurnInClass: UE.SoftClassPath;
-        Settings: UE.LevelSequenceBurnInInitSettings;
-        /*
-         *Loads the specified class path and initializes an instance, then stores it in Settings.
-         */
-        SetBurnIn(InBurnInClass: UE.SoftClassPath) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceBurnInOptions;
-        static Load(InName: string): LevelSequenceBurnInOptions;
-    
-        __tid_LevelSequenceBurnInOptions_0__: boolean;
-    }
-    
-    class MovieSceneBindingOverrideData {
-        constructor();
-        constructor(ObjectBindingId: UE.MovieSceneObjectBindingID, Object: TSoftObjectPtr<UE.Object>, bOverridesDefault: boolean);
-        ObjectBindingId: UE.MovieSceneObjectBindingID;
-        Object: TSoftObjectPtr<UE.Object>;
-        bOverridesDefault: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_MovieSceneBindingOverrideData_0__: boolean;
-    }
-    
-    class MovieSceneBindingOverrides extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        BindingData: TArray<UE.MovieSceneBindingOverrideData>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneBindingOverrides;
-        static Load(InName: string): MovieSceneBindingOverrides;
-    
-        __tid_MovieSceneBindingOverrides_0__: boolean;
-    }
-    
-    class LevelSequencePlayerSnapshot {
-        constructor();
-        constructor(RootName: string, RootTime: UE.QualifiedFrameTime, SourceTime: UE.QualifiedFrameTime, CurrentShotName: string, CurrentShotLocalTime: UE.QualifiedFrameTime, CurrentShotSourceTime: UE.QualifiedFrameTime, SourceTimecode: string, CameraComponent: TSoftObjectPtr<UE.CameraComponent>, ActiveShot: UE.LevelSequence, ShotID: UE.MovieSceneSequenceID);
-        RootName: string;
-        RootTime: UE.QualifiedFrameTime;
-        SourceTime: UE.QualifiedFrameTime;
-        CurrentShotName: string;
-        CurrentShotLocalTime: UE.QualifiedFrameTime;
-        CurrentShotSourceTime: UE.QualifiedFrameTime;
-        SourceTimecode: string;
-        CameraComponent: TSoftObjectPtr<UE.CameraComponent>;
-        ActiveShot: UE.LevelSequence;
-        ShotID: UE.MovieSceneSequenceID;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_LevelSequencePlayerSnapshot_0__: boolean;
-    }
-    
-    class LevelSequenceBurnIn extends UE.UserWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        FrameInformation: UE.LevelSequencePlayerSnapshot;
-        LevelSequenceActor: UE.LevelSequenceActor;
-        /*
-         *Get the settings class to use for this burn in
-         */
-        GetSettingsClass() : UE.Class;
-        /*
-         *Called when this burn in is receiving its settings
-         */
-        SetSettings(InSettings: $Nullable<UE.Object>) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceBurnIn;
-        static Load(InName: string): LevelSequenceBurnIn;
-    
-        __tid_LevelSequenceBurnIn_0__: boolean;
-    }
-    
-    class WorldPartitionResolveData {
-        constructor();
-        constructor(ContainerID: UE.ActorContainerID, SourceWorldAssetPath: UE.TopLevelAssetPath);
-        ContainerID: UE.ActorContainerID;
-        SourceWorldAssetPath: UE.TopLevelAssetPath;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_WorldPartitionResolveData_0__: boolean;
-    }
-    
-    class LevelSequenceActor extends UE.Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        PlaybackSettings: UE.MovieSceneSequencePlaybackSettings;
-        SequencePlayer: UE.LevelSequencePlayer;
-        LevelSequenceAsset: UE.LevelSequence;
-        LevelSequence_EditorOnly: UE.SoftObjectPath;
-        CameraSettings: UE.LevelSequenceCameraSettings;
-        BurnInOptions: UE.LevelSequenceBurnInOptions;
-        BindingOverrides: UE.MovieSceneBindingOverrides;
-        bAutoPlay: boolean;
-        bOverrideInstanceData: boolean;
-        bReplicatePlayback: boolean;
-        DefaultInstanceData: UE.Object;
-        BurnInInstance: UE.LevelSequenceBurnIn;
-        bShowBurnin: boolean;
-        WorldPartitionResolveData: UE.WorldPartitionResolveData;
-        /*
-         *Adds the specified actor to the overridden bindings for the specified binding ID, optionally still allowing the bindings defined in the Level Sequence asset
-         *
-         *@param Binding Binding to modify
-         *@param Actor Actor to bind
-         *@param bAllowBindingsFromAsset If false the new bindings being supplied here will replace the bindings set in the level sequence asset, meaning the original object animated by
-         *                                                               Sequencer will no longer be animated. Bindings set to spawnables will not spawn if false. If true, new bindings will be in addition to ones set
-         *                                                               set in Sequencer UI. This function will not modify the original asset.
-         */
-        AddBinding(Binding: UE.MovieSceneObjectBindingID, Actor: $Nullable<UE.Actor>, bAllowBindingsFromAsset?: boolean /* = false */) : void;
-        /*
-         *Binds an actor to all the bindings tagged with the specified name in this sequence. Does not remove any exising bindings that have been set up through this API. Object Bindings can be tagged within the sequence UI by RMB -> Tags... on the object binding in the tree.
-         *
-         *@param BindingTag   The unique tag name to lookup bindings with
-         *@param Actor        The actor to assign to all the tagged bindings
-         *@param bAllowBindingsFromAsset If false the new bindings being supplied here will replace the bindings set in the level sequence asset, meaning the original object animated by
-         *                                                               Sequencer will no longer be animated. Bindings set to spawnables will not spawn if false. If true, new bindings will be in addition to ones set
-         *                                                               set in Sequencer UI. This function will not modify the original asset.
-         */
-        AddBindingByTag(BindingTag: string, Actor: $Nullable<UE.Actor>, bAllowBindingsFromAsset?: boolean /* = false */) : void;
-        /*
-         *Retrieve the first object binding that has been tagged with the specified name
-         */
-        FindNamedBinding(Tag: string) : UE.MovieSceneObjectBindingID;
-        /*
-         *Retrieve all the bindings that have been tagged with the specified name
-         *
-         *@param Tag  The unique tag name to lookup bindings with. Object Bindings can be tagged within the sequence UI by RMB -> Tags... on the object binding in the tree.
-         *@return An array containing all the bindings that are tagged with this name, potentially empty.
-         */
-        FindNamedBindings(Tag: string) : TArray<UE.MovieSceneObjectBindingID>;
-        /*
-         *Get the level sequence being played by this actor.
-         *
-         *@return Level sequence, or nullptr if not assigned or if it cannot be loaded.
-         *@see SetSequence
-         */
-        GetSequence() : UE.LevelSequence;
-        /*
-         *Access this actor's sequence player, or None if it is not yet initialized
-         */
-        GetSequencePlayer() : UE.LevelSequencePlayer;
-        /*
-         *Hide burnin
-         */
-        HideBurnin() : void;
-        OnLevelSequenceLoaded__DelegateSignature() : void;
-        /*
-         *Removes the specified actor from the specified binding's actor array
-         */
-        RemoveBinding(Binding: UE.MovieSceneObjectBindingID, Actor: $Nullable<UE.Actor>) : void;
-        /*
-         *Removes the specified actor from the specified binding's actor array
-         */
-        RemoveBindingByTag(Tag: string, Actor: $Nullable<UE.Actor>) : void;
-        /*
-         *Resets the specified binding back to the defaults defined by the Level Sequence asset
-         */
-        ResetBinding(Binding: UE.MovieSceneObjectBindingID) : void;
-        /*
-         *Resets all overridden bindings back to the defaults defined by the Level Sequence asset
-         */
-        ResetBindings() : void;
-        /*
-         *Overrides the specified binding with the specified actors, optionally still allowing the bindings defined in the Level Sequence asset
-         *
-         *@param Binding Binding to modify
-         *@param Actors Actors to bind
-         *@param bAllowBindingsFromAsset If false the new bindings being supplied here will replace the bindings set in the level sequence asset, meaning the original object animated by
-         *                                                               Sequencer will no longer be animated. Bindings set to spawnables will not spawn if false. If true, new bindings will be in addition to ones set
-         *                                                               set in Sequencer UI. This function will not modify the original asset.
-         */
-        SetBinding(Binding: UE.MovieSceneObjectBindingID, Actors: TArray<UE.Actor>, bAllowBindingsFromAsset?: boolean /* = false */) : void;
-        /*
-         *Assigns an set of actors to all the bindings tagged with the specified name in this sequence. Object Bindings can be tagged within the sequence UI by RMB -> Tags... on the object binding in the tree.
-         *
-         *@param BindingTag   The unique tag name to lookup bindings with
-         *@param Actors       The actors to assign to all the tagged bindings
-         *@param bAllowBindingsFromAsset If false the new bindings being supplied here will replace the bindings set in the level sequence asset, meaning the original object animated by
-         *                                                               Sequencer will no longer be animated. Bindings set to spawnables will not spawn if false. If true, new bindings will be in addition to ones set
-         *                                                               set in Sequencer UI. This function will not modify the original asset.
-         */
-        SetBindingByTag(BindingTag: string, Actors: TArray<UE.Actor>, bAllowBindingsFromAsset?: boolean /* = false */) : void;
-        /*
-         *Set whether or not to replicate playback for this actor
-         */
-        SetReplicatePlayback(ReplicatePlayback: boolean) : void;
-        /*
-         *Set the level sequence being played by this actor.
-         *
-         *@param InSequence The sequence object to set.
-         *@see GetSequence
-         */
-        SetSequence(InSequence: $Nullable<UE.LevelSequence>) : void;
-        /*
-         *Show burnin
-         */
-        ShowBurnin() : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceActor;
-        static Load(InName: string): LevelSequenceActor;
-    
-        __tid_LevelSequenceActor_0__: boolean;
     }
     
     class AnimationSequenceBrowserContextMenuContext extends UE.Object {
@@ -43445,6 +42203,21 @@ declare module "ue" {
         __tid_AnimDetailsLocation_0__: boolean;
     }
     
+    class RigUnit_HierarchyAddControl_ShapeSettings {
+        constructor();
+        constructor(bVisible: boolean, Name: string, Color: UE.LinearColor, Transform: UE.Transform);
+        bVisible: boolean;
+        Name: string;
+        Color: UE.LinearColor;
+        Transform: UE.Transform;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RigUnit_HierarchyAddControl_ShapeSettings_0__: boolean;
+    }
+    
     class AnimDetailsProxyBase extends UE.Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         DisplayName: string;
@@ -45192,6 +43965,21 @@ declare module "ue" {
         __tid_AnimGraphNode_LinkedAnimLayer_0__: boolean;
     }
     
+    class AnimNode_LinkedInputPose extends UE.AnimNode_Base {
+        constructor();
+        constructor(Name: string, Graph: string, InputPose: UE.PoseLink, bIsOutputLinked: boolean);
+        Name: string;
+        Graph: string;
+        InputPose: UE.PoseLink;
+        bIsOutputLinked: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_AnimNode_LinkedInputPose_0__: boolean;
+    }
+    
     class AnimGraphNode_LinkedInputPose extends UE.AnimGraphNode_Base {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         Node: UE.AnimNode_LinkedInputPose;
@@ -45481,6 +44269,18 @@ declare module "ue" {
         __tid_AnimGraphNode_PoseHandler_0__: boolean;
     }
     
+    class AnimNode_PoseHandler extends UE.AnimNode_AssetPlayerBase {
+        constructor();
+        constructor(PoseAsset: UE.PoseAsset);
+        PoseAsset: UE.PoseAsset;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_AnimNode_PoseHandler_0__: boolean;
+    }
+    
     class AnimNode_PoseBlendNode extends UE.AnimNode_PoseHandler {
         constructor();
         constructor(SourcePose: UE.PoseLink, BlendOption: UE.EAlphaBlendOption, CustomCurve: UE.CurveFloat);
@@ -45526,6 +44326,96 @@ declare module "ue" {
         static Load(InName: string): AnimGraphNode_PoseByName;
     
         __tid_AnimGraphNode_PoseByName_0__: boolean;
+    }
+    
+    class PoseDriverTransform {
+        constructor();
+        constructor(TargetTranslation: UE.Vector, TargetRotation: UE.Rotator);
+        TargetTranslation: UE.Vector;
+        TargetRotation: UE.Rotator;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_PoseDriverTransform_0__: boolean;
+    }
+    
+    enum ERBFDistanceMethod { Euclidean, Quaternion, SwingAngle, TwistAngle, DefaultMethod, ERBFDistanceMethod_MAX, __typeKeyDoNoAccess}
+    enum ERBFFunctionType { Gaussian, Exponential, Linear, Cubic, Quintic, DefaultFunction, ERBFFunctionType_MAX, __typeKeyDoNoAccess}
+    class PoseDriverTarget {
+        constructor();
+        constructor(BoneTransforms: TArray<UE.PoseDriverTransform>, TargetRotation: UE.Rotator, TargetScale: number, DistanceMethod: UE.ERBFDistanceMethod, FunctionType: UE.ERBFFunctionType, bApplyCustomCurve: boolean, CustomCurve: UE.RichCurve, DrivenName: string, bIsHidden: boolean);
+        BoneTransforms: TArray<UE.PoseDriverTransform>;
+        TargetRotation: UE.Rotator;
+        TargetScale: number;
+        DistanceMethod: UE.ERBFDistanceMethod;
+        FunctionType: UE.ERBFFunctionType;
+        bApplyCustomCurve: boolean;
+        CustomCurve: UE.RichCurve;
+        DrivenName: string;
+        bIsHidden: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_PoseDriverTarget_0__: boolean;
+    }
+    
+    enum ERBFSolverType { Additive, Interpolative, ERBFSolverType_MAX, __typeKeyDoNoAccess}
+    enum EBoneAxis { BA_X, BA_Y, BA_Z, BA_MAX, __typeKeyDoNoAccess}
+    enum ERBFNormalizeMethod { OnlyNormalizeAboveOne, AlwaysNormalize, NormalizeWithinMedian, NoNormalization, ERBFNormalizeMethod_MAX, __typeKeyDoNoAccess}
+    class RBFParams {
+        constructor();
+        constructor(TargetDimensions: number, SolverType: UE.ERBFSolverType, Radius: number, bAutomaticRadius: boolean, Function: UE.ERBFFunctionType, DistanceMethod: UE.ERBFDistanceMethod, TwistAxis: UE.EBoneAxis, WeightThreshold: number, NormalizeMethod: UE.ERBFNormalizeMethod, MedianReference: UE.Vector, MedianMin: number, MedianMax: number);
+        TargetDimensions: number;
+        SolverType: UE.ERBFSolverType;
+        Radius: number;
+        bAutomaticRadius: boolean;
+        Function: UE.ERBFFunctionType;
+        DistanceMethod: UE.ERBFDistanceMethod;
+        TwistAxis: UE.EBoneAxis;
+        WeightThreshold: number;
+        NormalizeMethod: UE.ERBFNormalizeMethod;
+        MedianReference: UE.Vector;
+        MedianMin: number;
+        MedianMax: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RBFParams_0__: boolean;
+    }
+    
+    enum EPoseDriverSource { Rotation, Translation, EPoseDriverSource_MAX, __typeKeyDoNoAccess}
+    enum EPoseDriverOutput { DrivePoses, DriveCurves, EPoseDriverOutput_MAX, __typeKeyDoNoAccess}
+    enum EPoseDriverType { SwingAndTwist, SwingOnly, Translation, EPoseDriverType_MAX, __typeKeyDoNoAccess}
+    class AnimNode_PoseDriver extends UE.AnimNode_PoseHandler {
+        constructor();
+        constructor(SourcePose: UE.PoseLink, SourceBones: TArray<UE.BoneReference>, EvalSpaceBone: UE.BoneReference, bEvalFromRefPose: boolean, OnlyDriveBones: TArray<UE.BoneReference>, PoseTargets: TArray<UE.PoseDriverTarget>, RBFParams: UE.RBFParams, DriveSource: UE.EPoseDriverSource, DriveOutput: UE.EPoseDriverOutput, SourceBone: UE.BoneReference, TwistAxis: UE.EBoneAxis, Type: UE.EPoseDriverType, RadialScaling: number, bSoloDrivenOnly: boolean, LODThreshold: number);
+        SourcePose: UE.PoseLink;
+        SourceBones: TArray<UE.BoneReference>;
+        EvalSpaceBone: UE.BoneReference;
+        bEvalFromRefPose: boolean;
+        OnlyDriveBones: TArray<UE.BoneReference>;
+        PoseTargets: TArray<UE.PoseDriverTarget>;
+        RBFParams: UE.RBFParams;
+        DriveSource: UE.EPoseDriverSource;
+        DriveOutput: UE.EPoseDriverOutput;
+        SourceBone: UE.BoneReference;
+        TwistAxis: UE.EBoneAxis;
+        Type: UE.EPoseDriverType;
+        RadialScaling: number;
+        bSoloDrivenOnly: boolean;
+        LODThreshold: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_AnimNode_PoseDriver_0__: boolean;
     }
     
     class AnimGraphNode_PoseDriver extends UE.AnimGraphNode_PoseHandler {
@@ -48982,6 +47872,86 @@ declare module "ue" {
         static Load(InName: string): NiagaraValidationRuleSet;
     
         __tid_NiagaraValidationRuleSet_0__: boolean;
+    }
+    
+    enum EHorizTextAligment { EHTA_Left, EHTA_Center, EHTA_Right, EHTA_MAX, __typeKeyDoNoAccess}
+    enum EVerticalTextAligment { EVRTA_TextTop, EVRTA_TextCenter, EVRTA_TextBottom, EVRTA_QuadTop, EVRTA_MAX, __typeKeyDoNoAccess}
+    class TextRenderComponent extends UE.PrimitiveComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Text: string;
+        TextMaterial: UE.MaterialInterface;
+        Font: UE.Font;
+        HorizontalAlignment: UE.EHorizTextAligment;
+        VerticalAlignment: UE.EVerticalTextAligment;
+        TextRenderColor: UE.Color;
+        XScale: number;
+        YScale: number;
+        WorldSize: number;
+        InvDefaultSize: number;
+        HorizSpacingAdjust: number;
+        VertSpacingAdjust: number;
+        bAlwaysRenderAsText: boolean;
+        /*
+         *Get local size of text
+         */
+        GetTextLocalSize() : UE.Vector;
+        /*
+         *Get world space size of text
+         */
+        GetTextWorldSize() : UE.Vector;
+        /*
+         *Change the text value and signal the primitives to be rebuilt
+         */
+        K2_SetText(Value: string) : void;
+        /*
+         *Change the font and signal the primitives to be rebuilt
+         */
+        SetFont(Value: $Nullable<UE.Font>) : void;
+        /*
+         *Change the horizontal alignment and signal the primitives to be rebuilt
+         */
+        SetHorizontalAlignment(Value: UE.EHorizTextAligment) : void;
+        /*
+         *Change the text horizontal spacing adjustment and signal the primitives to be rebuilt
+         */
+        SetHorizSpacingAdjust(Value: number) : void;
+        /*
+         *Change the text value and signal the primitives to be rebuilt
+         */
+        SetText(Value: string) : void;
+        /*
+         *Change the text material and signal the primitives to be rebuilt
+         */
+        SetTextMaterial(Material: $Nullable<UE.MaterialInterface>) : void;
+        /*
+         *Change the text render color and signal the primitives to be rebuilt
+         */
+        SetTextRenderColor(Value: UE.Color) : void;
+        /*
+         *Change the vertical alignment and signal the primitives to be rebuilt
+         */
+        SetVerticalAlignment(Value: UE.EVerticalTextAligment) : void;
+        /*
+         *Change the text vertical spacing adjustment and signal the primitives to be rebuilt
+         */
+        SetVertSpacingAdjust(Value: number) : void;
+        /*
+         *Change the world size of the text and signal the primitives to be rebuilt
+         */
+        SetWorldSize(Value: number) : void;
+        /*
+         *Change the text X scale and signal the primitives to be rebuilt
+         */
+        SetXScale(Value: number) : void;
+        /*
+         *Change the text Y scale and signal the primitives to be rebuilt
+         */
+        SetYScale(Value: number) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TextRenderComponent;
+        static Load(InName: string): TextRenderComponent;
+    
+        __tid_TextRenderComponent_0__: boolean;
     }
     
     class NiagaraPerfBaselineActor extends UE.Actor {
@@ -54884,6 +53854,18 @@ declare module "ue" {
         __tid_MigrationOptions_0__: boolean;
     }
     
+    class DateTime {
+        constructor();
+        constructor(Ticks: bigint);
+        Ticks: bigint;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_DateTime_0__: boolean;
+    }
+    
     class RevisionInfo {
         constructor();
         constructor(Revision: string, Changelist: number, Date: UE.DateTime);
@@ -55823,6 +54805,25 @@ declare module "ue" {
         static Load(InName: string): WidgetBlueprintGeneratedClass;
     
         __tid_WidgetBlueprintGeneratedClass_0__: boolean;
+    }
+    
+    class EditorUtilityWidget extends UE.UserWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        TabDisplayName: string;
+        HelpText: string;
+        bAlwaysReregisterWithWindowsMenu: boolean;
+        bAutoRunDefaultAction: boolean;
+        bRunEditorUtilityOnStartup: boolean;
+        FindChildWidgetByName_EditorOnly(WidgetName: string) : UE.Widget;
+        /*
+         *The default action called when the widget is invoked if bAutoRunDefaultAction=true (it is never called otherwise)
+         */
+        Run_EditorOnly() : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): EditorUtilityWidget;
+        static Load(InName: string): EditorUtilityWidget;
+    
+        __tid_EditorUtilityWidget_0__: boolean;
     }
     
     class UserWidgetBlueprint extends UE.Blueprint {
@@ -56820,317 +55821,6 @@ declare module "ue" {
         __tid_AudioBusSubsystem_0__: boolean;
     }
     
-    enum ETextShapingMethod { Auto, KerningOnly, FullShaping, ETextShapingMethod_MAX, __typeKeyDoNoAccess}
-    enum ETextFlowDirection { Auto, LeftToRight, RightToLeft, Culture, ETextFlowDirection_MAX, __typeKeyDoNoAccess}
-    class ShapedTextOptions {
-        constructor();
-        constructor(bOverride_TextShapingMethod: boolean, bOverride_TextFlowDirection: boolean, TextShapingMethod: UE.ETextShapingMethod, TextFlowDirection: UE.ETextFlowDirection);
-        bOverride_TextShapingMethod: boolean;
-        bOverride_TextFlowDirection: boolean;
-        TextShapingMethod: UE.ETextShapingMethod;
-        TextFlowDirection: UE.ETextFlowDirection;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ShapedTextOptions_0__: boolean;
-    }
-    
-    enum ETextJustify { Left, Center, Right, InvariantLeft, InvariantRight, ETextJustify_MAX, __typeKeyDoNoAccess}
-    enum ETextWrappingPolicy { DefaultWrapping, AllowPerCharacterWrapping, ETextWrappingPolicy_MAX, __typeKeyDoNoAccess}
-    class TextLayoutWidget extends UE.Widget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ShapedTextOptions: UE.ShapedTextOptions;
-        Justification: UE.ETextJustify;
-        WrappingPolicy: UE.ETextWrappingPolicy;
-        AutoWrapText: boolean;
-        ApplyLineHeightToBottomLine: boolean;
-        WrapTextAt: number;
-        Margin: UE.Margin;
-        LineHeightPercentage: number;
-        SetJustification(InJustification: UE.ETextJustify) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TextLayoutWidget;
-        static Load(InName: string): TextLayoutWidget;
-    
-        __tid_TextLayoutWidget_0__: boolean;
-    }
-    
-    class TextBlock extends UE.TextLayoutWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Text: string;
-        TextDelegate: $Delegate<() => string>;
-        ColorAndOpacity: UE.SlateColor;
-        ColorAndOpacityDelegate: $Delegate<() => UE.SlateColor>;
-        MinDesiredWidth: number;
-        Font: UE.SlateFontInfo;
-        StrikeBrush: UE.SlateBrush;
-        ShadowOffset: UE.Vector2D;
-        ShadowColorAndOpacity: UE.LinearColor;
-        ShadowColorAndOpacityDelegate: $Delegate<() => UE.LinearColor>;
-        bWrapWithInvalidationPanel: boolean;
-        TextTransformPolicy: UE.ETextTransformPolicy;
-        TextOverflowPolicy: UE.ETextOverflowPolicy;
-        bSimpleTextMode: boolean;
-        GetDynamicFontMaterial() : UE.MaterialInstanceDynamic;
-        GetDynamicOutlineMaterial() : UE.MaterialInstanceDynamic;
-        /*
-         *Gets the widget text
-         *@return The widget text
-         */
-        GetText() : string;
-        /*
-         *Set the auto wrap for this text block.
-         *
-         *@param InAutoTextWrap to turn wrap on or off.
-         */
-        SetAutoWrapText(InAutoTextWrap: boolean) : void;
-        /*
-         *Sets the color and opacity of the text in this text block
-         *
-         *@param InColorAndOpacity             The new text color and opacity
-         */
-        SetColorAndOpacity(InColorAndOpacity: UE.SlateColor) : void;
-        /*
-         *Dynamically set the font info for this text block
-         *
-         *@param InFontInfo The new font info
-         */
-        SetFont(InFontInfo: UE.SlateFontInfo) : void;
-        SetFontMaterial(InMaterial: $Nullable<UE.MaterialInterface>) : void;
-        SetFontOutlineMaterial(InMaterial: $Nullable<UE.MaterialInterface>) : void;
-        /*
-         *Set the minimum desired width for this text block
-         *
-         *@param InMinDesiredWidth new minimum desired width
-         */
-        SetMinDesiredWidth(InMinDesiredWidth: number) : void;
-        /*
-         *Sets the opacity of the text in this text block
-         *
-         *@param InOpacity              The new text opacity
-         */
-        SetOpacity(InOpacity: number) : void;
-        /*
-         *Sets the color and opacity of the text drop shadow
-         *Note: if opacity is zero no shadow will be drawn
-         *
-         *@param InShadowColorAndOpacity               The new drop shadow color and opacity
-         */
-        SetShadowColorAndOpacity(InShadowColorAndOpacity: UE.LinearColor) : void;
-        /*
-         *Sets the offset that the text drop shadow should be drawn at
-         *
-         *@param InShadowOffset                The new offset
-         */
-        SetShadowOffset(InShadowOffset: UE.Vector2D) : void;
-        /*
-         *Dynamically set the strike brush for this text block
-         *
-         *@param InStrikeBrush The new brush to use to strike through text
-         */
-        SetStrikeBrush(InStrikeBrush: UE.SlateBrush) : void;
-        /*
-         *Directly sets the widget text.
-         *Warning: This will wipe any binding created for the Text property!
-         *@param InText The text to assign to the widget
-         */
-        SetText(InText: string) : void;
-        /*
-         *Set the text overflow policy for this text block.
-         *
-         *@param InOverflowPolicy the new text overflow policy.
-         */
-        SetTextOverflowPolicy(InOverflowPolicy: UE.ETextOverflowPolicy) : void;
-        /*
-         *Set the text transformation policy for this text block.
-         *
-         *@param InTransformPolicy the new text transformation policy.
-         */
-        SetTextTransformPolicy(InTransformPolicy: UE.ETextTransformPolicy) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TextBlock;
-        static Load(InName: string): TextBlock;
-    
-        __tid_TextBlock_0__: boolean;
-    }
-    
-    class WidgetSwitcher extends UE.PanelWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ActiveWidgetIndex: number;
-        /*
-         *Get the reference of the currently active widget
-         */
-        GetActiveWidget() : UE.Widget;
-        /*
-         *Gets the slot index of the currently active widget
-         */
-        GetActiveWidgetIndex() : number;
-        /*
-         *Gets the number of widgets that this switcher manages.
-         */
-        GetNumWidgets() : number;
-        /*
-         *Get a widget at the provided index
-         */
-        GetWidgetAtIndex(Index: number) : UE.Widget;
-        /*
-         *Activates the widget and makes it the active index.
-         */
-        SetActiveWidget(Widget: $Nullable<UE.Widget>) : void;
-        /*
-         *Activates the widget at the specified index.
-         */
-        SetActiveWidgetIndex(Index: number) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): WidgetSwitcher;
-        static Load(InName: string): WidgetSwitcher;
-    
-        __tid_WidgetSwitcher_0__: boolean;
-    }
-    
-    class SlateBrushAsset extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Brush: UE.SlateBrush;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): SlateBrushAsset;
-        static Load(InName: string): SlateBrushAsset;
-    
-        __tid_SlateBrushAsset_0__: boolean;
-    }
-    
-    class Border extends UE.ContentWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        HorizontalAlignment: UE.EHorizontalAlignment;
-        VerticalAlignment: UE.EVerticalAlignment;
-        bShowEffectWhenDisabled: boolean;
-        ContentColorAndOpacity: UE.LinearColor;
-        ContentColorAndOpacityDelegate: $Delegate<() => UE.LinearColor>;
-        Padding: UE.Margin;
-        Background: UE.SlateBrush;
-        BackgroundDelegate: $Delegate<() => UE.SlateBrush>;
-        BrushColor: UE.LinearColor;
-        BrushColorDelegate: $Delegate<() => UE.LinearColor>;
-        DesiredSizeScale: UE.Vector2D;
-        bFlipForRightToLeftFlowDirection: boolean;
-        OnMouseButtonDownEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
-        OnMouseButtonUpEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
-        OnMouseMoveEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
-        OnMouseDoubleClickEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
-        GetDynamicMaterial() : UE.MaterialInstanceDynamic;
-        SetBrush(InBrush: UE.SlateBrush) : void;
-        SetBrushColor(InBrushColor: UE.LinearColor) : void;
-        SetBrushFromAsset(Asset: $Nullable<UE.SlateBrushAsset>) : void;
-        SetBrushFromMaterial(Material: $Nullable<UE.MaterialInterface>) : void;
-        SetBrushFromTexture(Texture: $Nullable<UE.Texture2D>) : void;
-        SetContentColorAndOpacity(InContentColorAndOpacity: UE.LinearColor) : void;
-        /*
-         *Sets the DesiredSizeScale of this border.
-         *
-         *@param InScale    The X and Y multipliers for the desired size
-         */
-        SetDesiredSizeScale(InScale: UE.Vector2D) : void;
-        SetHorizontalAlignment(InHorizontalAlignment: UE.EHorizontalAlignment) : void;
-        SetPadding(InPadding: UE.Margin) : void;
-        SetShowEffectWhenDisabled(bInShowEffectWhenDisabled: boolean) : void;
-        SetVerticalAlignment(InVerticalAlignment: UE.EVerticalAlignment) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): Border;
-        static Load(InName: string): Border;
-    
-        __tid_Border_0__: boolean;
-    }
-    
-    class SlateTextureAtlasInterface extends UE.Interface {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): SlateTextureAtlasInterface;
-        static Load(InName: string): SlateTextureAtlasInterface;
-    
-        __tid_SlateTextureAtlasInterface_0__: boolean;
-    }
-    
-    class Image extends UE.Widget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Brush: UE.SlateBrush;
-        BrushDelegate: $Delegate<() => UE.SlateBrush>;
-        ColorAndOpacity: UE.LinearColor;
-        ColorAndOpacityDelegate: $Delegate<() => UE.LinearColor>;
-        bFlipForRightToLeftFlowDirection: boolean;
-        OnMouseButtonDownEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
-        GetDynamicMaterial() : UE.MaterialInstanceDynamic;
-        SetBrush(InBrush: UE.SlateBrush) : void;
-        SetBrushFromAsset(Asset: $Nullable<UE.SlateBrushAsset>) : void;
-        /*
-         *Sets the Brush to the specified Atlas Region.
-         *
-         *  @param AtlasRegion Region of the Atlas to use to set on Brush.
-         *      @param bMatchSize If true, image will change its size to atlas region size. If false, atlas region will be stretched to image size.
-         */
-        SetBrushFromAtlasInterface(AtlasRegion: UE.SlateTextureAtlasInterface, bMatchSize?: boolean /* = false */) : void;
-        SetBrushFromMaterial(Material: $Nullable<UE.MaterialInterface>) : void;
-        SetBrushFromSoftMaterial(SoftMaterial: TSoftObjectPtr<UE.MaterialInterface>) : void;
-        /*
-         *Sets the Brush to the specified Soft Texture.
-         *
-         *  @param SoftTexture Soft Texture to use to set on Brush.
-         *      @param bMatchSize If true, image will change its size to texture size. If false, texture will be stretched to image size.
-         */
-        SetBrushFromSoftTexture(SoftTexture: TSoftObjectPtr<UE.Texture2D>, bMatchSize?: boolean /* = false */) : void;
-        /*
-         *Sets the Brush to the specified Texture.
-         *
-         *  @param Texture Texture to use to set on Brush.
-         *      @param bMatchSize If true, image will change its size to texture size. If false, texture will be stretched to image size.
-         */
-        SetBrushFromTexture(Texture: $Nullable<UE.Texture2D>, bMatchSize?: boolean /* = false */) : void;
-        /*
-         *Sets the Brush to the specified Dynamic Texture.
-         *
-         *  @param Texture Dynamic Texture to use to set on Brush.
-         *      @param bMatchSize If true, image will change its size to texture size. If false, texture will be stretched to image size.
-         */
-        SetBrushFromTextureDynamic(Texture: $Nullable<UE.Texture2DDynamic>, bMatchSize?: boolean /* = false */) : void;
-        SetBrushResourceObject(ResourceObject: $Nullable<UE.Object>) : void;
-        SetBrushTintColor(TintColor: UE.SlateColor) : void;
-        SetColorAndOpacity(InColorAndOpacity: UE.LinearColor) : void;
-        SetDesiredSizeOverride(DesiredSize: UE.Vector2D) : void;
-        SetOpacity(InOpacity: number) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): Image;
-        static Load(InName: string): Image;
-    
-        __tid_Image_0__: boolean;
-    }
-    
-    class VerticalBoxSlot extends UE.PanelSlot {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Size: UE.SlateChildSize;
-        Padding: UE.Margin;
-        HorizontalAlignment: UE.EHorizontalAlignment;
-        VerticalAlignment: UE.EVerticalAlignment;
-        SetHorizontalAlignment(InHorizontalAlignment: UE.EHorizontalAlignment) : void;
-        SetPadding(InPadding: UE.Margin) : void;
-        SetSize(InSize: UE.SlateChildSize) : void;
-        SetVerticalAlignment(InVerticalAlignment: UE.EVerticalAlignment) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): VerticalBoxSlot;
-        static Load(InName: string): VerticalBoxSlot;
-    
-        __tid_VerticalBoxSlot_0__: boolean;
-    }
-    
-    class VerticalBox extends UE.PanelWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AddChildToVerticalBox(Content: $Nullable<UE.Widget>) : UE.VerticalBoxSlot;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): VerticalBox;
-        static Load(InName: string): VerticalBox;
-    
-        __tid_VerticalBox_0__: boolean;
-    }
-    
     class AudioGenerator extends UE.Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
@@ -57485,192 +56175,6 @@ declare module "ue" {
         __tid_AudioEndpointSettingsBase_0__: boolean;
     }
     
-    class SliderStyle extends UE.SlateWidgetStyle {
-        constructor();
-        constructor(NormalBarImage: UE.SlateBrush, HoveredBarImage: UE.SlateBrush, DisabledBarImage: UE.SlateBrush, NormalThumbImage: UE.SlateBrush, HoveredThumbImage: UE.SlateBrush, DisabledThumbImage: UE.SlateBrush, BarThickness: number);
-        NormalBarImage: UE.SlateBrush;
-        HoveredBarImage: UE.SlateBrush;
-        DisabledBarImage: UE.SlateBrush;
-        NormalThumbImage: UE.SlateBrush;
-        HoveredThumbImage: UE.SlateBrush;
-        DisabledThumbImage: UE.SlateBrush;
-        BarThickness: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_SliderStyle_0__: boolean;
-    }
-    
-    enum EOrientation { Orient_Horizontal, Orient_Vertical, Orient_MAX, __typeKeyDoNoAccess}
-    class Slider extends UE.Widget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Value: number;
-        ValueDelegate: $Delegate<() => number>;
-        MinValue: number;
-        MaxValue: number;
-        WidgetStyle: UE.SliderStyle;
-        Orientation: UE.EOrientation;
-        SliderBarColor: UE.LinearColor;
-        SliderHandleColor: UE.LinearColor;
-        IndentHandle: boolean;
-        Locked: boolean;
-        MouseUsesStep: boolean;
-        RequiresControllerLock: boolean;
-        StepSize: number;
-        IsFocusable: boolean;
-        bPreventThrottling: boolean;
-        OnMouseCaptureBegin: $MulticastDelegate<() => void>;
-        OnMouseCaptureEnd: $MulticastDelegate<() => void>;
-        OnControllerCaptureBegin: $MulticastDelegate<() => void>;
-        OnControllerCaptureEnd: $MulticastDelegate<() => void>;
-        OnValueChanged: $MulticastDelegate<(Value: number) => void>;
-        /*
-         *Get the current value scaled from 0 to 1
-         */
-        GetNormalizedValue() : number;
-        /*
-         *Gets the current value of the slider.
-         */
-        GetValue() : number;
-        /*
-         *Sets if the slidable area should be indented to fit the handle.
-         */
-        SetIndentHandle(InValue: boolean) : void;
-        /*
-         *Sets the handle to be interactive or fixed.
-         */
-        SetLocked(InValue: boolean) : void;
-        /*
-         *Sets the maximum value of the slider.
-         */
-        SetMaxValue(InValue: number) : void;
-        /*
-         *Sets the minimum value of the slider.
-         */
-        SetMinValue(InValue: number) : void;
-        /*
-         *Sets the color of the slider bar.
-         */
-        SetSliderBarColor(InValue: UE.LinearColor) : void;
-        /*
-         *Sets the color of the handle bar
-         */
-        SetSliderHandleColor(InValue: UE.LinearColor) : void;
-        /*
-         *Sets the amount to adjust the value by, when using a controller or keyboard.
-         */
-        SetStepSize(InValue: number) : void;
-        /*
-         *Sets the current value of the slider.
-         */
-        SetValue(InValue: number) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): Slider;
-        static Load(InName: string): Slider;
-    
-        __tid_Slider_0__: boolean;
-    }
-    
-    class EditableTextStyle extends UE.SlateWidgetStyle {
-        constructor();
-        constructor(Font: UE.SlateFontInfo, ColorAndOpacity: UE.SlateColor, BackgroundImageSelected: UE.SlateBrush, BackgroundImageComposing: UE.SlateBrush, CaretImage: UE.SlateBrush);
-        Font: UE.SlateFontInfo;
-        ColorAndOpacity: UE.SlateColor;
-        BackgroundImageSelected: UE.SlateBrush;
-        BackgroundImageComposing: UE.SlateBrush;
-        CaretImage: UE.SlateBrush;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_EditableTextStyle_0__: boolean;
-    }
-    
-    enum EVirtualKeyboardType { Default, Number, Web, Email, Password, AlphaNumeric, EVirtualKeyboardType_MAX, __typeKeyDoNoAccess}
-    class VirtualKeyboardOptions {
-        constructor();
-        constructor(bEnableAutocorrect: boolean);
-        bEnableAutocorrect: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_VirtualKeyboardOptions_0__: boolean;
-    }
-    
-    enum EVirtualKeyboardTrigger { OnFocusByPointer, OnAllFocusEvents, EVirtualKeyboardTrigger_MAX, __typeKeyDoNoAccess}
-    enum EVirtualKeyboardDismissAction { TextChangeOnDismiss, TextCommitOnAccept, TextCommitOnDismiss, EVirtualKeyboardDismissAction_MAX, __typeKeyDoNoAccess}
-    enum ETextCommit { Default, OnEnter, OnUserMovedFocus, OnCleared, ETextCommit_MAX, __typeKeyDoNoAccess}
-    class EditableText extends UE.Widget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Text: string;
-        TextDelegate: $Delegate<() => string>;
-        HintText: string;
-        HintTextDelegate: $Delegate<() => string>;
-        WidgetStyle: UE.EditableTextStyle;
-        IsReadOnly: boolean;
-        IsPassword: boolean;
-        MinimumDesiredWidth: number;
-        IsCaretMovedWhenGainFocus: boolean;
-        SelectAllTextWhenFocused: boolean;
-        RevertTextOnEscape: boolean;
-        ClearKeyboardFocusOnCommit: boolean;
-        SelectAllTextOnCommit: boolean;
-        AllowContextMenu: boolean;
-        KeyboardType: UE.EVirtualKeyboardType;
-        VirtualKeyboardOptions: UE.VirtualKeyboardOptions;
-        VirtualKeyboardTrigger: UE.EVirtualKeyboardTrigger;
-        VirtualKeyboardDismissAction: UE.EVirtualKeyboardDismissAction;
-        Justification: UE.ETextJustify;
-        OverflowPolicy: UE.ETextOverflowPolicy;
-        ShapedTextOptions: UE.ShapedTextOptions;
-        OnTextChanged: $MulticastDelegate<(Text: string) => void>;
-        OnTextCommitted: $MulticastDelegate<(Text: string, CommitMethod: UE.ETextCommit) => void>;
-        EnableIntegratedKeyboard: boolean;
-        GetFont() : UE.SlateFontInfo;
-        /*
-         *Gets the Hint text that appears when there is no text in the text box
-         */
-        GetHintText() : string;
-        GetJustification() : UE.ETextJustify;
-        /*
-         *Gets the widget text
-         *@return The widget text
-         */
-        GetText() : string;
-        OnEditableTextChangedEvent__DelegateSignature(Text: string) : void;
-        OnEditableTextCommittedEvent__DelegateSignature(Text: string, CommitMethod: UE.ETextCommit) : void;
-        SetFont(InFontInfo: UE.SlateFontInfo) : void;
-        SetFontMaterial(InMaterial: $Nullable<UE.MaterialInterface>) : void;
-        SetFontOutlineMaterial(InMaterial: $Nullable<UE.MaterialInterface>) : void;
-        SetHintText(InHintText: string) : void;
-        SetIsPassword(InbIsPassword: boolean) : void;
-        SetIsReadOnly(InbIsReadyOnly: boolean) : void;
-        SetJustification(InJustification: UE.ETextJustify) : void;
-        /*
-         *Set the minimum desired width for this text box
-         *
-         *@param InMinDesiredWidth new minimum desired width
-         */
-        SetMinimumDesiredWidth(InMinDesiredWidth: number) : void;
-        /*
-         *Directly sets the widget text.
-         *Warning: This will wipe any binding created for the Text property!
-         *@param InText The text to assign to the widget
-         */
-        SetText(InText: string) : void;
-        SetTextOverflowPolicy(InOverflowPolicy: UE.ETextOverflowPolicy) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): EditableText;
-        static Load(InName: string): EditableText;
-    
-        __tid_EditableText_0__: boolean;
-    }
-    
     enum EAudioRadialSliderLayout { Layout_LabelTop, Layout_LabelCenter, Layout_LabelBottom, Layout_MAX, __typeKeyDoNoAccess}
     class AudioRadialSlider extends UE.Widget {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
@@ -57766,6 +56270,7 @@ declare module "ue" {
         __tid_AudioFrequencyRadialSlider_0__: boolean;
     }
     
+    enum EOrientation { Orient_Horizontal, Orient_Vertical, Orient_MAX, __typeKeyDoNoAccess}
     class AudioSliderBase extends UE.Widget {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         Value: number;
@@ -57922,123 +56427,6 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_AudioInputDeviceProperty_0__: boolean;
-    }
-    
-    class RadialSlider extends UE.Widget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Value: number;
-        ValueDelegate: $Delegate<() => number>;
-        bUseCustomDefaultValue: boolean;
-        CustomDefaultValue: number;
-        SliderRange: UE.RuntimeFloatCurve;
-        ValueTags: TArray<number>;
-        SliderHandleStartAngle: number;
-        SliderHandleEndAngle: number;
-        AngularOffset: number;
-        HandStartEndRatio: UE.Vector2D;
-        WidgetStyle: UE.SliderStyle;
-        SliderBarColor: UE.LinearColor;
-        SliderProgressColor: UE.LinearColor;
-        SliderHandleColor: UE.LinearColor;
-        CenterBackgroundColor: UE.LinearColor;
-        Locked: boolean;
-        MouseUsesStep: boolean;
-        RequiresControllerLock: boolean;
-        StepSize: number;
-        IsFocusable: boolean;
-        UseVerticalDrag: boolean;
-        ShowSliderHandle: boolean;
-        ShowSliderHand: boolean;
-        OnMouseCaptureBegin: $MulticastDelegate<() => void>;
-        OnMouseCaptureEnd: $MulticastDelegate<() => void>;
-        OnControllerCaptureBegin: $MulticastDelegate<() => void>;
-        OnControllerCaptureEnd: $MulticastDelegate<() => void>;
-        OnValueChanged: $MulticastDelegate<(Value: number) => void>;
-        /*
-         *Gets the current custom default value of the slider.
-         */
-        GetCustomDefaultValue() : number;
-        /*
-         *Get the current raw slider alpha from 0 to 1
-         */
-        GetNormalizedSliderHandlePosition() : number;
-        /*
-         *Gets the current value of the slider.
-         */
-        GetValue() : number;
-        /*
-         *Sets the Angular Offset for the slider.
-         */
-        SetAngularOffset(InValue: number) : void;
-        /*
-         *Sets the color of the slider bar
-         */
-        SetCenterBackgroundColor(InValue: UE.LinearColor) : void;
-        /*
-         *Sets the current custom default value of the slider.
-         */
-        SetCustomDefaultValue(InValue: number) : void;
-        /*
-         *Sets the start and end of the hand as a ratio to the slider radius (so 0.0 to 1.0 is from the slider center to the handle).
-         */
-        SetHandStartEndRatio(InValue: UE.Vector2D) : void;
-        /*
-         *Sets the handle to be interactive or fixed
-         */
-        SetLocked(InValue: boolean) : void;
-        /*
-         *Whether to show the slider hand.
-         */
-        SetShowSliderHand(InShowSliderHand: boolean) : void;
-        /*
-         *Whether to show the slider handle (thumb).
-         */
-        SetShowSliderHandle(InShowSliderHandle: boolean) : void;
-        /*
-         *Sets the color of the slider bar
-         */
-        SetSliderBarColor(InValue: UE.LinearColor) : void;
-        /*
-         *Sets the color of the handle bar
-         */
-        SetSliderHandleColor(InValue: UE.LinearColor) : void;
-        /*
-         *Sets the maximum angle of the slider.
-         */
-        SetSliderHandleEndAngle(InValue: number) : void;
-        /*
-         *Sets the minimum angle of the slider.
-         */
-        SetSliderHandleStartAngle(InValue: number) : void;
-        /*
-         *Sets the progress color of the slider bar
-         */
-        SetSliderProgressColor(InValue: UE.LinearColor) : void;
-        /*
-         *Sets the curve for the slider range
-         */
-        SetSliderRange(InSliderRange: UE.RuntimeFloatCurve) : void;
-        /*
-         *Sets the amount to adjust the value by, when using a controller or keyboard
-         */
-        SetStepSize(InValue: number) : void;
-        /*
-         *Set whether the value is changed when dragging vertically as opposed to along the radial curve.
-         */
-        SetUseVerticalDrag(InUseVerticalDrag: boolean) : void;
-        /*
-         *Sets the current value of the slider.
-         */
-        SetValue(InValue: number) : void;
-        /*
-         *Adds value tags to the slider.
-         */
-        SetValueTags(InValueTags: TArray<number>) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): RadialSlider;
-        static Load(InName: string): RadialSlider;
-    
-        __tid_RadialSlider_0__: boolean;
     }
     
     class AudioLinkBlueprintInterface extends UE.Interface {
@@ -59159,6 +57547,24 @@ declare module "ue" {
         __tid_AudioSlider_0__: boolean;
     }
     
+    class SliderStyle extends UE.SlateWidgetStyle {
+        constructor();
+        constructor(NormalBarImage: UE.SlateBrush, HoveredBarImage: UE.SlateBrush, DisabledBarImage: UE.SlateBrush, NormalThumbImage: UE.SlateBrush, HoveredThumbImage: UE.SlateBrush, DisabledThumbImage: UE.SlateBrush, BarThickness: number);
+        NormalBarImage: UE.SlateBrush;
+        HoveredBarImage: UE.SlateBrush;
+        DisabledBarImage: UE.SlateBrush;
+        NormalThumbImage: UE.SlateBrush;
+        HoveredThumbImage: UE.SlateBrush;
+        DisabledThumbImage: UE.SlateBrush;
+        BarThickness: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_SliderStyle_0__: boolean;
+    }
+    
     class AudioSliderStyle extends UE.SlateWidgetStyle {
         constructor();
         constructor(SliderStyle: UE.SliderStyle, TextBoxStyle: UE.AudioTextBoxStyle, WidgetBackgroundImage: UE.SlateBrush, SliderBackgroundColor: UE.SlateColor, SliderBackgroundSize: UE.Vector2D, LabelPadding: number, SliderBarColor: UE.SlateColor, SliderThumbColor: UE.SlateColor, WidgetBackgroundColor: UE.SlateColor);
@@ -59631,6 +58037,265 @@ declare module "ue" {
         static Load(InName: string): MovieSceneCapture;
     
         __tid_MovieSceneCapture_0__: boolean;
+    }
+    
+    class LevelSequenceBurnInInitSettings extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceBurnInInitSettings;
+        static Load(InName: string): LevelSequenceBurnInInitSettings;
+    
+        __tid_LevelSequenceBurnInInitSettings_0__: boolean;
+    }
+    
+    class LevelSequenceBurnInOptions extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        bUseBurnIn: boolean;
+        BurnInClass: UE.SoftClassPath;
+        Settings: UE.LevelSequenceBurnInInitSettings;
+        /*
+         *Loads the specified class path and initializes an instance, then stores it in Settings.
+         */
+        SetBurnIn(InBurnInClass: UE.SoftClassPath) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceBurnInOptions;
+        static Load(InName: string): LevelSequenceBurnInOptions;
+    
+        __tid_LevelSequenceBurnInOptions_0__: boolean;
+    }
+    
+    class LevelSequencePlayer extends UE.MovieSceneSequencePlayer {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        OnCameraCut: $MulticastDelegate<(CameraComponent: $Nullable<UE.CameraComponent>) => void>;
+        /*
+         *Get the active camera cut camera
+         */
+        GetActiveCameraComponent() : UE.CameraComponent;
+        /*
+         *Create a new level sequence player.
+         *
+         *@param WorldContextObject Context object from which to retrieve a UWorld.
+         *@param LevelSequence The level sequence to play.
+         *@param Settings The desired playback settings
+         *@param OutActor The level sequence actor created to play this sequence.
+         */
+        static CreateLevelSequencePlayer(WorldContextObject: $Nullable<UE.Object>, LevelSequence: $Nullable<UE.LevelSequence>, Settings: UE.MovieSceneSequencePlaybackSettings, OutActor: $Ref<UE.LevelSequenceActor>) : UE.LevelSequencePlayer;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequencePlayer;
+        static Load(InName: string): LevelSequencePlayer;
+    
+        __tid_LevelSequencePlayer_0__: boolean;
+    }
+    
+    class LevelSequenceCameraSettings {
+        constructor();
+        constructor(bOverrideAspectRatioAxisConstraint: boolean, AspectRatioAxisConstraint: UE.EAspectRatioAxisConstraint);
+        bOverrideAspectRatioAxisConstraint: boolean;
+        AspectRatioAxisConstraint: UE.EAspectRatioAxisConstraint;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_LevelSequenceCameraSettings_0__: boolean;
+    }
+    
+    class MovieSceneBindingOverrideData {
+        constructor();
+        constructor(ObjectBindingId: UE.MovieSceneObjectBindingID, Object: TSoftObjectPtr<UE.Object>, bOverridesDefault: boolean);
+        ObjectBindingId: UE.MovieSceneObjectBindingID;
+        Object: TSoftObjectPtr<UE.Object>;
+        bOverridesDefault: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_MovieSceneBindingOverrideData_0__: boolean;
+    }
+    
+    class MovieSceneBindingOverrides extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        BindingData: TArray<UE.MovieSceneBindingOverrideData>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneBindingOverrides;
+        static Load(InName: string): MovieSceneBindingOverrides;
+    
+        __tid_MovieSceneBindingOverrides_0__: boolean;
+    }
+    
+    class LevelSequencePlayerSnapshot {
+        constructor();
+        constructor(RootName: string, RootTime: UE.QualifiedFrameTime, SourceTime: UE.QualifiedFrameTime, CurrentShotName: string, CurrentShotLocalTime: UE.QualifiedFrameTime, CurrentShotSourceTime: UE.QualifiedFrameTime, SourceTimecode: string, CameraComponent: TSoftObjectPtr<UE.CameraComponent>, ActiveShot: UE.LevelSequence, ShotID: UE.MovieSceneSequenceID);
+        RootName: string;
+        RootTime: UE.QualifiedFrameTime;
+        SourceTime: UE.QualifiedFrameTime;
+        CurrentShotName: string;
+        CurrentShotLocalTime: UE.QualifiedFrameTime;
+        CurrentShotSourceTime: UE.QualifiedFrameTime;
+        SourceTimecode: string;
+        CameraComponent: TSoftObjectPtr<UE.CameraComponent>;
+        ActiveShot: UE.LevelSequence;
+        ShotID: UE.MovieSceneSequenceID;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_LevelSequencePlayerSnapshot_0__: boolean;
+    }
+    
+    class LevelSequenceBurnIn extends UE.UserWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        FrameInformation: UE.LevelSequencePlayerSnapshot;
+        LevelSequenceActor: UE.LevelSequenceActor;
+        /*
+         *Get the settings class to use for this burn in
+         */
+        GetSettingsClass() : UE.Class;
+        /*
+         *Called when this burn in is receiving its settings
+         */
+        SetSettings(InSettings: $Nullable<UE.Object>) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceBurnIn;
+        static Load(InName: string): LevelSequenceBurnIn;
+    
+        __tid_LevelSequenceBurnIn_0__: boolean;
+    }
+    
+    class WorldPartitionResolveData {
+        constructor();
+        constructor(ContainerID: UE.ActorContainerID, SourceWorldAssetPath: UE.TopLevelAssetPath);
+        ContainerID: UE.ActorContainerID;
+        SourceWorldAssetPath: UE.TopLevelAssetPath;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_WorldPartitionResolveData_0__: boolean;
+    }
+    
+    class LevelSequenceActor extends UE.Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        PlaybackSettings: UE.MovieSceneSequencePlaybackSettings;
+        SequencePlayer: UE.LevelSequencePlayer;
+        LevelSequenceAsset: UE.LevelSequence;
+        LevelSequence_EditorOnly: UE.SoftObjectPath;
+        CameraSettings: UE.LevelSequenceCameraSettings;
+        BurnInOptions: UE.LevelSequenceBurnInOptions;
+        BindingOverrides: UE.MovieSceneBindingOverrides;
+        bAutoPlay: boolean;
+        bOverrideInstanceData: boolean;
+        bReplicatePlayback: boolean;
+        DefaultInstanceData: UE.Object;
+        BurnInInstance: UE.LevelSequenceBurnIn;
+        bShowBurnin: boolean;
+        WorldPartitionResolveData: UE.WorldPartitionResolveData;
+        /*
+         *Adds the specified actor to the overridden bindings for the specified binding ID, optionally still allowing the bindings defined in the Level Sequence asset
+         *
+         *@param Binding Binding to modify
+         *@param Actor Actor to bind
+         *@param bAllowBindingsFromAsset If false the new bindings being supplied here will replace the bindings set in the level sequence asset, meaning the original object animated by
+         *                                                               Sequencer will no longer be animated. Bindings set to spawnables will not spawn if false. If true, new bindings will be in addition to ones set
+         *                                                               set in Sequencer UI. This function will not modify the original asset.
+         */
+        AddBinding(Binding: UE.MovieSceneObjectBindingID, Actor: $Nullable<UE.Actor>, bAllowBindingsFromAsset?: boolean /* = false */) : void;
+        /*
+         *Binds an actor to all the bindings tagged with the specified name in this sequence. Does not remove any exising bindings that have been set up through this API. Object Bindings can be tagged within the sequence UI by RMB -> Tags... on the object binding in the tree.
+         *
+         *@param BindingTag   The unique tag name to lookup bindings with
+         *@param Actor        The actor to assign to all the tagged bindings
+         *@param bAllowBindingsFromAsset If false the new bindings being supplied here will replace the bindings set in the level sequence asset, meaning the original object animated by
+         *                                                               Sequencer will no longer be animated. Bindings set to spawnables will not spawn if false. If true, new bindings will be in addition to ones set
+         *                                                               set in Sequencer UI. This function will not modify the original asset.
+         */
+        AddBindingByTag(BindingTag: string, Actor: $Nullable<UE.Actor>, bAllowBindingsFromAsset?: boolean /* = false */) : void;
+        /*
+         *Retrieve the first object binding that has been tagged with the specified name
+         */
+        FindNamedBinding(Tag: string) : UE.MovieSceneObjectBindingID;
+        /*
+         *Retrieve all the bindings that have been tagged with the specified name
+         *
+         *@param Tag  The unique tag name to lookup bindings with. Object Bindings can be tagged within the sequence UI by RMB -> Tags... on the object binding in the tree.
+         *@return An array containing all the bindings that are tagged with this name, potentially empty.
+         */
+        FindNamedBindings(Tag: string) : TArray<UE.MovieSceneObjectBindingID>;
+        /*
+         *Get the level sequence being played by this actor.
+         *
+         *@return Level sequence, or nullptr if not assigned or if it cannot be loaded.
+         *@see SetSequence
+         */
+        GetSequence() : UE.LevelSequence;
+        /*
+         *Access this actor's sequence player, or None if it is not yet initialized
+         */
+        GetSequencePlayer() : UE.LevelSequencePlayer;
+        /*
+         *Hide burnin
+         */
+        HideBurnin() : void;
+        OnLevelSequenceLoaded__DelegateSignature() : void;
+        /*
+         *Removes the specified actor from the specified binding's actor array
+         */
+        RemoveBinding(Binding: UE.MovieSceneObjectBindingID, Actor: $Nullable<UE.Actor>) : void;
+        /*
+         *Removes the specified actor from the specified binding's actor array
+         */
+        RemoveBindingByTag(Tag: string, Actor: $Nullable<UE.Actor>) : void;
+        /*
+         *Resets the specified binding back to the defaults defined by the Level Sequence asset
+         */
+        ResetBinding(Binding: UE.MovieSceneObjectBindingID) : void;
+        /*
+         *Resets all overridden bindings back to the defaults defined by the Level Sequence asset
+         */
+        ResetBindings() : void;
+        /*
+         *Overrides the specified binding with the specified actors, optionally still allowing the bindings defined in the Level Sequence asset
+         *
+         *@param Binding Binding to modify
+         *@param Actors Actors to bind
+         *@param bAllowBindingsFromAsset If false the new bindings being supplied here will replace the bindings set in the level sequence asset, meaning the original object animated by
+         *                                                               Sequencer will no longer be animated. Bindings set to spawnables will not spawn if false. If true, new bindings will be in addition to ones set
+         *                                                               set in Sequencer UI. This function will not modify the original asset.
+         */
+        SetBinding(Binding: UE.MovieSceneObjectBindingID, Actors: TArray<UE.Actor>, bAllowBindingsFromAsset?: boolean /* = false */) : void;
+        /*
+         *Assigns an set of actors to all the bindings tagged with the specified name in this sequence. Object Bindings can be tagged within the sequence UI by RMB -> Tags... on the object binding in the tree.
+         *
+         *@param BindingTag   The unique tag name to lookup bindings with
+         *@param Actors       The actors to assign to all the tagged bindings
+         *@param bAllowBindingsFromAsset If false the new bindings being supplied here will replace the bindings set in the level sequence asset, meaning the original object animated by
+         *                                                               Sequencer will no longer be animated. Bindings set to spawnables will not spawn if false. If true, new bindings will be in addition to ones set
+         *                                                               set in Sequencer UI. This function will not modify the original asset.
+         */
+        SetBindingByTag(BindingTag: string, Actors: TArray<UE.Actor>, bAllowBindingsFromAsset?: boolean /* = false */) : void;
+        /*
+         *Set whether or not to replicate playback for this actor
+         */
+        SetReplicatePlayback(ReplicatePlayback: boolean) : void;
+        /*
+         *Set the level sequence being played by this actor.
+         *
+         *@param InSequence The sequence object to set.
+         *@see GetSequence
+         */
+        SetSequence(InSequence: $Nullable<UE.LevelSequence>) : void;
+        /*
+         *Show burnin
+         */
+        ShowBurnin() : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceActor;
+        static Load(InName: string): LevelSequenceActor;
+    
+        __tid_LevelSequenceActor_0__: boolean;
     }
     
     class AutomatedLevelSequenceCapture extends UE.MovieSceneCapture {
@@ -61200,6 +59865,18 @@ declare module "ue" {
         static Load(InName: string): AxisPositionGizmoBuilder;
     
         __tid_AxisPositionGizmoBuilder_0__: boolean;
+    }
+    
+    class ContentWidget extends UE.PanelWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        GetContent() : UE.Widget;
+        GetContentSlot() : UE.PanelSlot;
+        SetContent(Content: $Nullable<UE.Widget>) : UE.PanelSlot;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ContentWidget;
+        static Load(InName: string): ContentWidget;
+    
+        __tid_ContentWidget_0__: boolean;
     }
     
     class BackgroundBlur extends UE.ContentWidget {
@@ -67848,6 +66525,58 @@ declare module "ue" {
         __tid_BoomArmCameraNode_0__: boolean;
     }
     
+    class SlateBrushAsset extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Brush: UE.SlateBrush;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): SlateBrushAsset;
+        static Load(InName: string): SlateBrushAsset;
+    
+        __tid_SlateBrushAsset_0__: boolean;
+    }
+    
+    class Border extends UE.ContentWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        HorizontalAlignment: UE.EHorizontalAlignment;
+        VerticalAlignment: UE.EVerticalAlignment;
+        bShowEffectWhenDisabled: boolean;
+        ContentColorAndOpacity: UE.LinearColor;
+        ContentColorAndOpacityDelegate: $Delegate<() => UE.LinearColor>;
+        Padding: UE.Margin;
+        Background: UE.SlateBrush;
+        BackgroundDelegate: $Delegate<() => UE.SlateBrush>;
+        BrushColor: UE.LinearColor;
+        BrushColorDelegate: $Delegate<() => UE.LinearColor>;
+        DesiredSizeScale: UE.Vector2D;
+        bFlipForRightToLeftFlowDirection: boolean;
+        OnMouseButtonDownEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
+        OnMouseButtonUpEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
+        OnMouseMoveEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
+        OnMouseDoubleClickEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
+        GetDynamicMaterial() : UE.MaterialInstanceDynamic;
+        SetBrush(InBrush: UE.SlateBrush) : void;
+        SetBrushColor(InBrushColor: UE.LinearColor) : void;
+        SetBrushFromAsset(Asset: $Nullable<UE.SlateBrushAsset>) : void;
+        SetBrushFromMaterial(Material: $Nullable<UE.MaterialInterface>) : void;
+        SetBrushFromTexture(Texture: $Nullable<UE.Texture2D>) : void;
+        SetContentColorAndOpacity(InContentColorAndOpacity: UE.LinearColor) : void;
+        /*
+         *Sets the DesiredSizeScale of this border.
+         *
+         *@param InScale    The X and Y multipliers for the desired size
+         */
+        SetDesiredSizeScale(InScale: UE.Vector2D) : void;
+        SetHorizontalAlignment(InHorizontalAlignment: UE.EHorizontalAlignment) : void;
+        SetPadding(InPadding: UE.Margin) : void;
+        SetShowEffectWhenDisabled(bInShowEffectWhenDisabled: boolean) : void;
+        SetVerticalAlignment(InVerticalAlignment: UE.EVerticalAlignment) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): Border;
+        static Load(InName: string): Border;
+    
+        __tid_Border_0__: boolean;
+    }
+    
     class BorderSlot extends UE.PanelSlot {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         Padding: UE.Margin;
@@ -68041,6 +66770,42 @@ declare module "ue" {
         __tid_BoundsCopyComponent_0__: boolean;
     }
     
+    class Box2D {
+        constructor();
+        constructor(p0: number);
+        constructor(p0: Vector2D, p1: Vector2D);
+        constructor(p0: Vector2D, p1: number);
+        constructor(p0: UE.TArray<UE.Vector2D>);
+        Min: UE.Vector2D;
+        Max: UE.Vector2D;
+        bIsValid: boolean;
+        ComputeSquaredDistanceToPoint(p0: Vector2D) : number;
+        ExpandBy(p0: number) : Box2D;
+        GetArea() : number;
+        GetCenter() : Vector2D;
+        GetCenterAndExtents(p0: $Ref<Vector2D>, p1: $Ref<Vector2D>) : void;
+        GetClosestPointTo(p0: Vector2D) : Vector2D;
+        GetExtent() : Vector2D;
+        GetSize() : Vector2D;
+        Init() : void;
+        Intersect(p0: Box2D) : boolean;
+        IsInside(p0: Vector2D) : boolean;
+        IsInside(p0: Box2D) : boolean;
+        op_Addition(p0: Vector2D) : Box2D;
+        op_Addition(p0: Box2D) : Box2D;
+        op_Equality(p0: Box2D) : boolean;
+        op_Inequality(p0: Box2D) : boolean;
+        set_Item(p0: number) : Vector2D;
+        ShiftBy(p0: Vector2D) : Box2D;
+        ToString() : string;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_Box2D_0__: boolean;
+    }
+    
     class Box3d {
         constructor();
         constructor(Min: UE.Vector3d, Max: UE.Vector3d, IsValid: boolean);
@@ -68067,6 +66832,30 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_Box3f_0__: boolean;
+    }
+    
+    class BoxComponent extends UE.ShapeComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        BoxExtent: UE.Vector;
+        /*
+         *@return the box extent, scaled by the component scale.
+         */
+        GetScaledBoxExtent() : UE.Vector;
+        /*
+         *@return the box extent, ignoring component scale.
+         */
+        GetUnscaledBoxExtent() : UE.Vector;
+        /*
+         *Change the box extent size. This is the unscaled size, before component scale is applied.
+         *@param       InBoxExtent: new extent (radius) for the box.
+         *@param       bUpdateOverlaps: if true and this shape is registered and collides, updates touching array for owner actor.
+         */
+        SetBoxExtent(InBoxExtent: UE.Vector, bUpdateOverlaps?: boolean /* = true */) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): BoxComponent;
+        static Load(InName: string): BoxComponent;
+    
+        __tid_BoxComponent_0__: boolean;
     }
     
     class FieldNodeBase extends UE.ActorComponent {
@@ -68259,2601 +67048,6 @@ declare module "ue" {
         __tid_BoxToMeshDataflowNode_0__: boolean;
     }
     
-    class Light extends UE.Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        LightComponent: UE.LightComponent;
-        bEnabled: boolean;
-        GetBrightness() : number;
-        GetLightColor() : UE.LinearColor;
-        IsEnabled() : boolean;
-        /*
-         *Replication Notification Callbacks
-         */
-        OnRep_bEnabled() : void;
-        SetAffectTranslucentLighting(bNewValue: boolean) : void;
-        SetBrightness(NewBrightness: number) : void;
-        SetCastShadows(bNewValue: boolean) : void;
-        /*
-         *BEGIN DEPRECATED (use component functions now in level script)
-         */
-        SetEnabled(bSetEnabled: boolean) : void;
-        SetLightColor(NewLightColor: UE.LinearColor) : void;
-        SetLightFunctionFadeDistance(NewLightFunctionFadeDistance: number) : void;
-        SetLightFunctionMaterial(NewLightFunctionMaterial: $Nullable<UE.MaterialInterface>) : void;
-        SetLightFunctionScale(NewLightFunctionScale: UE.Vector) : void;
-        ToggleEnabled() : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): Light;
-        static Load(InName: string): Light;
-    
-        __tid_Light_0__: boolean;
-    }
-    
-    class DirectionalLight extends UE.Light {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ArrowComponent_EditorOnly: UE.ArrowComponent;
-        DirectionalLightComponent_EditorOnly: UE.DirectionalLightComponent;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): DirectionalLight;
-        static Load(InName: string): DirectionalLight;
-    
-        __tid_DirectionalLight_0__: boolean;
-    }
-    
-    class DecalComponent extends UE.SceneComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        DecalMaterial: UE.MaterialInterface;
-        SortOrder: number;
-        FadeScreenSize: number;
-        FadeStartDelay: number;
-        FadeDuration: number;
-        FadeInDuration: number;
-        FadeInStartDelay: number;
-        bDestroyOwnerAfterFade: boolean;
-        DecalSize: UE.Vector;
-        DecalColor: UE.LinearColor;
-        /*
-         *Utility to allocate a new Dynamic Material Instance, set its parent to the currently applied material, and assign it
-         */
-        CreateDynamicMaterialInstance() : UE.MaterialInstanceDynamic;
-        /*
-         *Accessor for decal material
-         */
-        GetDecalMaterial() : UE.MaterialInterface;
-        GetFadeDuration() : number;
-        GetFadeInDuration() : number;
-        GetFadeInStartDelay() : number;
-        GetFadeStartDelay() : number;
-        /*
-         *Sets the decal color.
-         */
-        SetDecalColor(Color: UE.LinearColor) : void;
-        /*
-         *setting decal material on decal component. This will force the decal to reattach
-         */
-        SetDecalMaterial(NewDecalMaterial: $Nullable<UE.MaterialInterface>) : void;
-        SetFadeIn(StartDelay: number, Duration: number) : void;
-        /*
-         *Sets the decal's fade start time, duration and if the owning actor should be destroyed after the decal is fully faded out.
-         *The default value of 0 for FadeStartDelay and FadeDuration makes the decal persistent. See DecalLifetimeOpacity material
-         *node to control the look of "fading out."
-         *
-         *@param StartDelay - Time in seconds to wait before beginning to fade out the decal.
-         *@param Duration - Time in second for the decal to fade out.
-         *@param DestroyOwnerAfterFade - Should the owning actor automatically be destroyed after it is completely faded out.
-         */
-        SetFadeOut(StartDelay: number, Duration: number, DestroyOwnerAfterFade?: boolean /* = true */) : void;
-        /*
-         *Set the FadeScreenSize for this decal component
-         */
-        SetFadeScreenSize(NewFadeScreenSize: number) : void;
-        /*
-         *Sets the sort order for the decal component. Higher values draw later (on top). This will force the decal to reattach
-         */
-        SetSortOrder(Value: number) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): DecalComponent;
-        static Load(InName: string): DecalComponent;
-    
-        __tid_DecalComponent_0__: boolean;
-    }
-    
-    enum EClusterUnionMethod { PointImplicit, DelaunayTriangulation, MinimalSpanningSubsetDelaunayTriangulation, PointImplicitAugmentedWithMinimalDelaunay, BoundsOverlapFilteredDelaunayTriangulation, None, EClusterUnionMethod_MAX, __typeKeyDoNoAccess}
-    class ChaosSolverDestructionSettings {
-        constructor();
-        constructor(PerAdvanceBreaksAllowed: number, PerAdvanceBreaksRescheduleLimit: number, ClusteringParticleReleaseThrottlingMinCount: number, ClusteringParticleReleaseThrottlingMaxCount: number, bOptimizeForRuntimeMemory: boolean);
-        PerAdvanceBreaksAllowed: number;
-        PerAdvanceBreaksRescheduleLimit: number;
-        ClusteringParticleReleaseThrottlingMinCount: number;
-        ClusteringParticleReleaseThrottlingMaxCount: number;
-        bOptimizeForRuntimeMemory: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ChaosSolverDestructionSettings_0__: boolean;
-    }
-    
-    class SolverCollisionFilterSettings {
-        constructor();
-        constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinImpulse: number);
-        FilterEnabled: boolean;
-        MinMass: number;
-        MinSpeed: number;
-        MinImpulse: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_SolverCollisionFilterSettings_0__: boolean;
-    }
-    
-    class SolverBreakingFilterSettings {
-        constructor();
-        constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinVolume: number);
-        FilterEnabled: boolean;
-        MinMass: number;
-        MinSpeed: number;
-        MinVolume: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_SolverBreakingFilterSettings_0__: boolean;
-    }
-    
-    class SolverTrailingFilterSettings {
-        constructor();
-        constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinVolume: number);
-        FilterEnabled: boolean;
-        MinMass: number;
-        MinSpeed: number;
-        MinVolume: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_SolverTrailingFilterSettings_0__: boolean;
-    }
-    
-    class ChaosSolverConfiguration {
-        constructor();
-        constructor(PositionIterations: number, VelocityIterations: number, ProjectionIterations: number, CollisionMarginFraction: number, CollisionMarginMax: number, CollisionCullDistance: number, CollisionMaxPushOutVelocity: number, CollisionInitialOverlapDepenetrationVelocity: number, ClusterConnectionFactor: number, ClusterUnionConnectionType: UE.EClusterUnionMethod, DestructionSettings: UE.ChaosSolverDestructionSettings, bGenerateCollisionData: boolean, CollisionFilterSettings: UE.SolverCollisionFilterSettings, bGenerateBreakData: boolean, BreakingFilterSettings: UE.SolverBreakingFilterSettings, bGenerateTrailingData: boolean, TrailingFilterSettings: UE.SolverTrailingFilterSettings, Iterations: number, PushOutIterations: number, bGenerateContactGraph: boolean);
-        PositionIterations: number;
-        VelocityIterations: number;
-        ProjectionIterations: number;
-        CollisionMarginFraction: number;
-        CollisionMarginMax: number;
-        CollisionCullDistance: number;
-        CollisionMaxPushOutVelocity: number;
-        CollisionInitialOverlapDepenetrationVelocity: number;
-        ClusterConnectionFactor: number;
-        ClusterUnionConnectionType: UE.EClusterUnionMethod;
-        DestructionSettings: UE.ChaosSolverDestructionSettings;
-        bGenerateCollisionData: boolean;
-        CollisionFilterSettings: UE.SolverCollisionFilterSettings;
-        bGenerateBreakData: boolean;
-        BreakingFilterSettings: UE.SolverBreakingFilterSettings;
-        bGenerateTrailingData: boolean;
-        TrailingFilterSettings: UE.SolverTrailingFilterSettings;
-        Iterations: number;
-        PushOutIterations: number;
-        bGenerateContactGraph: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ChaosSolverConfiguration_0__: boolean;
-    }
-    
-    enum EClusterConnectionTypeEnum { Chaos_PointImplicit, Chaos_DelaunayTriangulation, Chaos_MinimalSpanningSubsetDelaunayTriangulation, Chaos_PointImplicitAugmentedWithMinimalDelaunay, Chaos_BoundsOverlapFilteredDelaunayTriangulation, Chaos_None, Chaos_EClsuterCreationParameters_Max, Chaos_MAX, __typeKeyDoNoAccess}
-    class ChaosDebugSubstepControl {
-        constructor();
-        constructor(bPause: boolean, bSubstep: boolean, bStep: boolean);
-        bPause: boolean;
-        bSubstep: boolean;
-        bStep: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ChaosDebugSubstepControl_0__: boolean;
-    }
-    
-    enum EDataflowType { Construction, Simulation, EDataflowType_MAX, __typeKeyDoNoAccess}
-    class DataflowPreviewCacheParams {
-        constructor();
-        constructor(FrameRate: number, SubframeRate: number, bCanEditSubframeRate: boolean, TimeRange: UE.Vector2f, bRestartSimulation: boolean, RestartTimeRange: UE.Vector2f, bAsyncCaching: boolean);
-        FrameRate: number;
-        SubframeRate: number;
-        bCanEditSubframeRate: boolean;
-        TimeRange: UE.Vector2f;
-        bRestartSimulation: boolean;
-        RestartTimeRange: UE.Vector2f;
-        bAsyncCaching: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_DataflowPreviewCacheParams_0__: boolean;
-    }
-    
-    class DataflowSubGraph extends UE.EdGraph {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SubGraphGuid: UE.Guid;
-        bIsForEach: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): DataflowSubGraph;
-        static Load(InName: string): DataflowSubGraph;
-    
-        __tid_DataflowSubGraph_0__: boolean;
-    }
-    
-    class Dataflow extends UE.EdGraph {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        bActive: boolean;
-        Targets: TArray<UE.Object>;
-        Material: UE.Material;
-        Type: UE.EDataflowType;
-        Variables: UE.InstancedPropertyBag;
-        PreviewCacheParams_EditorOnly: UE.DataflowPreviewCacheParams;
-        PreviewCacheAsset_EditorOnly: TSoftObjectPtr<UE.Object>;
-        PreviewBlueprintClass_EditorOnly: UE.Class;
-        PreviewBlueprintTransform_EditorOnly: UE.Transform;
-        PreviewGeometryCacheAsset_EditorOnly: TSoftObjectPtr<UE.Object>;
-        PreviewEmbeddedSkeletalMesh_EditorOnly: TSoftObjectPtr<UE.Object>;
-        PreviewEmbeddedStaticMesh_EditorOnly: TSoftObjectPtr<UE.Object>;
-        DataflowSubGraphs: TArray<UE.DataflowSubGraph>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): Dataflow;
-        static Load(InName: string): Dataflow;
-    
-        __tid_Dataflow_0__: boolean;
-    }
-    
-    class DataflowSimulationAsset {
-        constructor();
-        constructor(DataflowAsset: UE.Dataflow, SimulationGroups: TSet<string>);
-        DataflowAsset: UE.Dataflow;
-        SimulationGroups: TSet<string>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_DataflowSimulationAsset_0__: boolean;
-    }
-    
-    class ChaosEventListenerComponent extends UE.ActorComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosEventListenerComponent;
-        static Load(InName: string): ChaosEventListenerComponent;
-    
-        __tid_ChaosEventListenerComponent_0__: boolean;
-    }
-    
-    class ChaosHandlerSet {
-        constructor();
-        constructor(ChaosHandlers: TSet<UE.Object>);
-        ChaosHandlers: TSet<UE.Object>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ChaosHandlerSet_0__: boolean;
-    }
-    
-    class BreakEventCallbackWrapper {
-        constructor();
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_BreakEventCallbackWrapper_0__: boolean;
-    }
-    
-    class RemovalEventCallbackWrapper {
-        constructor();
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RemovalEventCallbackWrapper_0__: boolean;
-    }
-    
-    class CrumblingEventCallbackWrapper {
-        constructor();
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_CrumblingEventCallbackWrapper_0__: boolean;
-    }
-    
-    class ChaosGameplayEventDispatcher extends UE.ChaosEventListenerComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        CollisionEventRegistrations: TMap<UE.PrimitiveComponent, UE.ChaosHandlerSet>;
-        BreakEventRegistrations: TMap<UE.PrimitiveComponent, UE.BreakEventCallbackWrapper>;
-        RemovalEventRegistrations: TMap<UE.PrimitiveComponent, UE.RemovalEventCallbackWrapper>;
-        CrumblingEventRegistrations: TMap<UE.PrimitiveComponent, UE.CrumblingEventCallbackWrapper>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosGameplayEventDispatcher;
-        static Load(InName: string): ChaosGameplayEventDispatcher;
-    
-        __tid_ChaosGameplayEventDispatcher_0__: boolean;
-    }
-    
-    class ChaosSolverActor extends UE.Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Properties: UE.ChaosSolverConfiguration;
-        TimeStepMultiplier: number;
-        CollisionIterations: number;
-        PushOutIterations: number;
-        PushOutPairIterations: number;
-        ClusterConnectionFactor: number;
-        ClusterUnionConnectionType: UE.EClusterConnectionTypeEnum;
-        DoGenerateCollisionData: boolean;
-        CollisionFilterSettings: UE.SolverCollisionFilterSettings;
-        DoGenerateBreakingData: boolean;
-        BreakingFilterSettings: UE.SolverBreakingFilterSettings;
-        DoGenerateTrailingData: boolean;
-        TrailingFilterSettings: UE.SolverTrailingFilterSettings;
-        MassScale: number;
-        bHasFloor: boolean;
-        FloorHeight: number;
-        ChaosDebugSubstepControl: UE.ChaosDebugSubstepControl;
-        SpriteComponent: UE.BillboardComponent;
-        SimulationAsset: UE.DataflowSimulationAsset;
-        GameplayEventDispatcherComponent: UE.ChaosGameplayEventDispatcher;
-        /*
-         *Makes this solver the current world solver. Dynamically spawned objects will have their physics state created in this solver.
-         */
-        SetAsCurrentWorldSolver() : void;
-        /*
-         *Controls whether the solver is able to simulate particles it controls
-         */
-        SetSolverActive(bActive: boolean) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosSolverActor;
-        static Load(InName: string): ChaosSolverActor;
-    
-        __tid_ChaosSolverActor_0__: boolean;
-    }
-    
-    enum EDamageModelTypeEnum { Chaos_Damage_Model_UserDefined_Damage_Threshold, Chaos_Damage_Model_Material_Strength_And_Connectivity_DamageThreshold, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
-    class GeometryCollectionDamagePropagationData {
-        constructor();
-        constructor(bEnabled: boolean, BreakDamagePropagationFactor: number, ShockDamagePropagationFactor: number);
-        bEnabled: boolean;
-        BreakDamagePropagationFactor: number;
-        ShockDamagePropagationFactor: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionDamagePropagationData_0__: boolean;
-    }
-    
-    class GeometryCollectionSource {
-        constructor();
-        constructor(SourceGeometryObject: UE.SoftObjectPath, LocalTransform: UE.Transform, SourceMaterial: TArray<UE.MaterialInterface>, InstanceCustomData: TArray<number>, bAddInternalMaterials: boolean, bSplitComponents: boolean, bSetInternalFromMaterialIndex: boolean);
-        SourceGeometryObject: UE.SoftObjectPath;
-        LocalTransform: UE.Transform;
-        SourceMaterial: TArray<UE.MaterialInterface>;
-        InstanceCustomData: TArray<number>;
-        bAddInternalMaterials: boolean;
-        bSplitComponents: boolean;
-        bSetInternalFromMaterialIndex: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionSource_0__: boolean;
-    }
-    
-    class GeometryCollectionEmbeddedExemplar {
-        constructor();
-        constructor(StaticMeshExemplar: UE.SoftObjectPath, StartCullDistance: number, EndCullDistance: number, InstanceCount: number);
-        StaticMeshExemplar: UE.SoftObjectPath;
-        StartCullDistance: number;
-        EndCullDistance: number;
-        InstanceCount: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionEmbeddedExemplar_0__: boolean;
-    }
-    
-    class Transform3f {
-        constructor();
-        constructor(Rotation: UE.Quat4f, Translation: UE.Vector3f, Scale3D: UE.Vector3f);
-        Rotation: UE.Quat4f;
-        Translation: UE.Vector3f;
-        Scale3D: UE.Vector3f;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_Transform3f_0__: boolean;
-    }
-    
-    class GeometryCollectionProxyMeshData {
-        constructor();
-        constructor(ProxyMeshes: TArray<UE.StaticMesh>, MeshTransforms: TArray<UE.Transform3f>);
-        ProxyMeshes: TArray<UE.StaticMesh>;
-        MeshTransforms: TArray<UE.Transform3f>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionProxyMeshData_0__: boolean;
-    }
-    
-    enum ECollisionTypeEnum { Chaos_Volumetric, Chaos_Surface_Volumetric, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
-    enum EImplicitTypeEnum { Chaos_Implicit_Box, Chaos_Implicit_Sphere, Chaos_Implicit_Capsule, Chaos_Implicit_LevelSet, Chaos_Implicit_None, Chaos_Implicit_Convex, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
-    class GeometryCollectionLevelSetData {
-        constructor();
-        constructor(MinLevelSetResolution: number, MaxLevelSetResolution: number, MinClusterLevelSetResolution: number, MaxClusterLevelSetResolution: number);
-        MinLevelSetResolution: number;
-        MaxLevelSetResolution: number;
-        MinClusterLevelSetResolution: number;
-        MaxClusterLevelSetResolution: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionLevelSetData_0__: boolean;
-    }
-    
-    class GeometryCollectionCollisionParticleData {
-        constructor();
-        constructor(CollisionParticlesFraction: number, MaximumCollisionParticles: number);
-        CollisionParticlesFraction: number;
-        MaximumCollisionParticles: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionCollisionParticleData_0__: boolean;
-    }
-    
-    class GeometryCollectionCollisionTypeData {
-        constructor();
-        constructor(CollisionType: UE.ECollisionTypeEnum, ImplicitType: UE.EImplicitTypeEnum, LevelSet: UE.GeometryCollectionLevelSetData, CollisionParticles: UE.GeometryCollectionCollisionParticleData, CollisionObjectReductionPercentage: number, CollisionMarginFraction: number);
-        CollisionType: UE.ECollisionTypeEnum;
-        ImplicitType: UE.EImplicitTypeEnum;
-        LevelSet: UE.GeometryCollectionLevelSetData;
-        CollisionParticles: UE.GeometryCollectionCollisionParticleData;
-        CollisionObjectReductionPercentage: number;
-        CollisionMarginFraction: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionCollisionTypeData_0__: boolean;
-    }
-    
-    class GeometryCollectionSizeSpecificData {
-        constructor();
-        constructor(MaxSize: number, CollisionShapes: TArray<UE.GeometryCollectionCollisionTypeData>, CollisionType: UE.ECollisionTypeEnum, ImplicitType: UE.EImplicitTypeEnum, MinLevelSetResolution: number, MaxLevelSetResolution: number, MinClusterLevelSetResolution: number, MaxClusterLevelSetResolution: number, CollisionObjectReductionPercentage: number, CollisionParticlesFraction: number, MaximumCollisionParticles: number, DamageThreshold: number);
-        MaxSize: number;
-        CollisionShapes: TArray<UE.GeometryCollectionCollisionTypeData>;
-        CollisionType: UE.ECollisionTypeEnum;
-        ImplicitType: UE.EImplicitTypeEnum;
-        MinLevelSetResolution: number;
-        MaxLevelSetResolution: number;
-        MinClusterLevelSetResolution: number;
-        MaxClusterLevelSetResolution: number;
-        CollisionObjectReductionPercentage: number;
-        CollisionParticlesFraction: number;
-        MaximumCollisionParticles: number;
-        DamageThreshold: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionSizeSpecificData_0__: boolean;
-    }
-    
-    class DataflowVariableOverrides {
-        constructor();
-        constructor(Variables: UE.InstancedPropertyBag, OverriddenVariableGuids: TArray<UE.Guid>);
-        Variables: UE.InstancedPropertyBag;
-        OverriddenVariableGuids: TArray<UE.Guid>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_DataflowVariableOverrides_0__: boolean;
-    }
-    
-    class DataflowInstance {
-        constructor();
-        constructor(DataflowAsset: UE.Dataflow, DataflowTerminal: string, VariableOverrides: UE.DataflowVariableOverrides, Owner: UE.Object);
-        DataflowAsset: UE.Dataflow;
-        DataflowTerminal: string;
-        VariableOverrides: UE.DataflowVariableOverrides;
-        Owner: UE.Object;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_DataflowInstance_0__: boolean;
-    }
-    
-    class GeometryCollection extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        EnableClustering: boolean;
-        ClusterGroupIndex: number;
-        MaxClusterLevel: number;
-        DamageModel: UE.EDamageModelTypeEnum;
-        DamageThreshold: TArray<number>;
-        bUseSizeSpecificDamageThreshold: boolean;
-        bUseMaterialDamageModifiers: boolean;
-        PerClusterOnlyDamageThreshold: boolean;
-        DamagePropagationData: UE.GeometryCollectionDamagePropagationData;
-        ClusterConnectionType: UE.EClusterConnectionTypeEnum;
-        ConnectionGraphBoundsFilteringMargin: number;
-        GeometrySource_EditorOnly: TArray<UE.GeometryCollectionSource>;
-        Materials: TArray<UE.MaterialInterface>;
-        EmbeddedGeometryExemplar: TArray<UE.GeometryCollectionEmbeddedExemplar>;
-        bUseFullPrecisionUVs: boolean;
-        bStripOnCook: boolean;
-        bStripRenderDataOnCook: boolean;
-        CustomRendererType: UE.Class;
-        RootProxyData: UE.GeometryCollectionProxyMeshData;
-        AutoInstanceMeshes: TArray<UE.GeometryCollectionAutoInstanceMesh>;
-        EnableNanite: boolean;
-        bEnableNaniteFallback: boolean;
-        bConvertVertexColorsToSRGB: boolean;
-        CollisionType_EditorOnly: UE.ECollisionTypeEnum;
-        ImplicitType_EditorOnly: UE.EImplicitTypeEnum;
-        MinLevelSetResolution_EditorOnly: number;
-        MaxLevelSetResolution_EditorOnly: number;
-        MinClusterLevelSetResolution_EditorOnly: number;
-        MaxClusterLevelSetResolution_EditorOnly: number;
-        CollisionObjectReductionPercentage_EditorOnly: number;
-        RootProxy_EditorOnly: UE.SoftObjectPath;
-        PhysicsMaterial: UE.PhysicalMaterial;
-        bDensityFromPhysicsMaterial: boolean;
-        CachedDensityFromPhysicsMaterialInGCm3: number;
-        bMassAsDensity: boolean;
-        Mass: number;
-        MinimumMassClamp: number;
-        bImportCollisionFromSource: boolean;
-        bOptimizeConvexes: boolean;
-        CollisionParticlesFraction_EditorOnly: number;
-        MaximumCollisionParticles_EditorOnly: number;
-        bScaleOnRemoval: boolean;
-        bRemoveOnMaxSleep: boolean;
-        bAutomaticCrumblePartialClusters: boolean;
-        MaximumSleepTime: UE.Vector2D;
-        RemovalDuration: UE.Vector2D;
-        bSlowMovingAsSleeping: boolean;
-        SlowMovingVelocityThreshold: number;
-        SizeSpecificData: TArray<UE.GeometryCollectionSizeSpecificData>;
-        EnableRemovePiecesOnFracture: boolean;
-        RemoveOnFractureMaterials: TArray<UE.MaterialInterface>;
-        AssetImportData_EditorOnly: UE.AssetImportData;
-        ThumbnailInfo_EditorOnly: UE.ThumbnailInfo;
-        DataflowAsset_EditorOnly: UE.Dataflow;
-        DataflowTerminal_EditorOnly: string;
-        Overrides: TMap<string, string>;
-        DataflowInstance: UE.DataflowInstance;
-        PersistentGuid: UE.Guid;
-        StateGuid: UE.Guid;
-        RootIndex: number;
-        BreadthFirstTransformIndices: TArray<number>;
-        AutoInstanceTransformRemapIndices: TArray<number>;
-        BoneSelectedMaterialIndex: number;
-        AssetUserData: TArray<UE.AssetUserData>;
-        /*
-         *Creates and adds an instance of the provided AssetUserData class to the target asset.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to create
-         *
-         *@return       Whether or not an instance of InUserDataClass was succesfully added
-         */
-        AddAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
-        /*
-         *Returns an instance of the provided AssetUserData class if it's contained in the target asset.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to get
-         *
-         *@return       The instance of the UAssetUserData class contained, or null if it doesn't exist
-         */
-        GetAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : UE.AssetUserData;
-        GetDataflowAsset() : UE.Dataflow;
-        /*
-         *Checks whether or not an instance of the provided AssetUserData class is contained.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to check for
-         *
-         *@return       Whether or not an instance of InUserDataClass was found
-         */
-        HasAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
-        SetConvertVertexColorsToSRGB(bValue: boolean) : void;
-        SetDataflowAsset(InDataflowAsset: $Nullable<UE.Dataflow>) : void;
-        SetEnableNanite(bValue: boolean) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GeometryCollection;
-        static Load(InName: string): GeometryCollection;
-    
-        __tid_GeometryCollection_0__: boolean;
-    }
-    
-    class FieldSystem extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): FieldSystem;
-        static Load(InName: string): FieldSystem;
-    
-        __tid_FieldSystem_0__: boolean;
-    }
-    
-    class FieldSystemMetaData extends UE.ActorComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): FieldSystemMetaData;
-        static Load(InName: string): FieldSystemMetaData;
-    
-        __tid_FieldSystemMetaData_0__: boolean;
-    }
-    
-    class FieldObjectCommands {
-        constructor();
-        constructor(TargetNames: TArray<string>, RootNodes: TArray<UE.FieldNodeBase>, MetaDatas: TArray<UE.FieldSystemMetaData>);
-        TargetNames: TArray<string>;
-        RootNodes: TArray<UE.FieldNodeBase>;
-        MetaDatas: TArray<UE.FieldSystemMetaData>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_FieldObjectCommands_0__: boolean;
-    }
-    
-    enum EFieldPhysicsType { Field_None, Field_DynamicState, Field_LinearForce, Field_ExternalClusterStrain, Field_Kill, Field_LinearVelocity, Field_AngularVelociy, Field_AngularTorque, Field_InternalClusterStrain, Field_DisableThreshold, Field_SleepingThreshold, Field_PositionStatic, Field_PositionAnimated, Field_PositionTarget, Field_DynamicConstraint, Field_CollisionGroup, Field_ActivateDisabled, Field_InitialLinearVelocity, Field_InitialAngularVelocity, Field_LinearImpulse, Field_PhysicsType_Max, __typeKeyDoNoAccess}
-    class FieldSystemComponent extends UE.PrimitiveComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        FieldSystem: UE.FieldSystem;
-        bIsWorldField: boolean;
-        bIsChaosField: boolean;
-        SupportedSolvers: TArray<TSoftObjectPtr<UE.ChaosSolverActor>>;
-        ConstructionCommands: UE.FieldObjectCommands;
-        BufferCommands: UE.FieldObjectCommands;
-        /*
-         *AddConstructionField
-         *  This function will dispatch a command to the physics thread to apply
-         *  a generic evaluation of a user defined field network. This command will be used in a
-         *  construction script to setup some particles properties (anchors...). See documentation,
-         *  for examples of how to recreate variations of the above generic
-         *  fields using field networks
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Target Type of field supported by the solver.
-         *  @param MetaData Meta data used to assist in evaluation
-         *  @param Field Base evaluation node for the field network.
-         */
-        AddFieldCommand(Enabled: boolean, Target: UE.EFieldPhysicsType, MetaData: $Nullable<UE.FieldSystemMetaData>, Field: $Nullable<UE.FieldNodeBase>) : void;
-        /*
-         *AddPersistentField
-         *  This function will dispatch a command to the physics thread to apply
-         *  a generic evaluation of a user defined field network. This command will be persistent in time and will live until
-         *  the component is destroyed or until the RemovePersistenFields function is called. See documentation,
-         *  for examples of how to recreate variations of the above generic
-         *  fields using field networks
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Target Type of field supported by the solver.
-         *  @param MetaData Meta data used to assist in evaluation
-         *  @param Field Base evaluation node for the field network.
-         */
-        AddPersistentField(Enabled: boolean, Target: UE.EFieldPhysicsType, MetaData: $Nullable<UE.FieldSystemMetaData>, Field: $Nullable<UE.FieldNodeBase>) : void;
-        /*
-         *ApplyUniformForce
-         *  This function will dispatch a command to the physics thread to apply
-         *  a uniform linear force on each particle within the simulation.
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Direction The direction of the linear force
-         *  @param Magnitude The size of the linear force.
-         */
-        ApplyLinearForce(Enabled: boolean, Direction: UE.Vector, Magnitude: number) : void;
-        /*
-         *AddTransientField
-         *  This function will dispatch a command to the physics thread to apply
-         *  a generic evaluation of a user defined transient field network. See documentation,
-         *  for examples of how to recreate variations of the above generic
-         *  fields using field networks
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Target Type of field supported by the solver.
-         *  @param MetaData Meta data used to assist in evaluation
-         *  @param Field Base evaluation node for the field network.
-         */
-        ApplyPhysicsField(Enabled: boolean, Target: UE.EFieldPhysicsType, MetaData: $Nullable<UE.FieldSystemMetaData>, Field: $Nullable<UE.FieldNodeBase>) : void;
-        /*
-         *ApplyRadialForce
-         *  This function will dispatch a command to the physics thread to apply
-         *  a linear force that points away from a position.
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Position The origin point of the force
-         *  @param Magnitude The size of the linear force.
-         */
-        ApplyRadialForce(Enabled: boolean, Position: UE.Vector, Magnitude: number) : void;
-        /*
-         *FalloffRadialForce
-         *  This function will dispatch a command to the physics thread to apply
-         *  a linear force from a position in space. The force vector is weaker as
-         *  it moves away from the center.
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Position The origin point of the force
-         *  @param Radius Radial influence from the position, positions further away are weaker.
-         *  @param Magnitude The size of the linear force.
-         */
-        ApplyRadialVectorFalloffForce(Enabled: boolean, Position: UE.Vector, Radius: number, Magnitude: number) : void;
-        /*
-         *SetDynamicState
-         *  This function will dispatch a command to the physics thread to apply
-         *  a kinematic to dynamic state change for the particles within the field.
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Position The location of the command
-         *  @param Radius Radial influence from the position
-         */
-        ApplyStayDynamicField(Enabled: boolean, Position: UE.Vector, Radius: number) : void;
-        /*
-         *ApplyExternalStran
-         *  This function will dispatch a command to the physics thread to apply
-         *  a strain field on a clustered set of geometry. This is used to trigger a
-         *  breaking event within the solver.
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Position The origin point of the force
-         *  @param Radius Radial influence from the position, positions further away are weaker.
-         *  @param Magnitude The size of the linear force.
-         *  @param Iterations Levels of evaluation into the cluster hierarchy.
-         */
-        ApplyStrainField(Enabled: boolean, Position: UE.Vector, Radius: number, Magnitude: number, Iterations: number) : void;
-        /*
-         *FalloffUniformForce
-         *  This function will dispatch a command to the physics thread to apply
-         *  a linear force in a uniform direction. The force vector is weaker as
-         *  it moves away from the center.
-         *
-         *  @param Enabled Is this force enabled for evaluation.
-         *  @param Position The origin point of the force
-         *  @param Direction The direction of the linear force
-         *  @param Radius Radial influence from the position, positions further away are weaker.
-         *  @param Magnitude The size of the linear force.
-         */
-        ApplyUniformVectorFalloffForce(Enabled: boolean, Position: UE.Vector, Direction: UE.Vector, Radius: number, Magnitude: number) : void;
-        /*
-         *RemovePersistentFields
-         *  This function will remove all the field component persistent fields from chaos and from the world
-         */
-        RemovePersistentFields() : void;
-        /*
-         *RemoveConstructionFields
-         *  This function will remove all the field component construction fields from chaos and from the world
-         */
-        ResetFieldSystem() : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): FieldSystemComponent;
-        static Load(InName: string): FieldSystemComponent;
-    
-        __tid_FieldSystemComponent_0__: boolean;
-    }
-    
-    class FieldSystemActor extends UE.Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        FieldSystemComponent: UE.FieldSystemComponent;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): FieldSystemActor;
-        static Load(InName: string): FieldSystemActor;
-    
-        __tid_FieldSystemActor_0__: boolean;
-    }
-    
-    enum EObjectStateTypeEnum { Chaos_NONE, Chaos_Object_Sleeping, Chaos_Object_Kinematic, Chaos_Object_Static, Chaos_Object_Dynamic, Chaos_Object_UserDefined, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
-    class ChaosPhysicalMaterial extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Friction: number;
-        StaticFriction: number;
-        Restitution: number;
-        LinearEtherDrag: number;
-        AngularEtherDrag: number;
-        SleepingLinearVelocityThreshold: number;
-        SleepingAngularVelocityThreshold: number;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosPhysicalMaterial;
-        static Load(InName: string): ChaosPhysicalMaterial;
-    
-        __tid_ChaosPhysicalMaterial_0__: boolean;
-    }
-    
-    enum EInitialVelocityTypeEnum { Chaos_Initial_Velocity_User_Defined, Chaos_Initial_Velocity_None, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
-    enum EGeometryCollectionCacheType { None, Record, Play, RecordAndPlay, EGeometryCollectionCacheType_MAX, __typeKeyDoNoAccess}
-    class SolverCollisionData {
-        constructor();
-        constructor(Location: UE.Vector, AccumulatedImpulse: UE.Vector, Normal: UE.Vector, Velocity1: UE.Vector, Velocity2: UE.Vector, AngularVelocity1: UE.Vector, AngularVelocity2: UE.Vector, Mass1: number, Mass2: number, ParticleIndex: number, LevelsetIndex: number, ParticleIndexMesh: number, LevelsetIndexMesh: number);
-        Location: UE.Vector;
-        AccumulatedImpulse: UE.Vector;
-        Normal: UE.Vector;
-        Velocity1: UE.Vector;
-        Velocity2: UE.Vector;
-        AngularVelocity1: UE.Vector;
-        AngularVelocity2: UE.Vector;
-        Mass1: number;
-        Mass2: number;
-        ParticleIndex: number;
-        LevelsetIndex: number;
-        ParticleIndexMesh: number;
-        LevelsetIndexMesh: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_SolverCollisionData_0__: boolean;
-    }
-    
-    class SolverBreakingData {
-        constructor();
-        constructor(Location: UE.Vector, Velocity: UE.Vector, AngularVelocity: UE.Vector, Mass: number, ParticleIndex: number, ParticleIndexMesh: number);
-        Location: UE.Vector;
-        Velocity: UE.Vector;
-        AngularVelocity: UE.Vector;
-        Mass: number;
-        ParticleIndex: number;
-        ParticleIndexMesh: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_SolverBreakingData_0__: boolean;
-    }
-    
-    class SolverTrailingData {
-        constructor();
-        constructor(Location: UE.Vector, Velocity: UE.Vector, AngularVelocity: UE.Vector, Mass: number, ParticleIndex: number, ParticleIndexMesh: number);
-        Location: UE.Vector;
-        Velocity: UE.Vector;
-        AngularVelocity: UE.Vector;
-        Mass: number;
-        ParticleIndex: number;
-        ParticleIndexMesh: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_SolverTrailingData_0__: boolean;
-    }
-    
-    class RecordedFrame {
-        constructor();
-        constructor(Transforms: TArray<UE.Transform>, TransformIndices: TArray<number>, PreviousTransformIndices: TArray<number>, DisabledFlags: TArray<boolean>, Collisions: TArray<UE.SolverCollisionData>, Breakings: TArray<UE.SolverBreakingData>, Trailings: TSet<UE.SolverTrailingData>, Timestamp: number);
-        Transforms: TArray<UE.Transform>;
-        TransformIndices: TArray<number>;
-        PreviousTransformIndices: TArray<number>;
-        DisabledFlags: TArray<boolean>;
-        Collisions: TArray<UE.SolverCollisionData>;
-        Breakings: TArray<UE.SolverBreakingData>;
-        Trailings: TSet<UE.SolverTrailingData>;
-        Timestamp: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RecordedFrame_0__: boolean;
-    }
-    
-    class RecordedTransformTrack {
-        constructor();
-        constructor(Records: TArray<UE.RecordedFrame>);
-        Records: TArray<UE.RecordedFrame>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_RecordedTransformTrack_0__: boolean;
-    }
-    
-    class GeometryCollectionCache extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        RecordedData: UE.RecordedTransformTrack;
-        SupportedCollection: UE.GeometryCollection;
-        CompatibleCollectionState: UE.Guid;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GeometryCollectionCache;
-        static Load(InName: string): GeometryCollectionCache;
-    
-        __tid_GeometryCollectionCache_0__: boolean;
-    }
-    
-    class GeomComponentCacheParameters {
-        constructor();
-        constructor(CacheMode: UE.EGeometryCollectionCacheType, TargetCache: UE.GeometryCollectionCache, ReverseCacheBeginTime: number, SaveCollisionData: boolean, DoGenerateCollisionData: boolean, CollisionDataSizeMax: number, DoCollisionDataSpatialHash: boolean, CollisionDataSpatialHashRadius: number, MaxCollisionPerCell: number, SaveBreakingData: boolean, DoGenerateBreakingData: boolean, BreakingDataSizeMax: number, DoBreakingDataSpatialHash: boolean, BreakingDataSpatialHashRadius: number, MaxBreakingPerCell: number, SaveTrailingData: boolean, DoGenerateTrailingData: boolean, TrailingDataSizeMax: number, TrailingMinSpeedThreshold: number, TrailingMinVolumeThreshold: number);
-        CacheMode: UE.EGeometryCollectionCacheType;
-        TargetCache: UE.GeometryCollectionCache;
-        ReverseCacheBeginTime: number;
-        SaveCollisionData: boolean;
-        DoGenerateCollisionData: boolean;
-        CollisionDataSizeMax: number;
-        DoCollisionDataSpatialHash: boolean;
-        CollisionDataSpatialHashRadius: number;
-        MaxCollisionPerCell: number;
-        SaveBreakingData: boolean;
-        DoGenerateBreakingData: boolean;
-        BreakingDataSizeMax: number;
-        DoBreakingDataSpatialHash: boolean;
-        BreakingDataSpatialHashRadius: number;
-        MaxBreakingPerCell: number;
-        SaveTrailingData: boolean;
-        DoGenerateTrailingData: boolean;
-        TrailingDataSizeMax: number;
-        TrailingMinSpeedThreshold: number;
-        TrailingMinVolumeThreshold: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeomComponentCacheParameters_0__: boolean;
-    }
-    
-    class ChaosBreakEvent {
-        constructor();
-        constructor(Component: UE.PrimitiveComponent, Location: UE.Vector, Orientation: UE.Quat, Velocity: UE.Vector, AngularVelocity: UE.Vector, Extents: UE.Vector, Mass: number, Index: number, bFromCrumble: boolean);
-        Component: UE.PrimitiveComponent;
-        Location: UE.Vector;
-        Orientation: UE.Quat;
-        Velocity: UE.Vector;
-        AngularVelocity: UE.Vector;
-        Extents: UE.Vector;
-        Mass: number;
-        Index: number;
-        bFromCrumble: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ChaosBreakEvent_0__: boolean;
-    }
-    
-    class ChaosRemovalEvent {
-        constructor();
-        constructor(Component: UE.PrimitiveComponent, Location: UE.Vector, Mass: number);
-        Component: UE.PrimitiveComponent;
-        Location: UE.Vector;
-        Mass: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ChaosRemovalEvent_0__: boolean;
-    }
-    
-    class ChaosCrumblingEvent {
-        constructor();
-        constructor(Component: UE.PrimitiveComponent, Location: UE.Vector, Orientation: UE.Quat, LinearVelocity: UE.Vector, AngularVelocity: UE.Vector, Mass: number, LocalBounds: UE.Box, Children: TArray<number>);
-        Component: UE.PrimitiveComponent;
-        Location: UE.Vector;
-        Orientation: UE.Quat;
-        LinearVelocity: UE.Vector;
-        AngularVelocity: UE.Vector;
-        Mass: number;
-        LocalBounds: UE.Box;
-        Children: TArray<number>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ChaosCrumblingEvent_0__: boolean;
-    }
-    
-    class ChaosPhysicsCollisionInfo {
-        constructor();
-        constructor(Component: UE.PrimitiveComponent, OtherComponent: UE.PrimitiveComponent, Location: UE.Vector, Normal: UE.Vector, AccumulatedImpulse: UE.Vector, Velocity: UE.Vector, OtherVelocity: UE.Vector, AngularVelocity: UE.Vector, OtherAngularVelocity: UE.Vector, Mass: number, OtherMass: number);
-        Component: UE.PrimitiveComponent;
-        OtherComponent: UE.PrimitiveComponent;
-        Location: UE.Vector;
-        Normal: UE.Vector;
-        AccumulatedImpulse: UE.Vector;
-        Velocity: UE.Vector;
-        OtherVelocity: UE.Vector;
-        AngularVelocity: UE.Vector;
-        OtherAngularVelocity: UE.Vector;
-        Mass: number;
-        OtherMass: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_ChaosPhysicsCollisionInfo_0__: boolean;
-    }
-    
-    class ISMPoolComponent extends UE.SceneComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ISMPoolComponent;
-        static Load(InName: string): ISMPoolComponent;
-    
-        __tid_ISMPoolComponent_0__: boolean;
-    }
-    
-    class DebugDrawComponent extends UE.PrimitiveComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): DebugDrawComponent;
-        static Load(InName: string): DebugDrawComponent;
-    
-        __tid_DebugDrawComponent_0__: boolean;
-    }
-    
-    class InstancedStaticMeshInstanceData {
-        constructor();
-        constructor(Transform: UE.Matrix);
-        Transform: UE.Matrix;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_InstancedStaticMeshInstanceData_0__: boolean;
-    }
-    
-    class InstancedStaticMeshRandomSeed {
-        constructor();
-        constructor(StartInstanceIndex: number, RandomSeed: number);
-        StartInstanceIndex: number;
-        RandomSeed: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_InstancedStaticMeshRandomSeed_0__: boolean;
-    }
-    
-    class InstancedStaticMeshMappingInfo {
-        constructor();
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_InstancedStaticMeshMappingInfo_0__: boolean;
-    }
-    
-    class InstancedStaticMeshComponent extends UE.StaticMeshComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        PerInstanceSMData: TArray<UE.InstancedStaticMeshInstanceData>;
-        PerInstancePrevTransform: TArray<UE.Matrix>;
-        PreviousComponentTransform: UE.Transform;
-        NumCustomDataFloats: number;
-        InstancingRandomSeed: number;
-        PerInstanceSMCustomData: TArray<number>;
-        AdditionalRandomSeeds: TArray<UE.InstancedStaticMeshRandomSeed>;
-        InstanceLODDistanceScale: number;
-        InstanceMinDrawDistance: number;
-        InstanceStartCullDistance: number;
-        InstanceEndCullDistance: number;
-        bUseGpuLodSelection: boolean;
-        bInheritPerInstanceData: boolean;
-        bDisableCollision: boolean;
-        InstanceReorderTable: TArray<number>;
-        NumPendingLightmaps: number;
-        CachedMappings: TArray<UE.InstancedStaticMeshMappingInfo>;
-        CachedBounds: FixSizeArray<UE.BoundsCacheElement>;
-        /*
-         *Add an instance to this component. Transform is given in local space of this component unless bWorldSpace is set.
-         */
-        AddInstance(InstanceTransform: UE.Transform, bWorldSpace?: boolean /* = false */) : number;
-        /*
-         *Add multiple instances to this component. Transform is given in local space of this component unless bWorldSpace is set.
-         */
-        AddInstances(InstanceTransforms: TArray<UE.Transform>, bShouldReturnIndices: boolean, bWorldSpace?: boolean /* = false */, bUpdateNavigation?: boolean /* = true */) : TArray<number>;
-        AddInstanceWorldSpace(WorldTransform: UE.Transform) : number;
-        /*
-         *Update the transform for a number of instances.
-         *
-         *@param StartInstanceIndex             The starting index of the instances to update
-         *@param NumInstances                   The number of instances to update
-         *@param NewInstancesTransform  The new transform
-         *@param bWorldSpace                    If true, the new transform is interpreted as a World Space transform, otherwise it is interpreted as Local Space
-         *@param bMarkRenderStateDirty  If true, the change should be visible immediately. If you are updating many instances you should only set this to true for the last instance.
-         *@param bTeleport                              Whether or not the instances physics should be moved normally, or teleported (moved instantly, ignoring velocity).
-         *@return                                               True on success.
-         */
-        BatchUpdateInstancesTransform(StartInstanceIndex: number, NumInstances: number, NewInstancesTransform: UE.Transform, bWorldSpace?: boolean /* = false */, bMarkRenderStateDirty?: boolean /* = false */, bTeleport?: boolean /* = false */) : boolean;
-        /*
-         *Update the transform for an array of instances.
-         *
-         *@param StartInstanceIndex             The starting index of the instances to update
-         *@param NewInstancesTransforms The new transforms
-         *@param bWorldSpace                    If true, the new transforms are interpreted as a World Space transform, otherwise it is interpreted as Local Space
-         *@param bMarkRenderStateDirty  If true, the change should be visible immediately. If you are updating many instances you should only set this to true for the last instance.
-         *@param bTeleport                              Whether or not the instances physics should be moved normally, or teleported (moved instantly, ignoring velocity).
-         *@return                                               True on success.
-         */
-        BatchUpdateInstancesTransforms(StartInstanceIndex: number, NewInstancesTransforms: TArray<UE.Transform>, bWorldSpace?: boolean /* = false */, bMarkRenderStateDirty?: boolean /* = false */, bTeleport?: boolean /* = false */) : boolean;
-        /*
-         *Clear all instances being rendered by this component.
-         */
-        ClearInstances() : void;
-        /*
-         *Gets the fading start and culling end distances for this component.
-         */
-        GetCullDistances(OutStartCullDistance: $Ref<number>, OutEndCullDistance: $Ref<number>) : void;
-        /*
-         *Get the number of instances in this component.
-         */
-        GetInstanceCount() : number;
-        /*
-         *Returns the instances with instance bounds overlapping the specified box. The return value is an array of instance indices.
-         */
-        GetInstancesOverlappingBox(Box: UE.Box, bBoxInWorldSpace?: boolean /* = true */) : TArray<number>;
-        /*
-         *Returns the instances with instance bounds overlapping the specified sphere. The return value is an array of instance indices.
-         */
-        GetInstancesOverlappingSphere(Center: UE.Vector, Radius: number, bSphereInWorldSpace?: boolean /* = true */) : TArray<number>;
-        /*
-         *Get the transform for the instance specified. Instance is returned in local space of this component unless bWorldSpace is set.  Returns True on success.
-         */
-        GetInstanceTransform(InstanceIndex: number, OutInstanceTransform: $Ref<UE.Transform>, bWorldSpace?: boolean /* = false */) : boolean;
-        /*
-         *Gets the current LOD scale.
-         */
-        GetLODDistanceScale() : number;
-        /*
-         *Does the given index map to a valid instance in this component?
-         */
-        IsValidInstance(InstanceIndex: number) : boolean;
-        /*
-         *Remove the instance specified. Returns True on success.
-         */
-        RemoveInstance(InstanceIndex: number) : boolean;
-        /*
-         *Remove the instances specified. Returns True on success.
-         */
-        RemoveInstances(InstancesToRemove: TArray<number>) : boolean;
-        /*
-         *Sets the fading start and culling end distances for this component.
-         */
-        SetCullDistances(StartCullDistance: number, EndCullDistance: number) : void;
-        /*
-         *Update custom data for specific instance
-         */
-        SetCustomDataValue(InstanceIndex: number, CustomDataIndex: number, CustomDataValue: number, bMarkRenderStateDirty?: boolean /* = false */) : boolean;
-        /*
-         *Sets the LOD scale.
-         */
-        SetLODDistanceScale(InLODDistanceScale: number) : void;
-        /*
-         *Update number of custom data entries per instance. This applies to all instances and will reallocate the full custom data buffer and reset all values to 0
-         */
-        SetNumCustomDataFloats(InNumCustomDataFloats: number) : void;
-        /*
-         *Update the transform for the instance specified.
-         *
-         *@param InstanceIndex                  The index of the instance to update
-         *@param NewInstanceTransform   The new transform
-         *@param bWorldSpace                    If true, the new transform is interpreted as a World Space transform, otherwise it is interpreted as Local Space
-         *@param bMarkRenderStateDirty  If true, the change should be visible immediately. If you are updating many instances you should only set this to true for the last instance.
-         *@param bTeleport                              Whether or not the instance's physics should be moved normally, or teleported (moved instantly, ignoring velocity).
-         *@return                                               True on success.
-         */
-        UpdateInstanceTransform(InstanceIndex: number, NewInstanceTransform: UE.Transform, bWorldSpace?: boolean /* = false */, bMarkRenderStateDirty?: boolean /* = false */, bTeleport?: boolean /* = false */) : boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): InstancedStaticMeshComponent;
-        static Load(InName: string): InstancedStaticMeshComponent;
-    
-        __tid_InstancedStaticMeshComponent_0__: boolean;
-    }
-    
-    class ISMPoolDebugDrawComponent extends UE.DebugDrawComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        bShowGlobalStats: boolean;
-        bShowStats: boolean;
-        bShowBounds: boolean;
-        SelectedComponent: UE.InstancedStaticMeshComponent;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ISMPoolDebugDrawComponent;
-        static Load(InName: string): ISMPoolDebugDrawComponent;
-    
-        __tid_ISMPoolDebugDrawComponent_0__: boolean;
-    }
-    
-    class ISMPoolActor extends UE.Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ISMPoolComp: UE.ISMPoolComponent;
-        ISMPoolDebugDrawComp: UE.ISMPoolDebugDrawComponent;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ISMPoolActor;
-        static Load(InName: string): ISMPoolActor;
-    
-        __tid_ISMPoolActor_0__: boolean;
-    }
-    
-    class GeometryCollectionExternalRenderInterface extends UE.Interface {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GeometryCollectionExternalRenderInterface;
-        static Load(InName: string): GeometryCollectionExternalRenderInterface;
-    
-        __tid_GeometryCollectionExternalRenderInterface_0__: boolean;
-    }
-    
-    class GeometryCollectionRepData {
-        constructor();
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionRepData_0__: boolean;
-    }
-    
-    class GeometryCollectionRepStateData {
-        constructor();
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionRepStateData_0__: boolean;
-    }
-    
-    class GeometryCollectionRepDynamicData {
-        constructor();
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GeometryCollectionRepDynamicData_0__: boolean;
-    }
-    
-    enum EGeometryCollectionPhysicsTypeEnum { Chaos_AngularVelocity, Chaos_DynamicState, Chaos_LinearVelocity, Chaos_InitialAngularVelocity, Chaos_InitialLinearVelocity, Chaos_CollisionGroup, Chaos_LinearForce, Chaos_AngularTorque, Chaos_DisableThreshold, Chaos_SleepingThreshold, Chaos_ExternalClusterStrain, Chaos_InternalClusterStrain, Chaos_LinearImpulse, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
-    class GeometryCollectionComponent extends UE.MeshComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ChaosSolverActor: UE.ChaosSolverActor;
-        RestCollection: UE.GeometryCollection;
-        InitializationFields: TArray<UE.FieldSystemActor>;
-        Simulating: boolean;
-        ObjectType: UE.EObjectStateTypeEnum;
-        GravityGroupIndex: number;
-        OneWayInteractionLevel: number;
-        bDensityFromPhysicsMaterial: boolean;
-        bForceMotionBlur: boolean;
-        EnableClustering: boolean;
-        ClusterGroupIndex: number;
-        MaxClusterLevel: number;
-        MaxSimulatedLevel: number;
-        DamageModel: UE.EDamageModelTypeEnum;
-        DamageThreshold: TArray<number>;
-        bUseSizeSpecificDamageThreshold: boolean;
-        bUseMaterialDamageModifiers: boolean;
-        DamagePropagationData: UE.GeometryCollectionDamagePropagationData;
-        bEnableDamageFromCollision: boolean;
-        bAllowRemovalOnSleep: boolean;
-        bAllowRemovalOnBreak: boolean;
-        bForceUpdateActiveTransforms: boolean;
-        ClusterConnectionType: UE.EClusterConnectionTypeEnum;
-        CollisionGroup: number;
-        CollisionSampleFraction: number;
-        LinearEtherDrag: number;
-        PhysicalMaterial: UE.ChaosPhysicalMaterial;
-        InitialVelocityType: UE.EInitialVelocityTypeEnum;
-        InitialLinearVelocity: UE.Vector;
-        InitialAngularVelocity: UE.Vector;
-        PhysicalMaterialOverride: UE.PhysicalMaterial;
-        CacheParameters: UE.GeomComponentCacheParameters;
-        RestTransforms: TArray<UE.Transform>;
-        NotifyGeometryCollectionPhysicsStateChange: $MulticastDelegate<(FracturedComponent: $Nullable<UE.GeometryCollectionComponent>) => void>;
-        NotifyGeometryCollectionPhysicsLoadingStateChange: $MulticastDelegate<(FracturedComponent: $Nullable<UE.GeometryCollectionComponent>) => void>;
-        OnChaosBreakEvent: $MulticastDelegate<(BreakEvent: UE.ChaosBreakEvent) => void>;
-        OnChaosRemovalEvent: $MulticastDelegate<(RemovalEvent: UE.ChaosRemovalEvent) => void>;
-        OnChaosCrumblingEvent: $MulticastDelegate<(CrumbleEvent: UE.ChaosCrumblingEvent) => void>;
-        DesiredCacheTime: number;
-        CachePlayback: boolean;
-        OnChaosPhysicsCollision: $MulticastDelegate<(CollisionInfo: UE.ChaosPhysicsCollisionInfo) => void>;
-        bNotifyBreaks: boolean;
-        bNotifyCollisions: boolean;
-        bNotifyTrailing: boolean;
-        bNotifyRemovals: boolean;
-        bNotifyCrumblings: boolean;
-        bCrumblingEventIncludesChildren: boolean;
-        bNotifyGlobalBreaks: boolean;
-        bNotifyGlobalCollisions: boolean;
-        bNotifyGlobalRemovals: boolean;
-        bNotifyGlobalCrumblings: boolean;
-        bGlobalCrumblingEventIncludesChildren: boolean;
-        bStoreVelocities: boolean;
-        bIsCurrentlyNavigationRelevant: boolean;
-        bShowBoneColors: boolean;
-        bUpdateComponentTransformToRootBone: boolean;
-        bUseRootProxyForNavigation: boolean;
-        bUpdateNavigationInTick: boolean;
-        bEnableRunTimeDataCollection_EditorOnly: boolean;
-        RunTimeDataCollectionGuid_EditorOnly: UE.Guid;
-        bEnableReplication: boolean;
-        bEnableAbandonAfterLevel: boolean;
-        AbandonedCollisionProfileName: string;
-        ISMPool: UE.ISMPoolActor;
-        CustomRendererType: UE.Class;
-        bOverrideCustomRenderer: boolean;
-        bAutoAssignISMPool: boolean;
-        bUseStaticMeshCollisionForTraces: boolean;
-        ReplicationAbandonClusterLevel: number;
-        CustomRenderer: UE.GeometryCollectionExternalRenderInterface;
-        CollisionProfilePerLevel: TArray<string>;
-        ReplicationAbandonAfterLevel: number;
-        ReplicationMaxPositionAndVelocityCorrectionLevel: number;
-        RepData: UE.GeometryCollectionRepData;
-        RepStateData: UE.GeometryCollectionRepStateData;
-        RepDynamicData: UE.GeometryCollectionRepDynamicData;
-        SelectedBones_EditorOnly: TArray<number>;
-        HighlightedBones_EditorOnly: TArray<number>;
-        DummyBodySetup: UE.BodySetup;
-        EditorActor_EditorOnly: UE.Actor;
-        EventDispatcher: UE.ChaosGameplayEventDispatcher;
-        EmbeddedGeometryComponents: TArray<UE.InstancedStaticMeshComponent>;
-        AngularEtherDrag: number;
-        /*
-         *Apply angular velocity on specific piece
-         *@param ItemIndex item index ( from HitResult) of the piece to apply velocity on
-         *@param AngularVelocity linear velocity to apply
-         */
-        ApplyAngularVelocity(ItemIndex: number, AngularVelocity: UE.Vector) : void;
-        /*
-         *Apply default values from asset ( damage related data and physics material )
-         */
-        ApplyAssetDefaults() : void;
-        /*
-         *Apply linear velocity on breaking pieces for a specific cluster
-         *If ItemIndex does not represent a cluster this will do nothing
-         *@param ItemIndex item index ( from HitResult) of the cluster owning the breaking pieces to apply velocity on
-         *@param AngularVelocity linear velocity to apply
-         */
-        ApplyBreakingAngularVelocity(ItemIndex: number, AngularVelocity: UE.Vector) : void;
-        /*
-         *Apply linear velocity on breaking pieces for a specific cluster
-         *If ItemIndex does not represent a cluster this will do nothing
-         *@param ItemIndex item index ( from HitResult) of the cluster owning the breaking pieces to apply velocity on
-         *@param LinearVelocity linear velocity to apply
-         */
-        ApplyBreakingLinearVelocity(ItemIndex: number, LinearVelocity: UE.Vector) : void;
-        /*
-         *Apply an external strain to specific piece of the geometry collection
-         *@param ItemIndex item index ( from HitResult) of the piece to apply strain on
-         *@param Location world location of where to apply the strain
-         *@param Radius radius from the location point to apply the strain to ( using the center of mass of the pieces )
-         *@param PropagationDepth How many level of connection to follow to propagate the strain through
-         *@param PropagationFactor when using propagation, the factor to multiply the strain from one level to the other, allowing falloff effect
-         *@param Strain strain _ damage to apply
-         */
-        ApplyExternalStrain(ItemIndex: number, Location: UE.Vector, Radius?: number /* = 0.000000 */, PropagationDepth?: number /* = 0 */, PropagationFactor?: number /* = 1.000000 */, Strain?: number /* = 0.000000 */) : void;
-        /*
-         *Apply an internal strain to specific piece of the geometry collection
-         *@param ItemIndex item index ( from HitResult) of the piece to apply strain on
-         *@param Location world location of where to apply the strain
-         *@param Radius radius from the location point to apply the strain to ( using the center of mass of the pieces )
-         *@param PropagationDepth How many level of connection to follow to propagate the strain through
-         *@param PropagationFactor when using propagation, the factor to multiply the strain from one level to the other, allowing falloff effect
-         *@param Strain strain _ damage to apply
-         */
-        ApplyInternalStrain(ItemIndex: number, Location: UE.Vector, Radius?: number /* = 0.000000 */, PropagationDepth?: number /* = 0 */, PropagationFactor?: number /* = 1.000000 */, Strain?: number /* = 0.000000 */) : void;
-        /*
-         *SetDynamicState
-         *  This function will dispatch a command to the physics thread to apply
-         *  a kinematic to dynamic state change for the geo collection particles within the field.
-         *
-         *      @param Radius Radial influence from the position
-         *  @param Position The location of the command
-         */
-        ApplyKinematicField(Radius: number, Position: UE.Vector) : void;
-        /*
-         *Apply linear velocity on specific piece
-         *@param ItemIndex item index ( from HitResult) of the piece to apply velocity on
-         *@param LinearVelocity linear velocity to apply
-         */
-        ApplyLinearVelocity(ItemIndex: number, LinearVelocity: UE.Vector) : void;
-        /*
-         *AddPhysicsField
-         *  This function will dispatch a command to the physics thread to apply
-         *  a generic evaluation of a user defined transient field network. See documentation,
-         *  for examples of how to recreate variations of the above generic
-         *  fields using field networks
-         *
-         *      @param Enabled Is this force enabled for evaluation.
-         *  @param Target Type of field supported by the solver.
-         *  @param MetaData Meta data used to assist in evaluation
-         *  @param Field Base evaluation node for the field network.
-         */
-        ApplyPhysicsField(Enabled: boolean, Target: UE.EGeometryCollectionPhysicsTypeEnum, MetaData: $Nullable<UE.FieldSystemMetaData>, Field: $Nullable<UE.FieldNodeBase>) : void;
-        /*
-         *Crumbe active clusters for this entire geometry collection
-         *this will apply to internal and regular clusters
-         */
-        CrumbleActiveClusters() : void;
-        /*
-         *Crumbe a cluster into all its pieces
-         *@param ItemIndex item index ( from HitResult) of the cluster to crumble
-         */
-        CrumbleCluster(ItemIndex: number) : void;
-        EnableRootProxyForCustomRenderer(bEnable: boolean) : void;
-        /*
-         *Force any custom renderer to render using the broken_decayed path. This can be set at runtime
-         */
-        ForceBrokenForCustomRenderer(bForceBroken: boolean) : void;
-        GetDamageThreshold() : TArray<number>;
-        /*
-         *RestCollection
-         */
-        GetDebugInfo() : string;
-        /*
-         *Get the initial level of a specific piece
-         *Initial level means the level as it is in the unbroken state
-         *@param ItemIndex item index ( from HitResult) of the cluster to get level from
-         *@param Level of the piece ( 0 for root level and positive for the rest )
-         */
-        GetInitialLevel(ItemIndex: number) : number;
-        /*
-         *Get the initial rest transforms in component (local) space  space,
-         *they are the transforms as defined in the rest collection asset
-         */
-        GetInitialLocalRestTransforms() : TArray<UE.Transform>;
-        /*
-         *Get local bounds of the geometry collection
-         */
-        GetLocalBounds() : UE.Box;
-        /*
-         *Get the rest transforms in component (local) space  space,
-         *if none have been set by SetLocalRestTransforms or if RestTransform property is empty , then the initial ones are returned
-         *@param bInitialTransform force the initial transforms to be returned ( false by default )
-         */
-        GetLocalRestTransforms(bInitialTransforms?: boolean /* = false */) : TArray<UE.Transform>;
-        /*
-         *Get mass and extent of a specific piece
-         *@param ItemIndex item index ( from HitResult) of the cluster to get level from
-         *@param Level of the piece ( 0 for root level and positive for the rest )
-         */
-        GetMassAndExtents(ItemIndex: number, OutMass: $Ref<number>, OutExtents: $Ref<UE.Box>) : void;
-        /*
-         *Get the root item current world transform
-         */
-        GetRootCurrentTransform() : UE.Transform;
-        /*
-         *Get the root item index of the hierarchy
-         */
-        GetRootIndex() : number;
-        /*
-         *Get the root item initial transform in world space
-         */
-        GetRootInitialTransform() : UE.Transform;
-        /*
-         *BP internal function to get the solver actor
-         */
-        GetSolverActor() : UE.ChaosSolverActor;
-        /*
-         *todo(chaos): Remove this and move to a cook time approach of the SM data based on the GC property
-         */
-        GetUseStaticMeshCollisionForTraces() : boolean;
-        /*
-         *return true if the root cluster is not longer active at runtime
-         */
-        IsRootBroken() : boolean;
-        NotifyGeometryCollectionPhysicsLoadingStateChange__DelegateSignature(FracturedComponent: $Nullable<UE.GeometryCollectionComponent>) : void;
-        /*
-         *Blueprint event
-         */
-        NotifyGeometryCollectionPhysicsStateChange__DelegateSignature(FracturedComponent: $Nullable<UE.GeometryCollectionComponent>) : void;
-        /*
-         *Called post solve to allow authoritative components to update their replication data
-         */
-        OnRep_RepData() : void;
-        OnRep_RepDynamicData() : void;
-        OnRep_RepStateData() : void;
-        ReceivePhysicsCollision(CollisionInfo: UE.ChaosPhysicsCollisionInfo) : void;
-        /*
-         *this will remove anchors on all the pieces ( including the static and kinematic initial states ones ) of the geometry colection
-         */
-        RemoveAllAnchors() : void;
-        SetAbandonedParticleCollisionProfileName(CollisionProfile: string) : void;
-        /*
-         *Set all pieces within a world space bounding box to be anchored or not
-         */
-        SetAnchoredByBox(WorldSpaceBox: UE.Box, bAnchored: boolean, MaxLevel?: number /* = -1 */) : void;
-        /*
-         *Set a piece or cluster to be anchored or not
-         */
-        SetAnchoredByIndex(Index: number, bAnchored: boolean) : void;
-        /*
-         *Set all pieces within a world transformed bounding box to be anchored or not
-         */
-        SetAnchoredByTransformedBox(Box: UE.Box, Transform: UE.Transform, bAnchored: boolean, MaxLevel?: number /* = -1 */) : void;
-        SetDamageModel(InDamageModel: UE.EDamageModelTypeEnum) : void;
-        SetDamagePropagationData(InDamagePropagationData: UE.GeometryCollectionDamagePropagationData) : void;
-        SetDamageThreshold(InDamageThreshold: TArray<number>) : void;
-        SetDensityFromPhysicsMaterial(bInDensityFromPhysicsMaterial: boolean) : void;
-        SetEnableDamageFromCollision(bValue: boolean) : void;
-        SetGravityGroupIndex(InGravityGroupIndex: number) : void;
-        /*
-         *Set the local rest transform, this may be different from the rest collection
-         *If the geometry collection is already simulating those matrices will be overriden by the physics state updates
-         */
-        SetLocalRestTransforms(Transforms: TArray<UE.Transform>, bOnlyLeaves: boolean) : void;
-        /*
-         *Changes whether or not this component will get future break notifications.
-         */
-        SetNotifyBreaks(bNewNotifyBreaks: boolean) : void;
-        /*
-         *Changes whether or not this component will get future crumbling notifications.
-         */
-        SetNotifyCrumblings(bNewNotifyCrumblings: boolean, bNewCrumblingEventIncludesChildren?: boolean /* = false */) : void;
-        /*
-         *Changes whether or not this component will get future global break notifications.
-         */
-        SetNotifyGlobalBreaks(bNewNotifyGlobalBreaks: boolean) : void;
-        /*
-         *Changes whether or not this component will get future global collision notifications.
-         */
-        SetNotifyGlobalCollision(bNewNotifyGlobalCollisions: boolean) : void;
-        /*
-         *Changes whether or not this component will get future global crumbling notifications.
-         */
-        SetNotifyGlobalCrumblings(bNewNotifyGlobalCrumblings: boolean, bGlobalNewCrumblingEventIncludesChildren: boolean) : void;
-        /*
-         *Changes whether or not this component will get future global removal notifications.
-         */
-        SetNotifyGlobalRemovals(bNewNotifyGlobalRemovals: boolean) : void;
-        /*
-         *Changes whether or not this component will get future removal notifications.
-         */
-        SetNotifyRemovals(bNewNotifyRemovals: boolean) : void;
-        SetOneWayInteractionLevel(InOneWayInteractionLevel: number) : void;
-        SetPerLevelCollisionProfileNames(ProfileNames: TArray<string>) : void;
-        SetPerParticleCollisionProfileName(BoneIds: TArray<number>, ProfileName: string) : void;
-        /*
-         *RestCollection
-         */
-        SetRestCollection(RestCollectionIn: $Nullable<UE.GeometryCollection>, bApplyAssetDefaults?: boolean /* = true */) : void;
-        /*
-         *blueprint function to set a specific root proxy local transform
-         *warning: when called from C++ and calling it on multiple root proxies it is recommended to use SetRootProxyLocalTransform instead and then call RefreshCustomRenderer
-         *to avoid the cost of refreshing the renderer each time
-         */
-        SetRootProxyComponentSpaceTransform(Index: number, RootProxyTransform: UE.Transform) : void;
-        /*
-         *BP internal function to set the solver actor
-         */
-        SetSolverActor(InSolverActor: $Nullable<UE.ChaosSolverActor>) : void;
-        SetUseMaterialDamageModifiers(bInUseMaterialDamageModifiers: boolean) : void;
-        /*
-         *todo(chaos): Remove this and move to a cook time approach of the SM data based on the GC property
-         */
-        SetUseStaticMeshCollisionForTraces(bInUseStaticMeshCollisionForTraces: boolean) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GeometryCollectionComponent;
-        static Load(InName: string): GeometryCollectionComponent;
-    
-        __tid_GeometryCollectionComponent_0__: boolean;
-    }
-    
-    enum EGroomLODMode { Default, Manual, Auto, EGroomLODMode_MAX, __typeKeyDoNoAccess}
-    enum EGroomBindingMeshType { SkeletalMesh, GeometryCache, EGroomBindingMeshType_MAX, __typeKeyDoNoAccess}
-    class GeometryCacheTrack extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Duration: number;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GeometryCacheTrack;
-        static Load(InName: string): GeometryCacheTrack;
-    
-        __tid_GeometryCacheTrack_0__: boolean;
-    }
-    
-    class GeometryCache extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AssetImportData_EditorOnly: UE.AssetImportData;
-        ThumbnailInfo_EditorOnly: UE.ThumbnailInfo;
-        Materials: TArray<UE.MaterialInterface>;
-        MaterialSlotNames: TArray<string>;
-        Tracks: TArray<UE.GeometryCacheTrack>;
-        AssetUserData: TArray<UE.AssetUserData>;
-        StartFrame: number;
-        EndFrame: number;
-        Hash: bigint;
-        /*
-         *Creates and adds an instance of the provided AssetUserData class to the target asset.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to create
-         *
-         *@return       Whether or not an instance of InUserDataClass was succesfully added
-         */
-        AddAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
-        /*
-         *Returns an instance of the provided AssetUserData class if it's contained in the target asset.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to get
-         *
-         *@return       The instance of the UAssetUserData class contained, or null if it doesn't exist
-         */
-        GetAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : UE.AssetUserData;
-        /*
-         *Checks whether or not an instance of the provided AssetUserData class is contained.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to check for
-         *
-         *@return       Whether or not an instance of InUserDataClass was found
-         */
-        HasAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GeometryCache;
-        static Load(InName: string): GeometryCache;
-    
-        __tid_GeometryCache_0__: boolean;
-    }
-    
-    class GoomBindingGroupInfo {
-        constructor();
-        constructor(RenRootCount: number, RenLODCount: number, SimRootCount: number, SimLODCount: number);
-        RenRootCount: number;
-        RenLODCount: number;
-        SimRootCount: number;
-        SimLODCount: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GoomBindingGroupInfo_0__: boolean;
-    }
-    
-    enum EGroomBindingAssetBuildResult { Succeeded, Failed, EGroomBindingAssetBuildResult_MAX, __typeKeyDoNoAccess}
-    class GroomBindingAsset extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        GroomBindingType: UE.EGroomBindingMeshType;
-        Groom: UE.GroomAsset;
-        SourceSkeletalMesh: UE.SkeletalMesh;
-        SourceMeshRequestedLOD: number;
-        SourceMeshUsedLOD: number;
-        TargetSkeletalMesh: UE.SkeletalMesh;
-        TargetMeshRequestedMinLOD: number;
-        TargetMeshUsedMinLOD: number;
-        SourceGeometryCache: UE.GeometryCache;
-        TargetGeometryCache: UE.GeometryCache;
-        NumInterpolationPoints: number;
-        MatchingSection: number;
-        TargetBindingAttribute: string;
-        GroupInfos: TArray<UE.GoomBindingGroupInfo>;
-        ThumbnailInfo_EditorOnly: UE.ThumbnailInfo;
-        /*
-         *Build_rebuild a binding asset.
-         *
-         *Avoid calling Build again while a build is already in progress on this asset, as this will
-         *cause the Game Thread to block until the earlier build is finished.
-         *
-         *Similarly, the Game Thread will block for a short time if a Groom Component is already using
-         *this binding asset, so if performance is critical avoid calling Build on bindings that are
-         *in use.
-         */
-        Build(CompletionDelegate: $Delegate<(GroomBinding: $Nullable<UE.GroomBindingAsset>, Result: UE.EGroomBindingAssetBuildResult) => void>) : void;
-        GetGroom() : UE.GroomAsset;
-        GetGroomBindingType() : UE.EGroomBindingMeshType;
-        GetGroupInfos() : TArray<UE.GoomBindingGroupInfo>;
-        GetMatchingSection() : number;
-        GetNumInterpolationPoints() : number;
-        GetSourceGeometryCache() : UE.GeometryCache;
-        GetSourceMeshRequestedLOD() : number;
-        GetSourceMeshUsedLOD() : number;
-        GetSourceSkeletalMesh() : UE.SkeletalMesh;
-        GetTargetBindingAttribute() : string;
-        GetTargetGeometryCache() : UE.GeometryCache;
-        GetTargetMeshRequestedMinLOD() : number;
-        GetTargetMeshUsedMinLOD() : number;
-        GetTargetSkeletalMesh() : UE.SkeletalMesh;
-        SetGroom(InGroom: $Nullable<UE.GroomAsset>) : void;
-        SetGroomBindingType(InGroomBindingType: UE.EGroomBindingMeshType) : void;
-        SetGroupInfos(InGroupInfos: TArray<UE.GoomBindingGroupInfo>) : void;
-        SetMatchingSection(InMatchingSection: number) : void;
-        SetNumInterpolationPoints(InNumInterpolationPoints: number) : void;
-        SetSourceGeometryCache(InGeometryCache: $Nullable<UE.GeometryCache>) : void;
-        SetSourceMeshRequestedLOD(InSourceMeshRequestedLOD: number) : void;
-        SetSourceMeshUsedLOD(InSourceMeshUsedLOD: number) : void;
-        SetSourceSkeletalMesh(InSkeletalMesh: $Nullable<UE.SkeletalMesh>) : void;
-        SetTargetBindingAttribute(InAttributeName: string) : void;
-        SetTargetGeometryCache(InGeometryCache: $Nullable<UE.GeometryCache>) : void;
-        SetTargetMeshRequestedMinLOD(InTargetMeshRequestedMinLOD: number) : void;
-        SetTargetMeshUsedMinLOD(InTargetMeshUsedMinLOD: number) : void;
-        SetTargetSkeletalMesh(InSkeletalMesh: $Nullable<UE.SkeletalMesh>) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GroomBindingAsset;
-        static Load(InName: string): GroomBindingAsset;
-    
-        __tid_GroomBindingAsset_0__: boolean;
-    }
-    
-    class GroomDataflowSettings {
-        constructor();
-        constructor(DataflowAsset: UE.Dataflow, DataflowTerminal: string, SkeletalMeshes: TArray<UE.SkeletalMesh>, MeshLODs: TArray<number>, PreviewBindingAsset: TSoftObjectPtr<UE.GroomBindingAsset>, PreviewAnimationAsset: TSoftObjectPtr<UE.AnimationAsset>);
-        DataflowAsset: UE.Dataflow;
-        DataflowTerminal: string;
-        SkeletalMeshes: TArray<UE.SkeletalMesh>;
-        MeshLODs: TArray<number>;
-        PreviewBindingAsset: TSoftObjectPtr<UE.GroomBindingAsset>;
-        PreviewAnimationAsset: TSoftObjectPtr<UE.AnimationAsset>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GroomDataflowSettings_0__: boolean;
-    }
-    
-    class HairGroupLODInfo {
-        constructor();
-        constructor(NumPoints: number, NumCurves: number);
-        NumPoints: number;
-        NumCurves: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupLODInfo_0__: boolean;
-    }
-    
-    class HairGroupInfo {
-        constructor();
-        constructor(GroupIndex: number, GroupID: number, GroupName: string, NumCurves: number, NumGuides: number, NumCurveVertices: number, NumGuideVertices: number, MaxCurveLength: number, Flags: number, LODInfos: TArray<UE.HairGroupLODInfo>);
-        GroupIndex: number;
-        GroupID: number;
-        GroupName: string;
-        NumCurves: number;
-        NumGuides: number;
-        NumCurveVertices: number;
-        NumGuideVertices: number;
-        MaxCurveLength: number;
-        Flags: number;
-        LODInfos: TArray<UE.HairGroupLODInfo>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupInfo_0__: boolean;
-    }
-    
-    class HairGroupInfoWithVisibility extends UE.HairGroupInfo {
-        constructor();
-        constructor(bIsVisible: boolean);
-        bIsVisible: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupInfoWithVisibility_0__: boolean;
-    }
-    
-    class HairGeometrySettings {
-        constructor();
-        constructor(HairWidth: number, HairWidth_Override: boolean, HairRootScale: number, HairTipScale: number);
-        HairWidth: number;
-        HairWidth_Override: boolean;
-        HairRootScale: number;
-        HairTipScale: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGeometrySettings_0__: boolean;
-    }
-    
-    class HairShadowSettings {
-        constructor();
-        constructor(HairShadowDensity: number, HairRaytracingRadiusScale: number, bUseHairRaytracingGeometry: boolean, bVoxelize: boolean);
-        HairShadowDensity: number;
-        HairRaytracingRadiusScale: number;
-        bUseHairRaytracingGeometry: boolean;
-        bVoxelize: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairShadowSettings_0__: boolean;
-    }
-    
-    class HairAdvancedRenderingSettings {
-        constructor();
-        constructor(bUseStableRasterization: boolean, bScatterSceneLighting: boolean);
-        bUseStableRasterization: boolean;
-        bScatterSceneLighting: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairAdvancedRenderingSettings_0__: boolean;
-    }
-    
-    class HairGroupsRendering {
-        constructor();
-        constructor(MaterialSlotName: string, Material: UE.MaterialInterface, GeometrySettings: UE.HairGeometrySettings, ShadowSettings: UE.HairShadowSettings, AdvancedSettings: UE.HairAdvancedRenderingSettings);
-        MaterialSlotName: string;
-        Material: UE.MaterialInterface;
-        GeometrySettings: UE.HairGeometrySettings;
-        ShadowSettings: UE.HairShadowSettings;
-        AdvancedSettings: UE.HairAdvancedRenderingSettings;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupsRendering_0__: boolean;
-    }
-    
-    enum EGroomNiagaraSolvers { None, CosseratRods, AngularSprings, CustomSolver, EGroomNiagaraSolvers_MAX, __typeKeyDoNoAccess}
-    class HairSolverSettings {
-        constructor();
-        constructor(bEnableDeformation: boolean, EnableSimulation: boolean, NiagaraSolver: UE.EGroomNiagaraSolvers, CustomSystem: TSoftObjectPtr<UE.NiagaraSystem>, GravityPreloading: number, SubSteps: number, IterationCount: number, bForceVisible: boolean);
-        bEnableDeformation: boolean;
-        EnableSimulation: boolean;
-        NiagaraSolver: UE.EGroomNiagaraSolvers;
-        CustomSystem: TSoftObjectPtr<UE.NiagaraSystem>;
-        GravityPreloading: number;
-        SubSteps: number;
-        IterationCount: number;
-        bForceVisible: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairSolverSettings_0__: boolean;
-    }
-    
-    class HairExternalForces {
-        constructor();
-        constructor(GravityVector: UE.Vector, AirDrag: number, AirVelocity: UE.Vector);
-        GravityVector: UE.Vector;
-        AirDrag: number;
-        AirVelocity: UE.Vector;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairExternalForces_0__: boolean;
-    }
-    
-    class HairBendConstraint {
-        constructor();
-        constructor(SolveBend: boolean, ProjectBend: boolean, BendDamping: number, BendStiffness: number, BendScale: UE.RuntimeFloatCurve);
-        SolveBend: boolean;
-        ProjectBend: boolean;
-        BendDamping: number;
-        BendStiffness: number;
-        BendScale: UE.RuntimeFloatCurve;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairBendConstraint_0__: boolean;
-    }
-    
-    class HairStretchConstraint {
-        constructor();
-        constructor(SolveStretch: boolean, ProjectStretch: boolean, StretchDamping: number, StretchStiffness: number, StretchScale: UE.RuntimeFloatCurve);
-        SolveStretch: boolean;
-        ProjectStretch: boolean;
-        StretchDamping: number;
-        StretchStiffness: number;
-        StretchScale: UE.RuntimeFloatCurve;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairStretchConstraint_0__: boolean;
-    }
-    
-    class HairCollisionConstraint {
-        constructor();
-        constructor(SolveCollision: boolean, ProjectCollision: boolean, StaticFriction: number, KineticFriction: number, StrandsViscosity: number, GridDimension: UE.IntVector, CollisionRadius: number, RadiusScale: UE.RuntimeFloatCurve);
-        SolveCollision: boolean;
-        ProjectCollision: boolean;
-        StaticFriction: number;
-        KineticFriction: number;
-        StrandsViscosity: number;
-        GridDimension: UE.IntVector;
-        CollisionRadius: number;
-        RadiusScale: UE.RuntimeFloatCurve;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairCollisionConstraint_0__: boolean;
-    }
-    
-    class HairMaterialConstraints {
-        constructor();
-        constructor(BendConstraint: UE.HairBendConstraint, StretchConstraint: UE.HairStretchConstraint, CollisionConstraint: UE.HairCollisionConstraint);
-        BendConstraint: UE.HairBendConstraint;
-        StretchConstraint: UE.HairStretchConstraint;
-        CollisionConstraint: UE.HairCollisionConstraint;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairMaterialConstraints_0__: boolean;
-    }
-    
-    enum EGroomStrandsSize { None, Size2, Size4, Size8, Size16, Size32, EGroomStrandsSize_MAX, __typeKeyDoNoAccess}
-    class HairStrandsParameters {
-        constructor();
-        constructor(StrandsSize: UE.EGroomStrandsSize, StrandsDensity: number, StrandsSmoothing: number, StrandsThickness: number, ThicknessScale: UE.RuntimeFloatCurve);
-        StrandsSize: UE.EGroomStrandsSize;
-        StrandsDensity: number;
-        StrandsSmoothing: number;
-        StrandsThickness: number;
-        ThicknessScale: UE.RuntimeFloatCurve;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairStrandsParameters_0__: boolean;
-    }
-    
-    class HairGroupsPhysics {
-        constructor();
-        constructor(SolverSettings: UE.HairSolverSettings, ExternalForces: UE.HairExternalForces, MaterialConstraints: UE.HairMaterialConstraints, StrandsParameters: UE.HairStrandsParameters);
-        SolverSettings: UE.HairSolverSettings;
-        ExternalForces: UE.HairExternalForces;
-        MaterialConstraints: UE.HairMaterialConstraints;
-        StrandsParameters: UE.HairStrandsParameters;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupsPhysics_0__: boolean;
-    }
-    
-    class HairDecimationSettings {
-        constructor();
-        constructor(CurveDecimation: number, VertexDecimation: number);
-        CurveDecimation: number;
-        VertexDecimation: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairDecimationSettings_0__: boolean;
-    }
-    
-    enum EGroomGuideType { Imported, Generated, Rigged, EGroomGuideType_MAX, __typeKeyDoNoAccess}
-    enum EHairInterpolationQuality { Low, Medium, High, Unknown, EHairInterpolationQuality_MAX, __typeKeyDoNoAccess}
-    enum EHairInterpolationWeight { Parametric, Root, Index, Distance, Unknown, EHairInterpolationWeight_MAX, __typeKeyDoNoAccess}
-    class HairInterpolationSettings {
-        constructor();
-        constructor(GuideType: UE.EGroomGuideType, bOverrideGuides: boolean, HairToGuideDensity: number, RiggedGuideNumCurves: number, RiggedGuideNumPoints: number, InterpolationQuality: UE.EHairInterpolationQuality, InterpolationDistance: UE.EHairInterpolationWeight, bRandomizeGuide: boolean, bUseUniqueGuide: boolean);
-        GuideType: UE.EGroomGuideType;
-        bOverrideGuides: boolean;
-        HairToGuideDensity: number;
-        RiggedGuideNumCurves: number;
-        RiggedGuideNumPoints: number;
-        InterpolationQuality: UE.EHairInterpolationQuality;
-        InterpolationDistance: UE.EHairInterpolationWeight;
-        bRandomizeGuide: boolean;
-        bUseUniqueGuide: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairInterpolationSettings_0__: boolean;
-    }
-    
-    class HairDeformationSettings {
-        constructor();
-        constructor(bEnableRigging: boolean, NumCurves: number, NumPoints: number);
-        bEnableRigging: boolean;
-        NumCurves: number;
-        NumPoints: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairDeformationSettings_0__: boolean;
-    }
-    
-    class HairGroupsInterpolation {
-        constructor();
-        constructor(DecimationSettings: UE.HairDecimationSettings, InterpolationSettings: UE.HairInterpolationSettings, RiggingSettings: UE.HairDeformationSettings);
-        DecimationSettings: UE.HairDecimationSettings;
-        InterpolationSettings: UE.HairInterpolationSettings;
-        RiggingSettings: UE.HairDeformationSettings;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupsInterpolation_0__: boolean;
-    }
-    
-    enum EGroomGeometryType { Strands, Cards, Meshes, EGroomGeometryType_MAX, __typeKeyDoNoAccess}
-    enum EGroomBindingType { NoneBinding, Rigid, Skinning, EGroomBindingType_MAX, __typeKeyDoNoAccess}
-    enum EGroomOverrideType { Auto, Enable, Disable, EGroomOverrideType_MAX, __typeKeyDoNoAccess}
-    class HairLODSettings {
-        constructor();
-        constructor(CurveDecimation: number, VertexDecimation: number, AngularThreshold: number, ScreenSize: number, ThicknessScale: number, bVisible: boolean, GeometryType: UE.EGroomGeometryType, BindingType: UE.EGroomBindingType, Simulation: UE.EGroomOverrideType, GlobalInterpolation: UE.EGroomOverrideType);
-        CurveDecimation: number;
-        VertexDecimation: number;
-        AngularThreshold: number;
-        ScreenSize: number;
-        ThicknessScale: number;
-        bVisible: boolean;
-        GeometryType: UE.EGroomGeometryType;
-        BindingType: UE.EGroomBindingType;
-        Simulation: UE.EGroomOverrideType;
-        GlobalInterpolation: UE.EGroomOverrideType;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairLODSettings_0__: boolean;
-    }
-    
-    class HairGroupsLOD {
-        constructor();
-        constructor(AutoLODBias: number, LODs: TArray<UE.HairLODSettings>);
-        AutoLODBias: number;
-        LODs: TArray<UE.HairLODSettings>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupsLOD_0__: boolean;
-    }
-    
-    enum EHairCardsSourceType { Procedural, Imported, EHairCardsSourceType_MAX, __typeKeyDoNoAccess}
-    enum EHairCardsGuideType { Generated, GuideBased, EHairCardsGuideType_MAX, __typeKeyDoNoAccess}
-    enum EHairTextureLayout { Layout0, Layout1, Layout2, Layout3, EHairTextureLayout_MAX, __typeKeyDoNoAccess}
-    class HairGroupCardsTextures {
-        constructor();
-        constructor(Layout: UE.EHairTextureLayout, Textures: TArray<UE.Texture2D>, DepthTexture: UE.Texture2D, CoverageTexture: UE.Texture2D, TangentTexture: UE.Texture2D, AttributeTexture: UE.Texture2D, AuxilaryDataTexture: UE.Texture2D, MaterialTexture: UE.Texture2D);
-        Layout: UE.EHairTextureLayout;
-        Textures: TArray<UE.Texture2D>;
-        DepthTexture: UE.Texture2D;
-        CoverageTexture: UE.Texture2D;
-        TangentTexture: UE.Texture2D;
-        AttributeTexture: UE.Texture2D;
-        AuxilaryDataTexture: UE.Texture2D;
-        MaterialTexture: UE.Texture2D;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupCardsTextures_0__: boolean;
-    }
-    
-    class HairCardGenerationSettings extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): HairCardGenerationSettings;
-        static Load(InName: string): HairCardGenerationSettings;
-    
-        __tid_HairCardGenerationSettings_0__: boolean;
-    }
-    
-    class HairGroupCardsInfo {
-        constructor();
-        constructor(NumCards: number, NumCardVertices: number);
-        NumCards: number;
-        NumCardVertices: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupCardsInfo_0__: boolean;
-    }
-    
-    class HairGroupsCardsSourceDescription {
-        constructor();
-        constructor(Material: UE.MaterialInterface, MaterialSlotName: string, SourceType: UE.EHairCardsSourceType, ProceduralMesh: UE.StaticMesh, bInvertUV: boolean, GuideType: UE.EHairCardsGuideType, ImportedMesh: UE.StaticMesh, Textures: UE.HairGroupCardsTextures, GroupIndex: number, LODIndex: number, GenerationSettings: UE.HairCardGenerationSettings, CardsInfo: UE.HairGroupCardsInfo, ImportedMeshKey: string);
-        Material: UE.MaterialInterface;
-        MaterialSlotName: string;
-        SourceType: UE.EHairCardsSourceType;
-        ProceduralMesh: UE.StaticMesh;
-        bInvertUV: boolean;
-        GuideType: UE.EHairCardsGuideType;
-        ImportedMesh: UE.StaticMesh;
-        Textures: UE.HairGroupCardsTextures;
-        GroupIndex: number;
-        LODIndex: number;
-        GenerationSettings: UE.HairCardGenerationSettings;
-        CardsInfo: UE.HairGroupCardsInfo;
-        ImportedMeshKey: string;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupsCardsSourceDescription_0__: boolean;
-    }
-    
-    class HairGroupsMeshesSourceDescription {
-        constructor();
-        constructor(Material: UE.MaterialInterface, MaterialSlotName: string, ImportedMesh: UE.StaticMesh, Textures: UE.HairGroupCardsTextures, GroupIndex: number, LODIndex: number, ImportedMeshKey: string);
-        Material: UE.MaterialInterface;
-        MaterialSlotName: string;
-        ImportedMesh: UE.StaticMesh;
-        Textures: UE.HairGroupCardsTextures;
-        GroupIndex: number;
-        LODIndex: number;
-        ImportedMeshKey: string;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupsMeshesSourceDescription_0__: boolean;
-    }
-    
-    class HairGroupsMaterial {
-        constructor();
-        constructor(Material: UE.MaterialInterface, SlotName: string);
-        Material: UE.MaterialInterface;
-        SlotName: string;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupsMaterial_0__: boolean;
-    }
-    
-    enum EGroomInterpolationType { None, RigidTransform, OffsetTransform, SmoothTransform, EGroomInterpolationType_MAX, __typeKeyDoNoAccess}
-    class GroomAsset extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        LODMode: UE.EGroomLODMode;
-        AutoLODBias: number;
-        DataflowSettings: UE.GroomDataflowSettings;
-        HairGroupsInfo: TArray<UE.HairGroupInfoWithVisibility>;
-        HairGroupsRendering: TArray<UE.HairGroupsRendering>;
-        HairGroupsPhysics: TArray<UE.HairGroupsPhysics>;
-        HairGroupsInterpolation: TArray<UE.HairGroupsInterpolation>;
-        HairGroupsLOD: TArray<UE.HairGroupsLOD>;
-        HairGroupsCards: TArray<UE.HairGroupsCardsSourceDescription>;
-        HairGroupsMeshes: TArray<UE.HairGroupsMeshesSourceDescription>;
-        HairGroupsMaterials: TArray<UE.HairGroupsMaterial>;
-        EnableGlobalInterpolation: boolean;
-        EnableSimulationCache: boolean;
-        HairInterpolationType: UE.EGroomInterpolationType;
-        RiggedSkeletalMesh: UE.SkeletalMesh;
-        DeformedGroupSections: TArray<number>;
-        MinLOD: UE.PerPlatformInt;
-        DisableBelowMinLodStripping: UE.PerPlatformBool;
-        EffectiveLODBias: TArray<number>;
-        ThumbnailInfo_EditorOnly: UE.ThumbnailInfo;
-        AssetImportData_EditorOnly: UE.AssetImportData;
-        AssetUserData: TArray<UE.AssetUserData>;
-        /*
-         *Creates and adds an instance of the provided AssetUserData class to the target asset.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to create
-         *
-         *@return       Whether or not an instance of InUserDataClass was succesfully added
-         */
-        AddAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
-        /*
-         *Returns an instance of the provided AssetUserData class if it's contained in the target asset.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to get
-         *
-         *@return       The instance of the UAssetUserData class contained, or null if it doesn't exist
-         */
-        GetAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : UE.AssetUserData;
-        GetDeformedGroupSections() : TArray<number>;
-        GetEnableGlobalInterpolation() : boolean;
-        GetEnableSimulationCache() : boolean;
-        GetHairGroupsCards() : TArray<UE.HairGroupsCardsSourceDescription>;
-        GetHairGroupsInterpolation() : TArray<UE.HairGroupsInterpolation>;
-        GetHairGroupsLOD() : TArray<UE.HairGroupsLOD>;
-        GetHairGroupsMaterials() : TArray<UE.HairGroupsMaterial>;
-        GetHairGroupsMeshes() : TArray<UE.HairGroupsMeshesSourceDescription>;
-        GetHairGroupsPhysics() : TArray<UE.HairGroupsPhysics>;
-        GetHairGroupsRendering() : TArray<UE.HairGroupsRendering>;
-        GetHairInterpolationType() : UE.EGroomInterpolationType;
-        GetRiggedSkeletalMesh() : UE.SkeletalMesh;
-        /*
-         *Checks whether or not an instance of the provided AssetUserData class is contained.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to check for
-         *
-         *@return       Whether or not an instance of InUserDataClass was found
-         */
-        HasAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
-        SetDeformedGroupSections(_In: TArray<number>) : void;
-        SetEnableGlobalInterpolation(_In: boolean) : void;
-        SetEnableSimulationCache(_In: boolean) : void;
-        SetHairGroupsCards(_In: TArray<UE.HairGroupsCardsSourceDescription>) : void;
-        SetHairGroupsInterpolation(_In: TArray<UE.HairGroupsInterpolation>) : void;
-        SetHairGroupsLOD(_In: TArray<UE.HairGroupsLOD>) : void;
-        SetHairGroupsMaterials(_In: TArray<UE.HairGroupsMaterial>) : void;
-        SetHairGroupsMeshes(_In: TArray<UE.HairGroupsMeshesSourceDescription>) : void;
-        SetHairGroupsPhysics(_In: TArray<UE.HairGroupsPhysics>) : void;
-        SetHairGroupsRendering(_In: TArray<UE.HairGroupsRendering>) : void;
-        SetHairInterpolationType(_In: UE.EGroomInterpolationType) : void;
-        SetRiggedSkeletalMesh(_In: $Nullable<UE.SkeletalMesh>) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GroomAsset;
-        static Load(InName: string): GroomAsset;
-    
-        __tid_GroomAsset_0__: boolean;
-    }
-    
-    enum EGroomCacheType { None, Strands, Guides, EGroomCacheType_MAX, __typeKeyDoNoAccess}
-    enum EGroomCacheAttributes { None, Position, Width, Color, PositionWidth, PositionColor, WidthColor, PositionWidthColor, EGroomCacheAttributes_MAX, __typeKeyDoNoAccess}
-    class GroomAnimationInfo {
-        constructor();
-        constructor(NumFrames: number, SecondsPerFrame: number, Duration: number, StartTime: number, EndTime: number, StartFrame: number, EndFrame: number, Attributes: UE.EGroomCacheAttributes);
-        NumFrames: number;
-        SecondsPerFrame: number;
-        Duration: number;
-        StartTime: number;
-        EndTime: number;
-        StartFrame: number;
-        EndFrame: number;
-        Attributes: UE.EGroomCacheAttributes;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GroomAnimationInfo_0__: boolean;
-    }
-    
-    class GroomCacheInfo {
-        constructor();
-        constructor(Version: number, Type: UE.EGroomCacheType, AnimationInfo: UE.GroomAnimationInfo);
-        Version: number;
-        Type: UE.EGroomCacheType;
-        AnimationInfo: UE.GroomAnimationInfo;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GroomCacheInfo_0__: boolean;
-    }
-    
-    class GroomCache extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AssetImportData_EditorOnly: UE.AssetImportData;
-        AssetUserData: TArray<UE.AssetUserData>;
-        GroomCacheInfo: UE.GroomCacheInfo;
-        /*
-         *Creates and adds an instance of the provided AssetUserData class to the target asset.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to create
-         *
-         *@return       Whether or not an instance of InUserDataClass was succesfully added
-         */
-        AddAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
-        /*
-         *Returns an instance of the provided AssetUserData class if it's contained in the target asset.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to get
-         *
-         *@return       The instance of the UAssetUserData class contained, or null if it doesn't exist
-         */
-        GetAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : UE.AssetUserData;
-        /*
-         *Checks whether or not an instance of the provided AssetUserData class is contained.
-         *
-         *@param        InUserDataClass         UAssetUserData sub class to check for
-         *
-         *@return       Whether or not an instance of InUserDataClass was found
-         */
-        HasAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GroomCache;
-        static Load(InName: string): GroomCache;
-    
-        __tid_GroomCache_0__: boolean;
-    }
-    
-    class HairSimulationSetup {
-        constructor();
-        constructor(bResetSimulation: boolean, bDebugSimulation: boolean, bLocalSimulation: boolean, LinearVelocityScale: number, AngularVelocityScale: number, LocalBone: string, TeleportDistance: number);
-        bResetSimulation: boolean;
-        bDebugSimulation: boolean;
-        bLocalSimulation: boolean;
-        LinearVelocityScale: number;
-        AngularVelocityScale: number;
-        LocalBone: string;
-        TeleportDistance: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairSimulationSetup_0__: boolean;
-    }
-    
-    class HairSimulationSolver {
-        constructor();
-        constructor(bEnableSimulation: boolean);
-        bEnableSimulation: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairSimulationSolver_0__: boolean;
-    }
-    
-    class HairSimulationForces {
-        constructor();
-        constructor(GravityVector: UE.Vector, AirDrag: number, AirVelocity: UE.Vector);
-        GravityVector: UE.Vector;
-        AirDrag: number;
-        AirVelocity: UE.Vector;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairSimulationForces_0__: boolean;
-    }
-    
-    class HairSimulationConstraints {
-        constructor();
-        constructor(BendDamping: number, BendStiffness: number, StretchDamping: number, StretchStiffness: number, StaticFriction: number, KineticFriction: number, StrandsViscosity: number, CollisionRadius: number);
-        BendDamping: number;
-        BendStiffness: number;
-        StretchDamping: number;
-        StretchStiffness: number;
-        StaticFriction: number;
-        KineticFriction: number;
-        StrandsViscosity: number;
-        CollisionRadius: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairSimulationConstraints_0__: boolean;
-    }
-    
-    class HairSimulationSettings {
-        constructor();
-        constructor(bOverrideSettings: boolean, SimulationSetup: UE.HairSimulationSetup, SolverSettings: UE.HairSimulationSolver, ExternalForces: UE.HairSimulationForces, MaterialConstraints: UE.HairSimulationConstraints);
-        bOverrideSettings: boolean;
-        SimulationSetup: UE.HairSimulationSetup;
-        SolverSettings: UE.HairSimulationSolver;
-        ExternalForces: UE.HairSimulationForces;
-        MaterialConstraints: UE.HairSimulationConstraints;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairSimulationSettings_0__: boolean;
-    }
-    
-    class HairGroupDesc {
-        constructor();
-        constructor(HairLength: number, HairWidth: number, HairWidth_Override: boolean, HairRootScale: number, HairRootScale_Override: boolean, HairTipScale: number, HairTipScale_Override: boolean, HairShadowDensity: number, HairShadowDensity_Override: boolean, HairRaytracingRadiusScale: number, HairRaytracingRadiusScale_Override: boolean, bUseHairRaytracingGeometry: boolean, bUseHairRaytracingGeometry_Override: boolean, LODBias: number, bUseStableRasterization: boolean, bUseStableRasterization_Override: boolean, bScatterSceneLighting: boolean, bScatterSceneLighting_Override: boolean, bSupportVoxelization: boolean, bSupportVoxelization_Override: boolean, HairLengthScale: number, HairLengthScale_Override: boolean);
-        HairLength: number;
-        HairWidth: number;
-        HairWidth_Override: boolean;
-        HairRootScale: number;
-        HairRootScale_Override: boolean;
-        HairTipScale: number;
-        HairTipScale_Override: boolean;
-        HairShadowDensity: number;
-        HairShadowDensity_Override: boolean;
-        HairRaytracingRadiusScale: number;
-        HairRaytracingRadiusScale_Override: boolean;
-        bUseHairRaytracingGeometry: boolean;
-        bUseHairRaytracingGeometry_Override: boolean;
-        LODBias: number;
-        bUseStableRasterization: boolean;
-        bUseStableRasterization_Override: boolean;
-        bScatterSceneLighting: boolean;
-        bScatterSceneLighting_Override: boolean;
-        bSupportVoxelization: boolean;
-        bSupportVoxelization_Override: boolean;
-        HairLengthScale: number;
-        HairLengthScale_Override: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_HairGroupDesc_0__: boolean;
-    }
-    
-    class GroomComponent extends UE.MeshComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        GroomAsset: UE.GroomAsset;
-        GroomCache: UE.GroomCache;
-        NiagaraComponents: TArray<UE.NiagaraComponent>;
-        SourceSkeletalMesh: UE.SkeletalMesh;
-        BindingAsset: UE.GroomBindingAsset;
-        PhysicsAsset: UE.PhysicsAsset;
-        SimulationSettings: UE.HairSimulationSettings;
-        MeshDeformer: UE.MeshDeformer;
-        MeshDeformerInstance: UE.MeshDeformerInstance;
-        MeshDeformerInstanceSettings: UE.MeshDeformerInstanceSettings;
-        Strands_DebugMaterial: UE.MaterialInterface;
-        Strands_DefaultMaterial: UE.MaterialInterface;
-        Cards_DefaultMaterial: UE.MaterialInterface;
-        Meshes_DefaultMaterial: UE.MaterialInterface;
-        AngularSpringsSystem: UE.NiagaraSystem;
-        CosseratRodsSystem: UE.NiagaraSystem;
-        AttachmentName: string;
-        GroomGroupsDesc: TArray<UE.HairGroupDesc>;
-        bUseCards: boolean;
-        bRunning: boolean;
-        bLooping: boolean;
-        bManualTick: boolean;
-        ElapsedTime: number;
-        GroomAssetBeingLoaded_EditorOnly: UE.GroomAsset;
-        BindingAssetBeingLoaded_EditorOnly: UE.GroomBindingAsset;
-        /*
-         *Add a skeletal mesh to the collision components
-         */
-        AddCollisionComponent(SkeletalMeshComponent: $Nullable<UE.SkeletalMeshComponent>) : void;
-        GetIsHairLengthScaleEnabled() : boolean;
-        /*
-         *Given the group index return the matching niagara component
-         */
-        GetNiagaraComponent(GroupIndex: number) : UE.NiagaraComponent;
-        /*
-         *Reset the collision components
-         */
-        ResetCollisionComponents() : void;
-        /*
-         *Reset the simulation, if enabled
-         */
-        ResetSimulation() : void;
-        /*
-         *Accessor function for changing Groom binding asset from blueprint_sequencer
-         */
-        SetBindingAsset(InBinding: $Nullable<UE.GroomBindingAsset>) : void;
-        /*
-         *Accessor function for changing the enable simulation flag from blueprint_sequencer
-         */
-        SetEnableSimulation(bInEnableSimulation: boolean) : void;
-        /*
-         *Accessor function for changing Groom asset from blueprint_sequencer
-         */
-        SetGroomAsset(Asset: $Nullable<UE.GroomAsset>) : void;
-        /*
-         *Accessor function for changing GroomCache asset from blueprint_sequencer
-         */
-        SetGroomCache(InGroomCache: $Nullable<UE.GroomCache>) : void;
-        /*
-         *Accessor function for changing hair length scale from blueprint_sequencer
-         */
-        SetHairLengthScale(Scale: number) : void;
-        SetHairLengthScaleEnable(bEnable: boolean) : void;
-        /*
-         *Change the MeshDeformer that is used for this Component.
-         */
-        SetMeshDeformer(InMeshDeformer: $Nullable<UE.MeshDeformer>) : void;
-        /*
-         *Accessor function for changing Groom physics asset from blueprint_sequencer
-         */
-        SetPhysicsAsset(InPhysicsAsset: $Nullable<UE.PhysicsAsset>) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GroomComponent;
-        static Load(InName: string): GroomComponent;
-    
-        __tid_GroomComponent_0__: boolean;
-    }
-    
-    class GroomSolverSettings {
-        constructor();
-        constructor(NumSubSteps: number, NumSolverIterations: number, SimulationFrameRate: number, MaxLODDistance: number, MinLODDistance: number);
-        NumSubSteps: number;
-        NumSolverIterations: number;
-        SimulationFrameRate: number;
-        MaxLODDistance: number;
-        MinLODDistance: number;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_GroomSolverSettings_0__: boolean;
-    }
-    
-    class GroomSolverComponent extends UE.MeshComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SolverSettings: UE.GroomSolverSettings;
-        SimulationAsset: UE.DataflowSimulationAsset;
-        GroomComponents: TSet<UE.GroomComponent>;
-        MeshDeformer: UE.MeshDeformer;
-        DeformerInstance: UE.MeshDeformerInstance;
-        DeformerSettings: UE.MeshDeformerInstanceSettings;
-        /*
-         *Add a groom component to the solver
-         */
-        AddGroomComponent(GroomComponent: $Nullable<UE.GroomComponent>) : void;
-        /*
-         *Add a groom component to the solver
-         */
-        RemoveGroomComponent(GroomComponent: $Nullable<UE.GroomComponent>) : void;
-        /*
-         *Reset the groom physics components
-         */
-        ResetGroomComponents() : void;
-        /*
-         *Change the MeshDeformer solver that is used for this Component.
-         */
-        SetDeformerSolver(DeformerSolver: $Nullable<UE.MeshDeformer>) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): GroomSolverComponent;
-        static Load(InName: string): GroomSolverComponent;
-    
-        __tid_GroomSolverComponent_0__: boolean;
-    }
-    
     class SpringArmComponent extends UE.SceneComponent {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         TargetArmLength: number;
@@ -71018,6 +67212,16 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_BreakAttributeKeyDataflowNode_0__: boolean;
+    }
+    
+    class BreakEventCallbackWrapper {
+        constructor();
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_BreakEventCallbackWrapper_0__: boolean;
     }
     
     class CacheEventBase {
@@ -72553,6 +68757,51 @@ declare module "ue" {
         static Load(InName: string): BuiltInDynamicBindingResolverLibrary;
     
         __tid_BuiltInDynamicBindingResolverLibrary_0__: boolean;
+    }
+    
+    enum EButtonClickMethod { DownAndUp, MouseDown, MouseUp, PreciseClick, EButtonClickMethod_MAX, __typeKeyDoNoAccess}
+    enum EButtonTouchMethod { DownAndUp, Down, PreciseTap, EButtonTouchMethod_MAX, __typeKeyDoNoAccess}
+    enum EButtonPressMethod { DownAndUp, ButtonPress, ButtonRelease, EButtonPressMethod_MAX, __typeKeyDoNoAccess}
+    class Button extends UE.ContentWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        WidgetStyle: UE.ButtonStyle;
+        ColorAndOpacity: UE.LinearColor;
+        BackgroundColor: UE.LinearColor;
+        ClickMethod: UE.EButtonClickMethod;
+        TouchMethod: UE.EButtonTouchMethod;
+        PressMethod: UE.EButtonPressMethod;
+        IsFocusable: boolean;
+        OnClicked: $MulticastDelegate<() => void>;
+        OnPressed: $MulticastDelegate<() => void>;
+        OnReleased: $MulticastDelegate<() => void>;
+        OnHovered: $MulticastDelegate<() => void>;
+        OnUnhovered: $MulticastDelegate<() => void>;
+        /*
+         *Returns true if the user is actively pressing the button.  Do not use this for detecting 'Clicks', use the OnClicked event instead.
+         *
+         *@return true if the user is actively pressing the button otherwise false.
+         */
+        IsPressed() : boolean;
+        /*
+         *Sets the color multiplier for the button background
+         */
+        SetBackgroundColor(InBackgroundColor: UE.LinearColor) : void;
+        SetClickMethod(InClickMethod: UE.EButtonClickMethod) : void;
+        /*
+         *Sets the color multiplier for the button content
+         */
+        SetColorAndOpacity(InColorAndOpacity: UE.LinearColor) : void;
+        SetPressMethod(InPressMethod: UE.EButtonPressMethod) : void;
+        /*
+         *Sets the color multiplier for the button background
+         */
+        SetStyle(InStyle: UE.ButtonStyle) : void;
+        SetTouchMethod(InTouchMethod: UE.EButtonTouchMethod) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): Button;
+        static Load(InName: string): Button;
+    
+        __tid_Button_0__: boolean;
     }
     
     class ButtonSlot extends UE.PanelSlot {
@@ -75083,6 +71332,20 @@ declare module "ue" {
         __tid_Rotator3dCameraRigParameterOverride_0__: boolean;
     }
     
+    class Transform3f {
+        constructor();
+        constructor(Rotation: UE.Quat4f, Translation: UE.Vector3f, Scale3D: UE.Vector3f);
+        Rotation: UE.Quat4f;
+        Translation: UE.Vector3f;
+        Scale3D: UE.Vector3f;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_Transform3f_0__: boolean;
+    }
+    
     class Transform3fCameraVariable extends UE.CameraVariableAsset {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         DefaultValue: UE.Transform3f;
@@ -76146,6 +72409,59 @@ declare module "ue" {
         __tid_CollisionChaosEvent_0__: boolean;
     }
     
+    class ChaosBreakEvent {
+        constructor();
+        constructor(Component: UE.PrimitiveComponent, Location: UE.Vector, Orientation: UE.Quat, Velocity: UE.Vector, AngularVelocity: UE.Vector, Extents: UE.Vector, Mass: number, Index: number, bFromCrumble: boolean);
+        Component: UE.PrimitiveComponent;
+        Location: UE.Vector;
+        Orientation: UE.Quat;
+        Velocity: UE.Vector;
+        AngularVelocity: UE.Vector;
+        Extents: UE.Vector;
+        Mass: number;
+        Index: number;
+        bFromCrumble: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ChaosBreakEvent_0__: boolean;
+    }
+    
+    class ChaosRemovalEvent {
+        constructor();
+        constructor(Component: UE.PrimitiveComponent, Location: UE.Vector, Mass: number);
+        Component: UE.PrimitiveComponent;
+        Location: UE.Vector;
+        Mass: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ChaosRemovalEvent_0__: boolean;
+    }
+    
+    class ChaosCrumblingEvent {
+        constructor();
+        constructor(Component: UE.PrimitiveComponent, Location: UE.Vector, Orientation: UE.Quat, LinearVelocity: UE.Vector, AngularVelocity: UE.Vector, Mass: number, LocalBounds: UE.Box, Children: TArray<number>);
+        Component: UE.PrimitiveComponent;
+        Location: UE.Vector;
+        Orientation: UE.Quat;
+        LinearVelocity: UE.Vector;
+        AngularVelocity: UE.Vector;
+        Mass: number;
+        LocalBounds: UE.Box;
+        Children: TArray<number>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ChaosCrumblingEvent_0__: boolean;
+    }
+    
     class ChaosEventRelay extends UE.Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         OnCollisionEvent: $MulticastDelegate<(CollisionEvents: TArray<UE.CollisionChaosEvent>) => void>;
@@ -76708,6 +73024,20 @@ declare module "ue" {
         __tid_ChaosDebugDrawSubsystem_0__: boolean;
     }
     
+    class ChaosDebugSubstepControl {
+        constructor();
+        constructor(bPause: boolean, bSubstep: boolean, bStep: boolean);
+        bPause: boolean;
+        bSubstep: boolean;
+        bStep: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ChaosDebugSubstepControl_0__: boolean;
+    }
+    
     enum ChaosDeformableSimSpace { World, ComponentXf, Bone, ChaosDeformableSimSpace_MAX, __typeKeyDoNoAccess}
     class ChaosDestructionEvent {
         constructor();
@@ -76761,6 +73091,1435 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_ChaosRemovalEventRequestSettings_0__: boolean;
+    }
+    
+    enum EClusterUnionMethod { PointImplicit, DelaunayTriangulation, MinimalSpanningSubsetDelaunayTriangulation, PointImplicitAugmentedWithMinimalDelaunay, BoundsOverlapFilteredDelaunayTriangulation, None, EClusterUnionMethod_MAX, __typeKeyDoNoAccess}
+    class ChaosSolverDestructionSettings {
+        constructor();
+        constructor(PerAdvanceBreaksAllowed: number, PerAdvanceBreaksRescheduleLimit: number, ClusteringParticleReleaseThrottlingMinCount: number, ClusteringParticleReleaseThrottlingMaxCount: number, bOptimizeForRuntimeMemory: boolean);
+        PerAdvanceBreaksAllowed: number;
+        PerAdvanceBreaksRescheduleLimit: number;
+        ClusteringParticleReleaseThrottlingMinCount: number;
+        ClusteringParticleReleaseThrottlingMaxCount: number;
+        bOptimizeForRuntimeMemory: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ChaosSolverDestructionSettings_0__: boolean;
+    }
+    
+    class SolverCollisionFilterSettings {
+        constructor();
+        constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinImpulse: number);
+        FilterEnabled: boolean;
+        MinMass: number;
+        MinSpeed: number;
+        MinImpulse: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_SolverCollisionFilterSettings_0__: boolean;
+    }
+    
+    class SolverBreakingFilterSettings {
+        constructor();
+        constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinVolume: number);
+        FilterEnabled: boolean;
+        MinMass: number;
+        MinSpeed: number;
+        MinVolume: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_SolverBreakingFilterSettings_0__: boolean;
+    }
+    
+    class SolverTrailingFilterSettings {
+        constructor();
+        constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinVolume: number);
+        FilterEnabled: boolean;
+        MinMass: number;
+        MinSpeed: number;
+        MinVolume: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_SolverTrailingFilterSettings_0__: boolean;
+    }
+    
+    class ChaosSolverConfiguration {
+        constructor();
+        constructor(PositionIterations: number, VelocityIterations: number, ProjectionIterations: number, CollisionMarginFraction: number, CollisionMarginMax: number, CollisionCullDistance: number, CollisionMaxPushOutVelocity: number, CollisionInitialOverlapDepenetrationVelocity: number, ClusterConnectionFactor: number, ClusterUnionConnectionType: UE.EClusterUnionMethod, DestructionSettings: UE.ChaosSolverDestructionSettings, bGenerateCollisionData: boolean, CollisionFilterSettings: UE.SolverCollisionFilterSettings, bGenerateBreakData: boolean, BreakingFilterSettings: UE.SolverBreakingFilterSettings, bGenerateTrailingData: boolean, TrailingFilterSettings: UE.SolverTrailingFilterSettings, Iterations: number, PushOutIterations: number, bGenerateContactGraph: boolean);
+        PositionIterations: number;
+        VelocityIterations: number;
+        ProjectionIterations: number;
+        CollisionMarginFraction: number;
+        CollisionMarginMax: number;
+        CollisionCullDistance: number;
+        CollisionMaxPushOutVelocity: number;
+        CollisionInitialOverlapDepenetrationVelocity: number;
+        ClusterConnectionFactor: number;
+        ClusterUnionConnectionType: UE.EClusterUnionMethod;
+        DestructionSettings: UE.ChaosSolverDestructionSettings;
+        bGenerateCollisionData: boolean;
+        CollisionFilterSettings: UE.SolverCollisionFilterSettings;
+        bGenerateBreakData: boolean;
+        BreakingFilterSettings: UE.SolverBreakingFilterSettings;
+        bGenerateTrailingData: boolean;
+        TrailingFilterSettings: UE.SolverTrailingFilterSettings;
+        Iterations: number;
+        PushOutIterations: number;
+        bGenerateContactGraph: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ChaosSolverConfiguration_0__: boolean;
+    }
+    
+    enum EClusterConnectionTypeEnum { Chaos_PointImplicit, Chaos_DelaunayTriangulation, Chaos_MinimalSpanningSubsetDelaunayTriangulation, Chaos_PointImplicitAugmentedWithMinimalDelaunay, Chaos_BoundsOverlapFilteredDelaunayTriangulation, Chaos_None, Chaos_EClsuterCreationParameters_Max, Chaos_MAX, __typeKeyDoNoAccess}
+    enum EDataflowType { Construction, Simulation, EDataflowType_MAX, __typeKeyDoNoAccess}
+    class DataflowPreviewCacheParams {
+        constructor();
+        constructor(FrameRate: number, SubframeRate: number, bCanEditSubframeRate: boolean, TimeRange: UE.Vector2f, bRestartSimulation: boolean, RestartTimeRange: UE.Vector2f, bAsyncCaching: boolean);
+        FrameRate: number;
+        SubframeRate: number;
+        bCanEditSubframeRate: boolean;
+        TimeRange: UE.Vector2f;
+        bRestartSimulation: boolean;
+        RestartTimeRange: UE.Vector2f;
+        bAsyncCaching: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_DataflowPreviewCacheParams_0__: boolean;
+    }
+    
+    class DataflowSubGraph extends UE.EdGraph {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SubGraphGuid: UE.Guid;
+        bIsForEach: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): DataflowSubGraph;
+        static Load(InName: string): DataflowSubGraph;
+    
+        __tid_DataflowSubGraph_0__: boolean;
+    }
+    
+    class Dataflow extends UE.EdGraph {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        bActive: boolean;
+        Targets: TArray<UE.Object>;
+        Material: UE.Material;
+        Type: UE.EDataflowType;
+        Variables: UE.InstancedPropertyBag;
+        PreviewCacheParams_EditorOnly: UE.DataflowPreviewCacheParams;
+        PreviewCacheAsset_EditorOnly: TSoftObjectPtr<UE.Object>;
+        PreviewBlueprintClass_EditorOnly: UE.Class;
+        PreviewBlueprintTransform_EditorOnly: UE.Transform;
+        PreviewGeometryCacheAsset_EditorOnly: TSoftObjectPtr<UE.Object>;
+        PreviewEmbeddedSkeletalMesh_EditorOnly: TSoftObjectPtr<UE.Object>;
+        PreviewEmbeddedStaticMesh_EditorOnly: TSoftObjectPtr<UE.Object>;
+        DataflowSubGraphs: TArray<UE.DataflowSubGraph>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): Dataflow;
+        static Load(InName: string): Dataflow;
+    
+        __tid_Dataflow_0__: boolean;
+    }
+    
+    class DataflowSimulationAsset {
+        constructor();
+        constructor(DataflowAsset: UE.Dataflow, SimulationGroups: TSet<string>);
+        DataflowAsset: UE.Dataflow;
+        SimulationGroups: TSet<string>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_DataflowSimulationAsset_0__: boolean;
+    }
+    
+    class ChaosEventListenerComponent extends UE.ActorComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosEventListenerComponent;
+        static Load(InName: string): ChaosEventListenerComponent;
+    
+        __tid_ChaosEventListenerComponent_0__: boolean;
+    }
+    
+    class ChaosHandlerSet {
+        constructor();
+        constructor(ChaosHandlers: TSet<UE.Object>);
+        ChaosHandlers: TSet<UE.Object>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ChaosHandlerSet_0__: boolean;
+    }
+    
+    class RemovalEventCallbackWrapper {
+        constructor();
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RemovalEventCallbackWrapper_0__: boolean;
+    }
+    
+    class CrumblingEventCallbackWrapper {
+        constructor();
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_CrumblingEventCallbackWrapper_0__: boolean;
+    }
+    
+    class ChaosGameplayEventDispatcher extends UE.ChaosEventListenerComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        CollisionEventRegistrations: TMap<UE.PrimitiveComponent, UE.ChaosHandlerSet>;
+        BreakEventRegistrations: TMap<UE.PrimitiveComponent, UE.BreakEventCallbackWrapper>;
+        RemovalEventRegistrations: TMap<UE.PrimitiveComponent, UE.RemovalEventCallbackWrapper>;
+        CrumblingEventRegistrations: TMap<UE.PrimitiveComponent, UE.CrumblingEventCallbackWrapper>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosGameplayEventDispatcher;
+        static Load(InName: string): ChaosGameplayEventDispatcher;
+    
+        __tid_ChaosGameplayEventDispatcher_0__: boolean;
+    }
+    
+    class ChaosSolverActor extends UE.Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Properties: UE.ChaosSolverConfiguration;
+        TimeStepMultiplier: number;
+        CollisionIterations: number;
+        PushOutIterations: number;
+        PushOutPairIterations: number;
+        ClusterConnectionFactor: number;
+        ClusterUnionConnectionType: UE.EClusterConnectionTypeEnum;
+        DoGenerateCollisionData: boolean;
+        CollisionFilterSettings: UE.SolverCollisionFilterSettings;
+        DoGenerateBreakingData: boolean;
+        BreakingFilterSettings: UE.SolverBreakingFilterSettings;
+        DoGenerateTrailingData: boolean;
+        TrailingFilterSettings: UE.SolverTrailingFilterSettings;
+        MassScale: number;
+        bHasFloor: boolean;
+        FloorHeight: number;
+        ChaosDebugSubstepControl: UE.ChaosDebugSubstepControl;
+        SpriteComponent: UE.BillboardComponent;
+        SimulationAsset: UE.DataflowSimulationAsset;
+        GameplayEventDispatcherComponent: UE.ChaosGameplayEventDispatcher;
+        /*
+         *Makes this solver the current world solver. Dynamically spawned objects will have their physics state created in this solver.
+         */
+        SetAsCurrentWorldSolver() : void;
+        /*
+         *Controls whether the solver is able to simulate particles it controls
+         */
+        SetSolverActive(bActive: boolean) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosSolverActor;
+        static Load(InName: string): ChaosSolverActor;
+    
+        __tid_ChaosSolverActor_0__: boolean;
+    }
+    
+    enum EDamageModelTypeEnum { Chaos_Damage_Model_UserDefined_Damage_Threshold, Chaos_Damage_Model_Material_Strength_And_Connectivity_DamageThreshold, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
+    class GeometryCollectionDamagePropagationData {
+        constructor();
+        constructor(bEnabled: boolean, BreakDamagePropagationFactor: number, ShockDamagePropagationFactor: number);
+        bEnabled: boolean;
+        BreakDamagePropagationFactor: number;
+        ShockDamagePropagationFactor: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionDamagePropagationData_0__: boolean;
+    }
+    
+    class GeometryCollectionSource {
+        constructor();
+        constructor(SourceGeometryObject: UE.SoftObjectPath, LocalTransform: UE.Transform, SourceMaterial: TArray<UE.MaterialInterface>, InstanceCustomData: TArray<number>, bAddInternalMaterials: boolean, bSplitComponents: boolean, bSetInternalFromMaterialIndex: boolean);
+        SourceGeometryObject: UE.SoftObjectPath;
+        LocalTransform: UE.Transform;
+        SourceMaterial: TArray<UE.MaterialInterface>;
+        InstanceCustomData: TArray<number>;
+        bAddInternalMaterials: boolean;
+        bSplitComponents: boolean;
+        bSetInternalFromMaterialIndex: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionSource_0__: boolean;
+    }
+    
+    class GeometryCollectionEmbeddedExemplar {
+        constructor();
+        constructor(StaticMeshExemplar: UE.SoftObjectPath, StartCullDistance: number, EndCullDistance: number, InstanceCount: number);
+        StaticMeshExemplar: UE.SoftObjectPath;
+        StartCullDistance: number;
+        EndCullDistance: number;
+        InstanceCount: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionEmbeddedExemplar_0__: boolean;
+    }
+    
+    class GeometryCollectionProxyMeshData {
+        constructor();
+        constructor(ProxyMeshes: TArray<UE.StaticMesh>, MeshTransforms: TArray<UE.Transform3f>);
+        ProxyMeshes: TArray<UE.StaticMesh>;
+        MeshTransforms: TArray<UE.Transform3f>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionProxyMeshData_0__: boolean;
+    }
+    
+    enum ECollisionTypeEnum { Chaos_Volumetric, Chaos_Surface_Volumetric, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
+    enum EImplicitTypeEnum { Chaos_Implicit_Box, Chaos_Implicit_Sphere, Chaos_Implicit_Capsule, Chaos_Implicit_LevelSet, Chaos_Implicit_None, Chaos_Implicit_Convex, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
+    class GeometryCollectionLevelSetData {
+        constructor();
+        constructor(MinLevelSetResolution: number, MaxLevelSetResolution: number, MinClusterLevelSetResolution: number, MaxClusterLevelSetResolution: number);
+        MinLevelSetResolution: number;
+        MaxLevelSetResolution: number;
+        MinClusterLevelSetResolution: number;
+        MaxClusterLevelSetResolution: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionLevelSetData_0__: boolean;
+    }
+    
+    class GeometryCollectionCollisionParticleData {
+        constructor();
+        constructor(CollisionParticlesFraction: number, MaximumCollisionParticles: number);
+        CollisionParticlesFraction: number;
+        MaximumCollisionParticles: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionCollisionParticleData_0__: boolean;
+    }
+    
+    class GeometryCollectionCollisionTypeData {
+        constructor();
+        constructor(CollisionType: UE.ECollisionTypeEnum, ImplicitType: UE.EImplicitTypeEnum, LevelSet: UE.GeometryCollectionLevelSetData, CollisionParticles: UE.GeometryCollectionCollisionParticleData, CollisionObjectReductionPercentage: number, CollisionMarginFraction: number);
+        CollisionType: UE.ECollisionTypeEnum;
+        ImplicitType: UE.EImplicitTypeEnum;
+        LevelSet: UE.GeometryCollectionLevelSetData;
+        CollisionParticles: UE.GeometryCollectionCollisionParticleData;
+        CollisionObjectReductionPercentage: number;
+        CollisionMarginFraction: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionCollisionTypeData_0__: boolean;
+    }
+    
+    class GeometryCollectionSizeSpecificData {
+        constructor();
+        constructor(MaxSize: number, CollisionShapes: TArray<UE.GeometryCollectionCollisionTypeData>, CollisionType: UE.ECollisionTypeEnum, ImplicitType: UE.EImplicitTypeEnum, MinLevelSetResolution: number, MaxLevelSetResolution: number, MinClusterLevelSetResolution: number, MaxClusterLevelSetResolution: number, CollisionObjectReductionPercentage: number, CollisionParticlesFraction: number, MaximumCollisionParticles: number, DamageThreshold: number);
+        MaxSize: number;
+        CollisionShapes: TArray<UE.GeometryCollectionCollisionTypeData>;
+        CollisionType: UE.ECollisionTypeEnum;
+        ImplicitType: UE.EImplicitTypeEnum;
+        MinLevelSetResolution: number;
+        MaxLevelSetResolution: number;
+        MinClusterLevelSetResolution: number;
+        MaxClusterLevelSetResolution: number;
+        CollisionObjectReductionPercentage: number;
+        CollisionParticlesFraction: number;
+        MaximumCollisionParticles: number;
+        DamageThreshold: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionSizeSpecificData_0__: boolean;
+    }
+    
+    class DataflowVariableOverrides {
+        constructor();
+        constructor(Variables: UE.InstancedPropertyBag, OverriddenVariableGuids: TArray<UE.Guid>);
+        Variables: UE.InstancedPropertyBag;
+        OverriddenVariableGuids: TArray<UE.Guid>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_DataflowVariableOverrides_0__: boolean;
+    }
+    
+    class DataflowInstance {
+        constructor();
+        constructor(DataflowAsset: UE.Dataflow, DataflowTerminal: string, VariableOverrides: UE.DataflowVariableOverrides, Owner: UE.Object);
+        DataflowAsset: UE.Dataflow;
+        DataflowTerminal: string;
+        VariableOverrides: UE.DataflowVariableOverrides;
+        Owner: UE.Object;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_DataflowInstance_0__: boolean;
+    }
+    
+    class GeometryCollection extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        EnableClustering: boolean;
+        ClusterGroupIndex: number;
+        MaxClusterLevel: number;
+        DamageModel: UE.EDamageModelTypeEnum;
+        DamageThreshold: TArray<number>;
+        bUseSizeSpecificDamageThreshold: boolean;
+        bUseMaterialDamageModifiers: boolean;
+        PerClusterOnlyDamageThreshold: boolean;
+        DamagePropagationData: UE.GeometryCollectionDamagePropagationData;
+        ClusterConnectionType: UE.EClusterConnectionTypeEnum;
+        ConnectionGraphBoundsFilteringMargin: number;
+        GeometrySource_EditorOnly: TArray<UE.GeometryCollectionSource>;
+        Materials: TArray<UE.MaterialInterface>;
+        EmbeddedGeometryExemplar: TArray<UE.GeometryCollectionEmbeddedExemplar>;
+        bUseFullPrecisionUVs: boolean;
+        bStripOnCook: boolean;
+        bStripRenderDataOnCook: boolean;
+        CustomRendererType: UE.Class;
+        RootProxyData: UE.GeometryCollectionProxyMeshData;
+        AutoInstanceMeshes: TArray<UE.GeometryCollectionAutoInstanceMesh>;
+        EnableNanite: boolean;
+        bEnableNaniteFallback: boolean;
+        bConvertVertexColorsToSRGB: boolean;
+        CollisionType_EditorOnly: UE.ECollisionTypeEnum;
+        ImplicitType_EditorOnly: UE.EImplicitTypeEnum;
+        MinLevelSetResolution_EditorOnly: number;
+        MaxLevelSetResolution_EditorOnly: number;
+        MinClusterLevelSetResolution_EditorOnly: number;
+        MaxClusterLevelSetResolution_EditorOnly: number;
+        CollisionObjectReductionPercentage_EditorOnly: number;
+        RootProxy_EditorOnly: UE.SoftObjectPath;
+        PhysicsMaterial: UE.PhysicalMaterial;
+        bDensityFromPhysicsMaterial: boolean;
+        CachedDensityFromPhysicsMaterialInGCm3: number;
+        bMassAsDensity: boolean;
+        Mass: number;
+        MinimumMassClamp: number;
+        bImportCollisionFromSource: boolean;
+        bOptimizeConvexes: boolean;
+        CollisionParticlesFraction_EditorOnly: number;
+        MaximumCollisionParticles_EditorOnly: number;
+        bScaleOnRemoval: boolean;
+        bRemoveOnMaxSleep: boolean;
+        bAutomaticCrumblePartialClusters: boolean;
+        MaximumSleepTime: UE.Vector2D;
+        RemovalDuration: UE.Vector2D;
+        bSlowMovingAsSleeping: boolean;
+        SlowMovingVelocityThreshold: number;
+        SizeSpecificData: TArray<UE.GeometryCollectionSizeSpecificData>;
+        EnableRemovePiecesOnFracture: boolean;
+        RemoveOnFractureMaterials: TArray<UE.MaterialInterface>;
+        AssetImportData_EditorOnly: UE.AssetImportData;
+        ThumbnailInfo_EditorOnly: UE.ThumbnailInfo;
+        DataflowAsset_EditorOnly: UE.Dataflow;
+        DataflowTerminal_EditorOnly: string;
+        Overrides: TMap<string, string>;
+        DataflowInstance: UE.DataflowInstance;
+        PersistentGuid: UE.Guid;
+        StateGuid: UE.Guid;
+        RootIndex: number;
+        BreadthFirstTransformIndices: TArray<number>;
+        AutoInstanceTransformRemapIndices: TArray<number>;
+        BoneSelectedMaterialIndex: number;
+        AssetUserData: TArray<UE.AssetUserData>;
+        /*
+         *Creates and adds an instance of the provided AssetUserData class to the target asset.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to create
+         *
+         *@return       Whether or not an instance of InUserDataClass was succesfully added
+         */
+        AddAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
+        /*
+         *Returns an instance of the provided AssetUserData class if it's contained in the target asset.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to get
+         *
+         *@return       The instance of the UAssetUserData class contained, or null if it doesn't exist
+         */
+        GetAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : UE.AssetUserData;
+        GetDataflowAsset() : UE.Dataflow;
+        /*
+         *Checks whether or not an instance of the provided AssetUserData class is contained.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to check for
+         *
+         *@return       Whether or not an instance of InUserDataClass was found
+         */
+        HasAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
+        SetConvertVertexColorsToSRGB(bValue: boolean) : void;
+        SetDataflowAsset(InDataflowAsset: $Nullable<UE.Dataflow>) : void;
+        SetEnableNanite(bValue: boolean) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GeometryCollection;
+        static Load(InName: string): GeometryCollection;
+    
+        __tid_GeometryCollection_0__: boolean;
+    }
+    
+    class FieldSystem extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): FieldSystem;
+        static Load(InName: string): FieldSystem;
+    
+        __tid_FieldSystem_0__: boolean;
+    }
+    
+    class FieldSystemMetaData extends UE.ActorComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): FieldSystemMetaData;
+        static Load(InName: string): FieldSystemMetaData;
+    
+        __tid_FieldSystemMetaData_0__: boolean;
+    }
+    
+    class FieldObjectCommands {
+        constructor();
+        constructor(TargetNames: TArray<string>, RootNodes: TArray<UE.FieldNodeBase>, MetaDatas: TArray<UE.FieldSystemMetaData>);
+        TargetNames: TArray<string>;
+        RootNodes: TArray<UE.FieldNodeBase>;
+        MetaDatas: TArray<UE.FieldSystemMetaData>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_FieldObjectCommands_0__: boolean;
+    }
+    
+    enum EFieldPhysicsType { Field_None, Field_DynamicState, Field_LinearForce, Field_ExternalClusterStrain, Field_Kill, Field_LinearVelocity, Field_AngularVelociy, Field_AngularTorque, Field_InternalClusterStrain, Field_DisableThreshold, Field_SleepingThreshold, Field_PositionStatic, Field_PositionAnimated, Field_PositionTarget, Field_DynamicConstraint, Field_CollisionGroup, Field_ActivateDisabled, Field_InitialLinearVelocity, Field_InitialAngularVelocity, Field_LinearImpulse, Field_PhysicsType_Max, __typeKeyDoNoAccess}
+    class FieldSystemComponent extends UE.PrimitiveComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        FieldSystem: UE.FieldSystem;
+        bIsWorldField: boolean;
+        bIsChaosField: boolean;
+        SupportedSolvers: TArray<TSoftObjectPtr<UE.ChaosSolverActor>>;
+        ConstructionCommands: UE.FieldObjectCommands;
+        BufferCommands: UE.FieldObjectCommands;
+        /*
+         *AddConstructionField
+         *  This function will dispatch a command to the physics thread to apply
+         *  a generic evaluation of a user defined field network. This command will be used in a
+         *  construction script to setup some particles properties (anchors...). See documentation,
+         *  for examples of how to recreate variations of the above generic
+         *  fields using field networks
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Target Type of field supported by the solver.
+         *  @param MetaData Meta data used to assist in evaluation
+         *  @param Field Base evaluation node for the field network.
+         */
+        AddFieldCommand(Enabled: boolean, Target: UE.EFieldPhysicsType, MetaData: $Nullable<UE.FieldSystemMetaData>, Field: $Nullable<UE.FieldNodeBase>) : void;
+        /*
+         *AddPersistentField
+         *  This function will dispatch a command to the physics thread to apply
+         *  a generic evaluation of a user defined field network. This command will be persistent in time and will live until
+         *  the component is destroyed or until the RemovePersistenFields function is called. See documentation,
+         *  for examples of how to recreate variations of the above generic
+         *  fields using field networks
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Target Type of field supported by the solver.
+         *  @param MetaData Meta data used to assist in evaluation
+         *  @param Field Base evaluation node for the field network.
+         */
+        AddPersistentField(Enabled: boolean, Target: UE.EFieldPhysicsType, MetaData: $Nullable<UE.FieldSystemMetaData>, Field: $Nullable<UE.FieldNodeBase>) : void;
+        /*
+         *ApplyUniformForce
+         *  This function will dispatch a command to the physics thread to apply
+         *  a uniform linear force on each particle within the simulation.
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Direction The direction of the linear force
+         *  @param Magnitude The size of the linear force.
+         */
+        ApplyLinearForce(Enabled: boolean, Direction: UE.Vector, Magnitude: number) : void;
+        /*
+         *AddTransientField
+         *  This function will dispatch a command to the physics thread to apply
+         *  a generic evaluation of a user defined transient field network. See documentation,
+         *  for examples of how to recreate variations of the above generic
+         *  fields using field networks
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Target Type of field supported by the solver.
+         *  @param MetaData Meta data used to assist in evaluation
+         *  @param Field Base evaluation node for the field network.
+         */
+        ApplyPhysicsField(Enabled: boolean, Target: UE.EFieldPhysicsType, MetaData: $Nullable<UE.FieldSystemMetaData>, Field: $Nullable<UE.FieldNodeBase>) : void;
+        /*
+         *ApplyRadialForce
+         *  This function will dispatch a command to the physics thread to apply
+         *  a linear force that points away from a position.
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Position The origin point of the force
+         *  @param Magnitude The size of the linear force.
+         */
+        ApplyRadialForce(Enabled: boolean, Position: UE.Vector, Magnitude: number) : void;
+        /*
+         *FalloffRadialForce
+         *  This function will dispatch a command to the physics thread to apply
+         *  a linear force from a position in space. The force vector is weaker as
+         *  it moves away from the center.
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Position The origin point of the force
+         *  @param Radius Radial influence from the position, positions further away are weaker.
+         *  @param Magnitude The size of the linear force.
+         */
+        ApplyRadialVectorFalloffForce(Enabled: boolean, Position: UE.Vector, Radius: number, Magnitude: number) : void;
+        /*
+         *SetDynamicState
+         *  This function will dispatch a command to the physics thread to apply
+         *  a kinematic to dynamic state change for the particles within the field.
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Position The location of the command
+         *  @param Radius Radial influence from the position
+         */
+        ApplyStayDynamicField(Enabled: boolean, Position: UE.Vector, Radius: number) : void;
+        /*
+         *ApplyExternalStran
+         *  This function will dispatch a command to the physics thread to apply
+         *  a strain field on a clustered set of geometry. This is used to trigger a
+         *  breaking event within the solver.
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Position The origin point of the force
+         *  @param Radius Radial influence from the position, positions further away are weaker.
+         *  @param Magnitude The size of the linear force.
+         *  @param Iterations Levels of evaluation into the cluster hierarchy.
+         */
+        ApplyStrainField(Enabled: boolean, Position: UE.Vector, Radius: number, Magnitude: number, Iterations: number) : void;
+        /*
+         *FalloffUniformForce
+         *  This function will dispatch a command to the physics thread to apply
+         *  a linear force in a uniform direction. The force vector is weaker as
+         *  it moves away from the center.
+         *
+         *  @param Enabled Is this force enabled for evaluation.
+         *  @param Position The origin point of the force
+         *  @param Direction The direction of the linear force
+         *  @param Radius Radial influence from the position, positions further away are weaker.
+         *  @param Magnitude The size of the linear force.
+         */
+        ApplyUniformVectorFalloffForce(Enabled: boolean, Position: UE.Vector, Direction: UE.Vector, Radius: number, Magnitude: number) : void;
+        /*
+         *RemovePersistentFields
+         *  This function will remove all the field component persistent fields from chaos and from the world
+         */
+        RemovePersistentFields() : void;
+        /*
+         *RemoveConstructionFields
+         *  This function will remove all the field component construction fields from chaos and from the world
+         */
+        ResetFieldSystem() : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): FieldSystemComponent;
+        static Load(InName: string): FieldSystemComponent;
+    
+        __tid_FieldSystemComponent_0__: boolean;
+    }
+    
+    class FieldSystemActor extends UE.Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        FieldSystemComponent: UE.FieldSystemComponent;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): FieldSystemActor;
+        static Load(InName: string): FieldSystemActor;
+    
+        __tid_FieldSystemActor_0__: boolean;
+    }
+    
+    enum EObjectStateTypeEnum { Chaos_NONE, Chaos_Object_Sleeping, Chaos_Object_Kinematic, Chaos_Object_Static, Chaos_Object_Dynamic, Chaos_Object_UserDefined, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
+    class ChaosPhysicalMaterial extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Friction: number;
+        StaticFriction: number;
+        Restitution: number;
+        LinearEtherDrag: number;
+        AngularEtherDrag: number;
+        SleepingLinearVelocityThreshold: number;
+        SleepingAngularVelocityThreshold: number;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosPhysicalMaterial;
+        static Load(InName: string): ChaosPhysicalMaterial;
+    
+        __tid_ChaosPhysicalMaterial_0__: boolean;
+    }
+    
+    enum EInitialVelocityTypeEnum { Chaos_Initial_Velocity_User_Defined, Chaos_Initial_Velocity_None, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
+    enum EGeometryCollectionCacheType { None, Record, Play, RecordAndPlay, EGeometryCollectionCacheType_MAX, __typeKeyDoNoAccess}
+    class SolverCollisionData {
+        constructor();
+        constructor(Location: UE.Vector, AccumulatedImpulse: UE.Vector, Normal: UE.Vector, Velocity1: UE.Vector, Velocity2: UE.Vector, AngularVelocity1: UE.Vector, AngularVelocity2: UE.Vector, Mass1: number, Mass2: number, ParticleIndex: number, LevelsetIndex: number, ParticleIndexMesh: number, LevelsetIndexMesh: number);
+        Location: UE.Vector;
+        AccumulatedImpulse: UE.Vector;
+        Normal: UE.Vector;
+        Velocity1: UE.Vector;
+        Velocity2: UE.Vector;
+        AngularVelocity1: UE.Vector;
+        AngularVelocity2: UE.Vector;
+        Mass1: number;
+        Mass2: number;
+        ParticleIndex: number;
+        LevelsetIndex: number;
+        ParticleIndexMesh: number;
+        LevelsetIndexMesh: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_SolverCollisionData_0__: boolean;
+    }
+    
+    class SolverBreakingData {
+        constructor();
+        constructor(Location: UE.Vector, Velocity: UE.Vector, AngularVelocity: UE.Vector, Mass: number, ParticleIndex: number, ParticleIndexMesh: number);
+        Location: UE.Vector;
+        Velocity: UE.Vector;
+        AngularVelocity: UE.Vector;
+        Mass: number;
+        ParticleIndex: number;
+        ParticleIndexMesh: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_SolverBreakingData_0__: boolean;
+    }
+    
+    class SolverTrailingData {
+        constructor();
+        constructor(Location: UE.Vector, Velocity: UE.Vector, AngularVelocity: UE.Vector, Mass: number, ParticleIndex: number, ParticleIndexMesh: number);
+        Location: UE.Vector;
+        Velocity: UE.Vector;
+        AngularVelocity: UE.Vector;
+        Mass: number;
+        ParticleIndex: number;
+        ParticleIndexMesh: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_SolverTrailingData_0__: boolean;
+    }
+    
+    class RecordedFrame {
+        constructor();
+        constructor(Transforms: TArray<UE.Transform>, TransformIndices: TArray<number>, PreviousTransformIndices: TArray<number>, DisabledFlags: TArray<boolean>, Collisions: TArray<UE.SolverCollisionData>, Breakings: TArray<UE.SolverBreakingData>, Trailings: TSet<UE.SolverTrailingData>, Timestamp: number);
+        Transforms: TArray<UE.Transform>;
+        TransformIndices: TArray<number>;
+        PreviousTransformIndices: TArray<number>;
+        DisabledFlags: TArray<boolean>;
+        Collisions: TArray<UE.SolverCollisionData>;
+        Breakings: TArray<UE.SolverBreakingData>;
+        Trailings: TSet<UE.SolverTrailingData>;
+        Timestamp: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RecordedFrame_0__: boolean;
+    }
+    
+    class RecordedTransformTrack {
+        constructor();
+        constructor(Records: TArray<UE.RecordedFrame>);
+        Records: TArray<UE.RecordedFrame>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RecordedTransformTrack_0__: boolean;
+    }
+    
+    class GeometryCollectionCache extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        RecordedData: UE.RecordedTransformTrack;
+        SupportedCollection: UE.GeometryCollection;
+        CompatibleCollectionState: UE.Guid;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GeometryCollectionCache;
+        static Load(InName: string): GeometryCollectionCache;
+    
+        __tid_GeometryCollectionCache_0__: boolean;
+    }
+    
+    class GeomComponentCacheParameters {
+        constructor();
+        constructor(CacheMode: UE.EGeometryCollectionCacheType, TargetCache: UE.GeometryCollectionCache, ReverseCacheBeginTime: number, SaveCollisionData: boolean, DoGenerateCollisionData: boolean, CollisionDataSizeMax: number, DoCollisionDataSpatialHash: boolean, CollisionDataSpatialHashRadius: number, MaxCollisionPerCell: number, SaveBreakingData: boolean, DoGenerateBreakingData: boolean, BreakingDataSizeMax: number, DoBreakingDataSpatialHash: boolean, BreakingDataSpatialHashRadius: number, MaxBreakingPerCell: number, SaveTrailingData: boolean, DoGenerateTrailingData: boolean, TrailingDataSizeMax: number, TrailingMinSpeedThreshold: number, TrailingMinVolumeThreshold: number);
+        CacheMode: UE.EGeometryCollectionCacheType;
+        TargetCache: UE.GeometryCollectionCache;
+        ReverseCacheBeginTime: number;
+        SaveCollisionData: boolean;
+        DoGenerateCollisionData: boolean;
+        CollisionDataSizeMax: number;
+        DoCollisionDataSpatialHash: boolean;
+        CollisionDataSpatialHashRadius: number;
+        MaxCollisionPerCell: number;
+        SaveBreakingData: boolean;
+        DoGenerateBreakingData: boolean;
+        BreakingDataSizeMax: number;
+        DoBreakingDataSpatialHash: boolean;
+        BreakingDataSpatialHashRadius: number;
+        MaxBreakingPerCell: number;
+        SaveTrailingData: boolean;
+        DoGenerateTrailingData: boolean;
+        TrailingDataSizeMax: number;
+        TrailingMinSpeedThreshold: number;
+        TrailingMinVolumeThreshold: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeomComponentCacheParameters_0__: boolean;
+    }
+    
+    class ChaosPhysicsCollisionInfo {
+        constructor();
+        constructor(Component: UE.PrimitiveComponent, OtherComponent: UE.PrimitiveComponent, Location: UE.Vector, Normal: UE.Vector, AccumulatedImpulse: UE.Vector, Velocity: UE.Vector, OtherVelocity: UE.Vector, AngularVelocity: UE.Vector, OtherAngularVelocity: UE.Vector, Mass: number, OtherMass: number);
+        Component: UE.PrimitiveComponent;
+        OtherComponent: UE.PrimitiveComponent;
+        Location: UE.Vector;
+        Normal: UE.Vector;
+        AccumulatedImpulse: UE.Vector;
+        Velocity: UE.Vector;
+        OtherVelocity: UE.Vector;
+        AngularVelocity: UE.Vector;
+        OtherAngularVelocity: UE.Vector;
+        Mass: number;
+        OtherMass: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ChaosPhysicsCollisionInfo_0__: boolean;
+    }
+    
+    class ISMPoolComponent extends UE.SceneComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ISMPoolComponent;
+        static Load(InName: string): ISMPoolComponent;
+    
+        __tid_ISMPoolComponent_0__: boolean;
+    }
+    
+    class DebugDrawComponent extends UE.PrimitiveComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): DebugDrawComponent;
+        static Load(InName: string): DebugDrawComponent;
+    
+        __tid_DebugDrawComponent_0__: boolean;
+    }
+    
+    class InstancedStaticMeshInstanceData {
+        constructor();
+        constructor(Transform: UE.Matrix);
+        Transform: UE.Matrix;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_InstancedStaticMeshInstanceData_0__: boolean;
+    }
+    
+    class InstancedStaticMeshRandomSeed {
+        constructor();
+        constructor(StartInstanceIndex: number, RandomSeed: number);
+        StartInstanceIndex: number;
+        RandomSeed: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_InstancedStaticMeshRandomSeed_0__: boolean;
+    }
+    
+    class InstancedStaticMeshMappingInfo {
+        constructor();
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_InstancedStaticMeshMappingInfo_0__: boolean;
+    }
+    
+    class InstancedStaticMeshComponent extends UE.StaticMeshComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        PerInstanceSMData: TArray<UE.InstancedStaticMeshInstanceData>;
+        PerInstancePrevTransform: TArray<UE.Matrix>;
+        PreviousComponentTransform: UE.Transform;
+        NumCustomDataFloats: number;
+        InstancingRandomSeed: number;
+        PerInstanceSMCustomData: TArray<number>;
+        AdditionalRandomSeeds: TArray<UE.InstancedStaticMeshRandomSeed>;
+        InstanceLODDistanceScale: number;
+        InstanceMinDrawDistance: number;
+        InstanceStartCullDistance: number;
+        InstanceEndCullDistance: number;
+        bUseGpuLodSelection: boolean;
+        bInheritPerInstanceData: boolean;
+        bDisableCollision: boolean;
+        InstanceReorderTable: TArray<number>;
+        NumPendingLightmaps: number;
+        CachedMappings: TArray<UE.InstancedStaticMeshMappingInfo>;
+        CachedBounds: FixSizeArray<UE.BoundsCacheElement>;
+        /*
+         *Add an instance to this component. Transform is given in local space of this component unless bWorldSpace is set.
+         */
+        AddInstance(InstanceTransform: UE.Transform, bWorldSpace?: boolean /* = false */) : number;
+        /*
+         *Add multiple instances to this component. Transform is given in local space of this component unless bWorldSpace is set.
+         */
+        AddInstances(InstanceTransforms: TArray<UE.Transform>, bShouldReturnIndices: boolean, bWorldSpace?: boolean /* = false */, bUpdateNavigation?: boolean /* = true */) : TArray<number>;
+        AddInstanceWorldSpace(WorldTransform: UE.Transform) : number;
+        /*
+         *Update the transform for a number of instances.
+         *
+         *@param StartInstanceIndex             The starting index of the instances to update
+         *@param NumInstances                   The number of instances to update
+         *@param NewInstancesTransform  The new transform
+         *@param bWorldSpace                    If true, the new transform is interpreted as a World Space transform, otherwise it is interpreted as Local Space
+         *@param bMarkRenderStateDirty  If true, the change should be visible immediately. If you are updating many instances you should only set this to true for the last instance.
+         *@param bTeleport                              Whether or not the instances physics should be moved normally, or teleported (moved instantly, ignoring velocity).
+         *@return                                               True on success.
+         */
+        BatchUpdateInstancesTransform(StartInstanceIndex: number, NumInstances: number, NewInstancesTransform: UE.Transform, bWorldSpace?: boolean /* = false */, bMarkRenderStateDirty?: boolean /* = false */, bTeleport?: boolean /* = false */) : boolean;
+        /*
+         *Update the transform for an array of instances.
+         *
+         *@param StartInstanceIndex             The starting index of the instances to update
+         *@param NewInstancesTransforms The new transforms
+         *@param bWorldSpace                    If true, the new transforms are interpreted as a World Space transform, otherwise it is interpreted as Local Space
+         *@param bMarkRenderStateDirty  If true, the change should be visible immediately. If you are updating many instances you should only set this to true for the last instance.
+         *@param bTeleport                              Whether or not the instances physics should be moved normally, or teleported (moved instantly, ignoring velocity).
+         *@return                                               True on success.
+         */
+        BatchUpdateInstancesTransforms(StartInstanceIndex: number, NewInstancesTransforms: TArray<UE.Transform>, bWorldSpace?: boolean /* = false */, bMarkRenderStateDirty?: boolean /* = false */, bTeleport?: boolean /* = false */) : boolean;
+        /*
+         *Clear all instances being rendered by this component.
+         */
+        ClearInstances() : void;
+        /*
+         *Gets the fading start and culling end distances for this component.
+         */
+        GetCullDistances(OutStartCullDistance: $Ref<number>, OutEndCullDistance: $Ref<number>) : void;
+        /*
+         *Get the number of instances in this component.
+         */
+        GetInstanceCount() : number;
+        /*
+         *Returns the instances with instance bounds overlapping the specified box. The return value is an array of instance indices.
+         */
+        GetInstancesOverlappingBox(Box: UE.Box, bBoxInWorldSpace?: boolean /* = true */) : TArray<number>;
+        /*
+         *Returns the instances with instance bounds overlapping the specified sphere. The return value is an array of instance indices.
+         */
+        GetInstancesOverlappingSphere(Center: UE.Vector, Radius: number, bSphereInWorldSpace?: boolean /* = true */) : TArray<number>;
+        /*
+         *Get the transform for the instance specified. Instance is returned in local space of this component unless bWorldSpace is set.  Returns True on success.
+         */
+        GetInstanceTransform(InstanceIndex: number, OutInstanceTransform: $Ref<UE.Transform>, bWorldSpace?: boolean /* = false */) : boolean;
+        /*
+         *Gets the current LOD scale.
+         */
+        GetLODDistanceScale() : number;
+        /*
+         *Does the given index map to a valid instance in this component?
+         */
+        IsValidInstance(InstanceIndex: number) : boolean;
+        /*
+         *Remove the instance specified. Returns True on success.
+         */
+        RemoveInstance(InstanceIndex: number) : boolean;
+        /*
+         *Remove the instances specified. Returns True on success.
+         */
+        RemoveInstances(InstancesToRemove: TArray<number>) : boolean;
+        /*
+         *Sets the fading start and culling end distances for this component.
+         */
+        SetCullDistances(StartCullDistance: number, EndCullDistance: number) : void;
+        /*
+         *Update custom data for specific instance
+         */
+        SetCustomDataValue(InstanceIndex: number, CustomDataIndex: number, CustomDataValue: number, bMarkRenderStateDirty?: boolean /* = false */) : boolean;
+        /*
+         *Sets the LOD scale.
+         */
+        SetLODDistanceScale(InLODDistanceScale: number) : void;
+        /*
+         *Update number of custom data entries per instance. This applies to all instances and will reallocate the full custom data buffer and reset all values to 0
+         */
+        SetNumCustomDataFloats(InNumCustomDataFloats: number) : void;
+        /*
+         *Update the transform for the instance specified.
+         *
+         *@param InstanceIndex                  The index of the instance to update
+         *@param NewInstanceTransform   The new transform
+         *@param bWorldSpace                    If true, the new transform is interpreted as a World Space transform, otherwise it is interpreted as Local Space
+         *@param bMarkRenderStateDirty  If true, the change should be visible immediately. If you are updating many instances you should only set this to true for the last instance.
+         *@param bTeleport                              Whether or not the instance's physics should be moved normally, or teleported (moved instantly, ignoring velocity).
+         *@return                                               True on success.
+         */
+        UpdateInstanceTransform(InstanceIndex: number, NewInstanceTransform: UE.Transform, bWorldSpace?: boolean /* = false */, bMarkRenderStateDirty?: boolean /* = false */, bTeleport?: boolean /* = false */) : boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): InstancedStaticMeshComponent;
+        static Load(InName: string): InstancedStaticMeshComponent;
+    
+        __tid_InstancedStaticMeshComponent_0__: boolean;
+    }
+    
+    class ISMPoolDebugDrawComponent extends UE.DebugDrawComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        bShowGlobalStats: boolean;
+        bShowStats: boolean;
+        bShowBounds: boolean;
+        SelectedComponent: UE.InstancedStaticMeshComponent;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ISMPoolDebugDrawComponent;
+        static Load(InName: string): ISMPoolDebugDrawComponent;
+    
+        __tid_ISMPoolDebugDrawComponent_0__: boolean;
+    }
+    
+    class ISMPoolActor extends UE.Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ISMPoolComp: UE.ISMPoolComponent;
+        ISMPoolDebugDrawComp: UE.ISMPoolDebugDrawComponent;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ISMPoolActor;
+        static Load(InName: string): ISMPoolActor;
+    
+        __tid_ISMPoolActor_0__: boolean;
+    }
+    
+    class GeometryCollectionExternalRenderInterface extends UE.Interface {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GeometryCollectionExternalRenderInterface;
+        static Load(InName: string): GeometryCollectionExternalRenderInterface;
+    
+        __tid_GeometryCollectionExternalRenderInterface_0__: boolean;
+    }
+    
+    class GeometryCollectionRepData {
+        constructor();
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionRepData_0__: boolean;
+    }
+    
+    class GeometryCollectionRepStateData {
+        constructor();
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionRepStateData_0__: boolean;
+    }
+    
+    class GeometryCollectionRepDynamicData {
+        constructor();
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GeometryCollectionRepDynamicData_0__: boolean;
+    }
+    
+    enum EGeometryCollectionPhysicsTypeEnum { Chaos_AngularVelocity, Chaos_DynamicState, Chaos_LinearVelocity, Chaos_InitialAngularVelocity, Chaos_InitialLinearVelocity, Chaos_CollisionGroup, Chaos_LinearForce, Chaos_AngularTorque, Chaos_DisableThreshold, Chaos_SleepingThreshold, Chaos_ExternalClusterStrain, Chaos_InternalClusterStrain, Chaos_LinearImpulse, Chaos_Max, Chaos_MAX, __typeKeyDoNoAccess}
+    class GeometryCollectionComponent extends UE.MeshComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ChaosSolverActor: UE.ChaosSolverActor;
+        RestCollection: UE.GeometryCollection;
+        InitializationFields: TArray<UE.FieldSystemActor>;
+        Simulating: boolean;
+        ObjectType: UE.EObjectStateTypeEnum;
+        GravityGroupIndex: number;
+        OneWayInteractionLevel: number;
+        bDensityFromPhysicsMaterial: boolean;
+        bForceMotionBlur: boolean;
+        EnableClustering: boolean;
+        ClusterGroupIndex: number;
+        MaxClusterLevel: number;
+        MaxSimulatedLevel: number;
+        DamageModel: UE.EDamageModelTypeEnum;
+        DamageThreshold: TArray<number>;
+        bUseSizeSpecificDamageThreshold: boolean;
+        bUseMaterialDamageModifiers: boolean;
+        DamagePropagationData: UE.GeometryCollectionDamagePropagationData;
+        bEnableDamageFromCollision: boolean;
+        bAllowRemovalOnSleep: boolean;
+        bAllowRemovalOnBreak: boolean;
+        bForceUpdateActiveTransforms: boolean;
+        ClusterConnectionType: UE.EClusterConnectionTypeEnum;
+        CollisionGroup: number;
+        CollisionSampleFraction: number;
+        LinearEtherDrag: number;
+        PhysicalMaterial: UE.ChaosPhysicalMaterial;
+        InitialVelocityType: UE.EInitialVelocityTypeEnum;
+        InitialLinearVelocity: UE.Vector;
+        InitialAngularVelocity: UE.Vector;
+        PhysicalMaterialOverride: UE.PhysicalMaterial;
+        CacheParameters: UE.GeomComponentCacheParameters;
+        RestTransforms: TArray<UE.Transform>;
+        NotifyGeometryCollectionPhysicsStateChange: $MulticastDelegate<(FracturedComponent: $Nullable<UE.GeometryCollectionComponent>) => void>;
+        NotifyGeometryCollectionPhysicsLoadingStateChange: $MulticastDelegate<(FracturedComponent: $Nullable<UE.GeometryCollectionComponent>) => void>;
+        OnChaosBreakEvent: $MulticastDelegate<(BreakEvent: UE.ChaosBreakEvent) => void>;
+        OnChaosRemovalEvent: $MulticastDelegate<(RemovalEvent: UE.ChaosRemovalEvent) => void>;
+        OnChaosCrumblingEvent: $MulticastDelegate<(CrumbleEvent: UE.ChaosCrumblingEvent) => void>;
+        DesiredCacheTime: number;
+        CachePlayback: boolean;
+        OnChaosPhysicsCollision: $MulticastDelegate<(CollisionInfo: UE.ChaosPhysicsCollisionInfo) => void>;
+        bNotifyBreaks: boolean;
+        bNotifyCollisions: boolean;
+        bNotifyTrailing: boolean;
+        bNotifyRemovals: boolean;
+        bNotifyCrumblings: boolean;
+        bCrumblingEventIncludesChildren: boolean;
+        bNotifyGlobalBreaks: boolean;
+        bNotifyGlobalCollisions: boolean;
+        bNotifyGlobalRemovals: boolean;
+        bNotifyGlobalCrumblings: boolean;
+        bGlobalCrumblingEventIncludesChildren: boolean;
+        bStoreVelocities: boolean;
+        bIsCurrentlyNavigationRelevant: boolean;
+        bShowBoneColors: boolean;
+        bUpdateComponentTransformToRootBone: boolean;
+        bUseRootProxyForNavigation: boolean;
+        bUpdateNavigationInTick: boolean;
+        bEnableRunTimeDataCollection_EditorOnly: boolean;
+        RunTimeDataCollectionGuid_EditorOnly: UE.Guid;
+        bEnableReplication: boolean;
+        bEnableAbandonAfterLevel: boolean;
+        AbandonedCollisionProfileName: string;
+        ISMPool: UE.ISMPoolActor;
+        CustomRendererType: UE.Class;
+        bOverrideCustomRenderer: boolean;
+        bAutoAssignISMPool: boolean;
+        bUseStaticMeshCollisionForTraces: boolean;
+        ReplicationAbandonClusterLevel: number;
+        CustomRenderer: UE.GeometryCollectionExternalRenderInterface;
+        CollisionProfilePerLevel: TArray<string>;
+        ReplicationAbandonAfterLevel: number;
+        ReplicationMaxPositionAndVelocityCorrectionLevel: number;
+        RepData: UE.GeometryCollectionRepData;
+        RepStateData: UE.GeometryCollectionRepStateData;
+        RepDynamicData: UE.GeometryCollectionRepDynamicData;
+        SelectedBones_EditorOnly: TArray<number>;
+        HighlightedBones_EditorOnly: TArray<number>;
+        DummyBodySetup: UE.BodySetup;
+        EditorActor_EditorOnly: UE.Actor;
+        EventDispatcher: UE.ChaosGameplayEventDispatcher;
+        EmbeddedGeometryComponents: TArray<UE.InstancedStaticMeshComponent>;
+        AngularEtherDrag: number;
+        /*
+         *Apply angular velocity on specific piece
+         *@param ItemIndex item index ( from HitResult) of the piece to apply velocity on
+         *@param AngularVelocity linear velocity to apply
+         */
+        ApplyAngularVelocity(ItemIndex: number, AngularVelocity: UE.Vector) : void;
+        /*
+         *Apply default values from asset ( damage related data and physics material )
+         */
+        ApplyAssetDefaults() : void;
+        /*
+         *Apply linear velocity on breaking pieces for a specific cluster
+         *If ItemIndex does not represent a cluster this will do nothing
+         *@param ItemIndex item index ( from HitResult) of the cluster owning the breaking pieces to apply velocity on
+         *@param AngularVelocity linear velocity to apply
+         */
+        ApplyBreakingAngularVelocity(ItemIndex: number, AngularVelocity: UE.Vector) : void;
+        /*
+         *Apply linear velocity on breaking pieces for a specific cluster
+         *If ItemIndex does not represent a cluster this will do nothing
+         *@param ItemIndex item index ( from HitResult) of the cluster owning the breaking pieces to apply velocity on
+         *@param LinearVelocity linear velocity to apply
+         */
+        ApplyBreakingLinearVelocity(ItemIndex: number, LinearVelocity: UE.Vector) : void;
+        /*
+         *Apply an external strain to specific piece of the geometry collection
+         *@param ItemIndex item index ( from HitResult) of the piece to apply strain on
+         *@param Location world location of where to apply the strain
+         *@param Radius radius from the location point to apply the strain to ( using the center of mass of the pieces )
+         *@param PropagationDepth How many level of connection to follow to propagate the strain through
+         *@param PropagationFactor when using propagation, the factor to multiply the strain from one level to the other, allowing falloff effect
+         *@param Strain strain _ damage to apply
+         */
+        ApplyExternalStrain(ItemIndex: number, Location: UE.Vector, Radius?: number /* = 0.000000 */, PropagationDepth?: number /* = 0 */, PropagationFactor?: number /* = 1.000000 */, Strain?: number /* = 0.000000 */) : void;
+        /*
+         *Apply an internal strain to specific piece of the geometry collection
+         *@param ItemIndex item index ( from HitResult) of the piece to apply strain on
+         *@param Location world location of where to apply the strain
+         *@param Radius radius from the location point to apply the strain to ( using the center of mass of the pieces )
+         *@param PropagationDepth How many level of connection to follow to propagate the strain through
+         *@param PropagationFactor when using propagation, the factor to multiply the strain from one level to the other, allowing falloff effect
+         *@param Strain strain _ damage to apply
+         */
+        ApplyInternalStrain(ItemIndex: number, Location: UE.Vector, Radius?: number /* = 0.000000 */, PropagationDepth?: number /* = 0 */, PropagationFactor?: number /* = 1.000000 */, Strain?: number /* = 0.000000 */) : void;
+        /*
+         *SetDynamicState
+         *  This function will dispatch a command to the physics thread to apply
+         *  a kinematic to dynamic state change for the geo collection particles within the field.
+         *
+         *      @param Radius Radial influence from the position
+         *  @param Position The location of the command
+         */
+        ApplyKinematicField(Radius: number, Position: UE.Vector) : void;
+        /*
+         *Apply linear velocity on specific piece
+         *@param ItemIndex item index ( from HitResult) of the piece to apply velocity on
+         *@param LinearVelocity linear velocity to apply
+         */
+        ApplyLinearVelocity(ItemIndex: number, LinearVelocity: UE.Vector) : void;
+        /*
+         *AddPhysicsField
+         *  This function will dispatch a command to the physics thread to apply
+         *  a generic evaluation of a user defined transient field network. See documentation,
+         *  for examples of how to recreate variations of the above generic
+         *  fields using field networks
+         *
+         *      @param Enabled Is this force enabled for evaluation.
+         *  @param Target Type of field supported by the solver.
+         *  @param MetaData Meta data used to assist in evaluation
+         *  @param Field Base evaluation node for the field network.
+         */
+        ApplyPhysicsField(Enabled: boolean, Target: UE.EGeometryCollectionPhysicsTypeEnum, MetaData: $Nullable<UE.FieldSystemMetaData>, Field: $Nullable<UE.FieldNodeBase>) : void;
+        /*
+         *Crumbe active clusters for this entire geometry collection
+         *this will apply to internal and regular clusters
+         */
+        CrumbleActiveClusters() : void;
+        /*
+         *Crumbe a cluster into all its pieces
+         *@param ItemIndex item index ( from HitResult) of the cluster to crumble
+         */
+        CrumbleCluster(ItemIndex: number) : void;
+        EnableRootProxyForCustomRenderer(bEnable: boolean) : void;
+        /*
+         *Force any custom renderer to render using the broken_decayed path. This can be set at runtime
+         */
+        ForceBrokenForCustomRenderer(bForceBroken: boolean) : void;
+        GetDamageThreshold() : TArray<number>;
+        /*
+         *RestCollection
+         */
+        GetDebugInfo() : string;
+        /*
+         *Get the initial level of a specific piece
+         *Initial level means the level as it is in the unbroken state
+         *@param ItemIndex item index ( from HitResult) of the cluster to get level from
+         *@param Level of the piece ( 0 for root level and positive for the rest )
+         */
+        GetInitialLevel(ItemIndex: number) : number;
+        /*
+         *Get the initial rest transforms in component (local) space  space,
+         *they are the transforms as defined in the rest collection asset
+         */
+        GetInitialLocalRestTransforms() : TArray<UE.Transform>;
+        /*
+         *Get local bounds of the geometry collection
+         */
+        GetLocalBounds() : UE.Box;
+        /*
+         *Get the rest transforms in component (local) space  space,
+         *if none have been set by SetLocalRestTransforms or if RestTransform property is empty , then the initial ones are returned
+         *@param bInitialTransform force the initial transforms to be returned ( false by default )
+         */
+        GetLocalRestTransforms(bInitialTransforms?: boolean /* = false */) : TArray<UE.Transform>;
+        /*
+         *Get mass and extent of a specific piece
+         *@param ItemIndex item index ( from HitResult) of the cluster to get level from
+         *@param Level of the piece ( 0 for root level and positive for the rest )
+         */
+        GetMassAndExtents(ItemIndex: number, OutMass: $Ref<number>, OutExtents: $Ref<UE.Box>) : void;
+        /*
+         *Get the root item current world transform
+         */
+        GetRootCurrentTransform() : UE.Transform;
+        /*
+         *Get the root item index of the hierarchy
+         */
+        GetRootIndex() : number;
+        /*
+         *Get the root item initial transform in world space
+         */
+        GetRootInitialTransform() : UE.Transform;
+        /*
+         *BP internal function to get the solver actor
+         */
+        GetSolverActor() : UE.ChaosSolverActor;
+        /*
+         *todo(chaos): Remove this and move to a cook time approach of the SM data based on the GC property
+         */
+        GetUseStaticMeshCollisionForTraces() : boolean;
+        /*
+         *return true if the root cluster is not longer active at runtime
+         */
+        IsRootBroken() : boolean;
+        NotifyGeometryCollectionPhysicsLoadingStateChange__DelegateSignature(FracturedComponent: $Nullable<UE.GeometryCollectionComponent>) : void;
+        /*
+         *Blueprint event
+         */
+        NotifyGeometryCollectionPhysicsStateChange__DelegateSignature(FracturedComponent: $Nullable<UE.GeometryCollectionComponent>) : void;
+        /*
+         *Called post solve to allow authoritative components to update their replication data
+         */
+        OnRep_RepData() : void;
+        OnRep_RepDynamicData() : void;
+        OnRep_RepStateData() : void;
+        ReceivePhysicsCollision(CollisionInfo: UE.ChaosPhysicsCollisionInfo) : void;
+        /*
+         *this will remove anchors on all the pieces ( including the static and kinematic initial states ones ) of the geometry colection
+         */
+        RemoveAllAnchors() : void;
+        SetAbandonedParticleCollisionProfileName(CollisionProfile: string) : void;
+        /*
+         *Set all pieces within a world space bounding box to be anchored or not
+         */
+        SetAnchoredByBox(WorldSpaceBox: UE.Box, bAnchored: boolean, MaxLevel?: number /* = -1 */) : void;
+        /*
+         *Set a piece or cluster to be anchored or not
+         */
+        SetAnchoredByIndex(Index: number, bAnchored: boolean) : void;
+        /*
+         *Set all pieces within a world transformed bounding box to be anchored or not
+         */
+        SetAnchoredByTransformedBox(Box: UE.Box, Transform: UE.Transform, bAnchored: boolean, MaxLevel?: number /* = -1 */) : void;
+        SetDamageModel(InDamageModel: UE.EDamageModelTypeEnum) : void;
+        SetDamagePropagationData(InDamagePropagationData: UE.GeometryCollectionDamagePropagationData) : void;
+        SetDamageThreshold(InDamageThreshold: TArray<number>) : void;
+        SetDensityFromPhysicsMaterial(bInDensityFromPhysicsMaterial: boolean) : void;
+        SetEnableDamageFromCollision(bValue: boolean) : void;
+        SetGravityGroupIndex(InGravityGroupIndex: number) : void;
+        /*
+         *Set the local rest transform, this may be different from the rest collection
+         *If the geometry collection is already simulating those matrices will be overriden by the physics state updates
+         */
+        SetLocalRestTransforms(Transforms: TArray<UE.Transform>, bOnlyLeaves: boolean) : void;
+        /*
+         *Changes whether or not this component will get future break notifications.
+         */
+        SetNotifyBreaks(bNewNotifyBreaks: boolean) : void;
+        /*
+         *Changes whether or not this component will get future crumbling notifications.
+         */
+        SetNotifyCrumblings(bNewNotifyCrumblings: boolean, bNewCrumblingEventIncludesChildren?: boolean /* = false */) : void;
+        /*
+         *Changes whether or not this component will get future global break notifications.
+         */
+        SetNotifyGlobalBreaks(bNewNotifyGlobalBreaks: boolean) : void;
+        /*
+         *Changes whether or not this component will get future global collision notifications.
+         */
+        SetNotifyGlobalCollision(bNewNotifyGlobalCollisions: boolean) : void;
+        /*
+         *Changes whether or not this component will get future global crumbling notifications.
+         */
+        SetNotifyGlobalCrumblings(bNewNotifyGlobalCrumblings: boolean, bGlobalNewCrumblingEventIncludesChildren: boolean) : void;
+        /*
+         *Changes whether or not this component will get future global removal notifications.
+         */
+        SetNotifyGlobalRemovals(bNewNotifyGlobalRemovals: boolean) : void;
+        /*
+         *Changes whether or not this component will get future removal notifications.
+         */
+        SetNotifyRemovals(bNewNotifyRemovals: boolean) : void;
+        SetOneWayInteractionLevel(InOneWayInteractionLevel: number) : void;
+        SetPerLevelCollisionProfileNames(ProfileNames: TArray<string>) : void;
+        SetPerParticleCollisionProfileName(BoneIds: TArray<number>, ProfileName: string) : void;
+        /*
+         *RestCollection
+         */
+        SetRestCollection(RestCollectionIn: $Nullable<UE.GeometryCollection>, bApplyAssetDefaults?: boolean /* = true */) : void;
+        /*
+         *blueprint function to set a specific root proxy local transform
+         *warning: when called from C++ and calling it on multiple root proxies it is recommended to use SetRootProxyLocalTransform instead and then call RefreshCustomRenderer
+         *to avoid the cost of refreshing the renderer each time
+         */
+        SetRootProxyComponentSpaceTransform(Index: number, RootProxyTransform: UE.Transform) : void;
+        /*
+         *BP internal function to set the solver actor
+         */
+        SetSolverActor(InSolverActor: $Nullable<UE.ChaosSolverActor>) : void;
+        SetUseMaterialDamageModifiers(bInUseMaterialDamageModifiers: boolean) : void;
+        /*
+         *todo(chaos): Remove this and move to a cook time approach of the SM data based on the GC property
+         */
+        SetUseStaticMeshCollisionForTraces(bInUseStaticMeshCollisionForTraces: boolean) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GeometryCollectionComponent;
+        static Load(InName: string): GeometryCollectionComponent;
+    
+        __tid_GeometryCollectionComponent_0__: boolean;
     }
     
     class GeometryCollectionDebugDrawWarningMessage {
@@ -78870,6 +76629,47 @@ declare module "ue" {
         static Load(InName: string): ChaosVDSettingsObjectsOuter;
     
         __tid_ChaosVDSettingsObjectsOuter_0__: boolean;
+    }
+    
+    class Light extends UE.Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        LightComponent: UE.LightComponent;
+        bEnabled: boolean;
+        GetBrightness() : number;
+        GetLightColor() : UE.LinearColor;
+        IsEnabled() : boolean;
+        /*
+         *Replication Notification Callbacks
+         */
+        OnRep_bEnabled() : void;
+        SetAffectTranslucentLighting(bNewValue: boolean) : void;
+        SetBrightness(NewBrightness: number) : void;
+        SetCastShadows(bNewValue: boolean) : void;
+        /*
+         *BEGIN DEPRECATED (use component functions now in level script)
+         */
+        SetEnabled(bSetEnabled: boolean) : void;
+        SetLightColor(NewLightColor: UE.LinearColor) : void;
+        SetLightFunctionFadeDistance(NewLightFunctionFadeDistance: number) : void;
+        SetLightFunctionMaterial(NewLightFunctionMaterial: $Nullable<UE.MaterialInterface>) : void;
+        SetLightFunctionScale(NewLightFunctionScale: UE.Vector) : void;
+        ToggleEnabled() : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): Light;
+        static Load(InName: string): Light;
+    
+        __tid_Light_0__: boolean;
+    }
+    
+    class DirectionalLight extends UE.Light {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ArrowComponent_EditorOnly: UE.ArrowComponent;
+        DirectionalLightComponent_EditorOnly: UE.DirectionalLightComponent;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): DirectionalLight;
+        static Load(InName: string): DirectionalLight;
+    
+        __tid_DirectionalLight_0__: boolean;
     }
     
     class ChaosVDSkySphereInterface extends UE.Interface {
@@ -82150,6 +79950,27 @@ declare module "ue" {
         __tid_CombineMeshesToolBuilder_0__: boolean;
     }
     
+    class ScrollBarStyle extends UE.SlateWidgetStyle {
+        constructor();
+        constructor(HorizontalBackgroundImage: UE.SlateBrush, VerticalBackgroundImage: UE.SlateBrush, VerticalTopSlotImage: UE.SlateBrush, HorizontalTopSlotImage: UE.SlateBrush, VerticalBottomSlotImage: UE.SlateBrush, HorizontalBottomSlotImage: UE.SlateBrush, NormalThumbImage: UE.SlateBrush, HoveredThumbImage: UE.SlateBrush, DraggedThumbImage: UE.SlateBrush, Thickness: number);
+        HorizontalBackgroundImage: UE.SlateBrush;
+        VerticalBackgroundImage: UE.SlateBrush;
+        VerticalTopSlotImage: UE.SlateBrush;
+        HorizontalTopSlotImage: UE.SlateBrush;
+        VerticalBottomSlotImage: UE.SlateBrush;
+        HorizontalBottomSlotImage: UE.SlateBrush;
+        NormalThumbImage: UE.SlateBrush;
+        HoveredThumbImage: UE.SlateBrush;
+        DraggedThumbImage: UE.SlateBrush;
+        Thickness: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ScrollBarStyle_0__: boolean;
+    }
+    
     class ComboBox extends UE.Widget {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         ScrollBarStyle: UE.ScrollBarStyle;
@@ -82163,6 +79984,55 @@ declare module "ue" {
         __tid_ComboBox_0__: boolean;
     }
     
+    class ComboBoxStyle extends UE.SlateWidgetStyle {
+        constructor();
+        constructor(ComboButtonStyle: UE.ComboButtonStyle, PressedSlateSound: UE.SlateSound, SelectionChangeSlateSound: UE.SlateSound, ContentPadding: UE.Margin, MenuRowPadding: UE.Margin, PressedSound: string, SelectionChangeSound: string);
+        ComboButtonStyle: UE.ComboButtonStyle;
+        PressedSlateSound: UE.SlateSound;
+        SelectionChangeSlateSound: UE.SlateSound;
+        ContentPadding: UE.Margin;
+        MenuRowPadding: UE.Margin;
+        PressedSound: string;
+        SelectionChangeSound: string;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ComboBoxStyle_0__: boolean;
+    }
+    
+    class TableRowStyle extends UE.SlateWidgetStyle {
+        constructor();
+        constructor(SelectorFocusedBrush: UE.SlateBrush, ActiveHoveredBrush: UE.SlateBrush, ActiveBrush: UE.SlateBrush, InactiveHoveredBrush: UE.SlateBrush, InactiveBrush: UE.SlateBrush, bUseParentRowBrush: boolean, ParentRowBackgroundBrush: UE.SlateBrush, ParentRowBackgroundHoveredBrush: UE.SlateBrush, EvenRowBackgroundHoveredBrush: UE.SlateBrush, EvenRowBackgroundBrush: UE.SlateBrush, OddRowBackgroundHoveredBrush: UE.SlateBrush, OddRowBackgroundBrush: UE.SlateBrush, TextColor: UE.SlateColor, SelectedTextColor: UE.SlateColor, DropIndicator_Above: UE.SlateBrush, DropIndicator_Onto: UE.SlateBrush, DropIndicator_Below: UE.SlateBrush, ActiveHighlightedBrush: UE.SlateBrush, InactiveHighlightedBrush: UE.SlateBrush);
+        SelectorFocusedBrush: UE.SlateBrush;
+        ActiveHoveredBrush: UE.SlateBrush;
+        ActiveBrush: UE.SlateBrush;
+        InactiveHoveredBrush: UE.SlateBrush;
+        InactiveBrush: UE.SlateBrush;
+        bUseParentRowBrush: boolean;
+        ParentRowBackgroundBrush: UE.SlateBrush;
+        ParentRowBackgroundHoveredBrush: UE.SlateBrush;
+        EvenRowBackgroundHoveredBrush: UE.SlateBrush;
+        EvenRowBackgroundBrush: UE.SlateBrush;
+        OddRowBackgroundHoveredBrush: UE.SlateBrush;
+        OddRowBackgroundBrush: UE.SlateBrush;
+        TextColor: UE.SlateColor;
+        SelectedTextColor: UE.SlateColor;
+        DropIndicator_Above: UE.SlateBrush;
+        DropIndicator_Onto: UE.SlateBrush;
+        DropIndicator_Below: UE.SlateBrush;
+        ActiveHighlightedBrush: UE.SlateBrush;
+        InactiveHighlightedBrush: UE.SlateBrush;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TableRowStyle_0__: boolean;
+    }
+    
+    enum ESelectInfo { OnKeyPress, OnNavigation, OnMouseClick, Direct, ESelectInfo_MAX, __typeKeyDoNoAccess}
     class ComboBoxKey extends UE.Widget {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         Options: TArray<string>;
@@ -82216,6 +80086,52 @@ declare module "ue" {
         static Load(InName: string): ComboBoxKey;
     
         __tid_ComboBoxKey_0__: boolean;
+    }
+    
+    class ComboBoxString extends UE.Widget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        DefaultOptions: TArray<string>;
+        SelectedOption: string;
+        WidgetStyle: UE.ComboBoxStyle;
+        ItemStyle: UE.TableRowStyle;
+        ScrollBarStyle: UE.ScrollBarStyle;
+        ContentPadding: UE.Margin;
+        MaxListHeight: number;
+        HasDownArrow: boolean;
+        EnableGamepadNavigationMode: boolean;
+        Font: UE.SlateFontInfo;
+        ForegroundColor: UE.SlateColor;
+        bIsFocusable: boolean;
+        OnGenerateWidgetEvent: $Delegate<(Item: string) => UE.Widget>;
+        OnSelectionChanged: $MulticastDelegate<(SelectedItem: string, SelectionType: UE.ESelectInfo) => void>;
+        OnOpening: $MulticastDelegate<() => void>;
+        AddOption(Option: string) : void;
+        ClearOptions() : void;
+        ClearSelection() : void;
+        FindOptionIndex(Option: string) : number;
+        GetOptionAtIndex(Index: number) : string;
+        /*
+         *Returns the number of options
+         */
+        GetOptionCount() : number;
+        GetSelectedIndex() : number;
+        GetSelectedOption() : string;
+        IsOpen() : boolean;
+        OnOpeningEvent__DelegateSignature() : void;
+        OnSelectionChangedEvent__DelegateSignature(SelectedItem: string, SelectionType: UE.ESelectInfo) : void;
+        /*
+         *Refreshes the list of options.  If you added new ones, and want to update the list even if it's
+         *currently being displayed use this.
+         */
+        RefreshOptions() : void;
+        RemoveOption(Option: string) : boolean;
+        SetSelectedIndex(Index: number) : void;
+        SetSelectedOption(Option: string) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ComboBoxString;
+        static Load(InName: string): ComboBoxString;
+    
+        __tid_ComboBoxString_0__: boolean;
     }
     
     class ComboBoxWidgetStyle extends UE.SlateWidgetStyleContainerBase {
@@ -83689,21 +81605,6 @@ declare module "ue" {
         __tid_ConstrainComponentPropName_0__: boolean;
     }
     
-    enum EControlRigVectorKind { Direction, Location, EControlRigVectorKind_MAX, __typeKeyDoNoAccess}
-    class TransformFilter {
-        constructor();
-        constructor(TranslationFilter: UE.FilterOptionPerAxis, RotationFilter: UE.FilterOptionPerAxis, ScaleFilter: UE.FilterOptionPerAxis);
-        TranslationFilter: UE.FilterOptionPerAxis;
-        RotationFilter: UE.FilterOptionPerAxis;
-        ScaleFilter: UE.FilterOptionPerAxis;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TransformFilter_0__: boolean;
-    }
-    
     class MovieSceneConstraintChannel extends UE.MovieSceneBoolChannel {
         constructor();
         /**
@@ -84340,6 +82241,20 @@ declare module "ue" {
         static Load(InName: string): ConstraintSubsystem;
     
         __tid_ConstraintSubsystem_0__: boolean;
+    }
+    
+    class TransformFilter {
+        constructor();
+        constructor(TranslationFilter: UE.FilterOptionPerAxis, RotationFilter: UE.FilterOptionPerAxis, ScaleFilter: UE.FilterOptionPerAxis);
+        TranslationFilter: UE.FilterOptionPerAxis;
+        RotationFilter: UE.FilterOptionPerAxis;
+        ScaleFilter: UE.FilterOptionPerAxis;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TransformFilter_0__: boolean;
     }
     
     class ConstraintTarget {
@@ -90921,6 +88836,16 @@ declare module "ue" {
         __tid_ControlRigSkeletalMeshComponent_0__: boolean;
     }
     
+    class ControlRigSpline {
+        constructor();
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ControlRigSpline_0__: boolean;
+    }
+    
     class ControlRigSplineImpl {
         constructor();
         /**
@@ -94843,6 +92768,672 @@ declare module "ue" {
         __tid_DataflowSkeletalContent_0__: boolean;
     }
     
+    enum EGroomBindingMeshType { SkeletalMesh, GeometryCache, EGroomBindingMeshType_MAX, __typeKeyDoNoAccess}
+    enum EGroomLODMode { Default, Manual, Auto, EGroomLODMode_MAX, __typeKeyDoNoAccess}
+    class GroomDataflowSettings {
+        constructor();
+        constructor(DataflowAsset: UE.Dataflow, DataflowTerminal: string, SkeletalMeshes: TArray<UE.SkeletalMesh>, MeshLODs: TArray<number>, PreviewBindingAsset: TSoftObjectPtr<UE.GroomBindingAsset>, PreviewAnimationAsset: TSoftObjectPtr<UE.AnimationAsset>);
+        DataflowAsset: UE.Dataflow;
+        DataflowTerminal: string;
+        SkeletalMeshes: TArray<UE.SkeletalMesh>;
+        MeshLODs: TArray<number>;
+        PreviewBindingAsset: TSoftObjectPtr<UE.GroomBindingAsset>;
+        PreviewAnimationAsset: TSoftObjectPtr<UE.AnimationAsset>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GroomDataflowSettings_0__: boolean;
+    }
+    
+    class HairGroupLODInfo {
+        constructor();
+        constructor(NumPoints: number, NumCurves: number);
+        NumPoints: number;
+        NumCurves: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupLODInfo_0__: boolean;
+    }
+    
+    class HairGroupInfo {
+        constructor();
+        constructor(GroupIndex: number, GroupID: number, GroupName: string, NumCurves: number, NumGuides: number, NumCurveVertices: number, NumGuideVertices: number, MaxCurveLength: number, Flags: number, LODInfos: TArray<UE.HairGroupLODInfo>);
+        GroupIndex: number;
+        GroupID: number;
+        GroupName: string;
+        NumCurves: number;
+        NumGuides: number;
+        NumCurveVertices: number;
+        NumGuideVertices: number;
+        MaxCurveLength: number;
+        Flags: number;
+        LODInfos: TArray<UE.HairGroupLODInfo>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupInfo_0__: boolean;
+    }
+    
+    class HairGroupInfoWithVisibility extends UE.HairGroupInfo {
+        constructor();
+        constructor(bIsVisible: boolean);
+        bIsVisible: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupInfoWithVisibility_0__: boolean;
+    }
+    
+    class HairGeometrySettings {
+        constructor();
+        constructor(HairWidth: number, HairWidth_Override: boolean, HairRootScale: number, HairTipScale: number);
+        HairWidth: number;
+        HairWidth_Override: boolean;
+        HairRootScale: number;
+        HairTipScale: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGeometrySettings_0__: boolean;
+    }
+    
+    class HairShadowSettings {
+        constructor();
+        constructor(HairShadowDensity: number, HairRaytracingRadiusScale: number, bUseHairRaytracingGeometry: boolean, bVoxelize: boolean);
+        HairShadowDensity: number;
+        HairRaytracingRadiusScale: number;
+        bUseHairRaytracingGeometry: boolean;
+        bVoxelize: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairShadowSettings_0__: boolean;
+    }
+    
+    class HairAdvancedRenderingSettings {
+        constructor();
+        constructor(bUseStableRasterization: boolean, bScatterSceneLighting: boolean);
+        bUseStableRasterization: boolean;
+        bScatterSceneLighting: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairAdvancedRenderingSettings_0__: boolean;
+    }
+    
+    class HairGroupsRendering {
+        constructor();
+        constructor(MaterialSlotName: string, Material: UE.MaterialInterface, GeometrySettings: UE.HairGeometrySettings, ShadowSettings: UE.HairShadowSettings, AdvancedSettings: UE.HairAdvancedRenderingSettings);
+        MaterialSlotName: string;
+        Material: UE.MaterialInterface;
+        GeometrySettings: UE.HairGeometrySettings;
+        ShadowSettings: UE.HairShadowSettings;
+        AdvancedSettings: UE.HairAdvancedRenderingSettings;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupsRendering_0__: boolean;
+    }
+    
+    enum EGroomNiagaraSolvers { None, CosseratRods, AngularSprings, CustomSolver, EGroomNiagaraSolvers_MAX, __typeKeyDoNoAccess}
+    class HairSolverSettings {
+        constructor();
+        constructor(bEnableDeformation: boolean, EnableSimulation: boolean, NiagaraSolver: UE.EGroomNiagaraSolvers, CustomSystem: TSoftObjectPtr<UE.NiagaraSystem>, GravityPreloading: number, SubSteps: number, IterationCount: number, bForceVisible: boolean);
+        bEnableDeformation: boolean;
+        EnableSimulation: boolean;
+        NiagaraSolver: UE.EGroomNiagaraSolvers;
+        CustomSystem: TSoftObjectPtr<UE.NiagaraSystem>;
+        GravityPreloading: number;
+        SubSteps: number;
+        IterationCount: number;
+        bForceVisible: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairSolverSettings_0__: boolean;
+    }
+    
+    class HairExternalForces {
+        constructor();
+        constructor(GravityVector: UE.Vector, AirDrag: number, AirVelocity: UE.Vector);
+        GravityVector: UE.Vector;
+        AirDrag: number;
+        AirVelocity: UE.Vector;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairExternalForces_0__: boolean;
+    }
+    
+    class HairBendConstraint {
+        constructor();
+        constructor(SolveBend: boolean, ProjectBend: boolean, BendDamping: number, BendStiffness: number, BendScale: UE.RuntimeFloatCurve);
+        SolveBend: boolean;
+        ProjectBend: boolean;
+        BendDamping: number;
+        BendStiffness: number;
+        BendScale: UE.RuntimeFloatCurve;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairBendConstraint_0__: boolean;
+    }
+    
+    class HairStretchConstraint {
+        constructor();
+        constructor(SolveStretch: boolean, ProjectStretch: boolean, StretchDamping: number, StretchStiffness: number, StretchScale: UE.RuntimeFloatCurve);
+        SolveStretch: boolean;
+        ProjectStretch: boolean;
+        StretchDamping: number;
+        StretchStiffness: number;
+        StretchScale: UE.RuntimeFloatCurve;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairStretchConstraint_0__: boolean;
+    }
+    
+    class HairCollisionConstraint {
+        constructor();
+        constructor(SolveCollision: boolean, ProjectCollision: boolean, StaticFriction: number, KineticFriction: number, StrandsViscosity: number, GridDimension: UE.IntVector, CollisionRadius: number, RadiusScale: UE.RuntimeFloatCurve);
+        SolveCollision: boolean;
+        ProjectCollision: boolean;
+        StaticFriction: number;
+        KineticFriction: number;
+        StrandsViscosity: number;
+        GridDimension: UE.IntVector;
+        CollisionRadius: number;
+        RadiusScale: UE.RuntimeFloatCurve;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairCollisionConstraint_0__: boolean;
+    }
+    
+    class HairMaterialConstraints {
+        constructor();
+        constructor(BendConstraint: UE.HairBendConstraint, StretchConstraint: UE.HairStretchConstraint, CollisionConstraint: UE.HairCollisionConstraint);
+        BendConstraint: UE.HairBendConstraint;
+        StretchConstraint: UE.HairStretchConstraint;
+        CollisionConstraint: UE.HairCollisionConstraint;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairMaterialConstraints_0__: boolean;
+    }
+    
+    enum EGroomStrandsSize { None, Size2, Size4, Size8, Size16, Size32, EGroomStrandsSize_MAX, __typeKeyDoNoAccess}
+    class HairStrandsParameters {
+        constructor();
+        constructor(StrandsSize: UE.EGroomStrandsSize, StrandsDensity: number, StrandsSmoothing: number, StrandsThickness: number, ThicknessScale: UE.RuntimeFloatCurve);
+        StrandsSize: UE.EGroomStrandsSize;
+        StrandsDensity: number;
+        StrandsSmoothing: number;
+        StrandsThickness: number;
+        ThicknessScale: UE.RuntimeFloatCurve;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairStrandsParameters_0__: boolean;
+    }
+    
+    class HairGroupsPhysics {
+        constructor();
+        constructor(SolverSettings: UE.HairSolverSettings, ExternalForces: UE.HairExternalForces, MaterialConstraints: UE.HairMaterialConstraints, StrandsParameters: UE.HairStrandsParameters);
+        SolverSettings: UE.HairSolverSettings;
+        ExternalForces: UE.HairExternalForces;
+        MaterialConstraints: UE.HairMaterialConstraints;
+        StrandsParameters: UE.HairStrandsParameters;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupsPhysics_0__: boolean;
+    }
+    
+    class HairDecimationSettings {
+        constructor();
+        constructor(CurveDecimation: number, VertexDecimation: number);
+        CurveDecimation: number;
+        VertexDecimation: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairDecimationSettings_0__: boolean;
+    }
+    
+    enum EGroomGuideType { Imported, Generated, Rigged, EGroomGuideType_MAX, __typeKeyDoNoAccess}
+    enum EHairInterpolationQuality { Low, Medium, High, Unknown, EHairInterpolationQuality_MAX, __typeKeyDoNoAccess}
+    enum EHairInterpolationWeight { Parametric, Root, Index, Distance, Unknown, EHairInterpolationWeight_MAX, __typeKeyDoNoAccess}
+    class HairInterpolationSettings {
+        constructor();
+        constructor(GuideType: UE.EGroomGuideType, bOverrideGuides: boolean, HairToGuideDensity: number, RiggedGuideNumCurves: number, RiggedGuideNumPoints: number, InterpolationQuality: UE.EHairInterpolationQuality, InterpolationDistance: UE.EHairInterpolationWeight, bRandomizeGuide: boolean, bUseUniqueGuide: boolean);
+        GuideType: UE.EGroomGuideType;
+        bOverrideGuides: boolean;
+        HairToGuideDensity: number;
+        RiggedGuideNumCurves: number;
+        RiggedGuideNumPoints: number;
+        InterpolationQuality: UE.EHairInterpolationQuality;
+        InterpolationDistance: UE.EHairInterpolationWeight;
+        bRandomizeGuide: boolean;
+        bUseUniqueGuide: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairInterpolationSettings_0__: boolean;
+    }
+    
+    class HairDeformationSettings {
+        constructor();
+        constructor(bEnableRigging: boolean, NumCurves: number, NumPoints: number);
+        bEnableRigging: boolean;
+        NumCurves: number;
+        NumPoints: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairDeformationSettings_0__: boolean;
+    }
+    
+    class HairGroupsInterpolation {
+        constructor();
+        constructor(DecimationSettings: UE.HairDecimationSettings, InterpolationSettings: UE.HairInterpolationSettings, RiggingSettings: UE.HairDeformationSettings);
+        DecimationSettings: UE.HairDecimationSettings;
+        InterpolationSettings: UE.HairInterpolationSettings;
+        RiggingSettings: UE.HairDeformationSettings;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupsInterpolation_0__: boolean;
+    }
+    
+    enum EGroomGeometryType { Strands, Cards, Meshes, EGroomGeometryType_MAX, __typeKeyDoNoAccess}
+    enum EGroomBindingType { NoneBinding, Rigid, Skinning, EGroomBindingType_MAX, __typeKeyDoNoAccess}
+    enum EGroomOverrideType { Auto, Enable, Disable, EGroomOverrideType_MAX, __typeKeyDoNoAccess}
+    class HairLODSettings {
+        constructor();
+        constructor(CurveDecimation: number, VertexDecimation: number, AngularThreshold: number, ScreenSize: number, ThicknessScale: number, bVisible: boolean, GeometryType: UE.EGroomGeometryType, BindingType: UE.EGroomBindingType, Simulation: UE.EGroomOverrideType, GlobalInterpolation: UE.EGroomOverrideType);
+        CurveDecimation: number;
+        VertexDecimation: number;
+        AngularThreshold: number;
+        ScreenSize: number;
+        ThicknessScale: number;
+        bVisible: boolean;
+        GeometryType: UE.EGroomGeometryType;
+        BindingType: UE.EGroomBindingType;
+        Simulation: UE.EGroomOverrideType;
+        GlobalInterpolation: UE.EGroomOverrideType;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairLODSettings_0__: boolean;
+    }
+    
+    class HairGroupsLOD {
+        constructor();
+        constructor(AutoLODBias: number, LODs: TArray<UE.HairLODSettings>);
+        AutoLODBias: number;
+        LODs: TArray<UE.HairLODSettings>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupsLOD_0__: boolean;
+    }
+    
+    enum EHairCardsSourceType { Procedural, Imported, EHairCardsSourceType_MAX, __typeKeyDoNoAccess}
+    enum EHairCardsGuideType { Generated, GuideBased, EHairCardsGuideType_MAX, __typeKeyDoNoAccess}
+    enum EHairTextureLayout { Layout0, Layout1, Layout2, Layout3, EHairTextureLayout_MAX, __typeKeyDoNoAccess}
+    class HairGroupCardsTextures {
+        constructor();
+        constructor(Layout: UE.EHairTextureLayout, Textures: TArray<UE.Texture2D>, DepthTexture: UE.Texture2D, CoverageTexture: UE.Texture2D, TangentTexture: UE.Texture2D, AttributeTexture: UE.Texture2D, AuxilaryDataTexture: UE.Texture2D, MaterialTexture: UE.Texture2D);
+        Layout: UE.EHairTextureLayout;
+        Textures: TArray<UE.Texture2D>;
+        DepthTexture: UE.Texture2D;
+        CoverageTexture: UE.Texture2D;
+        TangentTexture: UE.Texture2D;
+        AttributeTexture: UE.Texture2D;
+        AuxilaryDataTexture: UE.Texture2D;
+        MaterialTexture: UE.Texture2D;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupCardsTextures_0__: boolean;
+    }
+    
+    class HairCardGenerationSettings extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): HairCardGenerationSettings;
+        static Load(InName: string): HairCardGenerationSettings;
+    
+        __tid_HairCardGenerationSettings_0__: boolean;
+    }
+    
+    class HairGroupCardsInfo {
+        constructor();
+        constructor(NumCards: number, NumCardVertices: number);
+        NumCards: number;
+        NumCardVertices: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupCardsInfo_0__: boolean;
+    }
+    
+    class HairGroupsCardsSourceDescription {
+        constructor();
+        constructor(Material: UE.MaterialInterface, MaterialSlotName: string, SourceType: UE.EHairCardsSourceType, ProceduralMesh: UE.StaticMesh, bInvertUV: boolean, GuideType: UE.EHairCardsGuideType, ImportedMesh: UE.StaticMesh, Textures: UE.HairGroupCardsTextures, GroupIndex: number, LODIndex: number, GenerationSettings: UE.HairCardGenerationSettings, CardsInfo: UE.HairGroupCardsInfo, ImportedMeshKey: string);
+        Material: UE.MaterialInterface;
+        MaterialSlotName: string;
+        SourceType: UE.EHairCardsSourceType;
+        ProceduralMesh: UE.StaticMesh;
+        bInvertUV: boolean;
+        GuideType: UE.EHairCardsGuideType;
+        ImportedMesh: UE.StaticMesh;
+        Textures: UE.HairGroupCardsTextures;
+        GroupIndex: number;
+        LODIndex: number;
+        GenerationSettings: UE.HairCardGenerationSettings;
+        CardsInfo: UE.HairGroupCardsInfo;
+        ImportedMeshKey: string;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupsCardsSourceDescription_0__: boolean;
+    }
+    
+    class HairGroupsMeshesSourceDescription {
+        constructor();
+        constructor(Material: UE.MaterialInterface, MaterialSlotName: string, ImportedMesh: UE.StaticMesh, Textures: UE.HairGroupCardsTextures, GroupIndex: number, LODIndex: number, ImportedMeshKey: string);
+        Material: UE.MaterialInterface;
+        MaterialSlotName: string;
+        ImportedMesh: UE.StaticMesh;
+        Textures: UE.HairGroupCardsTextures;
+        GroupIndex: number;
+        LODIndex: number;
+        ImportedMeshKey: string;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupsMeshesSourceDescription_0__: boolean;
+    }
+    
+    class HairGroupsMaterial {
+        constructor();
+        constructor(Material: UE.MaterialInterface, SlotName: string);
+        Material: UE.MaterialInterface;
+        SlotName: string;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupsMaterial_0__: boolean;
+    }
+    
+    enum EGroomInterpolationType { None, RigidTransform, OffsetTransform, SmoothTransform, EGroomInterpolationType_MAX, __typeKeyDoNoAccess}
+    class GroomAsset extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        LODMode: UE.EGroomLODMode;
+        AutoLODBias: number;
+        DataflowSettings: UE.GroomDataflowSettings;
+        HairGroupsInfo: TArray<UE.HairGroupInfoWithVisibility>;
+        HairGroupsRendering: TArray<UE.HairGroupsRendering>;
+        HairGroupsPhysics: TArray<UE.HairGroupsPhysics>;
+        HairGroupsInterpolation: TArray<UE.HairGroupsInterpolation>;
+        HairGroupsLOD: TArray<UE.HairGroupsLOD>;
+        HairGroupsCards: TArray<UE.HairGroupsCardsSourceDescription>;
+        HairGroupsMeshes: TArray<UE.HairGroupsMeshesSourceDescription>;
+        HairGroupsMaterials: TArray<UE.HairGroupsMaterial>;
+        EnableGlobalInterpolation: boolean;
+        EnableSimulationCache: boolean;
+        HairInterpolationType: UE.EGroomInterpolationType;
+        RiggedSkeletalMesh: UE.SkeletalMesh;
+        DeformedGroupSections: TArray<number>;
+        MinLOD: UE.PerPlatformInt;
+        DisableBelowMinLodStripping: UE.PerPlatformBool;
+        EffectiveLODBias: TArray<number>;
+        ThumbnailInfo_EditorOnly: UE.ThumbnailInfo;
+        AssetImportData_EditorOnly: UE.AssetImportData;
+        AssetUserData: TArray<UE.AssetUserData>;
+        /*
+         *Creates and adds an instance of the provided AssetUserData class to the target asset.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to create
+         *
+         *@return       Whether or not an instance of InUserDataClass was succesfully added
+         */
+        AddAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
+        /*
+         *Returns an instance of the provided AssetUserData class if it's contained in the target asset.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to get
+         *
+         *@return       The instance of the UAssetUserData class contained, or null if it doesn't exist
+         */
+        GetAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : UE.AssetUserData;
+        GetDeformedGroupSections() : TArray<number>;
+        GetEnableGlobalInterpolation() : boolean;
+        GetEnableSimulationCache() : boolean;
+        GetHairGroupsCards() : TArray<UE.HairGroupsCardsSourceDescription>;
+        GetHairGroupsInterpolation() : TArray<UE.HairGroupsInterpolation>;
+        GetHairGroupsLOD() : TArray<UE.HairGroupsLOD>;
+        GetHairGroupsMaterials() : TArray<UE.HairGroupsMaterial>;
+        GetHairGroupsMeshes() : TArray<UE.HairGroupsMeshesSourceDescription>;
+        GetHairGroupsPhysics() : TArray<UE.HairGroupsPhysics>;
+        GetHairGroupsRendering() : TArray<UE.HairGroupsRendering>;
+        GetHairInterpolationType() : UE.EGroomInterpolationType;
+        GetRiggedSkeletalMesh() : UE.SkeletalMesh;
+        /*
+         *Checks whether or not an instance of the provided AssetUserData class is contained.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to check for
+         *
+         *@return       Whether or not an instance of InUserDataClass was found
+         */
+        HasAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
+        SetDeformedGroupSections(_In: TArray<number>) : void;
+        SetEnableGlobalInterpolation(_In: boolean) : void;
+        SetEnableSimulationCache(_In: boolean) : void;
+        SetHairGroupsCards(_In: TArray<UE.HairGroupsCardsSourceDescription>) : void;
+        SetHairGroupsInterpolation(_In: TArray<UE.HairGroupsInterpolation>) : void;
+        SetHairGroupsLOD(_In: TArray<UE.HairGroupsLOD>) : void;
+        SetHairGroupsMaterials(_In: TArray<UE.HairGroupsMaterial>) : void;
+        SetHairGroupsMeshes(_In: TArray<UE.HairGroupsMeshesSourceDescription>) : void;
+        SetHairGroupsPhysics(_In: TArray<UE.HairGroupsPhysics>) : void;
+        SetHairGroupsRendering(_In: TArray<UE.HairGroupsRendering>) : void;
+        SetHairInterpolationType(_In: UE.EGroomInterpolationType) : void;
+        SetRiggedSkeletalMesh(_In: $Nullable<UE.SkeletalMesh>) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GroomAsset;
+        static Load(InName: string): GroomAsset;
+    
+        __tid_GroomAsset_0__: boolean;
+    }
+    
+    class GeometryCacheTrack extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Duration: number;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GeometryCacheTrack;
+        static Load(InName: string): GeometryCacheTrack;
+    
+        __tid_GeometryCacheTrack_0__: boolean;
+    }
+    
+    class GeometryCache extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AssetImportData_EditorOnly: UE.AssetImportData;
+        ThumbnailInfo_EditorOnly: UE.ThumbnailInfo;
+        Materials: TArray<UE.MaterialInterface>;
+        MaterialSlotNames: TArray<string>;
+        Tracks: TArray<UE.GeometryCacheTrack>;
+        AssetUserData: TArray<UE.AssetUserData>;
+        StartFrame: number;
+        EndFrame: number;
+        Hash: bigint;
+        /*
+         *Creates and adds an instance of the provided AssetUserData class to the target asset.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to create
+         *
+         *@return       Whether or not an instance of InUserDataClass was succesfully added
+         */
+        AddAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
+        /*
+         *Returns an instance of the provided AssetUserData class if it's contained in the target asset.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to get
+         *
+         *@return       The instance of the UAssetUserData class contained, or null if it doesn't exist
+         */
+        GetAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : UE.AssetUserData;
+        /*
+         *Checks whether or not an instance of the provided AssetUserData class is contained.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to check for
+         *
+         *@return       Whether or not an instance of InUserDataClass was found
+         */
+        HasAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GeometryCache;
+        static Load(InName: string): GeometryCache;
+    
+        __tid_GeometryCache_0__: boolean;
+    }
+    
+    class GoomBindingGroupInfo {
+        constructor();
+        constructor(RenRootCount: number, RenLODCount: number, SimRootCount: number, SimLODCount: number);
+        RenRootCount: number;
+        RenLODCount: number;
+        SimRootCount: number;
+        SimLODCount: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GoomBindingGroupInfo_0__: boolean;
+    }
+    
+    enum EGroomBindingAssetBuildResult { Succeeded, Failed, EGroomBindingAssetBuildResult_MAX, __typeKeyDoNoAccess}
+    class GroomBindingAsset extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        GroomBindingType: UE.EGroomBindingMeshType;
+        Groom: UE.GroomAsset;
+        SourceSkeletalMesh: UE.SkeletalMesh;
+        SourceMeshRequestedLOD: number;
+        SourceMeshUsedLOD: number;
+        TargetSkeletalMesh: UE.SkeletalMesh;
+        TargetMeshRequestedMinLOD: number;
+        TargetMeshUsedMinLOD: number;
+        SourceGeometryCache: UE.GeometryCache;
+        TargetGeometryCache: UE.GeometryCache;
+        NumInterpolationPoints: number;
+        MatchingSection: number;
+        TargetBindingAttribute: string;
+        GroupInfos: TArray<UE.GoomBindingGroupInfo>;
+        ThumbnailInfo_EditorOnly: UE.ThumbnailInfo;
+        /*
+         *Build_rebuild a binding asset.
+         *
+         *Avoid calling Build again while a build is already in progress on this asset, as this will
+         *cause the Game Thread to block until the earlier build is finished.
+         *
+         *Similarly, the Game Thread will block for a short time if a Groom Component is already using
+         *this binding asset, so if performance is critical avoid calling Build on bindings that are
+         *in use.
+         */
+        Build(CompletionDelegate: $Delegate<(GroomBinding: $Nullable<UE.GroomBindingAsset>, Result: UE.EGroomBindingAssetBuildResult) => void>) : void;
+        GetGroom() : UE.GroomAsset;
+        GetGroomBindingType() : UE.EGroomBindingMeshType;
+        GetGroupInfos() : TArray<UE.GoomBindingGroupInfo>;
+        GetMatchingSection() : number;
+        GetNumInterpolationPoints() : number;
+        GetSourceGeometryCache() : UE.GeometryCache;
+        GetSourceMeshRequestedLOD() : number;
+        GetSourceMeshUsedLOD() : number;
+        GetSourceSkeletalMesh() : UE.SkeletalMesh;
+        GetTargetBindingAttribute() : string;
+        GetTargetGeometryCache() : UE.GeometryCache;
+        GetTargetMeshRequestedMinLOD() : number;
+        GetTargetMeshUsedMinLOD() : number;
+        GetTargetSkeletalMesh() : UE.SkeletalMesh;
+        SetGroom(InGroom: $Nullable<UE.GroomAsset>) : void;
+        SetGroomBindingType(InGroomBindingType: UE.EGroomBindingMeshType) : void;
+        SetGroupInfos(InGroupInfos: TArray<UE.GoomBindingGroupInfo>) : void;
+        SetMatchingSection(InMatchingSection: number) : void;
+        SetNumInterpolationPoints(InNumInterpolationPoints: number) : void;
+        SetSourceGeometryCache(InGeometryCache: $Nullable<UE.GeometryCache>) : void;
+        SetSourceMeshRequestedLOD(InSourceMeshRequestedLOD: number) : void;
+        SetSourceMeshUsedLOD(InSourceMeshUsedLOD: number) : void;
+        SetSourceSkeletalMesh(InSkeletalMesh: $Nullable<UE.SkeletalMesh>) : void;
+        SetTargetBindingAttribute(InAttributeName: string) : void;
+        SetTargetGeometryCache(InGeometryCache: $Nullable<UE.GeometryCache>) : void;
+        SetTargetMeshRequestedMinLOD(InTargetMeshRequestedMinLOD: number) : void;
+        SetTargetMeshUsedMinLOD(InTargetMeshUsedMinLOD: number) : void;
+        SetTargetSkeletalMesh(InSkeletalMesh: $Nullable<UE.SkeletalMesh>) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GroomBindingAsset;
+        static Load(InName: string): GroomBindingAsset;
+    
+        __tid_GroomBindingAsset_0__: boolean;
+    }
+    
     class DataflowGroomContent extends UE.DataflowSkeletalContent {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         BindingAsset: UE.GroomBindingAsset;
@@ -97960,6 +96551,64 @@ declare module "ue" {
         __tid_DebugShaderCompileJobCommandlet_0__: boolean;
     }
     
+    class DecalComponent extends UE.SceneComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        DecalMaterial: UE.MaterialInterface;
+        SortOrder: number;
+        FadeScreenSize: number;
+        FadeStartDelay: number;
+        FadeDuration: number;
+        FadeInDuration: number;
+        FadeInStartDelay: number;
+        bDestroyOwnerAfterFade: boolean;
+        DecalSize: UE.Vector;
+        DecalColor: UE.LinearColor;
+        /*
+         *Utility to allocate a new Dynamic Material Instance, set its parent to the currently applied material, and assign it
+         */
+        CreateDynamicMaterialInstance() : UE.MaterialInstanceDynamic;
+        /*
+         *Accessor for decal material
+         */
+        GetDecalMaterial() : UE.MaterialInterface;
+        GetFadeDuration() : number;
+        GetFadeInDuration() : number;
+        GetFadeInStartDelay() : number;
+        GetFadeStartDelay() : number;
+        /*
+         *Sets the decal color.
+         */
+        SetDecalColor(Color: UE.LinearColor) : void;
+        /*
+         *setting decal material on decal component. This will force the decal to reattach
+         */
+        SetDecalMaterial(NewDecalMaterial: $Nullable<UE.MaterialInterface>) : void;
+        SetFadeIn(StartDelay: number, Duration: number) : void;
+        /*
+         *Sets the decal's fade start time, duration and if the owning actor should be destroyed after the decal is fully faded out.
+         *The default value of 0 for FadeStartDelay and FadeDuration makes the decal persistent. See DecalLifetimeOpacity material
+         *node to control the look of "fading out."
+         *
+         *@param StartDelay - Time in seconds to wait before beginning to fade out the decal.
+         *@param Duration - Time in second for the decal to fade out.
+         *@param DestroyOwnerAfterFade - Should the owning actor automatically be destroyed after it is completely faded out.
+         */
+        SetFadeOut(StartDelay: number, Duration: number, DestroyOwnerAfterFade?: boolean /* = true */) : void;
+        /*
+         *Set the FadeScreenSize for this decal component
+         */
+        SetFadeScreenSize(NewFadeScreenSize: number) : void;
+        /*
+         *Sets the sort order for the decal component. Higher values draw later (on top). This will force the decal to reattach
+         */
+        SetSortOrder(Value: number) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): DecalComponent;
+        static Load(InName: string): DecalComponent;
+    
+        __tid_DecalComponent_0__: boolean;
+    }
+    
     class DecalActor extends UE.Actor {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         Decal: UE.DecalComponent;
@@ -98226,134 +96875,6 @@ declare module "ue" {
         static Load(InName: string): DefaultPhysicsVolume;
     
         __tid_DefaultPhysicsVolume_0__: boolean;
-    }
-    
-    class TakeRecorderUserParameters {
-        constructor();
-        constructor(bMaximizeViewport: boolean, CountdownSeconds: number, EngineTimeDilation: number, bResetPlayhead: boolean, bStopAtPlaybackEnd: boolean, bRemoveRedundantTracks: boolean, ReduceKeysTolerance: number, bSaveRecordedAssets: boolean, bAutoLock: boolean, bAutoSerialize: boolean);
-        bMaximizeViewport: boolean;
-        CountdownSeconds: number;
-        EngineTimeDilation: number;
-        bResetPlayhead: boolean;
-        bStopAtPlaybackEnd: boolean;
-        bRemoveRedundantTracks: boolean;
-        ReduceKeysTolerance: number;
-        bSaveRecordedAssets: boolean;
-        bAutoLock: boolean;
-        bAutoSerialize: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TakeRecorderUserParameters_0__: boolean;
-    }
-    
-    class TakeRecorderPropertyTrackSettings {
-        constructor();
-        constructor(ComponentPath: string, PropertyPath: string);
-        ComponentPath: string;
-        PropertyPath: string;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TakeRecorderPropertyTrackSettings_0__: boolean;
-    }
-    
-    class TakeRecorderTrackSettings {
-        constructor();
-        constructor(MatchingActorClass: UE.SoftClassPath, DefaultPropertyTracks: TArray<UE.TakeRecorderPropertyTrackSettings>, ExcludePropertyTracks: TArray<UE.TakeRecorderPropertyTrackSettings>);
-        MatchingActorClass: UE.SoftClassPath;
-        DefaultPropertyTracks: TArray<UE.TakeRecorderPropertyTrackSettings>;
-        ExcludePropertyTracks: TArray<UE.TakeRecorderPropertyTrackSettings>;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TakeRecorderTrackSettings_0__: boolean;
-    }
-    
-    class TakeRecorderProjectParameters {
-        constructor();
-        constructor(RootTakeSaveDir: UE.DirectoryPath, TakeSaveDir: string, SubSequenceDirectory: string, DefaultSlate: string, RecordingClockSource: UE.EUpdateClockSource, bStartAtCurrentTimecode: boolean, bRecordTimecode: boolean, bRecordSourcesIntoSubSequences: boolean, bRecordToPossessable: boolean, DefaultTracks: TArray<UE.TakeRecorderTrackSettings>, bShowNotifications: boolean);
-        RootTakeSaveDir: UE.DirectoryPath;
-        TakeSaveDir: string;
-        SubSequenceDirectory: string;
-        DefaultSlate: string;
-        RecordingClockSource: UE.EUpdateClockSource;
-        bStartAtCurrentTimecode: boolean;
-        bRecordTimecode: boolean;
-        bRecordSourcesIntoSubSequences: boolean;
-        bRecordToPossessable: boolean;
-        DefaultTracks: TArray<UE.TakeRecorderTrackSettings>;
-        bShowNotifications: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TakeRecorderProjectParameters_0__: boolean;
-    }
-    
-    enum ETakeRecorderMode { RecordNewSequence, RecordIntoSequence, ETakeRecorderMode_MAX, __typeKeyDoNoAccess}
-    class TakeRecorderParameters {
-        constructor();
-        constructor(User: UE.TakeRecorderUserParameters, Project: UE.TakeRecorderProjectParameters, TakeRecorderMode: UE.ETakeRecorderMode, StartFrame: UE.FrameNumber, bDisableRecordingAndSave: boolean, bOpenSequencer: boolean);
-        User: UE.TakeRecorderUserParameters;
-        Project: UE.TakeRecorderProjectParameters;
-        TakeRecorderMode: UE.ETakeRecorderMode;
-        StartFrame: UE.FrameNumber;
-        bDisableRecordingAndSave: boolean;
-        bOpenSequencer: boolean;
-        /**
-         * @deprecated use StaticStruct instead.
-         */
-        static StaticClass(): ScriptStruct;
-        static StaticStruct(): ScriptStruct;
-        __tid_TakeRecorderParameters_0__: boolean;
-    }
-    
-    enum ETakeRecorderState { PreInitialization, CountingDown, PreRecord, TickingAfterPre, Started, Stopped, Cancelled, ETakeRecorderState_MAX, __typeKeyDoNoAccess}
-    class TakeRecorder extends UE.Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SequenceAsset: UE.LevelSequence;
-        OverlayWidget: UE.TakeRecorderOverlayWidget;
-        WeakWorld: TWeakObjectPtr<UE.World>;
-        Parameters: UE.TakeRecorderParameters;
-        /*
-         *Access the number of seconds remaining before this recording will start
-         */
-        GetCountdownSeconds() : number;
-        /*
-         *Access the sequence asset that this recorder is recording into
-         */
-        GetSequence() : UE.LevelSequence;
-        /*
-         *Get the current state of this recorder
-         */
-        GetState() : UE.ETakeRecorderState;
-        /*
-         *Sets the current countdown time in seconds.
-         */
-        SetCountdown(InSeconds: number) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TakeRecorder;
-        static Load(InName: string): TakeRecorder;
-    
-        __tid_TakeRecorder_0__: boolean;
-    }
-    
-    class TakeRecorderOverlayWidget extends UE.UserWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Recorder: UE.TakeRecorder;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TakeRecorderOverlayWidget;
-        static Load(InName: string): TakeRecorderOverlayWidget;
-    
-        __tid_TakeRecorderOverlayWidget_0__: boolean;
     }
     
     class RootCameraNode extends UE.CameraNode {
@@ -100705,6 +99226,20 @@ declare module "ue" {
     }
     
     enum EDynamicBoxType { Horizontal, Vertical, Wrap, VerticalWrap, Radial, Overlay, EDynamicBoxType_MAX, __typeKeyDoNoAccess}
+    enum ESlateSizeRule { Automatic, Fill, ESlateSizeRule_MAX, __typeKeyDoNoAccess}
+    class SlateChildSize {
+        constructor();
+        constructor(Value: number, SizeRule: UE.ESlateSizeRule);
+        Value: number;
+        SizeRule: UE.ESlateSizeRule;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_SlateChildSize_0__: boolean;
+    }
+    
     class RadialBoxSettings {
         constructor();
         constructor(StartingAngle: number, bDistributeItemsEvenly: boolean, AngleBetweenItems: number, SectorCentralAngle: number);
@@ -101212,6 +99747,7 @@ declare module "ue" {
     enum ECombineCurvesMethod { LeaveSeparate, Union, Intersect, Difference, ExclusiveOr, ECombineCurvesMethod_MAX, __typeKeyDoNoAccess}
     enum ECommentBoxMode { GroupMovement, NoGroupMovement, ECommentBoxMode_MAX, __typeKeyDoNoAccess}
     enum ECompareOperation1Enum { Dataflow_Compare_Equal, Dataflow_Compare_Smaller, Dataflow_Compare_SmallerOrEqual, Dataflow_Compare_Greater, Dataflow_Compare_GreaterOrEqual, Dataflow_Max, Dataflow_MAX, __typeKeyDoNoAccess}
+    enum EComparisonMethod { Equal_To, Not_Equal_To, Greater_Than_Or_Equal_To, Less_Than_Or_Equal_To, Greater_Than, Less_Than, EComparisonMethod_MAX, __typeKeyDoNoAccess}
     enum ECompilerVersion { Default, VisualStudio2015, VisualStudio2017, VisualStudio2019, VisualStudio2022, ECompilerVersion_MAX, __typeKeyDoNoAccess}
     enum EComponentSocketType { Invalid, Bone, Socket, EComponentSocketType_MAX, __typeKeyDoNoAccess}
     enum ECompositeCoreMergeOp { None, Over, Add, Multiply, Divide, ECompositeCoreMergeOp_MAX, __typeKeyDoNoAccess}
@@ -101236,6 +99772,7 @@ declare module "ue" {
     enum EControlRigInteractionType { None, Translate, Rotate, Scale, All, EControlRigInteractionType_MAX, __typeKeyDoNoAccess}
     enum EControlRigModifyBoneMode { OverrideLocal, OverrideGlobal, AdditiveLocal, AdditiveGlobal, Max, EControlRigModifyBoneMode_MAX, __typeKeyDoNoAccess}
     enum EControlRigSetKey { DoNotCare, Always, Never, EControlRigSetKey_MAX, __typeKeyDoNoAccess}
+    enum EControlRigVectorKind { Direction, Location, EControlRigVectorKind_MAX, __typeKeyDoNoAccess}
     enum EConvexDecompositionMethod { NavigationDriven, VolumetricError, EConvexDecompositionMethod_MAX, __typeKeyDoNoAccess}
     enum EConvexHullProximityFilter { None, BoundingBox, EConvexHullProximityFilter_MAX, __typeKeyDoNoAccess}
     enum EConvexHullSimplifyMethod { MeshQSlim, AngleTolerance, EConvexHullSimplifyMethod_MAX, __typeKeyDoNoAccess}
@@ -101767,6 +100304,122 @@ declare module "ue" {
         static Load(InName: string): EditableGameplayTagQueryExpression_NoTagsMatch;
     
         __tid_EditableGameplayTagQueryExpression_NoTagsMatch_0__: boolean;
+    }
+    
+    class EditableTextStyle extends UE.SlateWidgetStyle {
+        constructor();
+        constructor(Font: UE.SlateFontInfo, ColorAndOpacity: UE.SlateColor, BackgroundImageSelected: UE.SlateBrush, BackgroundImageComposing: UE.SlateBrush, CaretImage: UE.SlateBrush);
+        Font: UE.SlateFontInfo;
+        ColorAndOpacity: UE.SlateColor;
+        BackgroundImageSelected: UE.SlateBrush;
+        BackgroundImageComposing: UE.SlateBrush;
+        CaretImage: UE.SlateBrush;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_EditableTextStyle_0__: boolean;
+    }
+    
+    enum EVirtualKeyboardType { Default, Number, Web, Email, Password, AlphaNumeric, EVirtualKeyboardType_MAX, __typeKeyDoNoAccess}
+    class VirtualKeyboardOptions {
+        constructor();
+        constructor(bEnableAutocorrect: boolean);
+        bEnableAutocorrect: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_VirtualKeyboardOptions_0__: boolean;
+    }
+    
+    enum EVirtualKeyboardTrigger { OnFocusByPointer, OnAllFocusEvents, EVirtualKeyboardTrigger_MAX, __typeKeyDoNoAccess}
+    enum EVirtualKeyboardDismissAction { TextChangeOnDismiss, TextCommitOnAccept, TextCommitOnDismiss, EVirtualKeyboardDismissAction_MAX, __typeKeyDoNoAccess}
+    enum ETextJustify { Left, Center, Right, InvariantLeft, InvariantRight, ETextJustify_MAX, __typeKeyDoNoAccess}
+    enum ETextShapingMethod { Auto, KerningOnly, FullShaping, ETextShapingMethod_MAX, __typeKeyDoNoAccess}
+    enum ETextFlowDirection { Auto, LeftToRight, RightToLeft, Culture, ETextFlowDirection_MAX, __typeKeyDoNoAccess}
+    class ShapedTextOptions {
+        constructor();
+        constructor(bOverride_TextShapingMethod: boolean, bOverride_TextFlowDirection: boolean, TextShapingMethod: UE.ETextShapingMethod, TextFlowDirection: UE.ETextFlowDirection);
+        bOverride_TextShapingMethod: boolean;
+        bOverride_TextFlowDirection: boolean;
+        TextShapingMethod: UE.ETextShapingMethod;
+        TextFlowDirection: UE.ETextFlowDirection;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_ShapedTextOptions_0__: boolean;
+    }
+    
+    enum ETextCommit { Default, OnEnter, OnUserMovedFocus, OnCleared, ETextCommit_MAX, __typeKeyDoNoAccess}
+    class EditableText extends UE.Widget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Text: string;
+        TextDelegate: $Delegate<() => string>;
+        HintText: string;
+        HintTextDelegate: $Delegate<() => string>;
+        WidgetStyle: UE.EditableTextStyle;
+        IsReadOnly: boolean;
+        IsPassword: boolean;
+        MinimumDesiredWidth: number;
+        IsCaretMovedWhenGainFocus: boolean;
+        SelectAllTextWhenFocused: boolean;
+        RevertTextOnEscape: boolean;
+        ClearKeyboardFocusOnCommit: boolean;
+        SelectAllTextOnCommit: boolean;
+        AllowContextMenu: boolean;
+        KeyboardType: UE.EVirtualKeyboardType;
+        VirtualKeyboardOptions: UE.VirtualKeyboardOptions;
+        VirtualKeyboardTrigger: UE.EVirtualKeyboardTrigger;
+        VirtualKeyboardDismissAction: UE.EVirtualKeyboardDismissAction;
+        Justification: UE.ETextJustify;
+        OverflowPolicy: UE.ETextOverflowPolicy;
+        ShapedTextOptions: UE.ShapedTextOptions;
+        OnTextChanged: $MulticastDelegate<(Text: string) => void>;
+        OnTextCommitted: $MulticastDelegate<(Text: string, CommitMethod: UE.ETextCommit) => void>;
+        EnableIntegratedKeyboard: boolean;
+        GetFont() : UE.SlateFontInfo;
+        /*
+         *Gets the Hint text that appears when there is no text in the text box
+         */
+        GetHintText() : string;
+        GetJustification() : UE.ETextJustify;
+        /*
+         *Gets the widget text
+         *@return The widget text
+         */
+        GetText() : string;
+        OnEditableTextChangedEvent__DelegateSignature(Text: string) : void;
+        OnEditableTextCommittedEvent__DelegateSignature(Text: string, CommitMethod: UE.ETextCommit) : void;
+        SetFont(InFontInfo: UE.SlateFontInfo) : void;
+        SetFontMaterial(InMaterial: $Nullable<UE.MaterialInterface>) : void;
+        SetFontOutlineMaterial(InMaterial: $Nullable<UE.MaterialInterface>) : void;
+        SetHintText(InHintText: string) : void;
+        SetIsPassword(InbIsPassword: boolean) : void;
+        SetIsReadOnly(InbIsReadyOnly: boolean) : void;
+        SetJustification(InJustification: UE.ETextJustify) : void;
+        /*
+         *Set the minimum desired width for this text box
+         *
+         *@param InMinDesiredWidth new minimum desired width
+         */
+        SetMinimumDesiredWidth(InMinDesiredWidth: number) : void;
+        /*
+         *Directly sets the widget text.
+         *Warning: This will wipe any binding created for the Text property!
+         *@param InText The text to assign to the widget
+         */
+        SetText(InText: string) : void;
+        SetTextOverflowPolicy(InOverflowPolicy: UE.ETextOverflowPolicy) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): EditableText;
+        static Load(InName: string): EditableText;
+    
+        __tid_EditableText_0__: boolean;
     }
     
     class EditableTextBoxStyle extends UE.SlateWidgetStyle {
@@ -107101,6 +105754,25 @@ declare module "ue" {
         __tid_EditorUtilityListView_0__: boolean;
     }
     
+    enum ETextWrappingPolicy { DefaultWrapping, AllowPerCharacterWrapping, ETextWrappingPolicy_MAX, __typeKeyDoNoAccess}
+    class TextLayoutWidget extends UE.Widget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ShapedTextOptions: UE.ShapedTextOptions;
+        Justification: UE.ETextJustify;
+        WrappingPolicy: UE.ETextWrappingPolicy;
+        AutoWrapText: boolean;
+        ApplyLineHeightToBottomLine: boolean;
+        WrapTextAt: number;
+        Margin: UE.Margin;
+        LineHeightPercentage: number;
+        SetJustification(InJustification: UE.ETextJustify) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TextLayoutWidget;
+        static Load(InName: string): TextLayoutWidget;
+    
+        __tid_TextLayoutWidget_0__: boolean;
+    }
+    
     class MultiLineEditableText extends UE.TextLayoutWidget {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         Text: string;
@@ -107438,6 +106110,75 @@ declare module "ue" {
         static Load(InName: string): EditorUtilityScrollBox;
     
         __tid_EditorUtilityScrollBox_0__: boolean;
+    }
+    
+    class Slider extends UE.Widget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Value: number;
+        ValueDelegate: $Delegate<() => number>;
+        MinValue: number;
+        MaxValue: number;
+        WidgetStyle: UE.SliderStyle;
+        Orientation: UE.EOrientation;
+        SliderBarColor: UE.LinearColor;
+        SliderHandleColor: UE.LinearColor;
+        IndentHandle: boolean;
+        Locked: boolean;
+        MouseUsesStep: boolean;
+        RequiresControllerLock: boolean;
+        StepSize: number;
+        IsFocusable: boolean;
+        bPreventThrottling: boolean;
+        OnMouseCaptureBegin: $MulticastDelegate<() => void>;
+        OnMouseCaptureEnd: $MulticastDelegate<() => void>;
+        OnControllerCaptureBegin: $MulticastDelegate<() => void>;
+        OnControllerCaptureEnd: $MulticastDelegate<() => void>;
+        OnValueChanged: $MulticastDelegate<(Value: number) => void>;
+        /*
+         *Get the current value scaled from 0 to 1
+         */
+        GetNormalizedValue() : number;
+        /*
+         *Gets the current value of the slider.
+         */
+        GetValue() : number;
+        /*
+         *Sets if the slidable area should be indented to fit the handle.
+         */
+        SetIndentHandle(InValue: boolean) : void;
+        /*
+         *Sets the handle to be interactive or fixed.
+         */
+        SetLocked(InValue: boolean) : void;
+        /*
+         *Sets the maximum value of the slider.
+         */
+        SetMaxValue(InValue: number) : void;
+        /*
+         *Sets the minimum value of the slider.
+         */
+        SetMinValue(InValue: number) : void;
+        /*
+         *Sets the color of the slider bar.
+         */
+        SetSliderBarColor(InValue: UE.LinearColor) : void;
+        /*
+         *Sets the color of the handle bar
+         */
+        SetSliderHandleColor(InValue: UE.LinearColor) : void;
+        /*
+         *Sets the amount to adjust the value by, when using a controller or keyboard.
+         */
+        SetStepSize(InValue: number) : void;
+        /*
+         *Sets the current value of the slider.
+         */
+        SetValue(InValue: number) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): Slider;
+        static Load(InName: string): Slider;
+    
+        __tid_Slider_0__: boolean;
     }
     
     class EditorUtilitySlider extends UE.Slider {
@@ -108126,6 +106867,8 @@ declare module "ue" {
     enum EFractureSelectionDisplayMode { Highlight, BoundingBox, EFractureSelectionDisplayMode_MAX, __typeKeyDoNoAccess}
     enum EFrameNumberDisplayFormats { NonDropFrameTimecode, DropFrameTimecode, Seconds, Frames, Custom, MAX_Count, EFrameNumberDisplayFormats_MAX, __typeKeyDoNoAccess}
     enum EFullyLoadPackageType { FULLYLOAD_Map, FULLYLOAD_Game_PreLoadClass, FULLYLOAD_Game_PostLoadClass, FULLYLOAD_Always, FULLYLOAD_Mutator, FULLYLOAD_MAX, __typeKeyDoNoAccess}
+    enum EFunctionalTestLogHandling { ProjectDefault, OutputIsError, OutputIgnored, EFunctionalTestLogHandling_MAX, __typeKeyDoNoAccess}
+    enum EFunctionalTestResult { Default, Invalid, Error, Running, Failed, Succeeded, EFunctionalTestResult_MAX, __typeKeyDoNoAccess}
     enum EGainParamMode { Linear, Decibels, EGainParamMode_MAX, __typeKeyDoNoAccess}
     enum EGameplayCameraComponentActivationMode { Push, PushAndInsert, InsertOrPush, EGameplayCameraComponentActivationMode_MAX, __typeKeyDoNoAccess}
     enum EGameplayCamerasViewRotationMode { None, PreviewUpdate, EGameplayCamerasViewRotationMode_MAX, __typeKeyDoNoAccess}
@@ -108183,7 +106926,9 @@ declare module "ue" {
     enum EGroomAttributeType { KinematicWeights, BoneIndices, BoneWeights, CurveParents, CurveLods, EGroomAttributeType_MAX, __typeKeyDoNoAccess}
     enum EGroomBasisType { NoBasis, BezierBasis, BsplineBasis, CatmullromBasis, HermiteBasis, PowerBasis, EGroomBasisType_MAX, __typeKeyDoNoAccess}
     enum EGroomBindingAsyncProperties { None, GroomBindingType, Groom, SourceSkeletalMesh, SourceMeshRequestedLOD, SourceMeshUsedLOD, TargetSkeletalMesh, TargetMeshRequestedMinLOD, TargetMeshUsedMinLOD, SourceGeometryCache, TargetGeometryCache, NumInterpolationPoints, MatchingSection, GroupInfos, HairGroupResources, HairGroupPlatformData, TargetBindingAttribute, All, EGroomBindingAsyncProperties_MAX, __typeKeyDoNoAccess}
+    enum EGroomCacheAttributes { None, Position, Width, Color, PositionWidth, PositionColor, WidthColor, PositionWidthColor, EGroomCacheAttributes_MAX, __typeKeyDoNoAccess}
     enum EGroomCacheImportType { None, Strands, Guides, All, EGroomCacheImportType_MAX, __typeKeyDoNoAccess}
+    enum EGroomCacheType { None, Strands, Guides, EGroomCacheType_MAX, __typeKeyDoNoAccess}
     enum EGroomCollectionType { Strands, Guides, EGroomCollectionType_MAX, __typeKeyDoNoAccess}
     enum EGroomCurveType { Cubic, Linear, VariableOrder, EGroomCurveType_MAX, __typeKeyDoNoAccess}
     enum EGroomInterpolationQuality { Low, Medium, High, Unknown, EGroomInterpolationQuality_MAX, __typeKeyDoNoAccess}
@@ -111354,6 +110099,7 @@ declare module "ue" {
     enum ERigVMFunctionArgumentDirection { Input, Output, Invalid, ERigVMFunctionArgumentDirection_MAX, __typeKeyDoNoAccess}
     enum ERigVMRegisterType { Plain, String, Name, Struct, Invalid, ERigVMRegisterType_MAX, __typeKeyDoNoAccess}
     enum ERigVMSimPointIntegrateType { Verlet, SemiExplicitEuler, ERigVMSimPointIntegrateType_MAX, __typeKeyDoNoAccess}
+    enum ERigVMTransformSpace { LocalSpace, GlobalSpace, Max, ERigVMTransformSpace_MAX, __typeKeyDoNoAccess}
     enum ERingModulatorTypeSourceEffect { Sine, Saw, Triangle, Square, Count, ERingModulatorTypeSourceEffect_MAX, __typeKeyDoNoAccess}
     enum ERootBonePlacementOptions { BottomCenter, Center, Origin, ERootBonePlacementOptions_MAX, __typeKeyDoNoAccess}
     enum ERootBonePositionReference { Relative, Absolute, ERootBonePositionReference_MAX, __typeKeyDoNoAccess}
@@ -111511,6 +110257,7 @@ declare module "ue" {
     enum ESpeedTreeLODType { STLOD_Pop, STLOD_Smooth, STLOD_MAX, __typeKeyDoNoAccess}
     enum ESpeedTreeWindType { STW_None, STW_Fastest, STW_Fast, STW_Better, STW_Best, STW_Palm, STW_BestPlus, STW_MAX, __typeKeyDoNoAccess}
     enum ESplineModulationColorMask { Red, Green, Blue, Alpha, ESplineModulationColorMask_MAX, __typeKeyDoNoAccess}
+    enum ESplineType { BSpline, Hermite, Max, ESplineType_MAX, __typeKeyDoNoAccess}
     enum ESplitMeshesMethod { ByMeshTopology, ByVertexOverlap, ByMaterialID, ByPolyGroup, ESplitMeshesMethod_MAX, __typeKeyDoNoAccess}
     enum ESplitScreenType { None, TwoPlayer_Horizontal, TwoPlayer_Vertical, ThreePlayer_FavorTop, ThreePlayer_FavorBottom, ThreePlayer_Vertical, ThreePlayer_Horizontal, FourPlayer_Grid, FourPlayer_Vertical, FourPlayer_Horizontal, SplitTypeCount, ESplitScreenType_MAX, __typeKeyDoNoAccess}
     enum ESpriteCollisionMode { None, Use2DPhysics, Use3DPhysics, ESpriteCollisionMode_MAX, __typeKeyDoNoAccess}
@@ -111599,7 +110346,9 @@ declare module "ue" {
     enum ESynthStereoDelayMode { Normal, Cross, PingPong, Count, ESynthStereoDelayMode_MAX, __typeKeyDoNoAccess}
     enum ETableViewMode { List, Tile, Tree, ETableViewMode_MAX, __typeKeyDoNoAccess}
     enum ETakeRecorderActorRecordType { Possessable, Spawnable, ProjectDefault, ETakeRecorderActorRecordType_MAX, __typeKeyDoNoAccess}
+    enum ETakeRecorderMode { RecordNewSequence, RecordIntoSequence, ETakeRecorderMode_MAX, __typeKeyDoNoAccess}
     enum ETakeRecorderPanelMode { NewRecording, RecordingInto, EditingPreset, ReviewingRecording, ETakeRecorderPanelMode_MAX, __typeKeyDoNoAccess}
+    enum ETakeRecorderState { PreInitialization, CountingDown, PreRecord, TickingAfterPre, Started, Stopped, Cancelled, ETakeRecorderState_MAX, __typeKeyDoNoAccess}
     enum ETapLineMode { SendToChannel, Panning, Disabled, ETapLineMode_MAX, __typeKeyDoNoAccess}
     enum ETargetFaces { InternalFaces, InternalFacesAndSelectedMaterialIDs, SelectedMaterialIDs, ExternalFaces, AllFaces, ETargetFaces_MAX, __typeKeyDoNoAccess}
     enum ETeamAttitude { Friendly, Neutral, Hostile, ETeamAttitude_MAX, __typeKeyDoNoAccess}
@@ -116487,194 +115236,6 @@ declare module "ue" {
         __tid_FreezablePerPlatformInt_0__: boolean;
     }
     
-    class RadialFalloff extends UE.FieldNodeFloat {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Magnitude: number;
-        MinRange: number;
-        MaxRange: number;
-        Default: number;
-        Radius: number;
-        Position: UE.Vector;
-        Falloff: UE.EFieldFalloffType;
-        /*
-         *Sphere scalar field that will be defined only within a sphere
-         *@param    Magnitude Magnitude of the sphere falloff field
-         *@param    MinRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
-         *@param    MaxRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
-         *@param    Default The field value will be set to Default if the sample distance from the center is higher than the radius
-         *@param    Radius Radius of the sphere falloff field
-         *@param    Position Center position of the sphere falloff field
-         *@param    Falloff Type of falloff function used if the falloff function is picked
-         */
-        SetRadialFalloff(Magnitude: number, MinRange: number, MaxRange: number, Default: number, Radius: number, Position: UE.Vector, Falloff: UE.EFieldFalloffType) : UE.RadialFalloff;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): RadialFalloff;
-        static Load(InName: string): RadialFalloff;
-    
-        __tid_RadialFalloff_0__: boolean;
-    }
-    
-    class PlaneFalloff extends UE.FieldNodeFloat {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Magnitude: number;
-        MinRange: number;
-        MaxRange: number;
-        Default: number;
-        Distance: number;
-        Position: UE.Vector;
-        Normal: UE.Vector;
-        Falloff: UE.EFieldFalloffType;
-        /*
-         *Plane scalar field that will be defined only within a distance from a plane
-         *@param    Magnitude Magnitude of the plane falloff field
-         *@param    MinRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
-         *@param    MaxRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
-         *@param    Default The field value will be set to default if the sample projected distance ((Sample Position - Center Position).dot(Plane Normal)) is higher than the Plane Distance
-         *@param    Distance Distance limit for the plane falloff field starting from the center position and extending in the direction of the plane normal
-         *@param    Position Plane center position of the plane falloff field
-         *@param    Normal Plane normal of the plane falloff field
-         *@param    Falloff Type of falloff function used to model the evolution of the field from the plane surface to the distance isosurface
-         */
-        SetPlaneFalloff(Magnitude: number, MinRange: number, MaxRange: number, Default: number, Distance: number, Position: UE.Vector, Normal: UE.Vector, Falloff: UE.EFieldFalloffType) : UE.PlaneFalloff;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): PlaneFalloff;
-        static Load(InName: string): PlaneFalloff;
-    
-        __tid_PlaneFalloff_0__: boolean;
-    }
-    
-    class UniformInteger extends UE.FieldNodeInt {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Magnitude: number;
-        /*
-         *Set a uniform integer value independently of the sample position. The output is equal to magnitude
-         *@param    Magnitude The field output will be equal the magnitude
-         */
-        SetUniformInteger(Magnitude: number) : UE.UniformInteger;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): UniformInteger;
-        static Load(InName: string): UniformInteger;
-    
-        __tid_UniformInteger_0__: boolean;
-    }
-    
-    class RadialVector extends UE.FieldNodeVector {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Magnitude: number;
-        Position: UE.Vector;
-        /*
-         *Set a radial vector value. The direction is the normalized vector from the field position to the sample one. The output is equal to this direction * magnitude.
-         *@param    Magnitude Magnitude of the radial vector field
-         *@param    Position Center position of the radial vector field
-         */
-        SetRadialVector(Magnitude: number, Position: UE.Vector) : UE.RadialVector;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): RadialVector;
-        static Load(InName: string): RadialVector;
-    
-        __tid_RadialVector_0__: boolean;
-    }
-    
-    class OperatorField extends UE.FieldNodeBase {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Magnitude: number;
-        RightField: UE.FieldNodeBase;
-        LeftField: UE.FieldNodeBase;
-        Operation: UE.EFieldOperationType;
-        /*
-         *Compute an operation between 2 incoming fields
-         *@param    Magnitude Magnitude of the operator field
-         *@param    LeftField Input field A to be processed
-         *@param    RightField Input field B to be processed
-         *@param    Operation Type of math operation you want to perform between the 2 fields
-         */
-        SetOperatorField(Magnitude: number, LeftField: $Nullable<UE.FieldNodeBase>, RightField: $Nullable<UE.FieldNodeBase>, Operation: UE.EFieldOperationType) : UE.OperatorField;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): OperatorField;
-        static Load(InName: string): OperatorField;
-    
-        __tid_OperatorField_0__: boolean;
-    }
-    
-    class UniformVector extends UE.FieldNodeVector {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Magnitude: number;
-        Direction: UE.Vector;
-        /*
-         *Set a uniform vector value independently of the sample position.The output is equal to magnitude * direction
-         *@param    Magnitude Magnitude of the uniform vector field
-         *@param    Direction Normalized direction of the uniform vector field
-         */
-        SetUniformVector(Magnitude: number, Direction: UE.Vector) : UE.UniformVector;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): UniformVector;
-        static Load(InName: string): UniformVector;
-    
-        __tid_UniformVector_0__: boolean;
-    }
-    
-    class NoiseField extends UE.FieldNodeFloat {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MinRange: number;
-        MaxRange: number;
-        Transform: UE.Transform;
-        /*
-         *Defines a perlin noise scalar value if the sample is within a box
-         *@param    MinRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
-         *@param    MaxRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
-         *@param    Transform Transform of the box in which the perlin noise will be defined
-         */
-        SetNoiseField(MinRange: number, MaxRange: number, Transform: UE.Transform) : UE.NoiseField;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): NoiseField;
-        static Load(InName: string): NoiseField;
-    
-        __tid_NoiseField_0__: boolean;
-    }
-    
-    class UniformScalar extends UE.FieldNodeFloat {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Magnitude: number;
-        /*
-         *Set a uniform scalar value independently of the sample position. The output is equal to magnitude
-         *@param    Magnitude The field output will be equal the magnitude
-         */
-        SetUniformScalar(Magnitude: number) : UE.UniformScalar;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): UniformScalar;
-        static Load(InName: string): UniformScalar;
-    
-        __tid_UniformScalar_0__: boolean;
-    }
-    
-    class ReturnResultsTerminal extends UE.FieldNodeBase {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        /*
-         *Terminal field of a graph
-         */
-        SetReturnResultsTerminal() : UE.ReturnResultsTerminal;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ReturnResultsTerminal;
-        static Load(InName: string): ReturnResultsTerminal;
-    
-        __tid_ReturnResultsTerminal_0__: boolean;
-    }
-    
-    class RandomVector extends UE.FieldNodeVector {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Magnitude: number;
-        /*
-         *Set a random vector value independently of the sample position. The output is equal to magnitude * random direction
-         *@param    Magnitude Magnitude of the random vector field
-         */
-        SetRandomVector(Magnitude: number) : UE.RandomVector;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): RandomVector;
-        static Load(InName: string): RandomVector;
-    
-        __tid_RandomVector_0__: boolean;
-    }
-    
     enum FTedsAlertColumnType { Warning, Error, MAX, __typeKeyDoNoAccess}
     class FullyLoadedPackagesInfo {
         constructor();
@@ -116689,6 +115250,390 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_FullyLoadedPackagesInfo_0__: boolean;
+    }
+    
+    class FuncTestRenderingComponent extends UE.PrimitiveComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): FuncTestRenderingComponent;
+        static Load(InName: string): FuncTestRenderingComponent;
+    
+        __tid_FuncTestRenderingComponent_0__: boolean;
+    }
+    
+    class RandomStream {
+        constructor();
+        constructor(InitialSeed: number, Seed: number);
+        InitialSeed: number;
+        Seed: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RandomStream_0__: boolean;
+    }
+    
+    class TraceQueryTestNames {
+        constructor();
+        constructor(ComponentName: string, PhysicalMaterialName: string, ActorName: string);
+        ComponentName: string;
+        PhysicalMaterialName: string;
+        ActorName: string;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TraceQueryTestNames_0__: boolean;
+    }
+    
+    class TraceQueryTestResultsInnerMost {
+        constructor();
+        constructor(SingleHit: UE.HitResult, SingleNames: UE.TraceQueryTestNames, bSingleResult: boolean, MultiHits: TArray<UE.HitResult>, MultiNames: TArray<UE.TraceQueryTestNames>, bMultiResult: boolean);
+        SingleHit: UE.HitResult;
+        SingleNames: UE.TraceQueryTestNames;
+        bSingleResult: boolean;
+        MultiHits: TArray<UE.HitResult>;
+        MultiNames: TArray<UE.TraceQueryTestNames>;
+        bMultiResult: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TraceQueryTestResultsInnerMost_0__: boolean;
+    }
+    
+    class TraceQueryTestResultsInner {
+        constructor();
+        constructor(LineResults: UE.TraceQueryTestResultsInnerMost, SphereResults: UE.TraceQueryTestResultsInnerMost, CapsuleResults: UE.TraceQueryTestResultsInnerMost, BoxResults: UE.TraceQueryTestResultsInnerMost);
+        LineResults: UE.TraceQueryTestResultsInnerMost;
+        SphereResults: UE.TraceQueryTestResultsInnerMost;
+        CapsuleResults: UE.TraceQueryTestResultsInnerMost;
+        BoxResults: UE.TraceQueryTestResultsInnerMost;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TraceQueryTestResultsInner_0__: boolean;
+    }
+    
+    class TraceChannelTestBatchOptions {
+        constructor();
+        constructor(bLineTrace: boolean, bSphereTrace: boolean, bCapsuleTrace: boolean, bBoxTrace: boolean, bChannelTrace: boolean, bObjectsTrace: boolean, bProfileTrace: boolean);
+        bLineTrace: boolean;
+        bSphereTrace: boolean;
+        bCapsuleTrace: boolean;
+        bBoxTrace: boolean;
+        bChannelTrace: boolean;
+        bObjectsTrace: boolean;
+        bProfileTrace: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TraceChannelTestBatchOptions_0__: boolean;
+    }
+    
+    class TraceQueryTestResults extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ChannelResults: UE.TraceQueryTestResultsInner;
+        ObjectResults: UE.TraceQueryTestResultsInner;
+        ProfileResults: UE.TraceQueryTestResultsInner;
+        BatchOptions: UE.TraceChannelTestBatchOptions;
+        /*
+         *Output string value
+         */
+        ToString() : string;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TraceQueryTestResults;
+        static Load(InName: string): TraceQueryTestResults;
+    
+        __tid_TraceQueryTestResults_0__: boolean;
+    }
+    
+    class FunctionalTest extends UE.Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        TestLabel: string;
+        Author: string;
+        Description: string;
+        TestTags: string;
+        SpriteComponent: UE.BillboardComponent;
+        bIsEnabled: boolean;
+        bIsInSublevel: boolean;
+        PersistentLevelName: string;
+        LogErrorHandling: UE.EFunctionalTestLogHandling;
+        LogWarningHandling: UE.EFunctionalTestLogHandling;
+        ObservationPoint: UE.Actor;
+        bShouldDelayGarbageCollection: boolean;
+        RandomNumbersStream: UE.RandomStream;
+        Result: UE.EFunctionalTestResult;
+        PreparationTimeLimit: number;
+        TimeLimit: number;
+        TimesUpMessage: string;
+        TimesUpResult: UE.EFunctionalTestResult;
+        OnTestPrepare: $MulticastDelegate<() => void>;
+        OnTestStart: $MulticastDelegate<() => void>;
+        OnTestFinished: $MulticastDelegate<() => void>;
+        AutoDestroyActors: TArray<UE.Actor>;
+        RenderComp_EditorOnly: UE.FuncTestRenderingComponent;
+        TestName_EditorOnly: UE.TextRenderComponent;
+        bIsRunning: boolean;
+        TotalTime: number;
+        AddError(Message: string) : void;
+        AddInfo(Message: string) : void;
+        /*
+         *Causes the test to be rerun for a specific named reason.
+         */
+        AddRerun(Reason: string) : void;
+        AddWarning(Message: string) : void;
+        /*
+         *Assert that two bools are equal
+         *@param What   A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} for context '')
+         */
+        AssertEqual_Bool(Actual: boolean, Expected: boolean, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two two-component boxes are (memberwise) equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Box2D(Actual: UE.Box2D, Expected: UE.Box2D, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two double are equal within tolerance between two doubles.
+         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} within Tolerance for context '')
+         */
+        AssertEqual_Double(Actual: number, Expected: number, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two floats are equal within tolerance between two floats.
+         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} within Tolerance for context '')
+         */
+        AssertEqual_Float(Actual: number, Expected: number, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two ints are equal
+         *@param What   A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} for context '')
+         */
+        AssertEqual_Int(Actual: number, Expected: number, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two 4x4 matrices are (memberwise) equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Matrix(Actual: UE.Matrix, Expected: UE.Matrix, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two FNames are equal
+         *@param What   A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} for context '')
+         */
+        AssertEqual_Name(Actual: string, Expected: string, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two Objects are equal
+         *@param What   A name to use in the message if the assert fails (What: expected {Actual} to be Equal To {Expected} for context '')
+         */
+        AssertEqual_Object(Actual: $Nullable<UE.Object>, Expected: $Nullable<UE.Object>, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two planes are (memberwise) equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Plane(Actual: UE.Plane, Expected: UE.Plane, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two quats are (memberwise) equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Quat(Actual: UE.Quat, Expected: UE.Quat, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that the component angles of two rotators are all equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Rotator(Actual: UE.Rotator, Expected: UE.Rotator, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that the orientation of two rotators is the same within a small tolerance. Robust to quaternion singularities where angles can differ despite having an identical orientation.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_RotatorOrientation(Actual: UE.Rotator, Expected: UE.Rotator, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two Strings are equal.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_String(Actual: string, Expected: string, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two TraceQueryResults are equal.
+         *@param What   A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_TraceQueryResults(Actual: $Nullable<UE.TraceQueryTestResults>, Expected: $Nullable<UE.TraceQueryTestResults>, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two transforms are (components memberwise - translation, rotation, scale) equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Transform(Actual: UE.Transform, Expected: UE.Transform, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two vectors are (memberwise) equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Vector(Actual: UE.Vector, Expected: UE.Vector, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two two-component vectors are (memberwise) equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Vector2D(Actual: UE.Vector2D, Expected: UE.Vector2D, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two four-component vectors are (memberwise) equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertEqual_Vector4(Actual: UE.Vector4, Expected: UE.Vector4, What: string, Tolerance?: number /* = 0.000100 */, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that a boolean value is false.
+         *@param Message       The message to display if the assert fails ("Assertion Failed: 'Message' for context ''")
+         */
+        AssertFalse(Condition: boolean, Message: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that a UObject is valid
+         *@param Message       The message to display if the object is invalid ("Invalid object: 'Message' for context ''")
+         */
+        AssertIsValid(Object: $Nullable<UE.Object>, Message: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two two-component boxes are (memberwise) not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Box2D(Actual: UE.Box2D, NotExpected: UE.Box2D, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two 4x4 matrices are (memberwise) not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Matrix(Actual: UE.Matrix, NotExpected: UE.Matrix, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two planes are (memberwise) not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Plane(Actual: UE.Plane, NotExpected: UE.Plane, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two quats are (memberwise) not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Quat(Actual: UE.Quat, NotExpected: UE.Quat, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that the component angles of two rotators are all not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Rotator(Actual: UE.Rotator, NotExpected: UE.Rotator, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two Strings are not equal.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_String(Actual: string, NotExpected: string, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two transforms are (components memberwise - translation, rotation, scale) not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Transform(Actual: UE.Transform, NotExpected: UE.Transform, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two vectors are (memberwise) not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Vector(Actual: UE.Vector, NotExpected: UE.Vector, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two two-component vectors are (memberwise) not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Vector2D(Actual: UE.Vector2D, NotExpected: UE.Vector2D, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that two four-component vectors are (memberwise) not equal within a small tolerance.
+         *@param What  A name to use in the message if the assert fails ("Expected 'What' not to be {Expected} but it was {Actual} for context ''")
+         */
+        AssertNotEqual_Vector4(Actual: UE.Vector4, NotExpected: UE.Vector4, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert that a boolean value is true.
+         *@param Message       The message to display if the assert fails ("Assertion Failed: 'Message' for context ''")
+         */
+        AssertTrue(Condition: boolean, Message: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert on a relationship between two DateTimes.
+         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be <ShouldBe> {Expected} for context '')
+         */
+        AssertValue_DateTime(Actual: UE.DateTime, ShouldBe: UE.EComparisonMethod, Expected: UE.DateTime, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert on a relationship between two doubles.
+         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be <ShouldBe> {Expected} for context '')
+         */
+        AssertValue_Double(Actual: number, ShouldBe: UE.EComparisonMethod, Expected: number, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert on a relationship between two floats.
+         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be <ShouldBe> {Expected} for context '')
+         */
+        AssertValue_Float(Actual: number, ShouldBe: UE.EComparisonMethod, Expected: number, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Assert on a relationship between two integers.
+         *@param What  A name to use in the message if the assert fails (What: expected {Actual} to be <ShouldBe> {Expected} for context '')
+         */
+        AssertValue_Int(Actual: number, ShouldBe: UE.EComparisonMethod, Expected: number, What: string, ContextObject?: UE.Object /* = None */) : boolean;
+        /*
+         *Used by debug drawing to gather actors this test is using and point at them on the level to better understand test's setup
+         */
+        DebugGatherRelevantActors() : TArray<UE.Actor>;
+        FinishTest(TestResult: UE.EFunctionalTestResult, Message: string) : void;
+        /*
+         *Returns the current re-run reason if we're in a named re-run.
+         */
+        GetCurrentRerunReason() : string;
+        IsEnabled() : boolean;
+        IsEnabledInWorld(World: $Nullable<UE.World>) : boolean;
+        /*
+         *IsReady() is called once per frame after a test is run, until it returns true.  You should use this function to
+         *delay Start being called on the test until preconditions are met.
+         */
+        IsReady() : boolean;
+        /*
+         *AActor interface end
+         */
+        IsRunning() : boolean;
+        LogMessage(Message: string) : void;
+        OnAdditionalTestFinishedMessageRequest(TestResult: UE.EFunctionalTestResult) : string;
+        /*
+         *retrieves information whether test wants to have another run just after finishing
+         */
+        OnWantsReRunCheck() : boolean;
+        /*
+         *Prepare Test is fired once the test starts up, before the test IsReady() and thus before Start Test is called.
+         *So if there's some initial conditions or setup that you might need for your IsReady() check, you might want
+         *to do that here.
+         */
+        ReceivePrepareTest() : void;
+        /*
+         *Called once the IsReady() check for the test returns true.  After that happens the test has Officially started,
+         *and it will begin receiving Ticks in the blueprint.
+         */
+        ReceiveStartTest() : void;
+        /*
+         *Called during FinishTest().  Allows for clean-up on the blueprint side, so that the user can bring the test
+         *back to its default state, making it ready for the next one.
+         */
+        ReceiveTestFinished() : void;
+        /*
+         *Actors registered this way will be automatically destroyed (by limiting their lifespan)
+         *    on test finish
+         */
+        RegisterAutoDestroyActor(ActorToAutoDestroy: $Nullable<UE.Actor>) : void;
+        /*
+         *Sets the CVar from the given input. Variable gets reset after the test.
+         */
+        SetConsoleVariable(Name: string, InValue: string) : void;
+        /*
+         *Sets the CVar from the given input. Variable gets reset after the test.
+         */
+        SetConsoleVariableFromBoolean(Name: string, InValue: boolean) : void;
+        /*
+         *Sets the CVar from the given input. Variable gets reset after the test.
+         */
+        SetConsoleVariableFromFloat(Name: string, InValue: number) : void;
+        /*
+         *Sets the CVar from the given input. Variable gets reset after the test.
+         */
+        SetConsoleVariableFromInteger(Name: string, InValue: number) : void;
+        SetTimeLimit(NewTimeLimit: number, ResultWhenTimeRunsOut: UE.EFunctionalTestResult) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): FunctionalTest;
+        static Load(InName: string): FunctionalTest;
+    
+        __tid_FunctionalTest_0__: boolean;
     }
     
     class PendingDelayedSpawn {
@@ -123271,6 +122216,267 @@ declare module "ue" {
         __tid_GridScatterPointsDataflowNode_0__: boolean;
     }
     
+    class GroomAnimationInfo {
+        constructor();
+        constructor(NumFrames: number, SecondsPerFrame: number, Duration: number, StartTime: number, EndTime: number, StartFrame: number, EndFrame: number, Attributes: UE.EGroomCacheAttributes);
+        NumFrames: number;
+        SecondsPerFrame: number;
+        Duration: number;
+        StartTime: number;
+        EndTime: number;
+        StartFrame: number;
+        EndFrame: number;
+        Attributes: UE.EGroomCacheAttributes;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GroomAnimationInfo_0__: boolean;
+    }
+    
+    class GroomCacheInfo {
+        constructor();
+        constructor(Version: number, Type: UE.EGroomCacheType, AnimationInfo: UE.GroomAnimationInfo);
+        Version: number;
+        Type: UE.EGroomCacheType;
+        AnimationInfo: UE.GroomAnimationInfo;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GroomCacheInfo_0__: boolean;
+    }
+    
+    class GroomCache extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AssetImportData_EditorOnly: UE.AssetImportData;
+        AssetUserData: TArray<UE.AssetUserData>;
+        GroomCacheInfo: UE.GroomCacheInfo;
+        /*
+         *Creates and adds an instance of the provided AssetUserData class to the target asset.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to create
+         *
+         *@return       Whether or not an instance of InUserDataClass was succesfully added
+         */
+        AddAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
+        /*
+         *Returns an instance of the provided AssetUserData class if it's contained in the target asset.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to get
+         *
+         *@return       The instance of the UAssetUserData class contained, or null if it doesn't exist
+         */
+        GetAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : UE.AssetUserData;
+        /*
+         *Checks whether or not an instance of the provided AssetUserData class is contained.
+         *
+         *@param        InUserDataClass         UAssetUserData sub class to check for
+         *
+         *@return       Whether or not an instance of InUserDataClass was found
+         */
+        HasAssetUserDataOfClass(InUserDataClass: $Nullable<UE.Class>) : boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GroomCache;
+        static Load(InName: string): GroomCache;
+    
+        __tid_GroomCache_0__: boolean;
+    }
+    
+    class HairSimulationSetup {
+        constructor();
+        constructor(bResetSimulation: boolean, bDebugSimulation: boolean, bLocalSimulation: boolean, LinearVelocityScale: number, AngularVelocityScale: number, LocalBone: string, TeleportDistance: number);
+        bResetSimulation: boolean;
+        bDebugSimulation: boolean;
+        bLocalSimulation: boolean;
+        LinearVelocityScale: number;
+        AngularVelocityScale: number;
+        LocalBone: string;
+        TeleportDistance: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairSimulationSetup_0__: boolean;
+    }
+    
+    class HairSimulationSolver {
+        constructor();
+        constructor(bEnableSimulation: boolean);
+        bEnableSimulation: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairSimulationSolver_0__: boolean;
+    }
+    
+    class HairSimulationForces {
+        constructor();
+        constructor(GravityVector: UE.Vector, AirDrag: number, AirVelocity: UE.Vector);
+        GravityVector: UE.Vector;
+        AirDrag: number;
+        AirVelocity: UE.Vector;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairSimulationForces_0__: boolean;
+    }
+    
+    class HairSimulationConstraints {
+        constructor();
+        constructor(BendDamping: number, BendStiffness: number, StretchDamping: number, StretchStiffness: number, StaticFriction: number, KineticFriction: number, StrandsViscosity: number, CollisionRadius: number);
+        BendDamping: number;
+        BendStiffness: number;
+        StretchDamping: number;
+        StretchStiffness: number;
+        StaticFriction: number;
+        KineticFriction: number;
+        StrandsViscosity: number;
+        CollisionRadius: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairSimulationConstraints_0__: boolean;
+    }
+    
+    class HairSimulationSettings {
+        constructor();
+        constructor(bOverrideSettings: boolean, SimulationSetup: UE.HairSimulationSetup, SolverSettings: UE.HairSimulationSolver, ExternalForces: UE.HairSimulationForces, MaterialConstraints: UE.HairSimulationConstraints);
+        bOverrideSettings: boolean;
+        SimulationSetup: UE.HairSimulationSetup;
+        SolverSettings: UE.HairSimulationSolver;
+        ExternalForces: UE.HairSimulationForces;
+        MaterialConstraints: UE.HairSimulationConstraints;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairSimulationSettings_0__: boolean;
+    }
+    
+    class HairGroupDesc {
+        constructor();
+        constructor(HairLength: number, HairWidth: number, HairWidth_Override: boolean, HairRootScale: number, HairRootScale_Override: boolean, HairTipScale: number, HairTipScale_Override: boolean, HairShadowDensity: number, HairShadowDensity_Override: boolean, HairRaytracingRadiusScale: number, HairRaytracingRadiusScale_Override: boolean, bUseHairRaytracingGeometry: boolean, bUseHairRaytracingGeometry_Override: boolean, LODBias: number, bUseStableRasterization: boolean, bUseStableRasterization_Override: boolean, bScatterSceneLighting: boolean, bScatterSceneLighting_Override: boolean, bSupportVoxelization: boolean, bSupportVoxelization_Override: boolean, HairLengthScale: number, HairLengthScale_Override: boolean);
+        HairLength: number;
+        HairWidth: number;
+        HairWidth_Override: boolean;
+        HairRootScale: number;
+        HairRootScale_Override: boolean;
+        HairTipScale: number;
+        HairTipScale_Override: boolean;
+        HairShadowDensity: number;
+        HairShadowDensity_Override: boolean;
+        HairRaytracingRadiusScale: number;
+        HairRaytracingRadiusScale_Override: boolean;
+        bUseHairRaytracingGeometry: boolean;
+        bUseHairRaytracingGeometry_Override: boolean;
+        LODBias: number;
+        bUseStableRasterization: boolean;
+        bUseStableRasterization_Override: boolean;
+        bScatterSceneLighting: boolean;
+        bScatterSceneLighting_Override: boolean;
+        bSupportVoxelization: boolean;
+        bSupportVoxelization_Override: boolean;
+        HairLengthScale: number;
+        HairLengthScale_Override: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_HairGroupDesc_0__: boolean;
+    }
+    
+    class GroomComponent extends UE.MeshComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        GroomAsset: UE.GroomAsset;
+        GroomCache: UE.GroomCache;
+        NiagaraComponents: TArray<UE.NiagaraComponent>;
+        SourceSkeletalMesh: UE.SkeletalMesh;
+        BindingAsset: UE.GroomBindingAsset;
+        PhysicsAsset: UE.PhysicsAsset;
+        SimulationSettings: UE.HairSimulationSettings;
+        MeshDeformer: UE.MeshDeformer;
+        MeshDeformerInstance: UE.MeshDeformerInstance;
+        MeshDeformerInstanceSettings: UE.MeshDeformerInstanceSettings;
+        Strands_DebugMaterial: UE.MaterialInterface;
+        Strands_DefaultMaterial: UE.MaterialInterface;
+        Cards_DefaultMaterial: UE.MaterialInterface;
+        Meshes_DefaultMaterial: UE.MaterialInterface;
+        AngularSpringsSystem: UE.NiagaraSystem;
+        CosseratRodsSystem: UE.NiagaraSystem;
+        AttachmentName: string;
+        GroomGroupsDesc: TArray<UE.HairGroupDesc>;
+        bUseCards: boolean;
+        bRunning: boolean;
+        bLooping: boolean;
+        bManualTick: boolean;
+        ElapsedTime: number;
+        GroomAssetBeingLoaded_EditorOnly: UE.GroomAsset;
+        BindingAssetBeingLoaded_EditorOnly: UE.GroomBindingAsset;
+        /*
+         *Add a skeletal mesh to the collision components
+         */
+        AddCollisionComponent(SkeletalMeshComponent: $Nullable<UE.SkeletalMeshComponent>) : void;
+        GetIsHairLengthScaleEnabled() : boolean;
+        /*
+         *Given the group index return the matching niagara component
+         */
+        GetNiagaraComponent(GroupIndex: number) : UE.NiagaraComponent;
+        /*
+         *Reset the collision components
+         */
+        ResetCollisionComponents() : void;
+        /*
+         *Reset the simulation, if enabled
+         */
+        ResetSimulation() : void;
+        /*
+         *Accessor function for changing Groom binding asset from blueprint_sequencer
+         */
+        SetBindingAsset(InBinding: $Nullable<UE.GroomBindingAsset>) : void;
+        /*
+         *Accessor function for changing the enable simulation flag from blueprint_sequencer
+         */
+        SetEnableSimulation(bInEnableSimulation: boolean) : void;
+        /*
+         *Accessor function for changing Groom asset from blueprint_sequencer
+         */
+        SetGroomAsset(Asset: $Nullable<UE.GroomAsset>) : void;
+        /*
+         *Accessor function for changing GroomCache asset from blueprint_sequencer
+         */
+        SetGroomCache(InGroomCache: $Nullable<UE.GroomCache>) : void;
+        /*
+         *Accessor function for changing hair length scale from blueprint_sequencer
+         */
+        SetHairLengthScale(Scale: number) : void;
+        SetHairLengthScaleEnable(bEnable: boolean) : void;
+        /*
+         *Change the MeshDeformer that is used for this Component.
+         */
+        SetMeshDeformer(InMeshDeformer: $Nullable<UE.MeshDeformer>) : void;
+        /*
+         *Accessor function for changing Groom physics asset from blueprint_sequencer
+         */
+        SetPhysicsAsset(InPhysicsAsset: $Nullable<UE.PhysicsAsset>) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GroomComponent;
+        static Load(InName: string): GroomComponent;
+    
+        __tid_GroomComponent_0__: boolean;
+    }
+    
     class GroomActor extends UE.Actor {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         GroomComponent: UE.GroomComponent;
@@ -123603,6 +122809,53 @@ declare module "ue" {
         static Load(InName: string): GroomPluginSettings;
     
         __tid_GroomPluginSettings_0__: boolean;
+    }
+    
+    class GroomSolverSettings {
+        constructor();
+        constructor(NumSubSteps: number, NumSolverIterations: number, SimulationFrameRate: number, MaxLODDistance: number, MinLODDistance: number);
+        NumSubSteps: number;
+        NumSolverIterations: number;
+        SimulationFrameRate: number;
+        MaxLODDistance: number;
+        MinLODDistance: number;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_GroomSolverSettings_0__: boolean;
+    }
+    
+    class GroomSolverComponent extends UE.MeshComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SolverSettings: UE.GroomSolverSettings;
+        SimulationAsset: UE.DataflowSimulationAsset;
+        GroomComponents: TSet<UE.GroomComponent>;
+        MeshDeformer: UE.MeshDeformer;
+        DeformerInstance: UE.MeshDeformerInstance;
+        DeformerSettings: UE.MeshDeformerInstanceSettings;
+        /*
+         *Add a groom component to the solver
+         */
+        AddGroomComponent(GroomComponent: $Nullable<UE.GroomComponent>) : void;
+        /*
+         *Add a groom component to the solver
+         */
+        RemoveGroomComponent(GroomComponent: $Nullable<UE.GroomComponent>) : void;
+        /*
+         *Reset the groom physics components
+         */
+        ResetGroomComponents() : void;
+        /*
+         *Change the MeshDeformer solver that is used for this Component.
+         */
+        SetDeformerSolver(DeformerSolver: $Nullable<UE.MeshDeformer>) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): GroomSolverComponent;
+        static Load(InName: string): GroomSolverComponent;
+    
+        __tid_GroomSolverComponent_0__: boolean;
     }
     
     class GroundTruthData extends UE.Object {
@@ -124718,6 +123971,33 @@ declare module "ue" {
         static Load(InName: string): HoleFillToolBuilder;
     
         __tid_HoleFillToolBuilder_0__: boolean;
+    }
+    
+    class HorizontalBoxSlot extends UE.PanelSlot {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Size: UE.SlateChildSize;
+        Padding: UE.Margin;
+        HorizontalAlignment: UE.EHorizontalAlignment;
+        VerticalAlignment: UE.EVerticalAlignment;
+        SetHorizontalAlignment(InHorizontalAlignment: UE.EHorizontalAlignment) : void;
+        SetPadding(InPadding: UE.Margin) : void;
+        SetSize(InSize: UE.SlateChildSize) : void;
+        SetVerticalAlignment(InVerticalAlignment: UE.EVerticalAlignment) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): HorizontalBoxSlot;
+        static Load(InName: string): HorizontalBoxSlot;
+    
+        __tid_HorizontalBoxSlot_0__: boolean;
+    }
+    
+    class HorizontalBox extends UE.PanelWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AddChildToHorizontalBox(Content: $Nullable<UE.Widget>) : UE.HorizontalBoxSlot;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): HorizontalBox;
+        static Load(InName: string): HorizontalBox;
+    
+        __tid_HorizontalBox_0__: boolean;
     }
     
     class HudSettings extends UE.Object {
@@ -127037,6 +126317,68 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_ilterState_0__: boolean;
+    }
+    
+    class SlateTextureAtlasInterface extends UE.Interface {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): SlateTextureAtlasInterface;
+        static Load(InName: string): SlateTextureAtlasInterface;
+    
+        __tid_SlateTextureAtlasInterface_0__: boolean;
+    }
+    
+    class Image extends UE.Widget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Brush: UE.SlateBrush;
+        BrushDelegate: $Delegate<() => UE.SlateBrush>;
+        ColorAndOpacity: UE.LinearColor;
+        ColorAndOpacityDelegate: $Delegate<() => UE.LinearColor>;
+        bFlipForRightToLeftFlowDirection: boolean;
+        OnMouseButtonDownEvent: $Delegate<(MyGeometry: UE.Geometry, MouseEvent: UE.PointerEvent) => UE.EventReply>;
+        GetDynamicMaterial() : UE.MaterialInstanceDynamic;
+        SetBrush(InBrush: UE.SlateBrush) : void;
+        SetBrushFromAsset(Asset: $Nullable<UE.SlateBrushAsset>) : void;
+        /*
+         *Sets the Brush to the specified Atlas Region.
+         *
+         *  @param AtlasRegion Region of the Atlas to use to set on Brush.
+         *      @param bMatchSize If true, image will change its size to atlas region size. If false, atlas region will be stretched to image size.
+         */
+        SetBrushFromAtlasInterface(AtlasRegion: UE.SlateTextureAtlasInterface, bMatchSize?: boolean /* = false */) : void;
+        SetBrushFromMaterial(Material: $Nullable<UE.MaterialInterface>) : void;
+        SetBrushFromSoftMaterial(SoftMaterial: TSoftObjectPtr<UE.MaterialInterface>) : void;
+        /*
+         *Sets the Brush to the specified Soft Texture.
+         *
+         *  @param SoftTexture Soft Texture to use to set on Brush.
+         *      @param bMatchSize If true, image will change its size to texture size. If false, texture will be stretched to image size.
+         */
+        SetBrushFromSoftTexture(SoftTexture: TSoftObjectPtr<UE.Texture2D>, bMatchSize?: boolean /* = false */) : void;
+        /*
+         *Sets the Brush to the specified Texture.
+         *
+         *  @param Texture Texture to use to set on Brush.
+         *      @param bMatchSize If true, image will change its size to texture size. If false, texture will be stretched to image size.
+         */
+        SetBrushFromTexture(Texture: $Nullable<UE.Texture2D>, bMatchSize?: boolean /* = false */) : void;
+        /*
+         *Sets the Brush to the specified Dynamic Texture.
+         *
+         *  @param Texture Dynamic Texture to use to set on Brush.
+         *      @param bMatchSize If true, image will change its size to texture size. If false, texture will be stretched to image size.
+         */
+        SetBrushFromTextureDynamic(Texture: $Nullable<UE.Texture2DDynamic>, bMatchSize?: boolean /* = false */) : void;
+        SetBrushResourceObject(ResourceObject: $Nullable<UE.Object>) : void;
+        SetBrushTintColor(TintColor: UE.SlateColor) : void;
+        SetColorAndOpacity(InColorAndOpacity: UE.LinearColor) : void;
+        SetDesiredSizeOverride(DesiredSize: UE.Vector2D) : void;
+        SetOpacity(InOpacity: number) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): Image;
+        static Load(InName: string): Image;
+    
+        __tid_Image_0__: boolean;
     }
     
     class ImageSequenceProtocol_BMP extends UE.ImageSequenceProtocol {
@@ -183545,20 +182887,6 @@ declare module "ue" {
         __tid_NiagaraPrecompileContainer_0__: boolean;
     }
     
-    class NiagaraPreviewBase extends UE.Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SetLabelText(InXAxisText: string, InYAxisText: string) : void;
-        /*
-         *AActor Interface End
-         */
-        SetSystem(InSystem: $Nullable<UE.NiagaraSystem>) : void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): NiagaraPreviewBase;
-        static Load(InName: string): NiagaraPreviewBase;
-    
-        __tid_NiagaraPreviewBase_0__: boolean;
-    }
-    
     class NiagaraPreviewAxis extends UE.Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         /*
@@ -183651,6 +182979,20 @@ declare module "ue" {
         static Load(InName: string): NiagaraPreviewAxis_InterpParamVector4;
     
         __tid_NiagaraPreviewAxis_InterpParamVector4_0__: boolean;
+    }
+    
+    class NiagaraPreviewBase extends UE.Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SetLabelText(InXAxisText: string, InYAxisText: string) : void;
+        /*
+         *AActor Interface End
+         */
+        SetSystem(InSystem: $Nullable<UE.NiagaraSystem>) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): NiagaraPreviewBase;
+        static Load(InName: string): NiagaraPreviewBase;
+    
+        __tid_NiagaraPreviewBase_0__: boolean;
     }
     
     class NiagaraPreviewGrid extends UE.Actor {
@@ -186525,6 +185867,25 @@ declare module "ue" {
         __tid_NodeToCodeAssociation_0__: boolean;
     }
     
+    class NoiseField extends UE.FieldNodeFloat {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MinRange: number;
+        MaxRange: number;
+        Transform: UE.Transform;
+        /*
+         *Defines a perlin noise scalar value if the sample is within a box
+         *@param    MinRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
+         *@param    MaxRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
+         *@param    Transform Transform of the box in which the perlin noise will be defined
+         */
+        SetNoiseField(MinRange: number, MaxRange: number, Transform: UE.Transform) : UE.NoiseField;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): NoiseField;
+        static Load(InName: string): NoiseField;
+    
+        __tid_NoiseField_0__: boolean;
+    }
+    
     class NoiseFieldDataflowNode extends UE.DataflowNode {
         constructor();
         constructor(SamplePositions: TArray<UE.Vector3f>, SampleIndices: UE.DataflowVertexSelection, MinRange: number, MaxRange: number, Transform: UE.Transform, FieldFloatResult: TArray<number>, FieldRemap: TArray<number>, NumSamplePositions: number);
@@ -187807,6 +187168,27 @@ declare module "ue" {
         static Load(InName: string): OpenVDBImportOptionsObject;
     
         __tid_OpenVDBImportOptionsObject_0__: boolean;
+    }
+    
+    class OperatorField extends UE.FieldNodeBase {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Magnitude: number;
+        RightField: UE.FieldNodeBase;
+        LeftField: UE.FieldNodeBase;
+        Operation: UE.EFieldOperationType;
+        /*
+         *Compute an operation between 2 incoming fields
+         *@param    Magnitude Magnitude of the operator field
+         *@param    LeftField Input field A to be processed
+         *@param    RightField Input field B to be processed
+         *@param    Operation Type of math operation you want to perform between the 2 fields
+         */
+        SetOperatorField(Magnitude: number, LeftField: $Nullable<UE.FieldNodeBase>, RightField: $Nullable<UE.FieldNodeBase>, Operation: UE.EFieldOperationType) : UE.OperatorField;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): OperatorField;
+        static Load(InName: string): OperatorField;
+    
+        __tid_OperatorField_0__: boolean;
     }
     
     class Optimus_ShaderBinding {
@@ -196098,6 +195480,35 @@ declare module "ue" {
         __tid_PlaneCutToolBuilder_0__: boolean;
     }
     
+    class PlaneFalloff extends UE.FieldNodeFloat {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Magnitude: number;
+        MinRange: number;
+        MaxRange: number;
+        Default: number;
+        Distance: number;
+        Position: UE.Vector;
+        Normal: UE.Vector;
+        Falloff: UE.EFieldFalloffType;
+        /*
+         *Plane scalar field that will be defined only within a distance from a plane
+         *@param    Magnitude Magnitude of the plane falloff field
+         *@param    MinRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
+         *@param    MaxRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
+         *@param    Default The field value will be set to default if the sample projected distance ((Sample Position - Center Position).dot(Plane Normal)) is higher than the Plane Distance
+         *@param    Distance Distance limit for the plane falloff field starting from the center position and extending in the direction of the plane normal
+         *@param    Position Plane center position of the plane falloff field
+         *@param    Normal Plane normal of the plane falloff field
+         *@param    Falloff Type of falloff function used to model the evolution of the field from the plane surface to the distance isosurface
+         */
+        SetPlaneFalloff(Magnitude: number, MinRange: number, MaxRange: number, Default: number, Distance: number, Position: UE.Vector, Normal: UE.Vector, Falloff: UE.EFieldFalloffType) : UE.PlaneFalloff;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): PlaneFalloff;
+        static Load(InName: string): PlaneFalloff;
+    
+        __tid_PlaneFalloff_0__: boolean;
+    }
+    
     class PlaneFalloffFieldDataflowNode extends UE.DataflowNode {
         constructor();
         constructor(SamplePositions: TArray<UE.Vector3f>, SampleIndices: UE.DataflowVertexSelection, Position: UE.Vector, Normal: UE.Vector, Distance: number, Translation: UE.Vector, Magnitude: number, MinRange: number, MaxRange: number, Default: number, FalloffType: UE.EDataflowFieldFalloffType, FieldFloatResult: TArray<number>, FieldRemap: TArray<number>, FieldSelectionMask: UE.DataflowVertexSelection, NumSamplePositions: number);
@@ -199529,6 +198940,33 @@ declare module "ue" {
         __tid_RadialDamageEvent_0__: boolean;
     }
     
+    class RadialFalloff extends UE.FieldNodeFloat {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Magnitude: number;
+        MinRange: number;
+        MaxRange: number;
+        Default: number;
+        Radius: number;
+        Position: UE.Vector;
+        Falloff: UE.EFieldFalloffType;
+        /*
+         *Sphere scalar field that will be defined only within a sphere
+         *@param    Magnitude Magnitude of the sphere falloff field
+         *@param    MinRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
+         *@param    MaxRange The initial function value between 0 and 1 will be scaled between MinRange and MaxRange before being multiplied by magnitude
+         *@param    Default The field value will be set to Default if the sample distance from the center is higher than the radius
+         *@param    Radius Radius of the sphere falloff field
+         *@param    Position Center position of the sphere falloff field
+         *@param    Falloff Type of falloff function used if the falloff function is picked
+         */
+        SetRadialFalloff(Magnitude: number, MinRange: number, MaxRange: number, Default: number, Radius: number, Position: UE.Vector, Falloff: UE.EFieldFalloffType) : UE.RadialFalloff;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): RadialFalloff;
+        static Load(InName: string): RadialFalloff;
+    
+        __tid_RadialFalloff_0__: boolean;
+    }
+    
     class RadialFalloffFieldDataflowNode extends UE.DataflowNode {
         constructor();
         constructor(SamplePositions: TArray<UE.Vector3f>, SampleIndices: UE.DataflowVertexSelection, Sphere: UE.Sphere, Translation: UE.Vector, Magnitude: number, MinRange: number, MaxRange: number, Default: number, FalloffType: UE.EDataflowFieldFalloffType, FieldFloatResult: TArray<number>, FieldRemap: TArray<number>, FieldSelectionMask: UE.DataflowVertexSelection, NumSamplePositions: number);
@@ -199694,6 +199132,140 @@ declare module "ue" {
         __tid_RadialScatterPointsDataflowNode_v2_0__: boolean;
     }
     
+    class RadialSlider extends UE.Widget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Value: number;
+        ValueDelegate: $Delegate<() => number>;
+        bUseCustomDefaultValue: boolean;
+        CustomDefaultValue: number;
+        SliderRange: UE.RuntimeFloatCurve;
+        ValueTags: TArray<number>;
+        SliderHandleStartAngle: number;
+        SliderHandleEndAngle: number;
+        AngularOffset: number;
+        HandStartEndRatio: UE.Vector2D;
+        WidgetStyle: UE.SliderStyle;
+        SliderBarColor: UE.LinearColor;
+        SliderProgressColor: UE.LinearColor;
+        SliderHandleColor: UE.LinearColor;
+        CenterBackgroundColor: UE.LinearColor;
+        Locked: boolean;
+        MouseUsesStep: boolean;
+        RequiresControllerLock: boolean;
+        StepSize: number;
+        IsFocusable: boolean;
+        UseVerticalDrag: boolean;
+        ShowSliderHandle: boolean;
+        ShowSliderHand: boolean;
+        OnMouseCaptureBegin: $MulticastDelegate<() => void>;
+        OnMouseCaptureEnd: $MulticastDelegate<() => void>;
+        OnControllerCaptureBegin: $MulticastDelegate<() => void>;
+        OnControllerCaptureEnd: $MulticastDelegate<() => void>;
+        OnValueChanged: $MulticastDelegate<(Value: number) => void>;
+        /*
+         *Gets the current custom default value of the slider.
+         */
+        GetCustomDefaultValue() : number;
+        /*
+         *Get the current raw slider alpha from 0 to 1
+         */
+        GetNormalizedSliderHandlePosition() : number;
+        /*
+         *Gets the current value of the slider.
+         */
+        GetValue() : number;
+        /*
+         *Sets the Angular Offset for the slider.
+         */
+        SetAngularOffset(InValue: number) : void;
+        /*
+         *Sets the color of the slider bar
+         */
+        SetCenterBackgroundColor(InValue: UE.LinearColor) : void;
+        /*
+         *Sets the current custom default value of the slider.
+         */
+        SetCustomDefaultValue(InValue: number) : void;
+        /*
+         *Sets the start and end of the hand as a ratio to the slider radius (so 0.0 to 1.0 is from the slider center to the handle).
+         */
+        SetHandStartEndRatio(InValue: UE.Vector2D) : void;
+        /*
+         *Sets the handle to be interactive or fixed
+         */
+        SetLocked(InValue: boolean) : void;
+        /*
+         *Whether to show the slider hand.
+         */
+        SetShowSliderHand(InShowSliderHand: boolean) : void;
+        /*
+         *Whether to show the slider handle (thumb).
+         */
+        SetShowSliderHandle(InShowSliderHandle: boolean) : void;
+        /*
+         *Sets the color of the slider bar
+         */
+        SetSliderBarColor(InValue: UE.LinearColor) : void;
+        /*
+         *Sets the color of the handle bar
+         */
+        SetSliderHandleColor(InValue: UE.LinearColor) : void;
+        /*
+         *Sets the maximum angle of the slider.
+         */
+        SetSliderHandleEndAngle(InValue: number) : void;
+        /*
+         *Sets the minimum angle of the slider.
+         */
+        SetSliderHandleStartAngle(InValue: number) : void;
+        /*
+         *Sets the progress color of the slider bar
+         */
+        SetSliderProgressColor(InValue: UE.LinearColor) : void;
+        /*
+         *Sets the curve for the slider range
+         */
+        SetSliderRange(InSliderRange: UE.RuntimeFloatCurve) : void;
+        /*
+         *Sets the amount to adjust the value by, when using a controller or keyboard
+         */
+        SetStepSize(InValue: number) : void;
+        /*
+         *Set whether the value is changed when dragging vertically as opposed to along the radial curve.
+         */
+        SetUseVerticalDrag(InUseVerticalDrag: boolean) : void;
+        /*
+         *Sets the current value of the slider.
+         */
+        SetValue(InValue: number) : void;
+        /*
+         *Adds value tags to the slider.
+         */
+        SetValueTags(InValueTags: TArray<number>) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): RadialSlider;
+        static Load(InName: string): RadialSlider;
+    
+        __tid_RadialSlider_0__: boolean;
+    }
+    
+    class RadialVector extends UE.FieldNodeVector {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Magnitude: number;
+        Position: UE.Vector;
+        /*
+         *Set a radial vector value. The direction is the normalized vector from the field position to the sample one. The output is equal to this direction * magnitude.
+         *@param    Magnitude Magnitude of the radial vector field
+         *@param    Position Center position of the radial vector field
+         */
+        SetRadialVector(Magnitude: number, Position: UE.Vector) : UE.RadialVector;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): RadialVector;
+        static Load(InName: string): RadialVector;
+    
+        __tid_RadialVector_0__: boolean;
+    }
+    
     class RadialVectorFieldDataflowNode extends UE.DataflowNode {
         constructor();
         constructor(SamplePositions: TArray<UE.Vector3f>, SampleIndices: UE.DataflowVertexSelection, Magnitude: number, Position: UE.Vector, FieldVectorResult: TArray<UE.Vector>, FieldRemap: TArray<number>, NumSamplePositions: number);
@@ -199798,6 +199370,21 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_RandomUnitVectorInConeDataflowNode_0__: boolean;
+    }
+    
+    class RandomVector extends UE.FieldNodeVector {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Magnitude: number;
+        /*
+         *Set a random vector value independently of the sample position. The output is equal to magnitude * random direction
+         *@param    Magnitude Magnitude of the random vector field
+         */
+        SetRandomVector(Magnitude: number) : UE.RandomVector;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): RandomVector;
+        static Load(InName: string): RandomVector;
+    
+        __tid_RandomVector_0__: boolean;
     }
     
     class RandomVectorFieldDataflowNode extends UE.DataflowNode {
@@ -201592,6 +201179,19 @@ declare module "ue" {
         static Load(InName: string): RetriangulateGeometrySelectionCommand;
     
         __tid_RetriangulateGeometrySelectionCommand_0__: boolean;
+    }
+    
+    class ReturnResultsTerminal extends UE.FieldNodeBase {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        /*
+         *Terminal field of a graph
+         */
+        SetReturnResultsTerminal() : UE.ReturnResultsTerminal;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ReturnResultsTerminal;
+        static Load(InName: string): ReturnResultsTerminal;
+    
+        __tid_ReturnResultsTerminal_0__: boolean;
     }
     
     class ReverbEffectFactory extends UE.Factory {
@@ -206112,6 +205712,32 @@ declare module "ue" {
         __tid_RigUnit_HierarchyAddBone_0__: boolean;
     }
     
+    class RigUnit_HierarchyAddControl_ProxySettings {
+        constructor();
+        constructor(bIsProxy: boolean, DrivenControls: TArray<UE.RigElementKey>, ShapeVisibility: UE.ERigControlVisibility);
+        bIsProxy: boolean;
+        DrivenControls: TArray<UE.RigElementKey>;
+        ShapeVisibility: UE.ERigControlVisibility;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RigUnit_HierarchyAddControl_ProxySettings_0__: boolean;
+    }
+    
+    class RigUnit_HierarchyAddControl_Settings {
+        constructor();
+        constructor(DisplayName: string);
+        DisplayName: string;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RigUnit_HierarchyAddControl_Settings_0__: boolean;
+    }
+    
     class RigUnit_HierarchyAddControlElement extends UE.RigUnit_HierarchyAddElement {
         constructor();
         constructor(OffsetTransform: UE.Transform, OffsetSpace: UE.ERigVMTransformSpace);
@@ -206259,6 +205885,47 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_RigUnit_HierarchyAddControlRotator_0__: boolean;
+    }
+    
+    class RigUnit_HierarchyAddControlTransform_LimitSettings {
+        constructor();
+        constructor(LimitTranslationX: UE.RigControlLimitEnabled, LimitTranslationY: UE.RigControlLimitEnabled, LimitTranslationZ: UE.RigControlLimitEnabled, LimitPitch: UE.RigControlLimitEnabled, LimitYaw: UE.RigControlLimitEnabled, LimitRoll: UE.RigControlLimitEnabled, LimitScaleX: UE.RigControlLimitEnabled, LimitScaleY: UE.RigControlLimitEnabled, LimitScaleZ: UE.RigControlLimitEnabled, MinValue: UE.EulerTransform, MaxValue: UE.EulerTransform, bDrawLimits: boolean);
+        LimitTranslationX: UE.RigControlLimitEnabled;
+        LimitTranslationY: UE.RigControlLimitEnabled;
+        LimitTranslationZ: UE.RigControlLimitEnabled;
+        LimitPitch: UE.RigControlLimitEnabled;
+        LimitYaw: UE.RigControlLimitEnabled;
+        LimitRoll: UE.RigControlLimitEnabled;
+        LimitScaleX: UE.RigControlLimitEnabled;
+        LimitScaleY: UE.RigControlLimitEnabled;
+        LimitScaleZ: UE.RigControlLimitEnabled;
+        MinValue: UE.EulerTransform;
+        MaxValue: UE.EulerTransform;
+        bDrawLimits: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RigUnit_HierarchyAddControlTransform_LimitSettings_0__: boolean;
+    }
+    
+    class RigUnit_HierarchyAddControlTransform_Settings extends UE.RigUnit_HierarchyAddControl_Settings {
+        constructor();
+        constructor(InitialSpace: UE.ERigVMTransformSpace, bUsePreferredRotationOrder: boolean, PreferredRotationOrder: UE.EEulerRotationOrder, Limits: UE.RigUnit_HierarchyAddControlTransform_LimitSettings, Shape: UE.RigUnit_HierarchyAddControl_ShapeSettings, Proxy: UE.RigUnit_HierarchyAddControl_ProxySettings, FilteredChannels: TArray<UE.ERigControlTransformChannel>);
+        InitialSpace: UE.ERigVMTransformSpace;
+        bUsePreferredRotationOrder: boolean;
+        PreferredRotationOrder: UE.EEulerRotationOrder;
+        Limits: UE.RigUnit_HierarchyAddControlTransform_LimitSettings;
+        Shape: UE.RigUnit_HierarchyAddControl_ShapeSettings;
+        Proxy: UE.RigUnit_HierarchyAddControl_ProxySettings;
+        FilteredChannels: TArray<UE.ERigControlTransformChannel>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_RigUnit_HierarchyAddControlTransform_Settings_0__: boolean;
     }
     
     class RigUnit_HierarchyAddControlTransform extends UE.RigUnit_HierarchyAddControlElement {
@@ -231557,6 +231224,132 @@ declare module "ue" {
         __tid_TakePresetSettings_0__: boolean;
     }
     
+    class TakeRecorderOverlayWidget extends UE.UserWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Recorder: UE.TakeRecorder;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TakeRecorderOverlayWidget;
+        static Load(InName: string): TakeRecorderOverlayWidget;
+    
+        __tid_TakeRecorderOverlayWidget_0__: boolean;
+    }
+    
+    class TakeRecorderUserParameters {
+        constructor();
+        constructor(bMaximizeViewport: boolean, CountdownSeconds: number, EngineTimeDilation: number, bResetPlayhead: boolean, bStopAtPlaybackEnd: boolean, bRemoveRedundantTracks: boolean, ReduceKeysTolerance: number, bSaveRecordedAssets: boolean, bAutoLock: boolean, bAutoSerialize: boolean);
+        bMaximizeViewport: boolean;
+        CountdownSeconds: number;
+        EngineTimeDilation: number;
+        bResetPlayhead: boolean;
+        bStopAtPlaybackEnd: boolean;
+        bRemoveRedundantTracks: boolean;
+        ReduceKeysTolerance: number;
+        bSaveRecordedAssets: boolean;
+        bAutoLock: boolean;
+        bAutoSerialize: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TakeRecorderUserParameters_0__: boolean;
+    }
+    
+    class TakeRecorderPropertyTrackSettings {
+        constructor();
+        constructor(ComponentPath: string, PropertyPath: string);
+        ComponentPath: string;
+        PropertyPath: string;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TakeRecorderPropertyTrackSettings_0__: boolean;
+    }
+    
+    class TakeRecorderTrackSettings {
+        constructor();
+        constructor(MatchingActorClass: UE.SoftClassPath, DefaultPropertyTracks: TArray<UE.TakeRecorderPropertyTrackSettings>, ExcludePropertyTracks: TArray<UE.TakeRecorderPropertyTrackSettings>);
+        MatchingActorClass: UE.SoftClassPath;
+        DefaultPropertyTracks: TArray<UE.TakeRecorderPropertyTrackSettings>;
+        ExcludePropertyTracks: TArray<UE.TakeRecorderPropertyTrackSettings>;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TakeRecorderTrackSettings_0__: boolean;
+    }
+    
+    class TakeRecorderProjectParameters {
+        constructor();
+        constructor(RootTakeSaveDir: UE.DirectoryPath, TakeSaveDir: string, SubSequenceDirectory: string, DefaultSlate: string, RecordingClockSource: UE.EUpdateClockSource, bStartAtCurrentTimecode: boolean, bRecordTimecode: boolean, bRecordSourcesIntoSubSequences: boolean, bRecordToPossessable: boolean, DefaultTracks: TArray<UE.TakeRecorderTrackSettings>, bShowNotifications: boolean);
+        RootTakeSaveDir: UE.DirectoryPath;
+        TakeSaveDir: string;
+        SubSequenceDirectory: string;
+        DefaultSlate: string;
+        RecordingClockSource: UE.EUpdateClockSource;
+        bStartAtCurrentTimecode: boolean;
+        bRecordTimecode: boolean;
+        bRecordSourcesIntoSubSequences: boolean;
+        bRecordToPossessable: boolean;
+        DefaultTracks: TArray<UE.TakeRecorderTrackSettings>;
+        bShowNotifications: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TakeRecorderProjectParameters_0__: boolean;
+    }
+    
+    class TakeRecorderParameters {
+        constructor();
+        constructor(User: UE.TakeRecorderUserParameters, Project: UE.TakeRecorderProjectParameters, TakeRecorderMode: UE.ETakeRecorderMode, StartFrame: UE.FrameNumber, bDisableRecordingAndSave: boolean, bOpenSequencer: boolean);
+        User: UE.TakeRecorderUserParameters;
+        Project: UE.TakeRecorderProjectParameters;
+        TakeRecorderMode: UE.ETakeRecorderMode;
+        StartFrame: UE.FrameNumber;
+        bDisableRecordingAndSave: boolean;
+        bOpenSequencer: boolean;
+        /**
+         * @deprecated use StaticStruct instead.
+         */
+        static StaticClass(): ScriptStruct;
+        static StaticStruct(): ScriptStruct;
+        __tid_TakeRecorderParameters_0__: boolean;
+    }
+    
+    class TakeRecorder extends UE.Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SequenceAsset: UE.LevelSequence;
+        OverlayWidget: UE.TakeRecorderOverlayWidget;
+        WeakWorld: TWeakObjectPtr<UE.World>;
+        Parameters: UE.TakeRecorderParameters;
+        /*
+         *Access the number of seconds remaining before this recording will start
+         */
+        GetCountdownSeconds() : number;
+        /*
+         *Access the sequence asset that this recorder is recording into
+         */
+        GetSequence() : UE.LevelSequence;
+        /*
+         *Get the current state of this recorder
+         */
+        GetState() : UE.ETakeRecorderState;
+        /*
+         *Sets the current countdown time in seconds.
+         */
+        SetCountdown(InSeconds: number) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TakeRecorder;
+        static Load(InName: string): TakeRecorder;
+    
+        __tid_TakeRecorder_0__: boolean;
+    }
+    
     class TakeRecorderSource extends UE.Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         bEnabled: boolean;
@@ -234540,6 +234333,105 @@ declare module "ue" {
         static Load(InName: string): TextBinding;
     
         __tid_TextBinding_0__: boolean;
+    }
+    
+    class TextBlock extends UE.TextLayoutWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Text: string;
+        TextDelegate: $Delegate<() => string>;
+        ColorAndOpacity: UE.SlateColor;
+        ColorAndOpacityDelegate: $Delegate<() => UE.SlateColor>;
+        MinDesiredWidth: number;
+        Font: UE.SlateFontInfo;
+        StrikeBrush: UE.SlateBrush;
+        ShadowOffset: UE.Vector2D;
+        ShadowColorAndOpacity: UE.LinearColor;
+        ShadowColorAndOpacityDelegate: $Delegate<() => UE.LinearColor>;
+        bWrapWithInvalidationPanel: boolean;
+        TextTransformPolicy: UE.ETextTransformPolicy;
+        TextOverflowPolicy: UE.ETextOverflowPolicy;
+        bSimpleTextMode: boolean;
+        GetDynamicFontMaterial() : UE.MaterialInstanceDynamic;
+        GetDynamicOutlineMaterial() : UE.MaterialInstanceDynamic;
+        /*
+         *Gets the widget text
+         *@return The widget text
+         */
+        GetText() : string;
+        /*
+         *Set the auto wrap for this text block.
+         *
+         *@param InAutoTextWrap to turn wrap on or off.
+         */
+        SetAutoWrapText(InAutoTextWrap: boolean) : void;
+        /*
+         *Sets the color and opacity of the text in this text block
+         *
+         *@param InColorAndOpacity             The new text color and opacity
+         */
+        SetColorAndOpacity(InColorAndOpacity: UE.SlateColor) : void;
+        /*
+         *Dynamically set the font info for this text block
+         *
+         *@param InFontInfo The new font info
+         */
+        SetFont(InFontInfo: UE.SlateFontInfo) : void;
+        SetFontMaterial(InMaterial: $Nullable<UE.MaterialInterface>) : void;
+        SetFontOutlineMaterial(InMaterial: $Nullable<UE.MaterialInterface>) : void;
+        /*
+         *Set the minimum desired width for this text block
+         *
+         *@param InMinDesiredWidth new minimum desired width
+         */
+        SetMinDesiredWidth(InMinDesiredWidth: number) : void;
+        /*
+         *Sets the opacity of the text in this text block
+         *
+         *@param InOpacity              The new text opacity
+         */
+        SetOpacity(InOpacity: number) : void;
+        /*
+         *Sets the color and opacity of the text drop shadow
+         *Note: if opacity is zero no shadow will be drawn
+         *
+         *@param InShadowColorAndOpacity               The new drop shadow color and opacity
+         */
+        SetShadowColorAndOpacity(InShadowColorAndOpacity: UE.LinearColor) : void;
+        /*
+         *Sets the offset that the text drop shadow should be drawn at
+         *
+         *@param InShadowOffset                The new offset
+         */
+        SetShadowOffset(InShadowOffset: UE.Vector2D) : void;
+        /*
+         *Dynamically set the strike brush for this text block
+         *
+         *@param InStrikeBrush The new brush to use to strike through text
+         */
+        SetStrikeBrush(InStrikeBrush: UE.SlateBrush) : void;
+        /*
+         *Directly sets the widget text.
+         *Warning: This will wipe any binding created for the Text property!
+         *@param InText The text to assign to the widget
+         */
+        SetText(InText: string) : void;
+        /*
+         *Set the text overflow policy for this text block.
+         *
+         *@param InOverflowPolicy the new text overflow policy.
+         */
+        SetTextOverflowPolicy(InOverflowPolicy: UE.ETextOverflowPolicy) : void;
+        /*
+         *Set the text transformation policy for this text block.
+         *
+         *@param InTransformPolicy the new text transformation policy.
+         */
+        SetTextTransformPolicy(InTransformPolicy: UE.ETextTransformPolicy) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TextBlock;
+        static Load(InName: string): TextBlock;
+    
+        __tid_TextBlock_0__: boolean;
     }
     
     class TextBlockWidgetStyle extends UE.SlateWidgetStyleContainerBase {
@@ -239079,6 +238971,21 @@ declare module "ue" {
         __tid_UniformGridPanel_0__: boolean;
     }
     
+    class UniformInteger extends UE.FieldNodeInt {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Magnitude: number;
+        /*
+         *Set a uniform integer value independently of the sample position. The output is equal to magnitude
+         *@param    Magnitude The field output will be equal the magnitude
+         */
+        SetUniformInteger(Magnitude: number) : UE.UniformInteger;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): UniformInteger;
+        static Load(InName: string): UniformInteger;
+    
+        __tid_UniformInteger_0__: boolean;
+    }
+    
     class UniformIntegerFieldDataflowNode extends UE.DataflowNode {
         constructor();
         constructor(SamplePositions: TArray<UE.Vector3f>, SampleIndices: UE.DataflowVertexSelection, Magnitude: number, FieldIntResult: TArray<number>, FieldRemap: TArray<number>, NumSamplePositions: number);
@@ -239114,6 +239021,21 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_UniformPointSamplingDataflowNode_0__: boolean;
+    }
+    
+    class UniformScalar extends UE.FieldNodeFloat {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Magnitude: number;
+        /*
+         *Set a uniform scalar value independently of the sample position. The output is equal to magnitude
+         *@param    Magnitude The field output will be equal the magnitude
+         */
+        SetUniformScalar(Magnitude: number) : UE.UniformScalar;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): UniformScalar;
+        static Load(InName: string): UniformScalar;
+    
+        __tid_UniformScalar_0__: boolean;
     }
     
     class UniformScalarFieldDataflowNode extends UE.DataflowNode {
@@ -239172,6 +239094,23 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_UniformScatterPointsDataflowNode_v2_0__: boolean;
+    }
+    
+    class UniformVector extends UE.FieldNodeVector {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Magnitude: number;
+        Direction: UE.Vector;
+        /*
+         *Set a uniform vector value independently of the sample position.The output is equal to magnitude * direction
+         *@param    Magnitude Magnitude of the uniform vector field
+         *@param    Direction Normalized direction of the uniform vector field
+         */
+        SetUniformVector(Magnitude: number, Direction: UE.Vector) : UE.UniformVector;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): UniformVector;
+        static Load(InName: string): UniformVector;
+    
+        __tid_UniformVector_0__: boolean;
     }
     
     class UniformVectorFieldDataflowNode extends UE.DataflowNode {
@@ -241842,6 +241781,33 @@ declare module "ue" {
         static StaticClass(): ScriptStruct;
         static StaticStruct(): ScriptStruct;
         __tid_VertexWeightedPointSamplingDataflowNode_0__: boolean;
+    }
+    
+    class VerticalBoxSlot extends UE.PanelSlot {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Size: UE.SlateChildSize;
+        Padding: UE.Margin;
+        HorizontalAlignment: UE.EHorizontalAlignment;
+        VerticalAlignment: UE.EVerticalAlignment;
+        SetHorizontalAlignment(InHorizontalAlignment: UE.EHorizontalAlignment) : void;
+        SetPadding(InPadding: UE.Margin) : void;
+        SetSize(InSize: UE.SlateChildSize) : void;
+        SetVerticalAlignment(InVerticalAlignment: UE.EVerticalAlignment) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): VerticalBoxSlot;
+        static Load(InName: string): VerticalBoxSlot;
+    
+        __tid_VerticalBoxSlot_0__: boolean;
+    }
+    
+    class VerticalBox extends UE.PanelWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AddChildToVerticalBox(Content: $Nullable<UE.Widget>) : UE.VerticalBoxSlot;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): VerticalBox;
+        static Load(InName: string): VerticalBox;
+    
+        __tid_VerticalBox_0__: boolean;
     }
     
     class VideoCaptureProtocol extends UE.FrameGrabberProtocol {
@@ -244909,6 +244875,40 @@ declare module "ue" {
         static Load(InName: string): WidgetStateSettings;
     
         __tid_WidgetStateSettings_0__: boolean;
+    }
+    
+    class WidgetSwitcher extends UE.PanelWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ActiveWidgetIndex: number;
+        /*
+         *Get the reference of the currently active widget
+         */
+        GetActiveWidget() : UE.Widget;
+        /*
+         *Gets the slot index of the currently active widget
+         */
+        GetActiveWidgetIndex() : number;
+        /*
+         *Gets the number of widgets that this switcher manages.
+         */
+        GetNumWidgets() : number;
+        /*
+         *Get a widget at the provided index
+         */
+        GetWidgetAtIndex(Index: number) : UE.Widget;
+        /*
+         *Activates the widget and makes it the active index.
+         */
+        SetActiveWidget(Widget: $Nullable<UE.Widget>) : void;
+        /*
+         *Activates the widget at the specified index.
+         */
+        SetActiveWidgetIndex(Index: number) : void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): WidgetSwitcher;
+        static Load(InName: string): WidgetSwitcher;
+    
+        __tid_WidgetSwitcher_0__: boolean;
     }
     
     class WidgetToolsContext extends UE.ModeManagerInteractiveToolsContext {

@@ -1,7 +1,7 @@
-console.log("init from ts begin");
+console.log("old init from ts begin");
 
 require('./BP_ActorMixin');
 require('./BP_ThirdPersonCharacterMixin');
 require('./WBP_MainUIMixin');
 
-console.log("init from ts end");
+console.log("old init from ts end");

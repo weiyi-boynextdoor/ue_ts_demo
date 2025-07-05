@@ -1,1 +1,1 @@
-{"version":3,"file":"Init.js","sourceRoot":"","sources":["../../TypeScript/Init.ts"],"names":[],"mappings":"AAAA,OAAO,CAAC,GAAG,CAAC,oBAAoB,CAAC,CAAC;AAElC,OAAO,CAAC,iBAAiB,CAAC,CAAC;AAC3B,OAAO,CAAC,gCAAgC,CAAC,CAAC;AAC1C,OAAO,CAAC,iBAAiB,CAAC,CAAC;AAE3B,OAAO,CAAC,GAAG,CAAC,kBAAkB,CAAC,CAAC"}
+{"version":3,"file":"init.js","sourceRoot":"","sources":["../../TypeScript/init.ts"],"names":[],"mappings":"AAAA,OAAO,CAAC,GAAG,CAAC,oBAAoB,CAAC,CAAC;AAElC,OAAO,CAAC,gBAAgB,CAAC,CAAC;AAE1B,OAAO,CAAC,GAAG,CAAC,kBAAkB,CAAC,CAAC"}

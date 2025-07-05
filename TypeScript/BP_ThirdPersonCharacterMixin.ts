@@ -17,7 +17,7 @@ class BPExt {
         this.EventMove.Add(this.OnEventMove.bind(this));
         this.EventBeginJump.Add(this.OnEventBeginJump.bind(this));
         this.EventEndJump.Add(this.OnEventEndJump.bind(this));
-        this.EventAttack.Add(this.OnEventAttack.bind(this));
+        // this.EventAttack.Add(this.OnEventAttack.bind(this));
     }
 
     OnEventLook(x: number, y: number) {
@@ -42,10 +42,10 @@ class BPExt {
         this.StopJumping();
     }
 
-    OnEventAttack() {
-        const montage = UE.AnimMontage.Load("/Game/Characters/Mannequins/Animations/AM_Kick.AM_Kick");
-        this.PlayAnimMontage(montage);
-    }
+    // OnEventAttack() {
+    //     const montage = UE.AnimMontage.Load("/Game/Characters/Mannequins/Animations/AM_Kick.AM_Kick");
+    //     this.PlayAnimMontage(montage);
+    // }
 }
 
 blueprint.mixin(BP_Mixin, BPExt);

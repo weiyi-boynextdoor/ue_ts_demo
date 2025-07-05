@@ -1,6 +1,4 @@
 console.log("init from ts begin");
-require('./BP_ActorMixin');
-require('./BP_ThirdPersonCharacterMixin');
-require('./TS_MainMenuUI');
+require("./BP_JsAdapter");
 console.log("init from ts end");
-//# sourceMappingURL=Init.js.map
+//# sourceMappingURL=init.js.map

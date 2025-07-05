@@ -19,6 +19,7 @@ declare module "ue" {
             EventBeginJump: $MulticastDelegate<() => void>;
             EventEndJump: $MulticastDelegate<() => void>;
             EventAttack: $MulticastDelegate<() => void>;
+            JsAdapter: UE.Game.Blueprints.BP_JsAdapter.BP_JsAdapter_C;
             EventAttack__DelegateSignature() : void;
             EventBeginJump__DelegateSignature() : void;
             EventEndJump__DelegateSignature() : void;
@@ -70,7 +71,6 @@ declare module "ue" {
             HostBtn: UE.Button;
             BndEvt__WBP_MainMenu_HostBtn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature() : void;
             BndEvt__WBP_MainMenu_JoinBtn_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature() : void;
-            Construct() : void;
             ExecuteUbergraph_WBP_MainMenu(EntryPoint: number) : void;
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): WBP_MainMenu_C;
@@ -4466,6 +4466,7 @@ declare module "ue" {
     namespace Game.Blueprints.BP_TsGameInstance {
         class BP_TsGameInstance_C extends UE.TsGameInstance {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            RetainedClasses: TSet<UE.Object>;
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): BP_TsGameInstance_C;
             static Load(InName: string): BP_TsGameInstance_C;
@@ -4483,8 +4484,13 @@ declare module "ue" {
             UberGraphFrame: UE.PointerToUberGraphFrame;
             DefaultSceneRoot: UE.SceneComponent;
             IsFirstTick: boolean;
+            JsAdapter: UE.Game.Blueprints.BP_JsAdapter.BP_JsAdapter_C;
+            JsClassName: string;
+            JsFilePath: string;
+            OnFirstTick: $MulticastDelegate<() => void>;
             ExecuteUbergraph_BP_Actor(EntryPoint: number) : void;
             FirstTick() : void;
+            OnFirstTick__DelegateSignature() : void;
             /*
              *Event when play begins for this actor.
              */
@@ -16485,31 +16491,33 @@ declare module "ue" {
 
 // __TYPE_DECL_END
 // __TYPE_DECL_START: 
-    namespace DatasmithContent.Datasmith.AreaLightsStruct {
-        class AreaLightsStruct {
-            constructor();
-            constructor(Mesh: UE.StaticMesh);
-            Mesh: UE.StaticMesh;
-            /**
-             * @deprecated use StaticStruct instead.
-             */
-            static StaticClass(): ScriptStruct;
-            static StaticStruct(): ScriptStruct;
-            __tid_AreaLightsStruct_0__: boolean;
-        }
-        
-    }
-
-// __TYPE_DECL_END
-// __TYPE_DECL_START: 
     namespace Game.ThirdPerson.UI.WBP_MainUI {
         class WBP_MainUI_C extends UE.UserWidget {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
             UberGraphFrame: UE.PointerToUberGraphFrame;
             Button_0: UE.Button;
+            JsAdapter: UE.Game.Blueprints.BP_JsAdapter.BP_JsAdapter_C;
             BndEvt__WBP_MainUI_Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature() : void;
+            /*
+             *Called after the underlying slate widget is constructed.  Depending on how the slate object is used
+             *this event may be called multiple times due to adding and removing from the hierarchy.
+             *If you need a true called-once-when-created event, use OnInitialized.
+             */
             Construct() : void;
             ExecuteUbergraph_WBP_MainUI(EntryPoint: number) : void;
+            /*
+             *Called by both the game and the editor.  Allows users to run initial setup for their widgets to better preview
+             *the setup in the designer and since generally that same setup code is required at runtime, it's called there
+             *as well.
+             *
+             ***WARNING**
+             *This is intended purely for cosmetic updates using locally owned data, you can not safely access any game related
+             *state, if you call something that doesn't expect to be run at editor time, you may crash the editor.
+             *
+             *In the event you save the asset with blueprint code that causes a crash on evaluation.  You can turn off
+             *PreConstruct evaluation in the Widget Designer settings in the Editor Preferences.
+             */
+            PreConstruct(IsDesignTime: boolean) : void;
             static StaticClass(): Class;
             static Find(OrigInName: string, Outer?: Object): WBP_MainUI_C;
             static Load(InName: string): WBP_MainUI_C;
@@ -16551,6 +16559,23 @@ declare module "ue" {
             static Load(InName: string): ThirdPersonMap_C;
         
             __tid_ThirdPersonMap_C_0__: boolean;
+        }
+        
+    }
+
+// __TYPE_DECL_END
+// __TYPE_DECL_START: 
+    namespace Game.Blueprints.BP_JsAdapter {
+        class BP_JsAdapter_C extends UE.Object {
+            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            JsClassName: string;
+            JsFilePath: string;
+            Init(Object: $Nullable<UE.Object>) : void;
+            static StaticClass(): Class;
+            static Find(OrigInName: string, Outer?: Object): BP_JsAdapter_C;
+            static Load(InName: string): BP_JsAdapter_C;
+        
+            __tid_BP_JsAdapter_C_0__: boolean;
         }
         
     }
