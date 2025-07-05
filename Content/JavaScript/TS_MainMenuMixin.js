@@ -21,4 +21,4 @@ class MainMenuExt {
     }
 }
 puerts_1.blueprint.mixin(MainMenuMixin, MainMenuExt);
-//# sourceMappingURL=TS_MainMenuUI.js.map
+//# sourceMappingURL=TS_MainMenuMixin.js.map
