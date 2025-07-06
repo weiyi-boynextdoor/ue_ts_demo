@@ -11,7 +11,6 @@ interface BPExt extends UE.Game.Blueprints.BP_JsAdapter.BP_JsAdapter_C {};
 
 class BPExt {
     Init(Object: UE.Object) {
-        UE.KismetSystemLibrary.PrintString(Object, `BP_JsAdapter init!!!!!`);
         if (G.registeredClasses.has(this.JsClassName)) {
             let jsClass = G.registeredClasses.get(this.JsClassName);
             const jsInstance = new jsClass();

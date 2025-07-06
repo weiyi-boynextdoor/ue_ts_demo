@@ -8,7 +8,6 @@ const BP_Mixin = puerts_1.blueprint.tojs(BP);
 ;
 class BPExt {
     Init(Object) {
-        UE.KismetSystemLibrary.PrintString(Object, `BP_JsAdapter init!!!!!`);
         if (G_1.G.registeredClasses.has(this.JsClassName)) {
             let jsClass = G_1.G.registeredClasses.get(this.JsClassName);
             const jsInstance = new jsClass();

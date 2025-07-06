@@ -16581,4 +16581,19 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
+// __TYPE_DECL_START: 
+    namespace Game.Blueprints.JsFunctionLib {
+        class JsFunctionLib_C extends UE.BlueprintFunctionLibrary {
+            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            static CreateJsAdapter(JsClassName: string, JsFilePath: string, Owner: $Nullable<UE.Object>, __WorldContext: $Nullable<UE.Object>, Adapter: $Ref<UE.Game.Blueprints.BP_JsAdapter.BP_JsAdapter_C>) : void;
+            static StaticClass(): Class;
+            static Find(OrigInName: string, Outer?: Object): JsFunctionLib_C;
+            static Load(InName: string): JsFunctionLib_C;
+        
+            __tid_JsFunctionLib_C_0__: boolean;
+        }
+        
+    }
+
+// __TYPE_DECL_END
 }
