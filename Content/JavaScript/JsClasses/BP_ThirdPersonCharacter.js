@@ -7,7 +7,7 @@ class BP_ThirdPersonCharacter extends JsClass_1.JsClass {
     character;
     Init(Object) {
         const bp_character = Object;
-        this.character = bp_character;
+        this.character = new WeakRef(bp_character);
         const controller = bp_character.GetController();
         if (controller instanceof UE.PlayerController) {
             UE.SubsystemBlueprintLibrary.GetLocalPlayerSubSystemFromPlayerController(controller, UE.EnhancedInputLocalPlayerSubsystem.StaticClass()).AddMappingContext(bp_character.DefaultMappingContext, 0);
@@ -18,22 +18,26 @@ class BP_ThirdPersonCharacter extends JsClass_1.JsClass {
         bp_character.EventEndJump.Add(this.OnEventEndJump.bind(this));
     }
     OnEventLook(x, y) {
-        this.character.AddControllerYawInput(x);
-        this.character.AddControllerPitchInput(y);
+        const character = this.character.deref();
+        character.AddControllerYawInput(x);
+        character.AddControllerPitchInput(y);
     }
     OnEventMove(x, y) {
+        const character = this.character.deref();
         // Rotator(pitch, yaw, roll)
-        const rotation = this.character.GetControlRotation();
+        const rotation = character.GetControlRotation();
         const right = UE.KismetMathLibrary.GetRightVector(new UE.Rotator(0, rotation.Yaw, rotation.Roll));
-        this.character.AddMovementInput(right, x);
+        character.AddMovementInput(right, x);
         const forward = UE.KismetMathLibrary.GetForwardVector(new UE.Rotator(0, rotation.Yaw, 0));
-        this.character.AddMovementInput(forward, y);
+        character.AddMovementInput(forward, y);
     }
     OnEventBeginJump() {
-        this.character.Jump();
+        const character = this.character.deref();
+        character.Jump();
     }
     OnEventEndJump() {
-        this.character.StopJumping();
+        const character = this.character.deref();
+        character.StopJumping();
     }
 }
 exports.BP_ThirdPersonCharacter = BP_ThirdPersonCharacter;

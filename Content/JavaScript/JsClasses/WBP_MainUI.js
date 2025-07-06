@@ -7,15 +7,15 @@ class WBP_MainUI extends JsClass_1.JsClass {
     ui;
     Init(Object) {
         const bp_ui = Object;
-        this.ui = bp_ui;
-        this.ui.Button_0.OnClicked.Add(this.OnButtonClicked.bind(this));
+        this.ui = new WeakRef(bp_ui);
+        bp_ui.Button_0.OnClicked.Add(this.OnButtonClicked.bind(this));
     }
     OnConstruct() {
         console.log("WBP_MainUI Construct from ts");
     }
     OnButtonClicked() {
         UE.KismetSystemLibrary.CollectGarbage();
-        UE.GameplayStatics.OpenLevel(this.ui.GetWorld(), '/Game/ThirdPerson/Maps/ThirdPersonMap');
+        UE.GameplayStatics.OpenLevel(this.ui.deref().GetWorld(), '/Game/ThirdPerson/Maps/ThirdPersonMap');
     }
 }
 exports.WBP_MainUI = WBP_MainUI;
